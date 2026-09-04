@@ -6,7 +6,10 @@
 <meta name="description" content="Seven-day bivouac plan for the GR52 from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026: interactive map, park rules, water, refuges, technical options, transport. English and Hebrew.">
 <meta name="color-scheme" content="light dark">
 <style>body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%;height:auto}[hidden]{display:none!important}</style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" crossorigin="">
+<link rel="stylesheet" href="/vendor/leaflet.min.css">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#C8322B">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
 <style>
 :root{
   --ground:#F0F1EE; --panel:#FFFFFF; --ink:#1E2726; --muted:#5F6C69; --line:#CCD3D0;
@@ -116,13 +119,23 @@ th{border-bottom:2px solid var(--ink)}
 table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)}
 .langbar button::before{content:"⇄ ";color:var(--mark)}
 
+.mapbox{margin:16px 0}
 .livemap{height:min(72vh,640px);border:1px solid var(--line);background:var(--panel);margin:16px 0;z-index:0}
 .livemap .leaflet-control-layers,.livemap .leaflet-bar{font-family:"IBM Plex Sans",sans-serif}
+.livemap .leaflet-control-layers-overlays label{white-space:nowrap}
+.livemap .leaflet-control-layers-expanded{max-height:60vh;overflow:auto}
 .leaflet-popup-content{font:14px/1.4 "IBM Plex Sans",sans-serif;margin:10px 12px}
 .staticmaps{margin:14px 0}
 .staticmaps summary{cursor:pointer;font-weight:600;padding:8px 0}
 .staticmaps figure{margin:14px 0}
 [lang="he"] .leaflet-popup-content{direction:rtl;font-family:"Heebo",sans-serif}
+.maptools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:10px 0}
+.maptools button{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 12px;cursor:pointer}
+.maptools button:hover{border-color:var(--mark)} .maptools button:disabled{opacity:.6;cursor:wait}
+.mapstatus{font:13px "IBM Plex Mono",monospace;color:var(--muted)}
+canvas.profile{width:100%;height:220px;display:block;background:var(--panel);border:1px solid var(--line);touch-action:none;cursor:crosshair}
+.profstats{font:13px "IBM Plex Mono",monospace;color:var(--muted);margin:6px 0 0;max-width:none}
+[lang="he"] .maptools button,[lang="he"] .mapstatus,[lang="he"] .profstats{font-family:"Heebo",sans-serif}
 </style>
 
 </head>
@@ -221,8 +234,17 @@ table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)
 
 
 <h2 id="maps"><span class="k">§2</span>Maps and profile</h2>
-<p>Red line: the GR52 as mapped in OpenStreetMap, which already includes the 2026 Boréon reroute. Red dots: the nights. Tap anything for its note. Use the layers button to add water, the park core boundary, side trips and the via ferrata. Base map OpenTopoMap, 100 m contours. Planning aid only; carry IGN 3741 OT and 3841 OT.</p>
-<div class="livemap" data-map="en" role="application" aria-label="Interactive map of the GR52 route"></div>
+<p>This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.</p>
+<div class="mapbox" data-map="en">
+  <div class="livemap" role="application" aria-label="Interactive map of the GR52 route"></div>
+  <div class="maptools">
+    <button type="button" data-act="locate"></button>
+    <button type="button" data-act="save"></button>
+    <span class="mapstatus"></span>
+  </div>
+  <canvas class="profile" aria-label="Elevation profile"></canvas>
+  <p class="profstats"></p>
+</div>
 <details class="staticmaps">
   <summary>Annotated section maps, for printing or offline</summary>
   <figure><img class="map" src="/maps/overview.webp" width="598" height="830" loading="lazy" decoding="async" alt="Overview map of the GR52 with the six bivouac nights"><figcaption>Whole route, north at top.</figcaption></figure>
@@ -233,10 +255,6 @@ table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)
     <figure><img class="map" src="/maps/menton.webp" width="699" height="1050" loading="lazy" decoding="async" alt="Map of day 7"><figcaption>Day 7.</figcaption></figure>
   </div>
 </details>
-<figure>
-  <svg class="profile" data-profile="en" viewBox="0 0 960 300" role="img" aria-label="Approximate elevation profile with the bivouac nights marked"></svg>
-  <figcaption>Approximate profile; distances are estimates.</figcaption>
-</figure>
 
 <h2 id="rules"><span class="k">§3</span>Rules and water</h2>
 <div class="note rule">
@@ -424,8 +442,17 @@ table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)
 
 
 <h2 id="he-maps"><span class="k">§2</span>מפות ופרופיל</h2>
-<p>הקו האדום: ה-GR52 כפי שמופה ב-OpenStreetMap, כבר כולל את שינוי התוואי של 2026 ליד Boréon. נקודות אדומות: הלילות. לחצו על כל דבר כדי לראות את ההערה שלו. בכפתור השכבות אפשר להוסיף מים, גבול לב הפארק, סטיות צד והוויה פראטה. מפת הבסיס OpenTopoMap, קווי גובה כל 100 מ'. עזר לתכנון בלבד; קחו את גיליונות IGN 3741 OT ו-3841 OT.</p>
-<div class="livemap" data-map="he" role="application" aria-label="מפה אינטראקטיבית של מסלול ה-GR52"></div>
+<p>המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.</p>
+<div class="mapbox" data-map="he">
+  <div class="livemap" role="application" aria-label="מפה אינטראקטיבית של מסלול ה-GR52"></div>
+  <div class="maptools">
+    <button type="button" data-act="locate"></button>
+    <button type="button" data-act="save"></button>
+    <span class="mapstatus"></span>
+  </div>
+  <canvas class="profile" aria-label="Elevation profile"></canvas>
+  <p class="profstats"></p>
+</div>
 <details class="staticmaps">
   <summary>מפות מקטעים עם סימונים, להדפסה או לאופליין</summary>
   <figure><img class="map" src="/maps/overview.webp" width="598" height="830" loading="lazy" decoding="async" alt="מפת סקירה של ה-GR52 עם ששת הלילות"><figcaption>כל המסלול, צפון למעלה.</figcaption></figure>
@@ -436,10 +463,6 @@ table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)
     <figure><img class="map" src="/maps/menton.webp" width="699" height="1050" loading="lazy" decoding="async" alt="מפת יום 7"><figcaption>יום 7.</figcaption></figure>
   </div>
 </details>
-<figure>
-  <svg class="profile" data-profile="he" viewBox="0 0 960 300" role="img" aria-label="פרופיל גבהים משוער עם הלילות מסומנים"></svg>
-  <figcaption>פרופיל משוער; המרחקים הם הערכה.</figcaption>
-</figure>
 
 <h2 id="he-rules"><span class="k">§3</span>חוקים ומים</h2>
 <div class="note rule">
@@ -552,78 +575,8 @@ table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)
   apply(saved);
   btn.addEventListener('click',function(){apply(en.hidden?'en':'he')});
 
-  // Elevation profile: [km, altitude m, label, night?]
-  var pts=[
-    [0,1290,"Saint-Dalmas",0],[5,2194,"",0],[7,2100,"",0],[9,2452,"Col du Barn",0],
-    [18,1500,"Le Boréon",1],[24,2150,"",0],[27,2448,"Pas des Ladres",0],[31,1903,"Madone",1],
-    [35,2548,"Pas du Mont Colomb",0],[38,2232,"Refuge de Nice",1],[43,2693,"Baisse du Basto",0],
-    [46,2549,"",0],[49,2130,"Merveilles",1],[54,2436,"Pas du Diable",0],[60,1999,"Col de Raus",0],
-    [63,1836,"",0],[67,1750,"Camp d'Argent",1],[78,350,"Sospel",1],[86,1032,"",0],
-    [90,1090,"Col du Berceau",0],[95,0,"Menton",0]
-  ];
-  var titles={en:'ELEVATION PROFILE · SAINT-DALMAS-VALDEBLORE → MENTON',he:'פרופיל גבהים · Saint-Dalmas-Valdeblore ← Menton'};
-  var units={en:function(a){return a+' m'},he:function(a){return a+" מ'"}};
-  var kms={en:function(k){return k+' km'},he:function(k){return k+' ק"מ'}};
-  document.querySelectorAll('svg[data-profile]').forEach(function(svg){
-    var L=svg.getAttribute('data-profile')||'en';
-    var W=960,H=300,PL=56,R=16,T=44,B=40,maxKm=95,maxAlt=3000;
-    var x=function(k){return PL+(k/maxKm)*(W-PL-R)}, y=function(a){return T+(1-a/maxAlt)*(H-T-B)};
-    var ns='http://www.w3.org/2000/svg';
-    var el=function(n,attrs,txt){var e=document.createElementNS(ns,n);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e};
-    var cs=getComputedStyle(document.documentElement);
-    var ink=cs.getPropertyValue('--ink').trim(),muted=cs.getPropertyValue('--muted').trim(),line=cs.getPropertyValue('--line').trim(),mark=cs.getPropertyValue('--mark').trim(),lake=cs.getPropertyValue('--lake').trim(),lakeSoft=cs.getPropertyValue('--lake-soft').trim();
-    svg.setAttribute('direction','ltr');
-    [0,1000,2000,3000].forEach(function(a){el('line',{x1:PL,x2:W-R,y1:y(a),y2:y(a),stroke:line,'stroke-width':1});el('text',{x:PL-8,y:y(a)+4,'text-anchor':'end',fill:muted,'font-size':11,'font-family':'IBM Plex Mono, Heebo, monospace'},units[L](a))});
-    [0,20,40,60,80].forEach(function(k){el('text',{x:x(k),y:H-B+18,'text-anchor':'middle',fill:muted,'font-size':11,'font-family':'IBM Plex Mono, Heebo, monospace'},kms[L](k))});
-    var d=pts.map(function(p,i){return (i?'L':'M')+x(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1)}).join(' ');
-    el('path',{d:d+' L'+x(95)+' '+y(0)+' L'+x(0)+' '+y(0)+' Z',fill:lakeSoft,stroke:'none'});
-    el('path',{d:d,fill:'none',stroke:lake,'stroke-width':2,'stroke-linejoin':'round'});
-    pts.forEach(function(p,i){
-      var isPass=i>0&&i<pts.length-1&&p[1]>pts[i-1][1]&&p[1]>pts[i+1][1];
-      if(p[3]){el('circle',{cx:x(p[0]),cy:y(p[1]),r:5,fill:mark,stroke:'none'});
-        el('text',{x:x(p[0]),y:y(p[1])+18,'text-anchor':'middle',fill:ink,'font-size':11,'font-family':'IBM Plex Sans, sans-serif','font-weight':500},p[2]);}
-      else if((isPass&&p[2])||i===0||i===pts.length-1){el('circle',{cx:x(p[0]),cy:y(p[1]),r:2.5,fill:lake,stroke:'none'});
-        var anchor=i===pts.length-1?'end':(i===0?'start':'middle');
-        el('text',{x:x(p[0]),y:y(p[1])-9,'text-anchor':anchor,fill:muted,'font-size':10.5,'font-family':'IBM Plex Sans, sans-serif'},p[2]);}
-    });
-    el('text',{x:PL,y:20,fill:ink,'font-size':13,'font-family':'Barlow Condensed, Rubik, sans-serif','font-weight':600,'letter-spacing':'.02em'},titles[L]);
-  });
 })();
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin=""></script>
-<script>
-(function(){
-  if(!window.L) return;
-  var LABELS={en:{route:'Route',nights:'Nights, refuges, escapes',water:'Water',boundary:'Park core boundary',side:'Side trips',ferrata:'Via ferrata',other:'Passes, shelters, bus'},
-              he:{route:'המסלול',nights:'לילות, בקתות, יציאות',water:'מים',boundary:'גבול לב הפארק',side:'סטיות צד',ferrata:'ויה פראטה',other:'מעברים, מחסות, אוטובוס'}};
-  var data=null, made={};
-  function build(el){
-    var lang=el.getAttribute('data-map'); if(made[lang]) return made[lang];
-    var map=L.map(el,{scrollWheelZoom:false,zoomSnap:0.5});
-    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM &middot; &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'}).addTo(map);
-    var g={}; Object.keys(LABELS.en).forEach(function(k){g[k]=L.layerGroup()});
-    data.features.forEach(function(f){
-      var p=f.properties;
-      if(f.geometry.type==='LineString'){
-        var ll=f.geometry.coordinates.map(function(c){return [c[1],c[0]]});
-        L.polyline(ll,{color:p.color,weight:p.kind==='route'?4:3,opacity:p.kind==='boundary'?.75:.95,dashArray:p.kind==='boundary'?'6 6':null}).bindPopup(p.name).addTo(g[p.kind]);
-      }else{
-        var ll2=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
-        var k=(p.type==='Night'||p.type==='Flag'||p.type==='Lodging'||p.type==='Restaurant'||p.type==='Escape'||p.type==='Info')?'nights':p.type==='Water'?'water':p.type==='SideTrip'?'side':p.type==='ViaFerrata'?'ferrata':'other';
-        L.circleMarker(ll2,{radius:k==='nights'?7:5,color:'#fff',weight:1.5,fillColor:p.color,fillOpacity:1}).bindPopup(p.name).addTo(g[k]);
-      }
-    });
-    g.route.addTo(map); g.nights.addTo(map); g.water.addTo(map);
-    var ov={}; Object.keys(g).forEach(function(k){ov[LABELS[lang][k]]=g[k]});
-    L.control.layers(null,ov,{collapsed:true}).addTo(map);
-    var bounds=L.featureGroup(g.route.getLayers()).getBounds();
-    map.fitBounds(bounds,{padding:[12,12]});
-    made[lang]={map:map,bounds:bounds}; return made[lang];
-  }
-  function visible(){document.querySelectorAll('.livemap').forEach(function(el){ if(el.offsetParent!==null){var m=build(el); m.map.invalidateSize(); }})}
-  fetch('/route.geojson').then(function(r){return r.json()}).then(function(j){data=j; visible();});
-  var btn=document.getElementById('langbtn'); if(btn) btn.addEventListener('click',function(){ if(data) setTimeout(visible,30); });
-})();
-</script>
+<script src="/map.js" defer></script>
 </body>
 </html>

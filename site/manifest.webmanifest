@@ -1,0 +1,9 @@
+{
+  "name": "GR52 Bivouac Dossier",
+  "short_name": "GR52",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F0F1EE",
+  "theme_color": "#C8322B",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}

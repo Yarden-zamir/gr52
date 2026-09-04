@@ -11,18 +11,24 @@ Live at [gr52.yarden-zamir.com](https://gr52.yarden-zamir.com). The GPX for OsmA
 
 - `src/`: page sources. `head.html` (styles), `body.html` (content, both languages),
   `scripts.html` (language toggle, elevation profile, Leaflet map). `build.py` assembles them.
-- `site/`: the built page, `route.geojson` (route and waypoints for the map), `maps/` (annotated
-  section maps as WebP) and the GPX file.
+- `site/`: the built page, `map.js`, `sw.js`, the GPX file, `maps/` (annotated section maps as
+  WebP) and `vendor/` (Leaflet).
 - `src/maps.py` renders the section maps from OpenTopoMap tiles; `src/gpx.py` builds the route
   GPX from the OpenStreetMap relation.
 - `container/Caddyfile`: the file server inside the container.
 - Deployment: see `kitshn.md`.
 
-## Maps
+## Map
 
-The page loads in about 50 KB. The interactive map pulls OpenTopoMap tiles on demand and draws the
-route from `route.geojson` (about 100 KB). The annotated section maps are behind a disclosure and
-load lazily as WebP.
+`site/map.js` fetches the real GPX, parses it in the browser and draws every track and waypoint,
+so the map and the download are the same file. Features: per-track and per-category layer toggles
+(the OsmAnd list), an elevation profile from EU-DEM 25 m heights with hover linked to the map,
+"Where am I" with kilometre on route and distance to the next night, and "Save this area offline"
+which stores the visible OpenTopoMap tiles. `site/sw.js` precaches the page, GPX and Leaflet so the
+site works without signal; `manifest.webmanifest` lets it install to a home screen. Leaflet is
+vendored under `site/vendor/`. The annotated section maps stay behind a disclosure as lazy WebP.
+
+`src/elevation.py` adds `<ele>` to the GPX from OpenTopoData; run it after regenerating the GPX.
 
 ## Update
 
