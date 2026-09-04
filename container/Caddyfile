@@ -8,6 +8,9 @@ http:// {
 	root * /srv
 	encode zstd gzip
 	@gpx path *.gpx
+	@geojson path *.geojson
+	header @geojson Content-Type application/geo+json
+	header /maps/* Cache-Control "public, max-age=604800"
 	header @gpx Content-Type application/gpx+xml
 	header @gpx Content-Disposition attachment
 	file_server

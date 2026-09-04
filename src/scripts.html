@@ -1,0 +1,89 @@
+<script>
+(function(){
+  var btn=document.getElementById('langbtn'),en=document.getElementById('en'),he=document.getElementById('he');
+  function apply(l){
+    var isHe=l==='he';
+    en.hidden=isHe; he.hidden=!isHe;
+    btn.textContent=isHe?'English':'עברית';
+    btn.setAttribute('lang',isHe?'en':'he');
+    document.documentElement.setAttribute('dir',isHe?'rtl':'ltr');
+    try{localStorage.setItem('gr52-lang',l)}catch(e){}
+  }
+  var saved='en';
+  try{saved=localStorage.getItem('gr52-lang')||'en'}catch(e){}
+  apply(saved);
+  btn.addEventListener('click',function(){apply(en.hidden?'en':'he')});
+
+  // Elevation profile: [km, altitude m, label, night?]
+  var pts=[
+    [0,1290,"Saint-Dalmas",0],[5,2194,"",0],[7,2100,"",0],[9,2452,"Col du Barn",0],
+    [18,1500,"Le Boréon",1],[24,2150,"",0],[27,2448,"Pas des Ladres",0],[31,1903,"Madone",1],
+    [35,2548,"Pas du Mont Colomb",0],[38,2232,"Refuge de Nice",1],[43,2693,"Baisse du Basto",0],
+    [46,2549,"",0],[49,2130,"Merveilles",1],[54,2436,"Pas du Diable",0],[60,1999,"Col de Raus",0],
+    [63,1836,"",0],[67,1750,"Camp d'Argent",1],[78,350,"Sospel",1],[86,1032,"",0],
+    [90,1090,"Col du Berceau",0],[95,0,"Menton",0]
+  ];
+  var titles={en:'ELEVATION PROFILE · SAINT-DALMAS-VALDEBLORE → MENTON',he:'פרופיל גבהים · Saint-Dalmas-Valdeblore ← Menton'};
+  var units={en:function(a){return a+' m'},he:function(a){return a+" מ'"}};
+  var kms={en:function(k){return k+' km'},he:function(k){return k+' ק"מ'}};
+  document.querySelectorAll('svg[data-profile]').forEach(function(svg){
+    var L=svg.getAttribute('data-profile')||'en';
+    var W=960,H=300,PL=56,R=16,T=44,B=40,maxKm=95,maxAlt=3000;
+    var x=function(k){return PL+(k/maxKm)*(W-PL-R)}, y=function(a){return T+(1-a/maxAlt)*(H-T-B)};
+    var ns='http://www.w3.org/2000/svg';
+    var el=function(n,attrs,txt){var e=document.createElementNS(ns,n);for(var k in attrs)e.setAttribute(k,attrs[k]);if(txt!=null)e.textContent=txt;svg.appendChild(e);return e};
+    var cs=getComputedStyle(document.documentElement);
+    var ink=cs.getPropertyValue('--ink').trim(),muted=cs.getPropertyValue('--muted').trim(),line=cs.getPropertyValue('--line').trim(),mark=cs.getPropertyValue('--mark').trim(),lake=cs.getPropertyValue('--lake').trim(),lakeSoft=cs.getPropertyValue('--lake-soft').trim();
+    svg.setAttribute('direction','ltr');
+    [0,1000,2000,3000].forEach(function(a){el('line',{x1:PL,x2:W-R,y1:y(a),y2:y(a),stroke:line,'stroke-width':1});el('text',{x:PL-8,y:y(a)+4,'text-anchor':'end',fill:muted,'font-size':11,'font-family':'IBM Plex Mono, Heebo, monospace'},units[L](a))});
+    [0,20,40,60,80].forEach(function(k){el('text',{x:x(k),y:H-B+18,'text-anchor':'middle',fill:muted,'font-size':11,'font-family':'IBM Plex Mono, Heebo, monospace'},kms[L](k))});
+    var d=pts.map(function(p,i){return (i?'L':'M')+x(p[0]).toFixed(1)+' '+y(p[1]).toFixed(1)}).join(' ');
+    el('path',{d:d+' L'+x(95)+' '+y(0)+' L'+x(0)+' '+y(0)+' Z',fill:lakeSoft,stroke:'none'});
+    el('path',{d:d,fill:'none',stroke:lake,'stroke-width':2,'stroke-linejoin':'round'});
+    pts.forEach(function(p,i){
+      var isPass=i>0&&i<pts.length-1&&p[1]>pts[i-1][1]&&p[1]>pts[i+1][1];
+      if(p[3]){el('circle',{cx:x(p[0]),cy:y(p[1]),r:5,fill:mark,stroke:'none'});
+        el('text',{x:x(p[0]),y:y(p[1])+18,'text-anchor':'middle',fill:ink,'font-size':11,'font-family':'IBM Plex Sans, sans-serif','font-weight':500},p[2]);}
+      else if((isPass&&p[2])||i===0||i===pts.length-1){el('circle',{cx:x(p[0]),cy:y(p[1]),r:2.5,fill:lake,stroke:'none'});
+        var anchor=i===pts.length-1?'end':(i===0?'start':'middle');
+        el('text',{x:x(p[0]),y:y(p[1])-9,'text-anchor':anchor,fill:muted,'font-size':10.5,'font-family':'IBM Plex Sans, sans-serif'},p[2]);}
+    });
+    el('text',{x:PL,y:20,fill:ink,'font-size':13,'font-family':'Barlow Condensed, Rubik, sans-serif','font-weight':600,'letter-spacing':'.02em'},titles[L]);
+  });
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" crossorigin=""></script>
+<script>
+(function(){
+  if(!window.L) return;
+  var LABELS={en:{route:'Route',nights:'Nights, refuges, escapes',water:'Water',boundary:'Park core boundary',side:'Side trips',ferrata:'Via ferrata',other:'Passes, shelters, bus'},
+              he:{route:'המסלול',nights:'לילות, בקתות, יציאות',water:'מים',boundary:'גבול לב הפארק',side:'סטיות צד',ferrata:'ויה פראטה',other:'מעברים, מחסות, אוטובוס'}};
+  var data=null, made={};
+  function build(el){
+    var lang=el.getAttribute('data-map'); if(made[lang]) return made[lang];
+    var map=L.map(el,{scrollWheelZoom:false,zoomSnap:0.5});
+    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{maxZoom:17,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM &middot; &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'}).addTo(map);
+    var g={}; Object.keys(LABELS.en).forEach(function(k){g[k]=L.layerGroup()});
+    data.features.forEach(function(f){
+      var p=f.properties;
+      if(f.geometry.type==='LineString'){
+        var ll=f.geometry.coordinates.map(function(c){return [c[1],c[0]]});
+        L.polyline(ll,{color:p.color,weight:p.kind==='route'?4:3,opacity:p.kind==='boundary'?.75:.95,dashArray:p.kind==='boundary'?'6 6':null}).bindPopup(p.name).addTo(g[p.kind]);
+      }else{
+        var ll2=[f.geometry.coordinates[1],f.geometry.coordinates[0]];
+        var k=(p.type==='Night'||p.type==='Flag'||p.type==='Lodging'||p.type==='Restaurant'||p.type==='Escape'||p.type==='Info')?'nights':p.type==='Water'?'water':p.type==='SideTrip'?'side':p.type==='ViaFerrata'?'ferrata':'other';
+        L.circleMarker(ll2,{radius:k==='nights'?7:5,color:'#fff',weight:1.5,fillColor:p.color,fillOpacity:1}).bindPopup(p.name).addTo(g[k]);
+      }
+    });
+    g.route.addTo(map); g.nights.addTo(map); g.water.addTo(map);
+    var ov={}; Object.keys(g).forEach(function(k){ov[LABELS[lang][k]]=g[k]});
+    L.control.layers(null,ov,{collapsed:true}).addTo(map);
+    var bounds=L.featureGroup(g.route.getLayers()).getBounds();
+    map.fitBounds(bounds,{padding:[12,12]});
+    made[lang]={map:map,bounds:bounds}; return made[lang];
+  }
+  function visible(){document.querySelectorAll('.livemap').forEach(function(el){ if(el.offsetParent!==null){var m=build(el); m.map.invalidateSize(); }})}
+  fetch('/route.geojson').then(function(r){return r.json()}).then(function(j){data=j; visible();});
+  var btn=document.getElementById('langbtn'); if(btn) btn.addEventListener('click',function(){ if(data) setTimeout(visible,30); });
+})();
+</script>
