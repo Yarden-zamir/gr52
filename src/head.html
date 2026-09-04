@@ -47,6 +47,7 @@ nav.toc a:hover{border-color:var(--mark)}
 .note{border-inline-start:4px solid var(--lake);background:var(--lake-soft);padding:12px 16px;margin:18px 0;max-width:76ch}
 .note.warn{border-color:var(--warn);background:var(--warn-soft)}
 .note.rule{border-color:var(--mark);background:var(--mark-soft)}
+.note.rule p+p{border-top:1px solid color-mix(in srgb,var(--mark) 25%,transparent);padding-top:8px;margin-top:8px}
 .note p{margin:6px 0}
 .scroll{overflow-x:auto;margin:16px 0}
 table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}
@@ -85,7 +86,35 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
 [lang="he"] .eyebrow,[lang="he"] .tag,[lang="he"] th{letter-spacing:0;text-transform:none;font-family:"Heebo",sans-serif}
 [lang="he"] .stage .d small,[lang="he"] .stage .stats,[lang="he"] h2 .k{font-family:"IBM Plex Mono",monospace}
 [lang="he"] .langbar button{font-family:"Heebo",sans-serif}
-@media (max-width:640px){.stage{grid-template-columns:1fr}.src{columns:1}}
+h2,h3,.stage,.note,.scroll,figure{scroll-margin-top:64px}
+td{overflow-wrap:anywhere}
+nav.toc a{padding:4px 0}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .wrap{padding:0 14px 60px}
+  header{padding:28px 0 8px}
+  h1{font-size:clamp(38px,11vw,52px)} h2{font-size:28px;margin-top:44px} h3{font-size:21px}
+  .lede{font-size:17px}
+  .facts{grid-template-columns:repeat(2,1fr)} .facts b{font-size:26px}
+  .stage{grid-template-columns:1fr;gap:6px 0;padding:18px 0}
+  .stage .d{display:flex;align-items:center;gap:12px;font-size:30px} .stage .d::before{margin:0} .stage .d small{margin:0}
+  .stage h3{font-size:20px}
+  .src{columns:1}
+  .maptools button{flex:1 1 45%;padding:10px 12px}
+  .livemap{height:62vh}
+  /* tables become stacked cards */
+  .scroll{overflow:visible}
+  .scroll table,.scroll tr,.scroll td{display:block;width:100%}
+  .scroll tr:first-child{display:none}
+  .scroll tr{border:1px solid var(--line);background:var(--panel);margin:10px 0;padding:6px 12px 8px;border-radius:3px}
+  .scroll td{border:0;padding:5px 0;display:grid;grid-template-columns:minmax(84px,32%) 1fr;gap:10px;align-items:baseline}
+  .scroll td::before{content:attr(data-label);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .scroll td:first-child{grid-template-columns:1fr;font-weight:600;font-size:16px;padding-bottom:4px;border-bottom:1px solid var(--line);margin-bottom:4px}
+  .scroll td:first-child::before{content:none}
+  .scroll td.n{white-space:normal}
+  [lang="he"] .scroll td::before{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+  .two{gap:8px}
+}
 @media (prefers-reduced-motion:no-preference){a{transition:border-color .15s}}
 
 /* trail theme */
@@ -105,7 +134,6 @@ h2::before{content:"";width:34px;height:16px;flex:none;align-self:center;backgro
 .stage .stats{gap:6px 8px}
 .stage h3{position:relative}
 .facts div:first-child b{color:var(--mark)}
-.note.rule{background:repeating-linear-gradient(135deg,var(--mark-soft) 0 12px,transparent 12px 24px),var(--panel)}
 figure img.map{box-shadow:0 1px 0 var(--line),0 8px 24px -16px rgba(0,0,0,.45)}
 th{border-bottom:2px solid var(--ink)}
 table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)}

@@ -7,8 +7,8 @@
     en: {
       nights: 'Nights, refuges, finish', water: 'Water', passes: 'Passes and summits', side: 'Side-trip summits',
       ferrata: 'Via ferrata points', escape: 'Escapes, bus, emergency', other: 'Shelters, campsites, lakes',
-      locate: 'Where am I', locating: 'Locating…', stopLocate: 'Stop following', save: 'Save this area offline',
-      saving: 'Saving tiles', saved: 'Saved for offline: ', tilesTooMany: 'Zoom in: too many tiles for one save (max 600).',
+      locate: 'Where am I', locating: 'Locating…', stopLocate: 'Stop following', save: 'Save this view offline', saveRoute: 'Save whole route offline',
+      saving: 'Saving tiles', saved: 'Saved for offline: ', tilesTooMany: 'Too many tiles for one save (max 900). Zoom in.',
       noGeo: 'Location is not available in this browser.', offRoute: 'off route', toNext: 'to', ascent: 'ascent',
       descent: 'descent', total: 'Route', km: 'km', m: 'm', offline: 'Offline: page, GPX and saved tiles are available.',
       alt: 'alt', loading: 'Loading GPX…', ready: 'GPX loaded: ', tracks: 'tracks', wpts: 'waypoints'
@@ -16,8 +16,8 @@
     he: {
       nights: 'לילות, בקתות, סיום', water: 'מים', passes: 'מעברים ופסגות', side: 'פסגות סטיות צד',
       ferrata: 'נקודות ויה פראטה', escape: 'יציאות, אוטובוס, חירום', other: 'מחסות, קמפינגים, אגמים',
-      locate: 'איפה אני', locating: 'מאתר…', stopLocate: 'הפסק מעקב', save: 'שמור אזור זה לאופליין',
-      saving: 'שומר אריחים', saved: 'נשמר לאופליין: ', tilesTooMany: 'התקרבו: יותר מדי אריחים לשמירה אחת (מקסימום 600).',
+      locate: 'איפה אני', locating: 'מאתר…', stopLocate: 'הפסק מעקב', save: 'שמור תצוגה זו לאופליין', saveRoute: 'שמור את כל המסלול לאופליין',
+      saving: 'שומר אריחים', saved: 'נשמר לאופליין: ', tilesTooMany: 'יותר מדי אריחים לשמירה אחת (מקסימום 900). התקרבו.',
       noGeo: 'מיקום לא זמין בדפדפן הזה.', offRoute: 'מחוץ למסלול', toNext: 'עד', ascent: 'עלייה',
       descent: 'ירידה', total: 'המסלול', km: 'ק"מ', m: 'מ\'', offline: 'אופליין: הדף, ה-GPX והאריחים השמורים זמינים.',
       alt: 'גובה', loading: 'טוען GPX…', ready: 'GPX נטען: ', tracks: 'מסלולים', wpts: 'נקודות'
@@ -96,7 +96,7 @@
     var mapEl = container.querySelector('.livemap');
     var status = container.querySelector('.mapstatus');
     var map = L.map(mapEl, { scrollWheelZoom: false, zoomSnap: 0.5 });
-    L.tileLayer(TILES, { maxZoom: 17, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, SRTM &middot; &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)' }).addTo(map);
+    L.tileLayer(TILES, { maxZoom: 17, crossOrigin: true, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>, SRTM &middot; &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)' }).addTo(map);
 
     var overlays = {}, routeGroup = L.featureGroup();
     data.tracks.forEach(function (t) {
@@ -192,25 +192,53 @@
     });
     map.on('locationerror', function (e) { status.textContent = e.message; watching = false; locBtn.textContent = T.locate; });
 
-    /* offline tiles for the current view */
+    /* offline tiles: current view, or a corridor along the whole route */
+    function tileXY(lat, lon, z) {
+      var n = Math.pow(2, z), r = lat * Math.PI / 180;
+      return [Math.floor((lon + 180) / 360 * n), Math.floor((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n)];
+    }
+    function tileUrl(z, x, y) { return TILES.replace('{s}', 'abc'[(x + y) % 3]).replace('{z}', z).replace('{x}', x).replace('{y}', y); }
+    function saveTiles(urls, btn) {
+      if (urls.length > 900) { status.textContent = T.tilesTooMany + ' (' + urls.length + ')'; return; }
+      if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
+      var done = 0, failed = 0; btn.disabled = true;
+      (function next() {
+        if (done >= urls.length) { status.textContent = T.saved + (urls.length - failed) + (failed ? ' (' + failed + ' failed)' : ''); btn.disabled = false; return; }
+        fetch(urls[done], { mode: 'cors' }).then(function (r) { if (!r.ok) failed++; }).catch(function () { failed++; })
+          .then(function () { done++; if (done % 10 === 0) status.textContent = T.saving + ' ' + done + '/' + urls.length; setTimeout(next, 40); });
+      })();
+    }
     var saveBtn = container.querySelector('[data-act="save"]');
     saveBtn.textContent = T.save;
     saveBtn.addEventListener('click', function () {
       var b = map.getBounds(), z0 = Math.max(11, Math.floor(map.getZoom())), z1 = Math.min(15, z0 + 2), urls = [];
       for (var z = z0; z <= z1; z++) {
-        var n = Math.pow(2, z);
-        var tx = function (lon) { return Math.floor((lon + 180) / 360 * n); };
-        var ty = function (lat) { var r = lat * Math.PI / 180; return Math.floor((1 - Math.log(Math.tan(r) + 1 / Math.cos(r)) / Math.PI) / 2 * n); };
-        for (var xx = tx(b.getWest()); xx <= tx(b.getEast()); xx++) for (var yy = ty(b.getNorth()); yy <= ty(b.getSouth()); yy++)
-          urls.push(TILES.replace('{s}', 'abc'[(xx + yy) % 3]).replace('{z}', z).replace('{x}', xx).replace('{y}', yy));
+        var a = tileXY(b.getNorth(), b.getWest(), z), c = tileXY(b.getSouth(), b.getEast(), z);
+        for (var xx = a[0]; xx <= c[0]; xx++) for (var yy = a[1]; yy <= c[1]; yy++) urls.push(tileUrl(z, xx, yy));
       }
-      if (urls.length > 600) { status.textContent = T.tilesTooMany + ' (' + urls.length + ')'; return; }
-      if (navigator.storage && navigator.storage.persist) navigator.storage.persist();
-      var done = 0; saveBtn.disabled = true;
-      (function next() {
-        if (done >= urls.length) { status.textContent = T.saved + urls.length; saveBtn.disabled = false; return; }
-        fetch(urls[done], { mode: 'no-cors' }).catch(function () { }).then(function () { done++; if (done % 10 === 0) status.textContent = T.saving + ' ' + done + '/' + urls.length; setTimeout(next, 60); });
-      })();
+      saveTiles(urls, saveBtn);
+    });
+    var routeBtn = container.querySelector('[data-act="saveroute"]');
+    routeBtn.textContent = T.saveRoute;
+    routeBtn.addEventListener('click', function () {
+      var seen = {}, urls = [];
+      [12, 13, 14].forEach(function (z) {
+        var pad = z === 14 ? 1 : 1;
+        data.tracks.forEach(function (t) {
+          if (t.kind === 'boundary') return;
+          t.segs.forEach(function (seg) {
+            seg.forEach(function (p, k) {
+              if (k % 3) return;
+              var xy = tileXY(p.lat, p.lon, z);
+              for (var dx = -pad; dx <= pad; dx++) for (var dy = -pad; dy <= pad; dy++) {
+                var key = z + '/' + (xy[0] + dx) + '/' + (xy[1] + dy);
+                if (!seen[key]) { seen[key] = 1; urls.push(tileUrl(z, xy[0] + dx, xy[1] + dy)); }
+              }
+            });
+          });
+        });
+      });
+      saveTiles(urls, routeBtn);
     });
 
     apps[lang] = { map: map, redraw: function () { map.invalidateSize(); drawProfile(null); } };

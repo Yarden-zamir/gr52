@@ -55,6 +55,7 @@ nav.toc a:hover{border-color:var(--mark)}
 .note{border-inline-start:4px solid var(--lake);background:var(--lake-soft);padding:12px 16px;margin:18px 0;max-width:76ch}
 .note.warn{border-color:var(--warn);background:var(--warn-soft)}
 .note.rule{border-color:var(--mark);background:var(--mark-soft)}
+.note.rule p+p{border-top:1px solid color-mix(in srgb,var(--mark) 25%,transparent);padding-top:8px;margin-top:8px}
 .note p{margin:6px 0}
 .scroll{overflow-x:auto;margin:16px 0}
 table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}
@@ -93,7 +94,35 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
 [lang="he"] .eyebrow,[lang="he"] .tag,[lang="he"] th{letter-spacing:0;text-transform:none;font-family:"Heebo",sans-serif}
 [lang="he"] .stage .d small,[lang="he"] .stage .stats,[lang="he"] h2 .k{font-family:"IBM Plex Mono",monospace}
 [lang="he"] .langbar button{font-family:"Heebo",sans-serif}
-@media (max-width:640px){.stage{grid-template-columns:1fr}.src{columns:1}}
+h2,h3,.stage,.note,.scroll,figure{scroll-margin-top:64px}
+td{overflow-wrap:anywhere}
+nav.toc a{padding:4px 0}
+@media (max-width:640px){
+  body{font-size:15.5px}
+  .wrap{padding:0 14px 60px}
+  header{padding:28px 0 8px}
+  h1{font-size:clamp(38px,11vw,52px)} h2{font-size:28px;margin-top:44px} h3{font-size:21px}
+  .lede{font-size:17px}
+  .facts{grid-template-columns:repeat(2,1fr)} .facts b{font-size:26px}
+  .stage{grid-template-columns:1fr;gap:6px 0;padding:18px 0}
+  .stage .d{display:flex;align-items:center;gap:12px;font-size:30px} .stage .d::before{margin:0} .stage .d small{margin:0}
+  .stage h3{font-size:20px}
+  .src{columns:1}
+  .maptools button{flex:1 1 45%;padding:10px 12px}
+  .livemap{height:62vh}
+  /* tables become stacked cards */
+  .scroll{overflow:visible}
+  .scroll table,.scroll tr,.scroll td{display:block;width:100%}
+  .scroll tr:first-child{display:none}
+  .scroll tr{border:1px solid var(--line);background:var(--panel);margin:10px 0;padding:6px 12px 8px;border-radius:3px}
+  .scroll td{border:0;padding:5px 0;display:grid;grid-template-columns:minmax(84px,32%) 1fr;gap:10px;align-items:baseline}
+  .scroll td::before{content:attr(data-label);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+  .scroll td:first-child{grid-template-columns:1fr;font-weight:600;font-size:16px;padding-bottom:4px;border-bottom:1px solid var(--line);margin-bottom:4px}
+  .scroll td:first-child::before{content:none}
+  .scroll td.n{white-space:normal}
+  [lang="he"] .scroll td::before{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+  .two{gap:8px}
+}
 @media (prefers-reduced-motion:no-preference){a{transition:border-color .15s}}
 
 /* trail theme */
@@ -113,7 +142,6 @@ h2::before{content:"";width:34px;height:16px;flex:none;align-self:center;backgro
 .stage .stats{gap:6px 8px}
 .stage h3{position:relative}
 .facts div:first-child b{color:var(--mark)}
-.note.rule{background:repeating-linear-gradient(135deg,var(--mark-soft) 0 12px,transparent 12px 24px),var(--panel)}
 figure img.map{box-shadow:0 1px 0 var(--line),0 8px 24px -16px rgba(0,0,0,.45)}
 th{border-bottom:2px solid var(--ink)}
 table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)}
@@ -240,6 +268,7 @@ canvas.profile{width:100%;height:220px;display:block;background:var(--panel);bor
   <div class="maptools">
     <button type="button" data-act="locate"></button>
     <button type="button" data-act="save"></button>
+    <button type="button" data-act="saveroute"></button>
     <span class="mapstatus"></span>
   </div>
   <canvas class="profile" aria-label="Elevation profile"></canvas>
@@ -264,26 +293,26 @@ canvas.profile{width:100%;height:220px;display:block;background:var(--panel);bor
 </div>
 <div class="scroll"><table>
   <tr><th>Place</th><th>Alt.</th><th>Open</th><th>Tent</th><th>Note</th></tr>
-  <tr><td>Saint-Dalmas-Valdeblore</td><td class="n">1,290 m</td><td>village</td><td>HI hostel, booked 11 Sep</td><td>bus 90, small shop, taps</td></tr>
-  <tr><td>Le Boréon</td><td class="n">1,500 m</td><td>hotel-restaurant</td><td>night 1: lake or ranch, ≈€10</td><td>dinner out 1</td></tr>
-  <tr><td><a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a></td><td class="n">2,100 m</td><td>to 19 Sep</td><td>Trécolpas, 30 min</td><td>tap, showers</td></tr>
-  <tr><td><a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a></td><td class="n">1,903 m</td><td>to 30 Sep</td><td>night 2: refuge bed, or Lac de Fenestre 1 h above</td><td>tap, dinner, road</td></tr>
-  <tr><td><a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a></td><td class="n">2,232 m</td><td>to end Sep</td><td>by the lake</td><td>tap; footbridge gone, ford</td></tr>
-  <tr><td><a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a></td><td class="n">2,130 m</td><td>to end Oct</td><td>marked area only</td><td>tap, cash only, guided walks</td></tr>
-  <tr><td><a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a></td><td class="n">1,750 m</td><td>to 1 Oct</td><td>ask</td><td>dinner, tap, road to Turini</td></tr>
-  <tr><td>Sospel</td><td class="n">350 m</td><td>village</td><td>Camping Sainte-Madeleine</td><td>shops, station, fountains</td></tr>
+  <tr><td data-label="Place">Saint-Dalmas-Valdeblore</td><td data-label="Alt." class="n">1,290 m</td><td data-label="Open">village</td><td data-label="Tent">HI hostel, booked 11 Sep</td><td data-label="Note">bus 90, small shop, taps</td></tr>
+  <tr><td data-label="Place">Le Boréon</td><td data-label="Alt." class="n">1,500 m</td><td data-label="Open">hotel-restaurant</td><td data-label="Tent">night 1: lake or ranch, ≈€10</td><td data-label="Note">dinner out 1</td></tr>
+  <tr><td data-label="Place"><a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a></td><td data-label="Alt." class="n">2,100 m</td><td data-label="Open">to 19 Sep</td><td data-label="Tent">Trécolpas, 30 min</td><td data-label="Note">tap, showers</td></tr>
+  <tr><td data-label="Place"><a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a></td><td data-label="Alt." class="n">1,903 m</td><td data-label="Open">to 30 Sep</td><td data-label="Tent">night 2: refuge bed, or Lac de Fenestre 1 h above</td><td data-label="Note">tap, dinner, road</td></tr>
+  <tr><td data-label="Place"><a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a></td><td data-label="Alt." class="n">2,232 m</td><td data-label="Open">to end Sep</td><td data-label="Tent">by the lake</td><td data-label="Note">tap; footbridge gone, ford</td></tr>
+  <tr><td data-label="Place"><a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a></td><td data-label="Alt." class="n">2,130 m</td><td data-label="Open">to end Oct</td><td data-label="Tent">marked area only</td><td data-label="Note">tap, cash only, guided walks</td></tr>
+  <tr><td data-label="Place"><a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a></td><td data-label="Alt." class="n">1,750 m</td><td data-label="Open">to 1 Oct</td><td data-label="Tent">ask</td><td data-label="Note">dinner, tap, road to Turini</td></tr>
+  <tr><td data-label="Place">Sospel</td><td data-label="Alt." class="n">350 m</td><td data-label="Open">village</td><td data-label="Tent">Camping Sainte-Madeleine</td><td data-label="Note">shops, station, fountains</td></tr>
 </table></div>
 
 <h2 id="tech"><span class="k">§4</span>Technical options and via ferrata</h2>
 <p>On the line: Trécolpas to Pas des Ladres (steep, blocky), the Pas du Mont Colomb rock step (T3 dry), boulders below Baisse du Basto, and two long loose descents where the reports' injuries happen. Beyond that:</p>
 <div class="scroll"><table>
   <tr><th>Objective</th><th>From</th><th>What it is</th><th>Time</th></tr>
-  <tr><td><a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">Via ferrata Baus de la Frema</a></td><td>La Colmiane, bus 90 stop above Saint-Dalmas</td><td>Grade D, TD variant. 40 m footbridge, overhangs, summit 2,246 m. €6 access, €21 kit, book 24 h ahead, closed in rain.</td><td class="n">4–5 h + 1 h down</td></tr>
-  <tr><td><a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 m</a></td><td>Refuge des Merveilles</td><td>Cairned walk, no difficulty, +750 m.</td><td class="n">3–4 h</td></tr>
-  <tr><td><a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 m</a></td><td>Pas du Diable</td><td>Steep marked path via Pas du Trem.</td><td class="n">≈2 h</td></tr>
-  <tr><td><a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 m</a></td><td>Pas du Mont Colomb</td><td>Off-trail scramble, dry rock and topo needed. Needs the spare day.</td><td class="n">2–3 h</td></tr>
-  <tr><td>Cime du Gélas 3,143 m</td><td>Madone de Fenestre</td><td>AD couloir, rockfall when dry. Skip in September.</td><td class="n">—</td></tr>
-  <tr><td><a href="https://www.mercantour-roya.com/via-ferrata/">Roya via ferratas</a></td><td>Tende, La Brigue, by train from Sospel</td><td>Easy to moderate, guided ≈€50. Only for a spare day. Peille's L'Escale is closed.</td><td class="n">half day</td></tr>
+  <tr><td data-label="Objective"><a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">Via ferrata Baus de la Frema</a></td><td data-label="From">La Colmiane, bus 90 stop above Saint-Dalmas</td><td data-label="What it is">Grade D, TD variant. 40 m footbridge, overhangs, summit 2,246 m. €6 access, €21 kit, book 24 h ahead, closed in rain.</td><td data-label="Time" class="n">4–5 h + 1 h down</td></tr>
+  <tr><td data-label="Objective"><a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 m</a></td><td data-label="From">Refuge des Merveilles</td><td data-label="What it is">Cairned walk, no difficulty, +750 m.</td><td data-label="Time" class="n">3–4 h</td></tr>
+  <tr><td data-label="Objective"><a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 m</a></td><td data-label="From">Pas du Diable</td><td data-label="What it is">Steep marked path via Pas du Trem.</td><td data-label="Time" class="n">≈2 h</td></tr>
+  <tr><td data-label="Objective"><a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 m</a></td><td data-label="From">Pas du Mont Colomb</td><td data-label="What it is">Off-trail scramble, dry rock and topo needed. Needs the spare day.</td><td data-label="Time" class="n">2–3 h</td></tr>
+  <tr><td data-label="Objective">Cime du Gélas 3,143 m</td><td data-label="From">Madone de Fenestre</td><td data-label="What it is">AD couloir, rockfall when dry. Skip in September.</td><td data-label="Time" class="n">—</td></tr>
+  <tr><td data-label="Objective"><a href="https://www.mercantour-roya.com/via-ferrata/">Roya via ferratas</a></td><td data-label="From">Tende, La Brigue, by train from Sospel</td><td data-label="What it is">Easy to moderate, guided ≈€50. Only for a spare day. Peille's L'Escale is closed.</td><td data-label="Time" class="n">half day</td></tr>
 </table></div>
 
 <h2 id="practical"><span class="k">§5</span>Practical</h2>
@@ -322,9 +351,9 @@ canvas.profile{width:100%;height:220px;display:block;background:var(--panel);bor
 <p>Verified on 4 September 2026 from the agencies' own pages. Menton has two confirmed agencies near the station. They close at 18:00 and you arrive Friday around 17:00–18:00 after the descent, so plan on either a Saturday morning pickup in Menton or the airport the same evening.</p>
 <div class="scroll"><table>
   <tr><th>Agency</th><th>Address, from station</th><th>Hours</th><th>Phone</th><th>Price</th><th>One-way</th><th>Notes</th></tr>
-  <tr><td><a href="https://www.ada.fr/location-voiture-menton">Ada</a></td><td>24 Av. des Alliés, 100 m</td><td>Mon–Fri 08:30–12:00, 15:00–18:00; Sat 08:30–12:00, 16:00–18:00; Sun closed</td><td class="n">04 92 10 16 07</td><td>low</td><td>rarely</td><td>Closest. Cars and vans, small fleet, station shuttle on request.</td></tr>
-  <tr><td><a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a></td><td>4 Av. Cochrane, 300 m</td><td>Mon–Sat 08:30–12:00, 14:00–18:00; Sun closed</td><td class="n">04 93 35 18 49</td><td>low–mid</td><td>yes</td><td>Only Menton agency confirming one-way rentals.</td></tr>
-  <tr><td><a href="https://www.nice.aeroport.fr/en/services/car-rental">Nice airport</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a></td><td>train Menton → Nice-Ville 35 min, tram 2 to the airport</td><td>Sixt 07:30–24:00 daily; T1 desks to 22:00, then the Car Rental Center at T2</td><td class="n">—</td><td>Sixt ≈€50/day in September</td><td>yes</td><td>Same-evening pickup, widest choice, cheapest one-way.</td></tr>
+  <tr><td data-label="Agency"><a href="https://www.ada.fr/location-voiture-menton">Ada</a></td><td data-label="Address, from station">24 Av. des Alliés, 100 m</td><td data-label="Hours">Mon–Fri 08:30–12:00, 15:00–18:00; Sat 08:30–12:00, 16:00–18:00; Sun closed</td><td data-label="Phone" class="n">04 92 10 16 07</td><td data-label="Price">low</td><td data-label="One-way">rarely</td><td data-label="Notes">Closest. Cars and vans, small fleet, station shuttle on request.</td></tr>
+  <tr><td data-label="Agency"><a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a></td><td data-label="Address, from station">4 Av. Cochrane, 300 m</td><td data-label="Hours">Mon–Sat 08:30–12:00, 14:00–18:00; Sun closed</td><td data-label="Phone" class="n">04 93 35 18 49</td><td data-label="Price">low–mid</td><td data-label="One-way">yes</td><td data-label="Notes">Only Menton agency confirming one-way rentals.</td></tr>
+  <tr><td data-label="Agency"><a href="https://www.nice.aeroport.fr/en/services/car-rental">Nice airport</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a></td><td data-label="Address, from station">train Menton → Nice-Ville 35 min, tram 2 to the airport</td><td data-label="Hours">Sixt 07:30–24:00 daily; T1 desks to 22:00, then the Car Rental Center at T2</td><td data-label="Phone" class="n">—</td><td data-label="Price">Sixt ≈€50/day in September</td><td data-label="One-way">yes</td><td data-label="Notes">Same-evening pickup, widest choice, cheapest one-way.</td></tr>
 </table></div>
 <p><b>Listed online but not operating:</b> Europcar, 9 Av. Thiers, shows "temporarily closed" since 2021 and its booking page is gone. Avis "Gare de Menton" shows closed every day of the week on avis.fr. Ignore both in comparison sites. Prices are September 2026 snapshots from <a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; book about a month ahead. Keep licence and the booking card in the pack.</p>
 
@@ -448,6 +477,7 @@ canvas.profile{width:100%;height:220px;display:block;background:var(--panel);bor
   <div class="maptools">
     <button type="button" data-act="locate"></button>
     <button type="button" data-act="save"></button>
+    <button type="button" data-act="saveroute"></button>
     <span class="mapstatus"></span>
   </div>
   <canvas class="profile" aria-label="Elevation profile"></canvas>
@@ -472,26 +502,26 @@ canvas.profile{width:100%;height:220px;display:block;background:var(--panel);bor
 </div>
 <div class="scroll"><table>
   <tr><th>מקום</th><th>גובה</th><th>פתוח</th><th>אוהל</th><th>הערה</th></tr>
-  <tr><td>Saint-Dalmas-Valdeblore</td><td class="n">1,290 מ'</td><td>כפר</td><td>אכסניית HI, הוזמן ל-11.9</td><td>אוטובוס 90, חנות קטנה, ברזים</td></tr>
-  <tr><td>Le Boréon</td><td class="n">1,500 מ'</td><td>מלון-מסעדה</td><td>לילה 1: ליד האגם או בחווה, ≈€10</td><td>ארוחת ערב בחוץ 1</td></tr>
-  <tr><td><a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a></td><td class="n">2,100 מ'</td><td>עד 19.9</td><td>Trécolpas, 30 דק'</td><td>ברז, מקלחות</td></tr>
-  <tr><td><a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a></td><td class="n">1,903 מ'</td><td>עד 30.9</td><td>לילה 2: מיטה בבקתה, או Lac de Fenestre שעה למעלה</td><td>ברז, ארוחת ערב, כביש</td></tr>
-  <tr><td><a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a></td><td class="n">2,232 מ'</td><td>עד סוף ספטמבר</td><td>ליד האגם</td><td>ברז; הגשרון נהרס, חוצים בנחל</td></tr>
-  <tr><td><a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a></td><td class="n">2,130 מ'</td><td>עד סוף אוקטובר</td><td>רק בשטח המסומן</td><td>ברז, מזומן בלבד, סיורים מודרכים</td></tr>
-  <tr><td><a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a></td><td class="n">1,750 מ'</td><td>עד 1.10</td><td>לשאול</td><td>ארוחת ערב, ברז, כביש ל-Turini</td></tr>
-  <tr><td>Sospel</td><td class="n">350 מ'</td><td>כפר</td><td>Camping Sainte-Madeleine</td><td>חנויות, רכבת, ברזיות</td></tr>
+  <tr><td data-label="מקום">Saint-Dalmas-Valdeblore</td><td data-label="גובה" class="n">1,290 מ'</td><td data-label="פתוח">כפר</td><td data-label="אוהל">אכסניית HI, הוזמן ל-11.9</td><td data-label="הערה">אוטובוס 90, חנות קטנה, ברזים</td></tr>
+  <tr><td data-label="מקום">Le Boréon</td><td data-label="גובה" class="n">1,500 מ'</td><td data-label="פתוח">מלון-מסעדה</td><td data-label="אוהל">לילה 1: ליד האגם או בחווה, ≈€10</td><td data-label="הערה">ארוחת ערב בחוץ 1</td></tr>
+  <tr><td data-label="מקום"><a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a></td><td data-label="גובה" class="n">2,100 מ'</td><td data-label="פתוח">עד 19.9</td><td data-label="אוהל">Trécolpas, 30 דק'</td><td data-label="הערה">ברז, מקלחות</td></tr>
+  <tr><td data-label="מקום"><a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a></td><td data-label="גובה" class="n">1,903 מ'</td><td data-label="פתוח">עד 30.9</td><td data-label="אוהל">לילה 2: מיטה בבקתה, או Lac de Fenestre שעה למעלה</td><td data-label="הערה">ברז, ארוחת ערב, כביש</td></tr>
+  <tr><td data-label="מקום"><a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a></td><td data-label="גובה" class="n">2,232 מ'</td><td data-label="פתוח">עד סוף ספטמבר</td><td data-label="אוהל">ליד האגם</td><td data-label="הערה">ברז; הגשרון נהרס, חוצים בנחל</td></tr>
+  <tr><td data-label="מקום"><a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a></td><td data-label="גובה" class="n">2,130 מ'</td><td data-label="פתוח">עד סוף אוקטובר</td><td data-label="אוהל">רק בשטח המסומן</td><td data-label="הערה">ברז, מזומן בלבד, סיורים מודרכים</td></tr>
+  <tr><td data-label="מקום"><a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a></td><td data-label="גובה" class="n">1,750 מ'</td><td data-label="פתוח">עד 1.10</td><td data-label="אוהל">לשאול</td><td data-label="הערה">ארוחת ערב, ברז, כביש ל-Turini</td></tr>
+  <tr><td data-label="מקום">Sospel</td><td data-label="גובה" class="n">350 מ'</td><td data-label="פתוח">כפר</td><td data-label="אוהל">Camping Sainte-Madeleine</td><td data-label="הערה">חנויות, רכבת, ברזיות</td></tr>
 </table></div>
 
 <h2 id="he-tech"><span class="k">§4</span>אופציות טכניות וויה פראטה</h2>
 <p>על המסלול עצמו: מ-Trécolpas ל-Pas des Ladres (תלול, בולדרים), מדרגת הסלע ב-Pas du Mont Colomb (T3 ביבש), בולדרים מתחת ל-Baisse du Basto, ושתי ירידות ארוכות ורופפות שבהן קורות הפציעות שמתוארות בדוחות. מעבר לזה:</p>
 <div class="scroll"><table>
   <tr><th>יעד</th><th>מאיפה</th><th>מה זה</th><th>זמן</th></tr>
-  <tr><td><a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">ויה פראטה Baus de la Frema</a></td><td>La Colmiane, תחנת אוטובוס 90 מעל Saint-Dalmas</td><td>דרגה D, וריאנט TD. גשר תלוי של 40 מ', תקרות, פסגה ב-2,246 מ'. כניסה €6, השכרת ציוד €21, להזמין יום מראש, סגור בגשם.</td><td class="n">4–5 שעות + שעה ירידה</td></tr>
-  <tr><td><a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 מ'</a></td><td>Refuge des Merveilles</td><td>הליכה עם רוג'ומים, בלי קושי, +750 מ'.</td><td class="n">3–4 שעות</td></tr>
-  <tr><td><a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 מ'</a></td><td>Pas du Diable</td><td>שביל מסומן ותלול דרך Pas du Trem.</td><td class="n">≈שעתיים</td></tr>
-  <tr><td><a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 מ'</a></td><td>Pas du Mont Colomb</td><td>סקרמבל מחוץ לשביל, רק בסלע יבש ועם טופו. דורש את יום הרזרבה.</td><td class="n">2–3 שעות</td></tr>
-  <tr><td>Cime du Gélas 3,143 מ'</td><td>Madone de Fenestre</td><td>ערוץ בדרגה AD, נפילת אבנים כשאין שלג. לוותר בספטמבר.</td><td class="n">—</td></tr>
-  <tr><td><a href="https://www.mercantour-roya.com/via-ferrata/">ויה פראטות של עמק Roya</a></td><td>Tende ו-La Brigue, ברכבת מ-Sospel</td><td>קלות עד בינוניות, מודרך ≈€50. רק אם יש יום פנוי. L'Escale ב-Peille סגורה.</td><td class="n">חצי יום</td></tr>
+  <tr><td data-label="יעד"><a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">ויה פראטה Baus de la Frema</a></td><td data-label="מאיפה">La Colmiane, תחנת אוטובוס 90 מעל Saint-Dalmas</td><td data-label="מה זה">דרגה D, וריאנט TD. גשר תלוי של 40 מ', תקרות, פסגה ב-2,246 מ'. כניסה €6, השכרת ציוד €21, להזמין יום מראש, סגור בגשם.</td><td data-label="זמן" class="n">4–5 שעות + שעה ירידה</td></tr>
+  <tr><td data-label="יעד"><a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 מ'</a></td><td data-label="מאיפה">Refuge des Merveilles</td><td data-label="מה זה">הליכה עם רוג'ומים, בלי קושי, +750 מ'.</td><td data-label="זמן" class="n">3–4 שעות</td></tr>
+  <tr><td data-label="יעד"><a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 מ'</a></td><td data-label="מאיפה">Pas du Diable</td><td data-label="מה זה">שביל מסומן ותלול דרך Pas du Trem.</td><td data-label="זמן" class="n">≈שעתיים</td></tr>
+  <tr><td data-label="יעד"><a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 מ'</a></td><td data-label="מאיפה">Pas du Mont Colomb</td><td data-label="מה זה">סקרמבל מחוץ לשביל, רק בסלע יבש ועם טופו. דורש את יום הרזרבה.</td><td data-label="זמן" class="n">2–3 שעות</td></tr>
+  <tr><td data-label="יעד">Cime du Gélas 3,143 מ'</td><td data-label="מאיפה">Madone de Fenestre</td><td data-label="מה זה">ערוץ בדרגה AD, נפילת אבנים כשאין שלג. לוותר בספטמבר.</td><td data-label="זמן" class="n">—</td></tr>
+  <tr><td data-label="יעד"><a href="https://www.mercantour-roya.com/via-ferrata/">ויה פראטות של עמק Roya</a></td><td data-label="מאיפה">Tende ו-La Brigue, ברכבת מ-Sospel</td><td data-label="מה זה">קלות עד בינוניות, מודרך ≈€50. רק אם יש יום פנוי. L'Escale ב-Peille סגורה.</td><td data-label="זמן" class="n">חצי יום</td></tr>
 </table></div>
 
 <h2 id="he-practical"><span class="k">§5</span>פרקטי</h2>
@@ -530,9 +560,9 @@ canvas.profile{width:100%;height:220px;display:block;background:var(--panel);bor
 <p>אומת ב-4 בספטמבר 2026 מהדפים של הסוכנויות עצמן. ב-Menton יש שתי סוכנויות מאומתות ליד תחנת הרכבת. הן נסגרות ב-18:00 ואתם מגיעים ביום שישי בסביבות 17:00–18:00 אחרי הירידה, אז תכננו או איסוף בשבת בבוקר ב-Menton או שדה התעופה באותו ערב.</p>
 <div class="scroll"><table>
   <tr><th>סוכנות</th><th>כתובת, מרחק מהתחנה</th><th>שעות</th><th>טלפון</th><th>מחיר</th><th>החזרה במקום אחר</th><th>הערות</th></tr>
-  <tr><td><a href="https://www.ada.fr/location-voiture-menton">Ada</a></td><td>24 Av. des Alliés, 100 מ'</td><td>ב'–ו' 08:30–12:00, 15:00–18:00; שבת 08:30–12:00, 16:00–18:00; א' סגור</td><td class="n">04 92 10 16 07</td><td>נמוך</td><td>כמעט לא</td><td>הכי קרוב. רכבים פרטיים ומסחריים, צי קטן, הסעה מהתחנה לפי בקשה.</td></tr>
-  <tr><td><a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a></td><td>4 Av. Cochrane, 300 מ'</td><td>ב'–שבת 08:30–12:00, 14:00–18:00; א' סגור</td><td class="n">04 93 35 18 49</td><td>נמוך–בינוני</td><td>כן</td><td>הסוכנות היחידה ב-Menton שמאשרת החזרה במקום אחר.</td></tr>
-  <tr><td><a href="https://www.nice.aeroport.fr/en/services/car-rental">שדה התעופה ניס</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a></td><td>רכבת מ-Menton ל-Nice-Ville 35 דקות, רכבת קלה קו 2 לשדה</td><td>Sixt 07:30–24:00 כל יום; דלפקים בטרמינל 1 עד 22:00, אחר כך מרכז ההשכרה בטרמינל 2</td><td class="n">—</td><td>Sixt ≈€50 ליום בספטמבר</td><td>כן</td><td>איסוף באותו ערב, הבחירה הרחבה ביותר, ההחזרה במקום אחר הזולה ביותר.</td></tr>
+  <tr><td data-label="סוכנות"><a href="https://www.ada.fr/location-voiture-menton">Ada</a></td><td data-label="כתובת, מרחק מהתחנה">24 Av. des Alliés, 100 מ'</td><td data-label="שעות">ב'–ו' 08:30–12:00, 15:00–18:00; שבת 08:30–12:00, 16:00–18:00; א' סגור</td><td data-label="טלפון" class="n">04 92 10 16 07</td><td data-label="מחיר">נמוך</td><td data-label="החזרה במקום אחר">כמעט לא</td><td data-label="הערות">הכי קרוב. רכבים פרטיים ומסחריים, צי קטן, הסעה מהתחנה לפי בקשה.</td></tr>
+  <tr><td data-label="סוכנות"><a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a></td><td data-label="כתובת, מרחק מהתחנה">4 Av. Cochrane, 300 מ'</td><td data-label="שעות">ב'–שבת 08:30–12:00, 14:00–18:00; א' סגור</td><td data-label="טלפון" class="n">04 93 35 18 49</td><td data-label="מחיר">נמוך–בינוני</td><td data-label="החזרה במקום אחר">כן</td><td data-label="הערות">הסוכנות היחידה ב-Menton שמאשרת החזרה במקום אחר.</td></tr>
+  <tr><td data-label="סוכנות"><a href="https://www.nice.aeroport.fr/en/services/car-rental">שדה התעופה ניס</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a></td><td data-label="כתובת, מרחק מהתחנה">רכבת מ-Menton ל-Nice-Ville 35 דקות, רכבת קלה קו 2 לשדה</td><td data-label="שעות">Sixt 07:30–24:00 כל יום; דלפקים בטרמינל 1 עד 22:00, אחר כך מרכז ההשכרה בטרמינל 2</td><td data-label="טלפון" class="n">—</td><td data-label="מחיר">Sixt ≈€50 ליום בספטמבר</td><td data-label="החזרה במקום אחר">כן</td><td data-label="הערות">איסוף באותו ערב, הבחירה הרחבה ביותר, ההחזרה במקום אחר הזולה ביותר.</td></tr>
 </table></div>
 <p><b>מופיעות באינטרנט אבל לא פעילות:</b> Europcar, 9 Av. Thiers, מסומנת "סגור זמנית" מאז 2021 ודף ההזמנה שלה נעלם. Avis "Gare de Menton" מופיעה באתר avis.fr כסגורה בכל ימות השבוע. התעלמו משתיהן באתרי השוואה. המחירים הם תמונת מצב מספטמבר 2026 מ-<a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; להזמין בערך חודש מראש. לשמור רישיון וכרטיס האשראי של ההזמנה בתיק.</p>
 
