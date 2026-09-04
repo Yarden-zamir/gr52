@@ -44,7 +44,7 @@ p{max-width:68ch;margin:12px 0}
 ul,ol{max-width:72ch;padding-inline-start:22px;margin:10px 0}
 li{margin:5px 0}
 .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-header{padding:56px 0 8px}
+header{padding:64px 0 8px}
 .balise{display:inline-block;width:56px;height:18px;background:linear-gradient(var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line);vertical-align:middle;margin-inline-end:10px}
 .lede{font-size:19px;max-width:62ch;color:var(--ink)}
 .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0 0}
@@ -85,8 +85,8 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
 .src li{break-inside:avoid}
 .two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:none}
 .two > div p{max-width:none}
-.langbar{position:sticky;top:0;z-index:5;display:flex;justify-content:flex-end;padding:10px 20px;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(6px)}
-.langbar button{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 14px;cursor:pointer}
+.langbar{position:fixed;top:12px;inset-inline-end:14px;z-index:5;padding:0;background:none}
+.langbar button{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 14px;cursor:pointer;box-shadow:0 2px 8px -4px rgba(0,0,0,.4)}
 .langbar button:hover{border-color:var(--mark)}
 /* Hebrew */
 [lang="he"]{font-family:"Heebo",system-ui,"Segoe UI",Arial,sans-serif}
@@ -96,7 +96,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
 [lang="he"] .eyebrow,[lang="he"] .tag,[lang="he"] th{letter-spacing:0;text-transform:none;font-family:"Heebo",sans-serif}
 [lang="he"] .stage .d small,[lang="he"] .stage .stats,[lang="he"] h2 .k{font-family:"IBM Plex Mono",monospace}
 [lang="he"] .langbar button{font-family:"Heebo",sans-serif}
-h2,h3,.stage,.note,.scroll,figure{scroll-margin-top:64px}
+h2,h3,.stage,.note,.scroll,figure,.mapbox{scroll-margin-top:12px}
 td{overflow-wrap:anywhere}
 nav.toc a{padding:4px 0}
 @media (max-width:640px){

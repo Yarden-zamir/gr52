@@ -132,7 +132,7 @@
 
     /* elevation profile */
     var canvas = container.querySelector('canvas.profile'), hoverMarker = null;
-    var nights = data.wpts.filter(function (w) { return w.type === 'Night' || w.type === 'Flag'; })
+    var nights = data.wpts.filter(function (w) { return (w.type === 'Night' || w.type === 'Flag') && !/FALLBACK|option/.test(w.name); })
       .map(function (w) { var n = nearestOnRoute(route, w); return { w: w, d: n.pt.d, ele: n.pt.ele }; }).sort(function (a, b) { return a.d - b.d; });
     function drawProfile(hoverX) {
       var dpr = window.devicePixelRatio || 1, W = canvas.clientWidth, H = canvas.clientHeight;
