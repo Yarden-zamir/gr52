@@ -56,23 +56,31 @@
     return { tracks: tracks, wpts: wpts };
   }
 
-  /* Concatenate the ROUTE tracks in order into one line with cumulative distance. */
+  /* Chain the ROUTE tracks into one walking line. Each track may hold short alternates or loops as
+     extra segments; keep only segments that connect to the running end (gap under 500 m). */
   function buildRoute(tracks) {
     var pts = [], d = 0, prev = null;
+    function append(seg) { seg.forEach(function (p) { if (prev) d += hav(prev, p); pts.push({ lat: p.lat, lon: p.lon, ele: p.ele, d: d }); prev = p; }); }
     tracks.filter(function (t) { return t.kind === 'route'; }).forEach(function (t) {
-      t.segs.forEach(function (seg) {
-        seg.forEach(function (p) {
-          if (prev) d += hav(prev, p);
-          pts.push({ lat: p.lat, lon: p.lon, ele: p.ele, d: d });
-          prev = p;
+      var left = t.segs.slice();
+      if (!prev) { left.sort(function (a, b) { return b.length - a.length; }); append(left.shift()); }
+      while (left.length) {
+        var best = null;
+        left.forEach(function (s) {
+          var g0 = hav(prev, s[0]), g1 = hav(prev, s[s.length - 1]);
+          if (!best || Math.min(g0, g1) < best.gap) best = { seg: s, gap: Math.min(g0, g1), rev: g1 < g0 };
         });
-      });
+        if (best.gap > 500) break;
+        left.splice(left.indexOf(best.seg), 1);
+        append(best.rev ? best.seg.slice().reverse() : best.seg);
+      }
     });
     var asc = 0, desc = 0, last = null;
     pts.forEach(function (p) {
       if (p.ele == null) return;
-      if (last != null) { var dz = p.ele - last; if (Math.abs(dz) >= 5) { if (dz > 0) asc += dz; else desc -= dz; last = p.ele; } }
-      else last = p.ele;
+      if (last == null) { last = p.ele; return; }
+      var dz = p.ele - last;
+      if (Math.abs(dz) >= 10) { if (dz > 0) asc += dz; else desc -= dz; last = p.ele; }
     });
     return { pts: pts, length: d, ascent: asc, descent: desc };
   }
