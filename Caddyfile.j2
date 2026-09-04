@@ -1,0 +1,7 @@
+{% if environment == "prod" -%}
+gr52.yarden-zamir.com
+{%- else -%}
+pr.{{ environment.removeprefix("pr-") }}.gr52.yarden-zamir.com
+{%- endif %} {
+    reverse_proxy unix//{{ paths.default_socket }}
+}

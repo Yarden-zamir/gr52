@@ -1,0 +1,14 @@
+{
+	auto_https off
+	admin off
+}
+
+http:// {
+	bind unix/{$KITSHN_DEFAULT_SOCKET}|0666
+	root * /srv
+	encode zstd gzip
+	@gpx path *.gpx
+	header @gpx Content-Type application/gpx+xml
+	header @gpx Content-Disposition attachment
+	file_server
+}
