@@ -95,7 +95,8 @@
     return parts.length > 2 ? parts[0] + ' · ' + parts[1] : name;
   }
 
-  var data = null, route = null, apps = {};
+  var data = null, route = null, apps = {}, pending = null;
+  function norm(s) { return (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase(); }
 
   function build(container) {
     var lang = container.getAttribute('data-map');
@@ -249,7 +250,42 @@
       saveTiles(urls, routeBtn);
     });
 
-    apps[lang] = { map: map, redraw: function () { map.invalidateSize(); drawProfile(null); } };
+    var highlight = null;
+    function clearHighlight() { if (highlight) { map.removeLayer(highlight); highlight = null; } }
+    function focus(q) {
+      clearHighlight();
+      var mDay = /^day:(\d+)$/.exec(q);
+      if (mDay) {
+        var n = +mDay[1], from = n === 1 ? 0 : null, to = null;
+        nights.forEach(function (x) { var k = x.w.name.split(' ')[1]; if (x.w.name.indexOf('NIGHT ' + (n - 1) + ' ') === 0 && from == null) from = x.d; if (x.w.name.indexOf('NIGHT ' + n + ' ') === 0 || (n === 7 && x.w.name.indexOf('FINISH') === 0)) to = x.d; });
+        if (from == null) from = 0; if (to == null) to = route.length;
+        var slice = route.pts.filter(function (p) { return p.d >= from && p.d <= to; }).map(function (p) { return [p.lat, p.lon]; });
+        if (slice.length < 2) return false;
+        highlight = L.polyline(slice, { color: '#1E6FD9', weight: 9, opacity: .45 }).addTo(map);
+        map.fitBounds(highlight.getBounds(), { padding: [20, 20] });
+        return true;
+      }
+      var nq = norm(q), w = null;
+      data.wpts.forEach(function (x) { if (!w && norm(x.name).indexOf(nq) >= 0) w = x; });
+      if (w) {
+        var c = CAT[w.type] || 'other'; if (cats[c] && !map.hasLayer(cats[c])) cats[c].addTo(map);
+        map.setView([w.lat, w.lon], Math.max(map.getZoom(), 14));
+        cats[c].eachLayer(function (l) { if (l.getLatLng && l.getLatLng().lat === w.lat && l.getLatLng().lng === w.lon) l.openPopup(); });
+        highlight = L.circleMarker([w.lat, w.lon], { radius: 16, color: '#1E6FD9', weight: 3, fill: false }).addTo(map);
+        return true;
+      }
+      var t = null; data.tracks.forEach(function (x) { if (!t && norm(x.name).indexOf(nq) >= 0) t = x; });
+      if (t) {
+        var g = overlays[shortTrackName(t.name)]; if (g && !map.hasLayer(g)) g.addTo(map);
+        var fg = L.featureGroup(); g.eachLayer(function (l) { fg.addLayer(l); });
+        map.fitBounds(fg.getBounds(), { padding: [20, 20] });
+        highlight = L.polyline(t.segs.map(function (s) { return s.map(function (p) { return [p.lat, p.lon]; }); }), { color: '#1E6FD9', weight: 9, opacity: .35 }).addTo(map);
+        return true;
+      }
+      return false;
+    }
+    map.on('click', clearHighlight);
+    apps[lang] = { map: map, focus: focus, redraw: function () { map.invalidateSize(); drawProfile(null); } };
     return apps[lang];
   }
 
@@ -261,7 +297,23 @@
     data = parseGpx(t); route = buildRoute(data.tracks);
     document.querySelectorAll('.mapstatus').forEach(function (s) { var T = I18N[s.closest('.mapbox').getAttribute('data-map')]; s.textContent = T.ready + data.tracks.length + ' ' + T.tracks + ', ' + data.wpts.length + ' ' + T.wpts + (navigator.onLine ? '' : ' · ' + T.offline); });
     visible();
+    if (pending) { var q = pending; pending = null; focusVisible(q); } else fromHash();
   });
   var btn = document.getElementById('langbtn'); if (btn) btn.addEventListener('click', function () { setTimeout(visible, 30); });
+  function focusVisible(q) {
+    var box = null; document.querySelectorAll('.mapbox').forEach(function (c) { if (c.offsetParent !== null) box = c; });
+    if (!box) return;
+    if (!data) { pending = q; return; }
+    var app = build(box);
+    box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(function () { app.redraw(); app.focus(q); }, 250);
+  }
+  window.gr52Focus = focusVisible;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[data-focus]'); if (!a) return;
+    e.preventDefault(); focusVisible(a.getAttribute('data-focus'));
+  });
+  function fromHash() { var h = decodeURIComponent(location.hash || ''); if (h.indexOf('#map=') === 0) focusVisible(h.slice(5)); }
+  window.addEventListener('hashchange', fromHash);
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
 })();
