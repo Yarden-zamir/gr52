@@ -206,16 +206,6 @@
           .then(function () { done++; if (done % 10 === 0) status.textContent = T.saving + ' ' + done + '/' + urls.length; setTimeout(next, 40); });
       })();
     }
-    var saveBtn = container.querySelector('[data-act="save"]');
-    saveBtn.textContent = T.save;
-    saveBtn.addEventListener('click', function () {
-      var b = map.getBounds(), z0 = Math.max(11, Math.floor(map.getZoom())), z1 = Math.min(15, z0 + 2), urls = [];
-      for (var z = z0; z <= z1; z++) {
-        var a = tileXY(b.getNorth(), b.getWest(), z), c = tileXY(b.getSouth(), b.getEast(), z);
-        for (var xx = a[0]; xx <= c[0]; xx++) for (var yy = a[1]; yy <= c[1]; yy++) urls.push(tileUrl(z, xx, yy));
-      }
-      saveTiles(urls, saveBtn);
-    });
     var routeBtn = container.querySelector('[data-act="saveroute"]');
     routeBtn.textContent = T.saveRoute;
     routeBtn.addEventListener('click', function () {
