@@ -282,7 +282,8 @@
       return false;
     }
     map.on('click', clearHighlight);
-    apps[lang] = { map: map, focus: focus, showPosition: showPosition, status: status, redraw: function () { map.invalidateSize(); drawProfile(null); } };
+    function pick(cb) { mapEl.style.cursor = 'crosshair'; map.once('click', function (e) { mapEl.style.cursor = ''; cb(e.latlng.lat, e.latlng.lng); }); }
+    apps[lang] = { map: map, focus: focus, showPosition: showPosition, pick: pick, box: container, status: status, redraw: function () { map.invalidateSize(); drawProfile(null); } };
     return apps[lang];
   }
 
@@ -329,7 +330,7 @@
       w: { storm: 'Thunderstorm risk: be off the passes by early afternoon', rain: 'Rain likely', snow: 'Snow or freezing on the high point',
         wind: 'Strong gusts on the ridge', frost: 'Frost at the bivouac', heat: 'Heat on the low ground: start early, 3 L water', fog: 'Fog: navigation care on boulder fields', uv: 'Very high UV', cold: 'Cold night', late: 'Planned arrival after sunset' },
       codes: { 0: 'clear', 1: 'mostly clear', 2: 'partly cloudy', 3: 'overcast', 45: 'fog', 48: 'freezing fog', 51: 'light drizzle', 53: 'drizzle', 55: 'heavy drizzle', 56: 'freezing drizzle', 57: 'freezing drizzle', 61: 'light rain', 63: 'rain', 65: 'heavy rain', 66: 'freezing rain', 67: 'freezing rain', 71: 'light snow', 73: 'snow', 75: 'heavy snow', 77: 'snow grains', 80: 'showers', 81: 'showers', 82: 'heavy showers', 85: 'snow showers', 86: 'snow showers', 95: 'thunderstorm', 96: 'thunderstorm with hail', 99: 'thunderstorm with hail' },
-      snap: { far: 'You are {km} km from the route. Snapshot not applied.', at: 'You are at km {km} of the route', walked: 'walked today', left: 'left to', ascent: 'ascent left', pace: 'pace', measured: 'measured', planned: 'planned', eta: 'ETA', sunset: 'sunset', tent: 'tent window opens 19:00', done: 'done', show: 'show', undo: 'not done', noGeo: 'Location is not available in this browser.', taken: 'Snapshot', off: 'off route by', before: 'Trek not started: you are near the start.', after: 'Past the finish: well done.' }
+      snap: { far: 'You are {km} km from the route. Snapshot not applied.', at: 'You are at km {km} of the route', walked: 'walked today', left: 'left to', ascent: 'ascent left', pace: 'pace', measured: 'measured', planned: 'planned', eta: 'ETA', sunset: 'sunset', tent: 'tent window opens 19:00', done: 'done', show: 'show', undo: 'not done', noGeo: 'Location is not available in this browser.', taken: 'Snapshot', manual: 'picked on map', pick: 'Tap the map where you are.', off: 'off route by', before: 'Trek not started: you are near the start.', after: 'Past the finish: well done.' }
     },
     he: { night: 'לינה', finish: 'סיום', high: 'נקודה גבוהה', rain: 'גשם', prob: 'סיכוי', gusts: 'משבים', fl: 'גובה קיפאון', uv: 'UV', sun: 'שמש',
       feels: 'מורגש', fetched: 'Open-Meteo · נמשך', ago: 'לפני', stale: 'לא עדכני', offline: 'עותק אופליין', refresh: 'רענן', range: 'עדיין אין תחזית לתאריך הזה (טווח של 16 יום). טענו שוב קרוב ליום.',
@@ -337,7 +338,7 @@
       w: { storm: 'סיכון לסופות רעמים: לרדת מהמעברים עד תחילת אחר הצהריים', rain: 'גשם צפוי', snow: 'שלג או קיפאון בנקודה הגבוהה',
         wind: 'משבי רוח חזקים על הרכס', frost: 'כפור בלינה', heat: 'חום בגובה הנמוך: לצאת מוקדם, 3 ליטר מים', fog: 'ערפל: זהירות בניווט בשדות הבולדרים', uv: 'קרינה גבוהה מאוד', cold: 'לילה קר', late: 'הגעה מתוכננת אחרי השקיעה' },
       codes: { 0: 'בהיר', 1: 'בהיר ברובו', 2: 'מעונן חלקית', 3: 'מעונן', 45: 'ערפל', 48: 'ערפל קפוא', 51: 'טפטוף קל', 53: 'טפטוף', 55: 'טפטוף כבד', 56: 'טפטוף קפוא', 57: 'טפטוף קפוא', 61: 'גשם קל', 63: 'גשם', 65: 'גשם כבד', 66: 'גשם קפוא', 67: 'גשם קפוא', 71: 'שלג קל', 73: 'שלג', 75: 'שלג כבד', 77: 'גרגרי שלג', 80: 'ממטרים', 81: 'ממטרים', 82: 'ממטרים כבדים', 85: 'ממטרי שלג', 86: 'ממטרי שלג', 95: 'סופת רעמים', 96: 'סופת רעמים עם ברד', 99: 'סופת רעמים עם ברד' },
-      snap: { far: 'אתם במרחק {km} ק"מ מהמסלול. צילום המצב לא הוחל.', at: 'אתם בק"מ {km} של המסלול', walked: 'הלכתם היום', left: 'נשאר עד', ascent: 'עלייה שנותרה', pace: 'קצב', measured: 'נמדד', planned: 'מתוכנן', eta: 'הגעה משוערת', sunset: 'שקיעה', tent: 'מותר להקים מ-19:00', done: 'הושלם', show: 'הצג', undo: 'לא הושלם', noGeo: 'מיקום לא זמין בדפדפן הזה.', taken: 'צילום מצב', off: 'מחוץ למסלול ב', before: 'הטרק עוד לא התחיל: אתם ליד ההתחלה.', after: 'אחרי הסיום: כל הכבוד.' }
+      snap: { far: 'אתם במרחק {km} ק"מ מהמסלול. צילום המצב לא הוחל.', at: 'אתם בק"מ {km} של המסלול', walked: 'הלכתם היום', left: 'נשאר עד', ascent: 'עלייה שנותרה', pace: 'קצב', measured: 'נמדד', planned: 'מתוכנן', eta: 'הגעה משוערת', sunset: 'שקיעה', tent: 'מותר להקים מ-19:00', done: 'הושלם', show: 'הצג', undo: 'לא הושלם', noGeo: 'מיקום לא זמין בדפדפן הזה.', taken: 'צילום מצב', manual: 'נבחר במפה', pick: 'לחצו על המפה איפה שאתם.', off: 'מחוץ למסלול ב', before: 'הטרק עוד לא התחיל: אתם ליד ההתחלה.', after: 'אחרי הסיום: כל הכבוד.' }
     }
   };
   var HOURLY = 'temperature_2m,precipitation,precipitation_probability,weather_code,wind_gusts_10m,cape,freezing_level_height,cloud_cover';
@@ -430,7 +431,6 @@
       var c = hv(src, 'cape', o.i) || 0, code = hv(src, 'weather_code', o.i) || 0, fl = hv(src, 'freezing_level_height', o.i);
       if (o.h < h0 || o.h > h1) return;
       if (c >= 400 || code >= 95) { ctx.fillStyle = mark; ctx.globalAlpha = .18; ctx.fillRect(x(o.h - .5), T0, x(o.h + .5) - x(o.h - .5), H - T0 - B0); ctx.globalAlpha = 1; }
-      if (day.high && fl != null && fl < day.high.ele + 300) { ctx.fillStyle = lake; ctx.globalAlpha = .15; ctx.fillRect(x(o.h - .5), T0, x(o.h + .5) - x(o.h - .5), H - T0 - B0); ctx.globalAlpha = 1; }
     });
     /* grid */
     ctx.strokeStyle = line; ctx.lineWidth = 1; ctx.fillStyle = muted; ctx.font = '10px IBM Plex Mono, monospace';
@@ -449,7 +449,7 @@
       var hh2 = Math.round(h0 + (hoverX - L0) / (W - L0 - R0) * (h1 - h0)); hh2 = Math.max(h0, Math.min(h1, hh2));
       var o = hs.filter(function (q) { return q.h === hh2; })[0], oN = hsN.filter(function (q) { return q.h === hh2; })[0];
       ctx.strokeStyle = mark; ctx.beginPath(); ctx.moveTo(x(hh2), T0); ctx.lineTo(x(hh2), H - B0); ctx.stroke();
-      if (o && readout) readout.textContent = hh2 + ':00 · ' + (Hh ? L.highT + ' ' + Math.round(hv(Hh, 'temperature_2m', o.i)) + ' °C · ' : '') + (oN ? L.nightT + ' ' + Math.round(hv(N, 'temperature_2m', oN.i)) + ' °C · ' : '') + L.rain + ' ' + (hv(src, 'precipitation', o.i) || 0).toFixed(1) + ' mm (' + (hv(src, 'precipitation_probability', o.i) || 0) + ' %) · ' + L.gusts + ' ' + Math.round(hv(src, 'wind_gusts_10m', o.i) || 0) + ' km/h · CAPE ' + Math.round(hv(src, 'cape', o.i) || 0) + ' · ' + L.fl + ' ' + Math.round((hv(src, 'freezing_level_height', o.i) || 0) / 50) * 50 + ' m · ' + (L.codes[hv(src, 'weather_code', o.i)] || '');
+      if (o && readout) readout.textContent = hh2 + ':00 · ' + (Hh ? L.highT + ' ' + Math.round(hv(Hh, 'temperature_2m', o.i)) + ' °C · ' : '') + (oN ? L.nightT + ' ' + Math.round(hv(N, 'temperature_2m', oN.i)) + ' °C · ' : '') + L.rain + ' ' + (hv(src, 'precipitation', o.i) || 0).toFixed(1) + ' mm (' + (hv(src, 'precipitation_probability', o.i) || 0) + ' %) · ' + L.gusts + ' ' + Math.round(hv(src, 'wind_gusts_10m', o.i) || 0) + ' km/h · ' + (L.codes[hv(src, 'weather_code', o.i)] || '');
     } else if (readout) readout.textContent = '';
   }
 
@@ -466,7 +466,6 @@
     var gust = Math.max(dN.wind_gusts_10m_max[iN], dH ? dH.wind_gusts_10m_max[iH] : 0), uv = Math.max(dN.uv_index_max[iN], dH ? dH.uv_index_max[iH] : 0);
     rows.push('<span><span class="wxk">' + L.rain + '</span> ' + rain.toFixed(rain < 1 ? 1 : 0) + ' mm (' + prob + ' % ' + L.prob + ')</span>');
     rows.push('<span><span class="wxk">' + L.gusts + '</span> ' + Math.round(gust) + ' km/h</span>');
-    if (hs.fl != null) rows.push('<span><span class="wxk">' + L.fl + '</span> ' + Math.round(hs.fl / 50) * 50 + ' m</span>');
     rows.push('<span><span class="wxk">' + L.uv + '</span> ' + Math.round(uv) + '</span>');
     rows.push('<span><span class="wxk">' + L.sun + '</span> ' + dN.sunrise[iN].slice(11) + '–' + dN.sunset[iN].slice(11) + '</span>');
     var html = '<div class="wxrow">' + rows.join('') + '</div>';
@@ -519,11 +518,26 @@
       var hrsLeft = left / pace + (measured ? asc / 600 : 0), eta = new Date(now + hrsLeft * 3600e3);
       var N = ctx.locs && ctx.index[day.n] ? ctx.locs[ctx.index[day.n].night] : null, dateStr = card ? card.getAttribute('data-date') : null, iN = N && dateStr ? N.daily.time.indexOf(dateStr) : -1;
       var ss = iN >= 0 ? N.daily.sunset[iN].slice(11) : null;
-      text = L.taken + ' ' + fmtHM(new Date(now)) + ' · ' + L.at.replace('{km}', (near.pt.d / 1000).toFixed(1)) + (near.dist > 150 ? ' (' + L.off + ' ' + Math.round(near.dist) + ' m)' : '') + ' · D' + day.n + ': ' + (walked / 1000).toFixed(1) + ' km ' + L.walked + ' · ' + (left / 1000).toFixed(1) + ' km ' + L.left + ' ' + day.night.name + ' · ' + L.ascent + ' +' + Math.round(asc) + ' m · ' + (measured ? L.pace + ' ' + (pace / 1000).toFixed(1) + ' km/h (' + L.measured + ') · ' : '') + L.eta + ' ' + fmtHM(eta) + (measured ? '' : ' (' + L.planned + ')') + (ss ? ' · ' + L.sunset + ' ' + ss : '') + (eta.getHours() < 19 && day.n >= 2 && day.n <= 4 ? ' · ' + L.tent : '');
+      text = L.taken + (pos.manual ? ' (' + L.manual + ')' : '') + ' ' + fmtHM(new Date(now)) + ' · ' + L.at.replace('{km}', (near.pt.d / 1000).toFixed(1)) + (near.dist > 150 ? ' (' + L.off + ' ' + Math.round(near.dist) + ' m)' : '') + ' · D' + day.n + ': ' + (walked / 1000).toFixed(1) + ' km ' + L.walked + ' · ' + (left / 1000).toFixed(1) + ' km ' + L.left + ' ' + day.night.name + ' · ' + L.ascent + ' +' + Math.round(asc) + ' m · ' + (measured ? L.pace + ' ' + (pace / 1000).toFixed(1) + ' km/h (' + L.measured + ') · ' : '') + L.eta + ' ' + fmtHM(eta) + (measured ? '' : ' (' + L.planned + ')') + (ss ? ' · ' + L.sunset + ' ' + ss : '') + (eta.getHours() < 19 && day.n >= 2 && day.n <= 4 ? ' · ' + L.tent : '');
       s.textContent = text;
       if (card) { var box = card.querySelector('.snapbox') || document.createElement('div'); box.className = 'snapbox'; box.textContent = text; if (!box.parentNode) card.querySelector('.wx').insertAdjacentElement('beforebegin', box); }
     });
   }
+  window.gr52PickOnMap = function () {
+    var app = window.gr52Map.visibleApp(); if (!app) return;
+    var lang = document.getElementById('he').hidden ? 'en' : 'he', L = T[lang].snap;
+    app.box.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.snapstatus').forEach(function (s) { s.textContent = L.pick; }); app.status.textContent = L.pick;
+    app.pick(function (lat, lon) { app.status.textContent = ''; applySnapshot({ coords: { latitude: lat, longitude: lon, accuracy: 50 }, manual: true }); });
+  };
+  /* long-press on either "Where am I" button picks the position on the map instead of GPS */
+  (function () {
+    var timer = null, fired = false, SEL = '[data-act="snapshot"],[data-act="locate"]';
+    document.addEventListener('pointerdown', function (e) { var b = e.target.closest && e.target.closest(SEL); if (!b) return; fired = false; timer = setTimeout(function () { fired = true; window.gr52PickOnMap(); }, 550); });
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) { document.addEventListener(ev, function (e) { if (e.target.closest && e.target.closest(SEL)) clearTimeout(timer); }); });
+    document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest(SEL); if (b && fired) { e.stopImmediatePropagation(); e.preventDefault(); fired = false; } }, true);
+    document.addEventListener('contextmenu', function (e) { if (e.target.closest && e.target.closest(SEL)) e.preventDefault(); });
+  })();
   window.gr52Snapshot = function (fake) {
     if (!ctx.route) return;
     if (fake && fake.coords) return applySnapshot(fake);
