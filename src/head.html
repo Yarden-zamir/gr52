@@ -162,5 +162,13 @@ a.focus{color:inherit;text-decoration:underline dotted;text-decoration-color:var
 a.focus:hover{color:var(--lake);text-decoration-style:solid}
 .stagemap{margin:0 0 6px;font-size:13.5px} .stagemap a.focus{color:var(--lake)}
 .stage .stats+.stagemap{margin-top:-4px}
+.wx{margin:6px 0 10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5;max-width:76ch}
+.wx:empty{display:none}
+.wx .wxrow{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+.wx .wxk{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.wx .wxwarn{display:inline-block;margin:6px 6px 0 0;padding:2px 8px;border-radius:2px;background:var(--warn-soft);border:1px solid var(--warn);color:var(--ink);font-size:13px}
+.wx .wxwarn.bad{background:var(--mark-soft);border-color:var(--mark)}
+.wx .wxmeta{color:var(--muted);font-size:12px;margin-top:6px}
+[lang="he"] .wx .wxk{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
 </style>
 

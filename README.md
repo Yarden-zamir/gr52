@@ -30,6 +30,15 @@ vendored under `site/vendor/`. The annotated section maps stay behind a disclosu
 
 `src/elevation.py` adds `<ele>` to the GPX from OpenTopoData; run it after regenerating the GPX.
 
+## Weather
+
+Each day card shows a live forecast from [Open-Meteo](https://open-meteo.com/) for that day's
+night spot and highest route point, both derived from the GPX at runtime (nothing is hardcoded).
+One request covers all points and the trek dates; the page derives warnings for thunderstorms
+(WMO code or CAPE), rain, snow and freezing level against the high point, ridge gusts, frost at
+the bivouac, heat on the low days, fog and UV. The last forecast is cached in localStorage and
+by the service worker so it still shows offline, marked as stale.
+
 ## Update
 
 Edit `src/body.html`, run `uv run src/build.py`, push to `main`. A pull request gets a preview at

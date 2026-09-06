@@ -294,7 +294,7 @@
   }
   document.querySelectorAll('.mapstatus').forEach(function (s) { s.textContent = I18N[s.closest('.mapbox').getAttribute('data-map')].loading; });
   fetch(GPX).then(function (r) { return r.text(); }).then(function (t) {
-    data = parseGpx(t); route = buildRoute(data.tracks);
+    data = parseGpx(t); route = buildRoute(data.tracks); window.gr52Data = { data: data, route: route };
     document.querySelectorAll('.mapstatus').forEach(function (s) { var T = I18N[s.closest('.mapbox').getAttribute('data-map')]; s.textContent = T.ready + data.tracks.length + ' ' + T.tracks + ', ' + data.wpts.length + ' ' + T.wpts + (navigator.onLine ? '' : ' · ' + T.offline); });
     visible();
     if (pending) { var q = pending; pending = null; focusVisible(q); } else fromHash();
@@ -316,4 +316,126 @@
   function fromHash() { var h = decodeURIComponent(location.hash || ''); if (h.indexOf('#map=') === 0) focusVisible(h.slice(5)); }
   window.addEventListener('hashchange', fromHash);
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');
+})();
+
+/* Live weather per day from Open-Meteo, at each day's night spot and high point, derived from the GPX. */
+(function () {
+  'use strict';
+  var API = 'https://api.open-meteo.com/v1/forecast';
+  var T = {
+    en: { night: 'night spot', finish: 'finish', high: 'high point', rain: 'rain', prob: 'chance', gusts: 'gusts', fl: 'freezing level', uv: 'UV', sun: 'sun',
+      feels: 'feels', issued: 'Open-Meteo forecast, fetched', stale: 'offline, last forecast from', range: 'Forecast not yet available for this date (16-day horizon). Reload closer to the day.',
+      err: 'Weather unavailable right now.', hour: 'h',
+      w: { storm: 'Thunderstorm risk: be off the passes by early afternoon', rain: 'Rain likely', snow: 'Snow or freezing on the high point',
+        wind: 'Strong gusts on the ridge', frost: 'Frost at the bivouac', heat: 'Heat on the low ground: start early, 3 L water', fog: 'Fog: navigation care on boulder fields', uv: 'Very high UV', cold: 'Cold night' },
+      codes: { 0: 'clear', 1: 'mostly clear', 2: 'partly cloudy', 3: 'overcast', 45: 'fog', 48: 'freezing fog', 51: 'light drizzle', 53: 'drizzle', 55: 'heavy drizzle', 56: 'freezing drizzle', 57: 'freezing drizzle', 61: 'light rain', 63: 'rain', 65: 'heavy rain', 66: 'freezing rain', 67: 'freezing rain', 71: 'light snow', 73: 'snow', 75: 'heavy snow', 77: 'snow grains', 80: 'showers', 81: 'showers', 82: 'heavy showers', 85: 'snow showers', 86: 'snow showers', 95: 'thunderstorm', 96: 'thunderstorm with hail', 99: 'thunderstorm with hail' } },
+    he: { night: 'לינה', finish: 'סיום', high: 'נקודה גבוהה', rain: 'גשם', prob: 'סיכוי', gusts: 'משבים', fl: 'גובה קיפאון', uv: 'UV', sun: 'שמש',
+      feels: 'מורגש', issued: 'תחזית Open-Meteo, נמשכה', stale: 'אופליין, תחזית אחרונה מ', range: 'עדיין אין תחזית לתאריך הזה (טווח של 16 יום). טענו שוב קרוב ליום.',
+      err: 'מזג האוויר לא זמין כרגע.', hour: '',
+      w: { storm: 'סיכון לסופות רעמים: לרדת מהמעברים עד תחילת אחר הצהריים', rain: 'גשם צפוי', snow: 'שלג או קיפאון בנקודה הגבוהה',
+        wind: 'משבי רוח חזקים על הרכס', frost: 'כפור בלינה', heat: 'חום בגובה הנמוך: לצאת מוקדם, 3 ליטר מים', fog: 'ערפל: זהירות בניווט בשדות הבולדרים', uv: 'קרינה גבוהה מאוד', cold: 'לילה קר' },
+      codes: { 0: 'בהיר', 1: 'בהיר ברובו', 2: 'מעונן חלקית', 3: 'מעונן', 45: 'ערפל', 48: 'ערפל קפוא', 51: 'טפטוף קל', 53: 'טפטוף', 55: 'טפטוף כבד', 56: 'טפטוף קפוא', 57: 'טפטוף קפוא', 61: 'גשם קל', 63: 'גשם', 65: 'גשם כבד', 66: 'גשם קפוא', 67: 'גשם קפוא', 71: 'שלג קל', 73: 'שלג', 75: 'שלג כבד', 77: 'גרגרי שלג', 80: 'ממטרים', 81: 'ממטרים', 82: 'ממטרים כבדים', 85: 'ממטרי שלג', 86: 'ממטרי שלג', 95: 'סופת רעמים', 96: 'סופת רעמים עם ברד', 99: 'סופת רעמים עם ברד' } }
+  };
+  function hav(a, b) { var R = 6371000, dLat = (b.lat - a.lat) * Math.PI / 180, dLon = (b.lon - a.lon) * Math.PI / 180, s = Math.sin(dLat / 2), t = Math.sin(dLon / 2); return 2 * R * Math.asin(Math.sqrt(s * s + Math.cos(a.lat * Math.PI / 180) * Math.cos(b.lat * Math.PI / 180) * t * t)); }
+  function shortName(w) { return w.name.replace(/^(NIGHT \d( option B)?|FINISH|FALLBACK night \d) · [^·]+· /, '').replace(/^(NIGHT \d|FINISH) · /, '').split(/[:,(]/)[0].trim(); }
+
+  /* Day points from the GPX: night spot (end of day) and the highest route point of the day. */
+  function dayPoints(data, route) {
+    var nights = data.wpts.filter(function (w) { return (w.type === 'Night' || w.type === 'Flag') && !/FALLBACK|option/.test(w.name); });
+    function at(prefix) { var w = null; nights.forEach(function (x) { if (!w && x.name.indexOf(prefix) === 0) w = x; }); return w; }
+    function onRoute(w) { var best = null; route.pts.forEach(function (q) { var dd = hav(w, q); if (!best || dd < best.dist) best = { dist: dd, pt: q }; }); return best.pt; }
+    function floorEle(w) { var e = null; route.pts.forEach(function (q) { if (q.ele != null && hav(w, q) < 400 && (e == null || q.ele < e)) e = q.ele; }); return e; }
+    var passes = data.wpts.filter(function (w) { return w.type === 'Summit' && /^PASS/.test(w.name); });
+    var days = {}, n0 = at('NIGHT 0');
+    days[0] = { night: { lat: n0.lat, lon: n0.lon, ele: 1290, name: shortName(n0) }, high: null };
+    for (var n = 1; n <= 7; n++) {
+      var a = n === 1 ? n0 : at('NIGHT ' + (n - 1) + ' '), b = n === 7 ? at('FINISH') : at('NIGHT ' + n + ' ');
+      if (!a || !b) continue;
+      var da = onRoute(a).d, db = onRoute(b).d, hi = null, endPt = onRoute(b);
+      route.pts.forEach(function (p) { if (p.d >= da && p.d <= db && p.ele != null && (!hi || p.ele > hi.ele)) hi = p; });
+      var hiName = null; passes.forEach(function (w) { if (hav(w, hi) < 800) hiName = w.name.replace(/^PASS · /, '').split(' - ')[0].replace(/\s*\d{3,4} m$/, ''); });
+      days[n] = { night: { lat: b.lat, lon: b.lon, ele: floorEle(b) != null ? floorEle(b) : endPt.ele, name: shortName(b), finish: n === 7 }, high: { lat: hi.lat, lon: hi.lon, ele: hi.ele, name: hiName } };
+    }
+    return days;
+  }
+
+  function fetchForecast(points, startDate, endDate) {
+    var q = API + '?latitude=' + points.map(function (p) { return p.lat.toFixed(4); }).join(',') + '&longitude=' + points.map(function (p) { return p.lon.toFixed(4); }).join(',')
+      + '&elevation=' + points.map(function (p) { return Math.round(p.ele); }).join(',')
+      + '&daily=weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_min,precipitation_sum,precipitation_probability_max,snowfall_sum,wind_gusts_10m_max,uv_index_max,sunrise,sunset'
+      + '&hourly=freezing_level_height,cape&timezone=Europe%2FParis&wind_speed_unit=kmh&start_date=' + startDate + '&end_date=' + endDate;
+    return fetch(q).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (j) { return Array.isArray(j) ? j : [j]; });
+  }
+  function dayIndex(loc, date) { return loc.daily.time.indexOf(date); }
+  function hourStats(loc, date) {
+    var fl = null, cape = 0; loc.hourly.time.forEach(function (t, i) {
+      if (t.indexOf(date) !== 0) return; var h = +t.slice(11, 13);
+      if (h >= 6 && h <= 18) { var v = loc.hourly.freezing_level_height[i]; if (v != null && (fl == null || v < fl)) fl = v; }
+      if (h >= 10 && h <= 20) { var c = loc.hourly.cape[i]; if (c != null && c > cape) cape = c; }
+    }); return { fl: fl, cape: cape };
+  }
+  function warnings(L, day, N, Hh, iN, iH) {
+    var w = [], dN = N.daily, dH = Hh && Hh.daily, hs = hourStats(Hh || N, dN.time[iN]);
+    var codes = [dN.weather_code[iN], dH ? dH.weather_code[iH] : 0];
+    if (codes.some(function (c) { return c >= 95; }) || hs.cape >= 400) w.push(['storm', 'bad']);
+    var rain = Math.max(dN.precipitation_sum[iN], dH ? dH.precipitation_sum[iH] : 0), prob = Math.max(dN.precipitation_probability_max[iN] || 0, dH ? dH.precipitation_probability_max[iH] || 0 : 0);
+    if (rain >= 8 || prob >= 60) w.push(['rain', rain >= 15 ? 'bad' : '']);
+    if (dH && (dH.snowfall_sum[iH] > 0 || (hs.fl != null && hs.fl < day.high.ele + 300))) w.push(['snow', 'bad']);
+    var gust = Math.max(dN.wind_gusts_10m_max[iN], dH ? dH.wind_gusts_10m_max[iH] : 0);
+    if (gust >= 60) w.push(['wind', gust >= 80 ? 'bad' : '']);
+    if (dN.apparent_temperature_min[iN] <= 0) w.push(['frost', '']); else if (dN.apparent_temperature_min[iN] <= 3) w.push(['cold', '']);
+    if (dN.temperature_2m_max[iN] >= 28) w.push(['heat', '']);
+    if (codes.some(function (c) { return c === 45 || c === 48; })) w.push(['fog', '']);
+    if (Math.max(dN.uv_index_max[iN], dH ? dH.uv_index_max[iH] : 0) >= 8) w.push(['uv', '']);
+    return w;
+  }
+  function render(el, lang, day, N, Hh, meta) {
+    var L = T[lang], date = el.closest('[data-date]').getAttribute('data-date'), iN = dayIndex(N, date), iH = Hh ? dayIndex(Hh, date) : -1;
+    if (iN < 0 || (Hh && iH < 0)) { el.innerHTML = '<span class="wxmeta">' + L.range + '</span>'; return; }
+    var dN = N.daily, dH = Hh && Hh.daily, hs = hourStats(Hh || N, date), esc = function (s) { return String(s).replace(/</g, '&lt;'); };
+    var rows = [];
+    rows.push('<span><span class="wxk">' + (day.night.finish ? L.finish : L.night) + '</span> ' + esc(day.night.name) + ' ' + Math.round(day.night.ele) + ' m: <b>' + Math.round(dN.temperature_2m_min[iN]) + '–' + Math.round(dN.temperature_2m_max[iN]) + ' °C</b>, ' + (L.codes[dN.weather_code[iN]] || dN.weather_code[iN]) + ' (' + L.feels + ' ' + Math.round(dN.apparent_temperature_min[iN]) + ' °C)</span>');
+    if (dH) rows.push('<span><span class="wxk">' + L.high + '</span> ' + (day.high.name ? esc(day.high.name) + ' ' : '') + Math.round(day.high.ele) + ' m: <b>' + Math.round(dH.temperature_2m_min[iH]) + '–' + Math.round(dH.temperature_2m_max[iH]) + ' °C</b>, ' + (L.codes[dH.weather_code[iH]] || dH.weather_code[iH]) + '</span>');
+    var rain = Math.max(dN.precipitation_sum[iN], dH ? dH.precipitation_sum[iH] : 0), prob = Math.max(dN.precipitation_probability_max[iN] || 0, dH ? dH.precipitation_probability_max[iH] || 0 : 0);
+    var gust = Math.max(dN.wind_gusts_10m_max[iN], dH ? dH.wind_gusts_10m_max[iH] : 0), uv = Math.max(dN.uv_index_max[iN], dH ? dH.uv_index_max[iH] : 0);
+    rows.push('<span><span class="wxk">' + L.rain + '</span> ' + rain.toFixed(rain < 1 ? 1 : 0) + ' mm (' + prob + ' % ' + L.prob + ')</span>');
+    rows.push('<span><span class="wxk">' + L.gusts + '</span> ' + Math.round(gust) + ' km/h</span>');
+    if (hs.fl != null) rows.push('<span><span class="wxk">' + L.fl + '</span> ' + Math.round(hs.fl / 50) * 50 + ' m</span>');
+    rows.push('<span><span class="wxk">' + L.uv + '</span> ' + Math.round(uv) + '</span>');
+    rows.push('<span><span class="wxk">' + L.sun + '</span> ' + dN.sunrise[iN].slice(11) + '–' + dN.sunset[iN].slice(11) + '</span>');
+    var html = '<div class="wxrow">' + rows.join('') + '</div>';
+    var ws = warnings(L, day, N, Hh, iN, iH);
+    if (ws.length) html += '<div>' + ws.map(function (x) { return '<span class="wxwarn ' + x[1] + '">' + L.w[x[0]] + '</span>'; }).join('') + '</div>';
+    html += '<div class="wxmeta">' + (meta.stale ? L.stale + ' ' : L.issued + ' ') + meta.when + '</div>';
+    el.innerHTML = html;
+  }
+
+  var tries = 0;
+  function start() {
+    var app = window.gr52Data; if (!app) { if (tries++ < 100) return setTimeout(start, 200); return; }
+    var days = dayPoints(app.data, app.route), points = [], index = {};
+    Object.keys(days).forEach(function (n) { var d = days[n]; index[n] = { night: points.length }; points.push(d.night); if (d.high) { index[n].high = points.length; points.push(d.high); } });
+    var els = Array.prototype.slice.call(document.querySelectorAll('.wx'));
+    var dates = els.map(function (e) { return e.closest('[data-date]').getAttribute('data-date'); }).sort();
+    var today = new Date().toISOString().slice(0, 10), horizon = new Date(Date.now() + 15 * 864e5).toISOString().slice(0, 10);
+    var startDate = dates[0] < today ? today : dates[0], endDate = dates[dates.length - 1] > horizon ? horizon : dates[dates.length - 1];
+    function paint(locs, meta) {
+      els.forEach(function (el) {
+        var n = +el.closest('[data-day]').getAttribute('data-day'), lang = el.closest('[lang]').getAttribute('lang');
+        if (!days[n]) return;
+        render(el, lang, days[n], locs[index[n].night], index[n].high != null ? locs[index[n].high] : null, meta);
+      });
+    }
+    var cached = null; try { cached = JSON.parse(localStorage.getItem('gr52-wx') || 'null'); } catch (e) { }
+    if (startDate > endDate) { els.forEach(function (el) { el.innerHTML = '<span class="wxmeta">' + T[el.closest('[lang]').getAttribute('lang')].range + '</span>'; }); return; }
+    fetchForecast(points, startDate, endDate).then(function (locs) {
+      var when = new Date().toLocaleString('en-GB', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: 'short' });
+      try { localStorage.setItem('gr52-wx', JSON.stringify({ when: when, locs: locs })); } catch (e) { }
+      paint(locs, { when: when });
+    }).catch(function () {
+      if (cached) paint(cached.locs, { when: cached.when, stale: true });
+      else els.forEach(function (el) { el.innerHTML = '<span class="wxmeta">' + T[el.closest('[lang]').getAttribute('lang')].err + '</span>'; });
+    });
+  }
+  start();
 })();
