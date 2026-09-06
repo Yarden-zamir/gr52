@@ -167,8 +167,6 @@ canvas.profile{width:100%;height:220px;display:block;background:var(--panel);bor
 [lang="he"] .maptools button,[lang="he"] .mapstatus,[lang="he"] .profstats{font-family:"Heebo",sans-serif}
 a.focus{color:inherit;text-decoration:underline dotted;text-decoration-color:var(--lake);text-underline-offset:3px}
 a.focus:hover{color:var(--lake);text-decoration-style:solid}
-.stagemap{margin:0 0 6px;font-size:13.5px} .stagemap a.focus{color:var(--lake)}
-.stage .stats+.stagemap{margin-top:-4px}
 .wx{margin:6px 0 10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5;max-width:76ch}
 .wx:empty{display:none}
 .wx .wxrow{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
@@ -177,5 +175,24 @@ a.focus:hover{color:var(--lake);text-decoration-style:solid}
 .wx .wxwarn.bad{background:var(--mark-soft);border-color:var(--mark)}
 .wx .wxmeta{color:var(--muted);font-size:12px;margin-top:6px}
 [lang="he"] .wx .wxk{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+a.daylink{color:inherit;text-decoration:none;border-bottom:2px solid var(--lake);cursor:pointer}
+a.daylink:hover{color:var(--lake)}
+.planbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;max-width:76ch;margin:14px 0 6px}
+.planbar button,.wxbtn,.donebar button{font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px 11px;cursor:pointer}
+.planbar button:hover,.wxbtn:hover,.donebar button:hover{border-color:var(--mark)}
+.snapstatus{font-size:13px;color:var(--muted)}
+.snapbox{margin:6px 0 8px;padding:8px 12px;border-inline-start:4px solid #1E6FD9;background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5}
+.wxfresh.old{color:var(--warn)}
+.wxbtn{padding:3px 9px;font-size:12px;margin-inline-start:6px}
+.wxhour{margin-top:8px}
+.wxhour canvas{width:100%;height:190px;display:block;background:var(--ground);border:1px solid var(--line);touch-action:none;cursor:crosshair}
+.wxread{font:12px "IBM Plex Mono",monospace;color:var(--ink);min-height:18px;margin-top:4px}
+.stage.done .d{color:var(--muted)} .stage.done .d::before{opacity:.35}
+.stage.done h3{opacity:.6}
+.stage.done:not(.open) .stats,.stage.done:not(.open) .wx,.stage.done:not(.open) p,.stage.done:not(.open) .snapbox{display:none}
+.donebar{display:flex;gap:8px;align-items:center;margin:4px 0 6px;font-size:13px}
+.donechip{color:#2E7D32;font-weight:600}
+[lang="he"] .planbar button,[lang="he"] .wxbtn,[lang="he"] .donebar button{font-family:"Heebo",sans-serif}
+[lang="he"] .wxread{font-family:"Heebo",sans-serif}
 </style>
 

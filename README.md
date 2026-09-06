@@ -36,8 +36,19 @@ Each day card shows a live forecast from [Open-Meteo](https://open-meteo.com/) f
 night spot and highest route point, both derived from the GPX at runtime (nothing is hardcoded).
 One request covers all points and the trek dates; the page derives warnings for thunderstorms
 (WMO code or CAPE), rain, snow and freezing level against the high point, ridge gusts, frost at
-the bivouac, heat on the low days, fog and UV. The last forecast is cached in localStorage and
-by the service worker so it still shows offline, marked as stale.
+the bivouac, heat on the low days, fog, UV, and a planned arrival after sunset. Each card shows
+the fetch time and age (stale after 6 h) with a refresh button, and an "Hour by hour" chart:
+temperature at the high point and the night spot, rain bars, storm hours in red, freezing hours
+in blue, sunrise and sunset, and the planned walking window. The last forecast is cached in
+localStorage and by the service worker so it still shows offline.
+
+## On the trail
+
+"Where am I" takes one position fix (no GPS watch, to save battery), shows it on the map, marks
+the days already walked as done and folds them, and adds to today's card the kilometre on the
+route, distance walked and left, ascent left, an arrival estimate (measured pace after two fixes
+at least 20 minutes apart, else the planned pace) and sunset. Day titles and every place name
+link to the map. Leaflet is pinned at 1.9.4 under `site/vendor/`.
 
 ## Update
 
