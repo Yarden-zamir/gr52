@@ -520,11 +520,22 @@
     document.querySelectorAll('.snapstatus').forEach(function (s) { s.textContent = L.pick; }); app.status.textContent = L.pick;
     app.pick(function (lat, lon) { app.status.textContent = ''; applySnapshot({ coords: { latitude: lat, longitude: lon, accuracy: 50 }, manual: true }); });
   };
-  /* long-press on either "Where am I" button picks the position on the map instead of GPS */
+  /* long-press on either "Where am I" button picks the position on the map instead of GPS.
+     Cancel only on lift or drag: iOS fires pointercancel during a hold, which must not stop the timer. */
   (function () {
-    var timer = null, fired = false, SEL = '[data-act="snapshot"],[data-act="locate"]';
-    document.addEventListener('pointerdown', function (e) { var b = e.target.closest && e.target.closest(SEL); if (!b) return; fired = false; timer = setTimeout(function () { fired = true; window.gr52PickOnMap(); }, 550); });
-    ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) { document.addEventListener(ev, function (e) { if (e.target.closest && e.target.closest(SEL)) clearTimeout(timer); }); });
+    var timer = null, fired = false, sx = 0, sy = 0, SEL = '[data-act="snapshot"],[data-act="locate"]';
+    function down(x, y, target) { var b = target.closest && target.closest(SEL); if (!b) return; fired = false; sx = x; sy = y; clearTimeout(timer); timer = setTimeout(function () { fired = true; if (navigator.vibrate) navigator.vibrate(30); window.gr52PickOnMap(); }, 550); }
+    function move(x, y) { if (timer && (Math.abs(x - sx) > 12 || Math.abs(y - sy) > 12)) { clearTimeout(timer); timer = null; } }
+    function up() { clearTimeout(timer); timer = null; }
+    if (window.PointerEvent) {
+      document.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse' && e.button !== 0) return; down(e.clientX, e.clientY, e.target); }, { passive: true });
+      document.addEventListener('pointermove', function (e) { move(e.clientX, e.clientY); }, { passive: true });
+      document.addEventListener('pointerup', up, { passive: true });
+    } else {
+      document.addEventListener('touchstart', function (e) { var t = e.touches[0]; down(t.clientX, t.clientY, e.target); }, { passive: true });
+      document.addEventListener('touchmove', function (e) { var t = e.touches[0]; move(t.clientX, t.clientY); }, { passive: true });
+      document.addEventListener('touchend', up, { passive: true });
+    }
     document.addEventListener('click', function (e) { var b = e.target.closest && e.target.closest(SEL); if (b && fired) { e.stopImmediatePropagation(); e.preventDefault(); fired = false; } }, true);
     document.addEventListener('contextmenu', function (e) { if (e.target.closest && e.target.closest(SEL)) e.preventDefault(); });
   })();
