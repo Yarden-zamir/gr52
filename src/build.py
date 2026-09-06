@@ -77,9 +77,9 @@ def link_places(html: str) -> str:
         out.append(text)
         tag = m.group(0)
         low = tag.lower()
-        if low.startswith(("<a ", "<a>", "<h1", "<button", "<title", "<summary", "<h2", "<h3")):
+        if low.startswith(("<a ", "<a>", "<h1", "<button", "<title", "<summary", "<caption", "<h2", "<h3")):
             skip += 1
-        elif low.startswith(("</a>", "</h1>", "</button>", "</title>", "</summary>", "</h2>", "</h3>")):
+        elif low.startswith(("</a>", "</h1>", "</button>", "</title>", "</summary>", "</caption>", "</h2>", "</h3>")):
             skip = max(0, skip - 1)
         out.append(tag)
         pos = m.end()

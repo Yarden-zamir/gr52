@@ -1,5 +1,5 @@
 /* Offline: precache the page and its data; cache map tiles and fonts as they are used or saved. */
-var VERSION = 'gr52-0c5c6ea17581';
+var VERSION = 'gr52-a3e61acf2698';
 var PRECACHE = ['/', '/GR52_all-in-one.gpx', '/map.js', '/vendor/leaflet.min.js', '/vendor/leaflet.min.css',
   '/vendor/images/layers.png', '/vendor/images/layers-2x.png', '/manifest.webmanifest', '/icon.svg',
   '/maps/overview.webp', '/maps/north.webp', '/maps/merv.webp', '/maps/authion.webp', '/maps/menton.webp'];
