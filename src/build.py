@@ -39,7 +39,15 @@ def label_tables(html: str) -> str:
             new = re.sub(r"<td([^>]*)>", td, row)
             out = out.replace(row, new, 1)
         return out
-    return re.sub(r"<table>.*?</table>", one, html, flags=re.S)
+    html = re.sub(r"<table>.*?</table>", one, html, flags=re.S)
+
+    def mark_long(_m: re.Match) -> str:
+        """Wrap the cell in one span so the phone card grid has exactly label + value; flag long cells."""
+        text = re.sub(r"<[^>]+>", "", _m.group(2))
+        long_attr = " data-long" if len(text) > 48 else ""
+        return f"<td{_m.group(1)}{long_attr}><span>{_m.group(2)}</span></td>"
+
+    return re.sub(r"<td([^>]*)>(.*?)</td>", mark_long, html, flags=re.S)
 
 
 # Place names that get a map link. Term -> waypoint or track query (accent-insensitive substring).

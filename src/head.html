@@ -55,6 +55,8 @@ nav.toc a:hover{border-color:var(--mark)}
 table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}
 th,td{text-align:start;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--ground)}
+caption{caption-side:top;text-align:start;font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:600;padding:0 0 8px;color:var(--ink)}
+[lang="he"] caption{font-family:"Rubik","Heebo",sans-serif;font-size:19px}
 td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
 .stage{display:grid;grid-template-columns:96px 1fr;gap:0 22px;border-top:1px solid var(--line);padding:22px 0}
 .stage:last-of-type{border-bottom:1px solid var(--line)}
@@ -91,7 +93,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
 h2,h3,.stage,.note,.scroll,figure,.mapbox{scroll-margin-top:12px}
 td{overflow-wrap:anywhere}
 nav.toc a{padding:4px 0}
-@media (max-width:640px){
+@media (max-width:760px){
   body{font-size:15.5px}
   .wrap{padding:0 14px 60px}
   header{padding:28px 0 8px}
@@ -106,15 +108,20 @@ nav.toc a{padding:4px 0}
   .livemap{height:62vh}
   /* tables become stacked cards */
   .scroll{overflow:visible}
-  .scroll table,.scroll tr,.scroll td{display:block;width:100%}
+  .scroll table,.scroll caption,.scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .scroll caption{padding:0 0 4px}
   .scroll tr:first-child{display:none}
-  .scroll tr{border:1px solid var(--line);background:var(--panel);margin:10px 0;padding:6px 12px 8px;border-radius:3px}
-  .scroll td{border:0;padding:5px 0;display:grid;grid-template-columns:minmax(84px,32%) 1fr;gap:10px;align-items:baseline}
-  .scroll td::before{content:attr(data-label);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
-  .scroll td:first-child{grid-template-columns:1fr;font-weight:600;font-size:16px;padding-bottom:4px;border-bottom:1px solid var(--line);margin-bottom:4px}
+  .scroll tr{border:1px solid var(--line);border-inline-start:4px solid var(--lake);background:var(--panel);margin:12px 0;padding:10px 12px 10px;border-radius:4px;box-sizing:border-box}
+  .scroll td{border:0;padding:5px 0;display:grid;grid-template-columns:minmax(88px,30%) 1fr;gap:2px 12px;align-items:start;font-size:14.5px;line-height:1.45}
+  .scroll td+td{border-top:1px dashed var(--line)}
+  .scroll td::before{content:attr(data-label);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+  .scroll td:first-child{grid-template-columns:1fr;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:20px;line-height:1.15;padding:0 0 6px;margin-bottom:2px;border-bottom:1px solid var(--line)}
   .scroll td:first-child::before{content:none}
-  .scroll td.n{white-space:normal}
+  .scroll td[data-long]{grid-template-columns:1fr}
+  .scroll td[data-long]::before{padding-top:0}
+  .scroll td.n{white-space:normal;font-family:"IBM Plex Sans",sans-serif}
   [lang="he"] .scroll td::before{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+  [lang="he"] .scroll td:first-child{font-family:"Rubik","Heebo",sans-serif}
   .two{gap:8px}
 }
 @media (prefers-reduced-motion:no-preference){a{transition:border-color .15s}}
