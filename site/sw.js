@@ -1,5 +1,5 @@
 /* Offline: precache the page and its data; cache map tiles and fonts as they are used or saved. */
-var VERSION = 'gr52-a22cda527a3c';
+var VERSION = 'gr52-c31ad9fef3c4';
 var PRECACHE = ["/", "/GR52_all-in-one.gpx", "/map.js", "/vendor/leaflet.min.js", "/vendor/leaflet.min.css", "/vendor/images/layers.png", "/vendor/images/layers-2x.png", "/manifest.webmanifest", "/icon.svg", "/maps/authion.webp", "/maps/menton.webp", "/maps/merv.webp", "/maps/north.webp", "/maps/overview.webp"];
 self.addEventListener('install', function (e) {
   e.waitUntil(caches.open(VERSION).then(function (c) { return c.addAll(PRECACHE); }).then(function () { return self.skipWaiting(); }));

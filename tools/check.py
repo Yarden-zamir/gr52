@@ -58,9 +58,10 @@ var __t0=Date.now(); (function waitWx(){ if(Date.now()-__t0<30000 && !document.q
   setTimeout(function(){
     var done=[].map.call(vis.querySelectorAll('.stage.done'),function(c){return c.getAttribute('data-day')}).join(',');
     var snap=(vis.querySelector('.snapbox')||{}).textContent||'';
-    var cv=vis.querySelector('.stage:not(.done) .wxhour canvas');
+    var cv=vis.querySelector('.stage:not(.done) .wxhour canvas'); var sl=vis.querySelector('.stage:not(.done) .wxhour input[type=range]'); var slider='';
+    if(sl){ sl.value=6.5; sl.dispatchEvent(new Event('input')); slider=(vis.querySelector('.stage:not(.done) .wxhour output')||{}).textContent+' | events: '+((vis.querySelector('.stage:not(.done) .wxevents')||{}).textContent||'').slice(0,160)+' | rec: '+((vis.querySelector('.stage:not(.done) .wxrec')||{}).textContent||''); }
     var stats=(document.querySelector('.profstats')||{}).textContent||'';
-    document.title=JSON.stringify({tiles:tiles,paths:paths,wx:wx,wxlinks:wxlinks,wxcards:wxcards,wxrange:wxrange,daylinks:daylinks,done:done,snap:snap.slice(0,160),canvas:cv?cv.width:0,stats:stats,log:window.__log});
+    document.title=JSON.stringify({tiles:tiles,paths:paths,wx:wx,wxlinks:wxlinks,wxcards:wxcards,wxrange:wxrange,daylinks:daylinks,done:done,snap:snap.slice(0,160),canvas:cv?cv.width:0,slider:slider,stats:stats,log:window.__log});
   },900);
 }catch(e){document.title=JSON.stringify({exc:e.message,log:window.__log})}},6000); })();</script>"""
 page = html.replace("<head>", "<head>" + probe, 1)
@@ -110,6 +111,8 @@ if res.get("daylinks", 0) < 1:
     fails.append("no day-title links")
 if "1" not in res.get("done", ""):
     fails.append(f"snapshot did not mark day 1 done (done={res.get('done')!r}, snap={res.get('snap')!r})")
+if res.get("canvas", 0) >= 100 and not res.get("slider"):
+    fails.append("start-time slider did not update the day simulation")
 if res.get("canvas", 0) < 100 and not beyond_horizon:
     fails.append("hourly chart canvas not drawn")
 print(json.dumps({k: v for k, v in res.items() if k != "log"}, ensure_ascii=False, indent=1))

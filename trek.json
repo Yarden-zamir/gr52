@@ -120,5 +120,6 @@
   ],
   "weatherModel": "meteofrance_seamless",
   "weatherModelLabel": "Météo-France AROME/ARPEGE, blend beyond 4 days",
-  "gpxDescription": "Route geometry from OpenStreetMap relation 3315112 (Traversée du Mercantour), stages in walking order. Map data (c) OpenStreetMap contributors, ODbL."
+  "gpxDescription": "Route geometry from OpenStreetMap relation 3315112 (Traversée du Mercantour), stages in walking order. Map data (c) OpenStreetMap contributors, ODbL.",
+  "treeline": 2000
 }
