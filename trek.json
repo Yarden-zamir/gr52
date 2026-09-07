@@ -121,5 +121,18 @@
   "weatherModel": "meteofrance_seamless",
   "weatherModelLabel": "Météo-France AROME/ARPEGE, blend beyond 4 days",
   "gpxDescription": "Route geometry from OpenStreetMap relation 3315112 (Traversée du Mercantour), stages in walking order. Map data (c) OpenStreetMap contributors, ODbL.",
-  "treeline": 2000
+  "treeline": 2000,
+  "accent": "#C8322B",
+  "exposed": [
+    {
+      "fromKm": 54,
+      "toKm": 67,
+      "name": "Authion ridge"
+    },
+    {
+      "fromKm": 40,
+      "toKm": 47,
+      "name": "Basto boulder fields"
+    }
+  ]
 }
