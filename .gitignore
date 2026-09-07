@@ -1,3 +1,4 @@
 # Generated deployment artifacts
 /Caddyfile
 .DS_Store
+.tiles/

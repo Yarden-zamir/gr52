@@ -7,10 +7,10 @@
     btn.textContent=isHe?'English':'עברית';
     btn.setAttribute('lang',isHe?'en':'he');
     document.documentElement.setAttribute('dir',isHe?'rtl':'ltr');
-    try{localStorage.setItem('gr52-lang',l)}catch(e){}
+    try{localStorage.setItem(((window.TREK&&window.TREK.slug)||'trek')+'-lang',l)}catch(e){}
   }
   var saved='en';
-  try{saved=localStorage.getItem('gr52-lang')||'en'}catch(e){}
+  try{saved=localStorage.getItem(((window.TREK&&window.TREK.slug)||'trek')+'-lang')||'en'}catch(e){}
   apply(saved);
   btn.addEventListener('click',function(){apply(en.hidden?'en':'he')});
 

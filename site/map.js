@@ -1,7 +1,7 @@
-/* GR52 map app: draws the real GPX, elevation profile, live position, offline tiles. */
+/* Trek map app: draws the real GPX, elevation profile, position snapshot, offline tiles. Config in window.TREK. */
 (function () {
   'use strict';
-  var GPX = '/GR52_all-in-one.gpx';
+  var TREK = window.TREK || {}; var GPX = TREK.gpx || '/route.gpx';
   var TILES = 'https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png';
   var I18N = {
     en: {
@@ -82,7 +82,8 @@
       var dz = p.ele - last;
       if (Math.abs(dz) >= 10) { if (dz > 0) asc += dz; else desc -= dz; last = p.ele; }
     });
-    return { pts: pts, length: d, ascent: asc, descent: desc };
+    var maxEle = 0; pts.forEach(function (p) { if (p.ele != null && p.ele > maxEle) maxEle = p.ele; });
+    return { pts: pts, length: d, ascent: asc, descent: desc, maxEle: maxEle };
   }
   function nearestOnRoute(route, p) {
     var best = null;
@@ -141,12 +142,12 @@
       var cs = getComputedStyle(document.documentElement);
       var ink = cs.getPropertyValue('--ink').trim(), muted = cs.getPropertyValue('--muted').trim(), line = cs.getPropertyValue('--line').trim(),
         mark = cs.getPropertyValue('--mark').trim(), lake = cs.getPropertyValue('--lake').trim(), soft = cs.getPropertyValue('--lake-soft').trim();
-      var L0 = 44, R0 = 10, T0 = 12, B0 = 24, maxD = route.length, maxE = 3000;
+      var L0 = 44, R0 = 10, T0 = 12, B0 = 24, maxD = route.length, maxE = Math.max(500, Math.ceil(route.maxEle / 500) * 500), eStep = maxE > 1500 ? 1000 : 500, kStep = maxD > 60000 ? 20 : maxD > 25000 ? 10 : 5;
       var x = function (d) { return L0 + d / maxD * (W - L0 - R0); }, y = function (e) { return T0 + (1 - e / maxE) * (H - T0 - B0); };
       ctx.clearRect(0, 0, W, H);
       ctx.font = '11px IBM Plex Mono, monospace'; ctx.fillStyle = muted; ctx.strokeStyle = line; ctx.lineWidth = 1;
-      [0, 1000, 2000, 3000].forEach(function (e) { ctx.beginPath(); ctx.moveTo(L0, y(e)); ctx.lineTo(W - R0, y(e)); ctx.stroke(); ctx.textAlign = 'right'; ctx.fillText(e + ' ' + T.m, L0 - 6, y(e) + 4); });
-      for (var k = 0; k <= maxD / 1000; k += 20) { ctx.textAlign = 'center'; ctx.fillText(k + ' ' + T.km, x(k * 1000), H - 8); }
+      for (var e = 0; e <= maxE; e += eStep) (function (e) { ctx.beginPath(); ctx.moveTo(L0, y(e)); ctx.lineTo(W - R0, y(e)); ctx.stroke(); ctx.textAlign = 'right'; ctx.fillText(e + ' ' + T.m, L0 - 6, y(e) + 4); })(e);
+      for (var k = 0; k <= maxD / 1000; k += kStep) { ctx.textAlign = 'center'; ctx.fillText(k + ' ' + T.km, x(k * 1000), H - 8); }
       ctx.beginPath(); var started = false;
       route.pts.forEach(function (p) { if (p.ele == null) return; var px = x(p.d), py = y(p.ele); if (!started) { ctx.moveTo(px, py); started = true; } else ctx.lineTo(px, py); });
       var pathEnd = ctx; ctx.lineTo(x(maxD), y(0)); ctx.lineTo(x(0), y(0)); ctx.closePath(); ctx.fillStyle = soft; ctx.fill();
@@ -175,7 +176,7 @@
     canvas.addEventListener('mousemove', hover); canvas.addEventListener('touchstart', hover, { passive: false }); canvas.addEventListener('touchmove', hover, { passive: false });
     canvas.addEventListener('mouseleave', function () { drawProfile(null); if (hoverMarker) { map.removeLayer(hoverMarker); hoverMarker = null; } });
     var stats = container.querySelector('.profstats');
-    stats.textContent = T.total + ' ' + (route.length / 1000).toFixed(1) + ' ' + T.km + ' · ' + T.ascent + ' ' + Math.round(route.ascent) + ' ' + T.m + ' · ' + T.descent + ' ' + Math.round(route.descent) + ' ' + T.m + ' · EU-DEM 25 m';
+    stats.textContent = T.total + ' ' + (route.length / 1000).toFixed(1) + ' ' + T.km + ' · ' + T.ascent + ' ' + Math.round(route.ascent) + ' ' + T.m + ' · ' + T.descent + ' ' + Math.round(route.descent) + ' ' + T.m + (TREK.elevation ? ' · ' + TREK.elevation : '');
     drawProfile(null);
     window.addEventListener('resize', function () { drawProfile(null); });
 
@@ -244,7 +245,7 @@
       var mDay = /^day:(\d+)$/.exec(q);
       if (mDay) {
         var n = +mDay[1], from = n === 1 ? 0 : null, to = null;
-        nights.forEach(function (x) { var k = x.w.name.split(' ')[1]; if (x.w.name.indexOf('NIGHT ' + (n - 1) + ' ') === 0 && from == null) from = x.d; if (x.w.name.indexOf('NIGHT ' + n + ' ') === 0 || (n === 7 && x.w.name.indexOf('FINISH') === 0)) to = x.d; });
+        nights.forEach(function (x) { var k = x.w.name.split(' ')[1]; if (x.w.name.indexOf('NIGHT ' + (n - 1) + ' ') === 0 && from == null) from = x.d; if (x.w.name.indexOf('NIGHT ' + n + ' ') === 0 || x.w.name.indexOf('FINISH') === 0 && !nights.some(function (y) { return y.w.name.indexOf('NIGHT ' + n + ' ') === 0; })) to = x.d; });
         if (from == null) from = 0; if (to == null) to = route.length;
         var slice = route.pts.filter(function (p) { return p.d >= from && p.d <= to; }).map(function (p) { return [p.lat, p.lon]; });
         if (slice.length < 2) return false;
@@ -331,6 +332,8 @@
       snap: { far: 'אתם במרחק {km} ק"מ מהמסלול. צילום המצב לא הוחל.', at: 'אתם בק"מ {km} של המסלול', walked: 'הלכתם היום', left: 'נשאר עד', ascent: 'עלייה שנותרה', pace: 'קצב', measured: 'נמדד', planned: 'מתוכנן', eta: 'הגעה משוערת', sunset: 'שקיעה', tent: 'מותר להקים מ-19:00', done: 'הושלם', show: 'הצג', undo: 'לא הושלם', noGeo: 'מיקום לא זמין בדפדפן הזה.', taken: 'צילום מצב', manual: 'נבחר במפה', pick: 'לחצו על המפה איפה שאתם.', off: 'מחוץ למסלול ב', before: 'הטרק עוד לא התחיל: אתם ליד ההתחלה.', after: 'אחרי הסיום: כל הכבוד.' }
     }
   };
+  /* per-trek wording: trek.json "strings": {"en": {"w": {"heat": "..."}, "snap": {...}}, "he": {...}} overrides any key */
+  (function () { var o = (window.TREK && window.TREK.strings) || {}; Object.keys(o).forEach(function (lang) { if (!T[lang]) return; Object.keys(o[lang]).forEach(function (grp) { if (typeof o[lang][grp] === 'object' && T[lang][grp]) Object.assign(T[lang][grp], o[lang][grp]); else T[lang][grp] = o[lang][grp]; }); }); })();
   var HOURLY = 'temperature_2m,precipitation,precipitation_probability,weather_code,wind_gusts_10m,cape,freezing_level_height,cloud_cover';
   var DAILY = 'weather_code,temperature_2m_max,temperature_2m_min,apparent_temperature_min,precipitation_sum,precipitation_probability_max,snowfall_sum,wind_gusts_10m_max,uv_index_max,sunrise,sunset';
   function hav(a, b) { var R = 6371000, dLat = (b.lat - a.lat) * Math.PI / 180, dLon = (b.lon - a.lon) * Math.PI / 180, s = Math.sin(dLat / 2), t = Math.sin(dLon / 2); return 2 * R * Math.asin(Math.sqrt(s * s + Math.cos(a.lat * Math.PI / 180) * Math.cos(b.lat * Math.PI / 180) * t * t)); }
@@ -347,15 +350,17 @@
     function at(prefix) { var w = null; nights.forEach(function (x) { if (!w && x.name.indexOf(prefix) === 0) w = x; }); return w; }
     function onRoute(w) { var best = null; route.pts.forEach(function (q) { var dd = hav(w, q); if (!best || dd < best.dist) best = { dist: dd, pt: q }; }); return best.pt; }
     var passes = data.wpts.filter(function (w) { return w.type === 'Summit' && /^PASS/.test(w.name); });
-    var days = {}, n0 = at('NIGHT 0');
-    days[0] = { n: 0, night: { lat: n0.lat, lon: n0.lon, ele: n0.ele != null ? n0.ele : 1290, name: shortName(n0), key: nightKey(n0) }, high: null, from: 0, to: 0 };
-    for (var n = 1; n <= 7; n++) {
-      var a = n === 1 ? n0 : at('NIGHT ' + (n - 1) + ' '), b = n === 7 ? at('FINISH') : at('NIGHT ' + n + ' ');
+    var days = {}, n0 = at('NIGHT 0'), last = 0;
+    nights.forEach(function (x) { var mm = /^NIGHT (\d+) /.exec(x.name); if (mm && +mm[1] > last) last = +mm[1]; });
+    var LAST = last + 1;
+    days[0] = { n: 0, night: { lat: n0.lat, lon: n0.lon, ele: n0.ele != null ? n0.ele : (route.pts[0].ele || 0), name: shortName(n0), key: nightKey(n0) }, high: null, from: 0, to: 0 };
+    for (var n = 1; n <= LAST; n++) {
+      var a = n === 1 ? n0 : at('NIGHT ' + (n - 1) + ' '), b = n === LAST ? at('FINISH') : at('NIGHT ' + n + ' ');
       if (!a || !b) continue;
       var da = onRoute(a).d, db = onRoute(b).d, hi = null, endPt = onRoute(b);
       route.pts.forEach(function (p) { if (p.d >= da && p.d <= db && p.ele != null && (!hi || p.ele > hi.ele)) hi = p; });
       var hiName = null; passes.forEach(function (w) { if (hav(w, hi) < 800) hiName = w.name.replace(/^PASS · /, '').split(' - ')[0].replace(/\s*\d{3,4} m$/, ''); });
-      days[n] = { n: n, night: { lat: b.lat, lon: b.lon, ele: b.ele != null ? b.ele : endPt.ele, name: shortName(b), key: nightKey(b), finish: n === 7 }, high: { lat: hi.lat, lon: hi.lon, ele: hi.ele, name: hiName }, from: da, to: db };
+      days[n] = { n: n, night: { lat: b.lat, lon: b.lon, ele: b.ele != null ? b.ele : endPt.ele, name: shortName(b), key: nightKey(b), finish: n === LAST }, high: { lat: hi.lat, lon: hi.lon, ele: hi.ele, name: hiName }, from: da, to: db };
     }
     return days;
   }
@@ -363,14 +368,35 @@
 
   /* ---- planned times from the card: "8–9 h" chip; start 08:00 (day 1: 08:00 after breakfast) ---- */
   function plannedHours(card) { var t = card.textContent, m = /(\d+)(?:[–-](\d+))?\s*h\b/.exec(t); return m ? +(m[2] || m[1]) : 7; }
-  function plannedStart(n) { return n === 0 ? null : 8; }
+  function plannedStart(n) { return n === 0 ? null : ((window.TREK && window.TREK.plannedStart) || 8); }
 
   /* ---- forecast ---- */
-  function fetchForecast(points, startDate, endDate) {
-    var q = API + '?latitude=' + points.map(function (p) { return p.lat.toFixed(4); }).join(',') + '&longitude=' + points.map(function (p) { return p.lon.toFixed(4); }).join(',')
+  /* Forecast. trek.json "weatherModel" picks an Open-Meteo model (for example meteofrance_seamless for
+     the Alps, whose AROME/ARPEGE runs only reach about 4 days); values it leaves null are filled from
+     the default best_match blend, so the whole trek always has numbers. */
+  function omUrl(points, startDate, endDate, model) {
+    return API + '?latitude=' + points.map(function (p) { return p.lat.toFixed(4); }).join(',') + '&longitude=' + points.map(function (p) { return p.lon.toFixed(4); }).join(',')
       + '&elevation=' + points.map(function (p) { return Math.round(p.ele); }).join(',') + '&daily=' + DAILY + '&hourly=' + HOURLY
-      + '&timezone=Europe%2FParis&wind_speed_unit=kmh&start_date=' + startDate + '&end_date=' + endDate;
-    return fetch(q).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (j) { return Array.isArray(j) ? j : [j]; });
+      + '&timezone=' + encodeURIComponent((window.TREK && window.TREK.timezone) || 'auto') + '&wind_speed_unit=kmh&start_date=' + startDate + '&end_date=' + endDate + (model ? '&models=' + model : '');
+  }
+  function getJson(u) { return fetch(u).then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); }).then(function (j) { return Array.isArray(j) ? j : [j]; }); }
+  function fillNulls(primary, fallback) {
+    primary.forEach(function (loc, k) {
+      var fb = fallback[k]; if (!fb) return;
+      ['daily', 'hourly'].forEach(function (grp) {
+        Object.keys(loc[grp]).forEach(function (key) {
+          if (key === 'time' || !fb[grp][key]) return;
+          loc[grp][key] = loc[grp][key].map(function (v, i) { return v == null ? fb[grp][key][i] : v; });
+        });
+      });
+    });
+    return primary;
+  }
+  function fetchForecast(points, startDate, endDate) {
+    var model = window.TREK && window.TREK.weatherModel;
+    if (!model || model === 'best_match') return getJson(omUrl(points, startDate, endDate, null));
+    return Promise.all([getJson(omUrl(points, startDate, endDate, model)), getJson(omUrl(points, startDate, endDate, null))])
+      .then(function (r) { return fillNulls(r[0], r[1]); });
   }
   function hours(loc, date) { var out = []; loc.hourly.time.forEach(function (t, i) { if (t.indexOf(date) === 0) out.push({ h: +t.slice(11, 13), i: i }); }); return out; }
   function hv(loc, key, i) { var v = loc.hourly[key]; return v ? v[i] : null; }
@@ -462,7 +488,7 @@
     var ws = warnings(L, day, N, Hh, iN, iH, card);
     if (ws.length) html += '<div>' + ws.map(function (x) { return '<span class="wxwarn ' + x[1] + '">' + L.w[x[0]] + x[2] + '</span>'; }).join('') + '</div>';
     var age = Math.round((Date.now() - meta.t) / 60000), ageTxt = age < 60 ? age + ' min' : Math.round(age / 60) + ' h';
-    html += '<div class="wxmeta"><span class="wxfresh' + (age >= 360 ? ' old' : '') + '">' + L.fetched + ' ' + meta.when + ' (' + ageTxt + ' ' + L.ago + (age >= 360 ? ', ' + L.stale : '') + (meta.stale ? ', ' + L.offline : '') + ')</span> <button type="button" class="wxbtn" data-wx="refresh">' + L.refresh + '</button> <button type="button" class="wxbtn" data-wx="hourly">' + L.hourly + ' ▾</button></div>';
+    html += '<div class="wxmeta"><span class="wxfresh' + (age >= 360 ? ' old' : '') + '">' + L.fetched + (window.TREK && window.TREK.weatherModelLabel ? ' · ' + window.TREK.weatherModelLabel : '') + ' ' + meta.when + ' (' + ageTxt + ' ' + L.ago + (age >= 360 ? ', ' + L.stale : '') + (meta.stale ? ', ' + L.offline : '') + ')</span> <button type="button" class="wxbtn" data-wx="refresh">' + L.refresh + '</button> <button type="button" class="wxbtn" data-wx="hourly">' + L.hourly + ' ▾</button></div>';
     html += '<div class="wxhour" hidden><canvas></canvas><div class="wxread"></div></div>';
     el.innerHTML = html;
     var hourBox = el.querySelector('.wxhour'), canvas = hourBox.querySelector('canvas'), btn = el.querySelector('[data-wx="hourly"]');
@@ -477,9 +503,9 @@
   /* ---- snapshot: one position fix, applied to the plan ---- */
   var ctx = { data: null, route: null, days: null, locs: null, index: null, meta: null, cards: [] };
   function cardsFor(n) { return ctx.cards.filter(function (c) { return +c.getAttribute('data-day') === n; }); }
-  function setDone(n, done) { var d = lsGet('gr52-done', {}); if (done) d[n] = 1; else delete d[n]; lsSet('gr52-done', d); applyDone(); }
+  function setDone(n, done) { var d = lsGet(((window.TREK && window.TREK.slug) || 'trek') + '-done', {}); if (done) d[n] = 1; else delete d[n]; lsSet(((window.TREK && window.TREK.slug) || 'trek') + '-done', d); applyDone(); }
   function applyDone() {
-    var d = lsGet('gr52-done', {});
+    var d = lsGet(((window.TREK && window.TREK.slug) || 'trek') + '-done', {});
     ctx.cards.forEach(function (c) {
       var n = +c.getAttribute('data-day'), lang = c.closest('[lang]').getAttribute('lang'), L = T[lang].snap, isDone = !!d[n];
       c.classList.toggle('done', isDone);
@@ -493,7 +519,7 @@
   function applySnapshot(pos) {
     var me = { lat: pos.coords.latitude, lon: pos.coords.longitude }, near = window.gr52Map.nearest(me), now = Date.now();
     var app = window.gr52Map.visibleApp(); if (app) { app.showPosition(me.lat, me.lon, pos.coords.accuracy); }
-    var snaps = lsGet('gr52-snaps', []); snaps.push({ t: now, lat: me.lat, lon: me.lon, d: near.pt.d, off: near.dist }); if (snaps.length > 50) snaps = snaps.slice(-50); lsSet('gr52-snaps', snaps);
+    var snaps = lsGet(((window.TREK && window.TREK.slug) || 'trek') + '-snaps', []); snaps.push({ t: now, lat: me.lat, lon: me.lon, d: near.pt.d, off: near.dist }); if (snaps.length > 50) snaps = snaps.slice(-50); lsSet(((window.TREK && window.TREK.slug) || 'trek') + '-snaps', snaps);
     document.querySelectorAll('.snapstatus').forEach(function (s) {
       var lang = s.closest('[lang]').getAttribute('lang'), L = T[lang].snap, day = null, text;
       if (near.dist > 20000) { s.textContent = L.far.replace('{km}', Math.round(near.dist / 1000)); return; }
@@ -508,7 +534,7 @@
       var hrsLeft = left / pace + (measured ? asc / 600 : 0), eta = new Date(now + hrsLeft * 3600e3);
       var N = ctx.locs && ctx.index[day.n] ? ctx.locs[ctx.index[day.n].night] : null, dateStr = card ? card.getAttribute('data-date') : null, iN = N && dateStr ? N.daily.time.indexOf(dateStr) : -1;
       var ss = iN >= 0 ? N.daily.sunset[iN].slice(11) : null;
-      text = L.taken + (pos.manual ? ' (' + L.manual + ')' : '') + ' ' + fmtHM(new Date(now)) + ' · ' + L.at.replace('{km}', (near.pt.d / 1000).toFixed(1)) + (near.dist > 150 ? ' (' + L.off + ' ' + Math.round(near.dist) + ' m)' : '') + ' · D' + day.n + ': ' + (walked / 1000).toFixed(1) + ' km ' + L.walked + ' · ' + (left / 1000).toFixed(1) + ' km ' + L.left + ' ' + day.night.name + ' · ' + L.ascent + ' +' + Math.round(asc) + ' m · ' + (measured ? L.pace + ' ' + (pace / 1000).toFixed(1) + ' km/h (' + L.measured + ') · ' : '') + L.eta + ' ' + fmtHM(eta) + (measured ? '' : ' (' + L.planned + ')') + (ss ? ' · ' + L.sunset + ' ' + ss : '') + (eta.getHours() < 19 && day.n >= 2 && day.n <= 4 ? ' · ' + L.tent : '');
+      text = L.taken + (pos.manual ? ' (' + L.manual + ')' : '') + ' ' + fmtHM(new Date(now)) + ' · ' + L.at.replace('{km}', (near.pt.d / 1000).toFixed(1)) + (near.dist > 150 ? ' (' + L.off + ' ' + Math.round(near.dist) + ' m)' : '') + ' · D' + day.n + ': ' + (walked / 1000).toFixed(1) + ' km ' + L.walked + ' · ' + (left / 1000).toFixed(1) + ' km ' + L.left + ' ' + day.night.name + ' · ' + L.ascent + ' +' + Math.round(asc) + ' m · ' + (measured ? L.pace + ' ' + (pace / 1000).toFixed(1) + ' km/h (' + L.measured + ') · ' : '') + L.eta + ' ' + fmtHM(eta) + (measured ? '' : ' (' + L.planned + ')') + (ss ? ' · ' + L.sunset + ' ' + ss : '') + (window.TREK && window.TREK.tentWindow && eta.getHours() < parseInt(window.TREK.tentWindow, 10) ? ' · ' + L.tent.replace('19:00', window.TREK.tentWindow) : '');
       s.textContent = text;
       if (card) { var box = card.querySelector('.snapbox') || document.createElement('div'); box.className = 'snapbox'; box.textContent = text; if (!box.parentNode) card.querySelector('.wx').insertAdjacentElement('beforebegin', box); }
     });
@@ -570,11 +596,11 @@
       });
     }
     function load() {
-      var cached = lsGet('gr52-wx', null);
+      var cached = lsGet(((window.TREK && window.TREK.slug) || 'trek') + '-wx', null);
       if (startDate > endDate) { els.forEach(function (el) { el.innerHTML = '<span class="wxmeta">' + T[el.closest('[lang]').getAttribute('lang')].range + '</span>'; }); return; }
       fetchForecast(points, startDate, endDate).then(function (locs) {
         var t = Date.now(), when = fmtHM(new Date(t)) + ' ' + new Date(t).toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
-        lsSet('gr52-wx', { t: t, when: when, locs: locs }); paint(locs, { t: t, when: when });
+        lsSet(((window.TREK && window.TREK.slug) || 'trek') + '-wx', { t: t, when: when, locs: locs }); paint(locs, { t: t, when: when });
       }).catch(function () {
         if (cached) paint(cached.locs, { t: cached.t, when: cached.when, stale: true });
         else els.forEach(function (el) { el.innerHTML = '<span class="wxmeta">' + T[el.closest('[lang]').getAttribute('lang')].err + '</span>'; });

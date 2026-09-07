@@ -7,6 +7,12 @@ and transport, in English and Hebrew.
 Live at [gr52.yarden-zamir.com](https://gr52.yarden-zamir.com). The GPX for OsmAnd is at
 [/GR52_all-in-one.gpx](https://gr52.yarden-zamir.com/GR52_all-in-one.gpx).
 
+## Built on the template
+
+Since 7 September 2026 this repo uses [trek-site-template](https://github.com/Yarden-zamir/trek-site-template):
+`trek.json` holds the config, `tools/` the data scripts, `src/build.py` the build. Weather uses
+Météo-France's AROME/ARPEGE through Open-Meteo for the first four days and the default blend beyond.
+
 ## Layout
 
 - `src/`: page sources. `head.html` (styles), `body.html` (content, both languages),

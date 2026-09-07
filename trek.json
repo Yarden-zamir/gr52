@@ -1,0 +1,124 @@
+{
+  "slug": "gr52",
+  "name": "GR52 Bivouac Dossier",
+  "shortName": "GR52",
+  "description": "Seven-day bivouac plan for the GR52 from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026.",
+  "hostname": "gr52.yarden-zamir.com",
+  "gpx": "site/GR52_all-in-one.gpx",
+  "timezone": "Europe/Paris",
+  "plannedStart": 8,
+  "tentWindow": "19:00",
+  "languages": [
+    "en",
+    "he"
+  ],
+  "elevationDataset": "eudem25m",
+  "places": {
+    "Saint-Dalmas-Valdeblore": "NIGHT 0",
+    "Saint-Dalmas": "NIGHT 0",
+    "La Colmiane": "VIA FERRATA start",
+    "Lac Petit": "Lac Petit",
+    "Col du Barn": "Col du Barn",
+    "Le Boréon": "NIGHT 1",
+    "Refuge de la Cougourde": "REFUGE · Cougourde",
+    "Lac de Trécolpas": "Trécolpas",
+    "Trécolpas": "Trécolpas",
+    "Pas des Ladres": "ROUTE 2 of 4",
+    "Madone de Fenestre": "NIGHT 2 ·",
+    "Lac de Fenestre": "NIGHT 2 option B",
+    "Pas du Mont Colomb": "PASS · Pas du Mont Colomb",
+    "Refuge de Nice": "NIGHT 3",
+    "Lac de la Fous": "NIGHT 3",
+    "Baisse du Basto": "Baisse du Basto",
+    "Refuge des Merveilles": "NIGHT 4",
+    "Vallée des Merveilles": "NIGHT 4",
+    "Pas du Diable": "PASS · Pas du Diable",
+    "Baisse de Saint-Véran": "Baisse de Saint-Veran",
+    "Camp d'Argent": "NIGHT 5",
+    "Col de Turini": "ESCAPE · Col de Turini",
+    "Sospel": "NIGHT 6",
+    "Col du Berceau": "Col du Berceau",
+    "Menton": "FINISH",
+    "Mont Bégo": "Mont Bégo",
+    "Cime du Diable": "Cime du Diable",
+    "Mont Colomb": "Mont Colomb",
+    "Cime du Gélas": "Gélas",
+    "Baus de la Frema": "VIA FERRATA start",
+    "Salèse valley": "ROUTE 1 of 4",
+    "עמק Salèse": "ROUTE 1 of 4",
+    "Authion ridge": "ROUTE 3 of 4"
+  },
+  "waypoints": [],
+  "route": {
+    "osm_relations": [
+      18307045,
+      18872944,
+      18307046,
+      18307047
+    ],
+    "start": [
+      44.0683,
+      7.2007
+    ]
+  },
+  "sectionMaps": [
+    {
+      "key": "overview",
+      "bbox": [
+        43.76,
+        44.17,
+        7.15,
+        7.56
+      ],
+      "zoom": 11,
+      "title": "GR52 overview, Saint-Dalmas-Valdeblore to Menton"
+    },
+    {
+      "key": "north",
+      "bbox": [
+        44.06,
+        44.16,
+        7.17,
+        7.4
+      ],
+      "zoom": 13,
+      "title": "Days 1–3"
+    },
+    {
+      "key": "merv",
+      "bbox": [
+        44.0,
+        44.11,
+        7.34,
+        7.48
+      ],
+      "zoom": 13,
+      "title": "Days 3–5"
+    },
+    {
+      "key": "authion",
+      "bbox": [
+        43.86,
+        44.03,
+        7.36,
+        7.49
+      ],
+      "zoom": 13,
+      "title": "Days 5–6"
+    },
+    {
+      "key": "menton",
+      "bbox": [
+        43.76,
+        43.89,
+        7.42,
+        7.54
+      ],
+      "zoom": 13,
+      "title": "Day 7"
+    }
+  ],
+  "weatherModel": "meteofrance_seamless",
+  "weatherModelLabel": "Météo-France AROME/ARPEGE, blend beyond 4 days",
+  "gpxDescription": "Route geometry from OpenStreetMap relation 3315112 (Traversée du Mercantour), stages in walking order. Map data (c) OpenStreetMap contributors, ODbL."
+}
