@@ -134,5 +134,6 @@
       "toKm": 47,
       "name": "Basto boulder fields"
     }
-  ]
+  ],
+  "heatLimit": 32
 }

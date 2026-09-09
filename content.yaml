@@ -1,0 +1,595 @@
+en:
+  eyebrow: GR52 · Mercantour · 12 – 18 September 2026
+  title: GR52 Bivouac Dossier
+  lede: Yarden and Ayelet land in Nice on Friday 11 September, sleep in Saint-Dalmas, walk seven days to Menton with a tent, and take the train back to Nice. Their stage split, with the technical options named.
+  facts:
+  - value: ≈95 km
+    label: Saint-Dalmas → Menton
+  - value: ≈6,200 m
+    label: total ascent
+  - value: ≈7,500 m
+    label: total descent
+  - value: 2,693 m
+    label: high point, Baisse du Basto
+  - value: 7 days
+    label: Sat 12 → Fri 18 Sep
+  - value: 3 L
+    label: water to carry on two dry days
+  plan_title: The plan
+  plan_intro: Yarden and Ayelet's split, which is the official FFRandonnée staging. Times are guidebook times plus 20 %. In the park core the tent may only stand from 19:00 to 09:00 and sunset is about 19:45, so arrive by 18:00 and cook first. The GPX layers in your Downloads folder match these nights.
+  snapshot_hint: 'One position fix, no tracking: marks finished days done and fills in today''s distance, ascent left and arrival estimate. Long-press to pick your position on the map instead. Tap a day title to see it on the map.'
+  days:
+  - n: 0
+    date: '2026-09-11'
+    label: FRI 11 SEP
+    title: Land in Nice 09:45 → a few hours in town → bus 90 → Saint-Dalmas
+    stats:
+    - bus 90 leaves 16:40, ≈2 h
+    - hostel check-in closes 19:00
+    text:
+    - '<b>The tight bit.</b> Bus 90 runs Nice to La Bolline three times a day on weekdays, at 08:10, 16:40 and 18:40 from Les Arboras, passing Grand Arénas a few minutes later. The 16:40 arrives around 18:40; the 18:40 arrives after check-in closes. Take the 16:40, be at Grand Arénas by 16:15, and phone the hostel on +33 4 22 49 01 06 in the morning to say you arrive about 18:45. Booked: twin room at HI hostel "Le Chalet", breakfast included, restaurant on site for dinner, check-out by 10:00.'
+    - '<b>Nice, 10:30 to 16:00.</b> Tram 2 from the airport to Grand Arénas is one stop, so leave the packs in a locker there or carry them. Buy four days of food and a gas cartridge, which cannot fly with you, at the Decathlon or a supermarket near Grand Arénas. Then tram into the old town: Cours Saleya market for lunch, the Castle Hill viewpoint, the Promenade. Be back on tram 2 by 15:45.'
+    hours: 2
+  - n: 1
+    date: '2026-09-12'
+    label: SAT 12 SEP
+    title: Saint-Dalmas → Col de Veillos → Col du Barn → Salèse valley → Le Boréon
+    stats:
+    - ≈18 km
+    - +1,350 / −1,150 m
+    - 9 h official, plan 10–11
+    - tent by the lake at Le Boréon, ≈1,500 m
+    text:
+    - 'The longest day, straight after travel. Breakfast at 07:00, walk by 08:00, and you arrive around 18:30. Water at a spring on the way up and at Lac Petit; nothing on the col. Col du Barn (2,452 m) is the park boundary; the trail then swings through the Salèse valley on the line restored after Storm Alex. Le Boréon is outside the core, so no 19:00 rule: the lake is beside the road, and one report paid €10 to pitch at the horse ranch. <b>Dinner out 1:</b> the hotel-restaurant at Le Boréon. <b>If you are behind schedule</b> at Lac Petit by 14:00, sleep there and finish the stage in the morning.'
+    hours: 11
+  - n: 2
+    date: '2026-09-13'
+    label: SUN 13 SEP
+    title: Le Boréon → Lac de Trécolpas → Pas des Ladres → Madone de Fenestre
+    stats:
+    - ≈9 km
+    - +1,000 / −600 m
+    - 5.5 h official, plan 6–7
+    - refuge bed or Lac de Fenestre, see below
+    text:
+    - 'Short and steep. Trécolpas to Pas des Ladres (2,448 m) is one of the three sections the French guides flag. <b>Camping is banned around Madone de Fenestre.</b> Two legal options: a bed at the refuge (62 places, open to 30 September, book online, dinner served), or carry on one hour to Lac de Fenestre (2,266 m) and bivouac there inside the core. The refuge bed is the comfortable choice and shortens day 3 by nothing; the lake shortens day 3 by an hour.'
+    hours: 7
+  - n: 3
+    date: '2026-09-14'
+    label: MON 14 SEP
+    title: Madone de Fenestre → Pas du Mont Colomb → Refuge de Nice
+    stats:
+    - ≈7 km
+    - +700 / −350 m
+    - 4.5 h official, plan 5–6
+    - tent by Lac de la Fous, ≈2,230 m
+    text:
+    - 'The technical day. Pas du Mont Colomb (2,548 m): scree to a narrow breach with a 2–3 m rock step, fine dry, not in rain. Boulders down to the refuge; the footbridge is gone, so a ford. Short day, so this is where Mont Colomb (2,816 m, off-trail scramble, 2–3 h) fits if the rock is dry and you have the topo.'
+    hours: 6
+  - n: 4
+    date: '2026-09-15'
+    label: TUE 15 SEP
+    title: Refuge de Nice → Baisse du Basto → Refuge des Merveilles
+    stats:
+    - ≈11 km
+    - +800 / −900 m
+    - 5–6 h
+    - tent only on the marked area behind the refuge
+    text:
+    - 'Over the high point (2,693 m) into the Vallée des Merveilles: marked trail only, rubber tips on poles, no touching engravings. Afternoon: Mont Bégo (2,872 m, +750 m, easy, sea view) or the guided engraving walk. Refuge dinner available, cash only.'
+    hours: 6
+  - n: 5
+    date: '2026-09-16'
+    label: WED 16 SEP
+    title: Merveilles → Pas du Diable → Authion ridge → Camp d'Argent
+    stats:
+    - ≈18 km
+    - +700 / −1,050 m
+    - 7–8 h
+    - gîte or tent, 1,750 m, outside the core
+    text:
+    - 'No water after the refuge until Camp d''Argent: leave with 3 L each. Option: Cime du Diable (2,685 m, +2 h) from the pass. <b>Dinner out 2:</b> L''Estive gîte, open to 1 October; ask where to pitch.'
+    hours: 8
+  - n: 6
+    date: '2026-09-17'
+    label: THU 17 SEP
+    title: Camp d'Argent → Sospel
+    stats:
+    - ≈16 km
+    - +300 / −1,700 m
+    - 5–6 h
+    - Camping Sainte-Madeleine, ≈€19
+    text:
+    - Long, steep, hot descent. Start early. Sospel has shops, a bakery and a station on the Nice–Tende line. <b>Dinner out 3:</b> Sospel, by the old bridge. Fill every bottle for tomorrow.
+    hours: 6
+  - n: 7
+    date: '2026-09-18'
+    label: FRI 18 SEP
+    title: Sospel → Col du Berceau → Menton → train to Nice
+    stats:
+    - ≈17 km
+    - +1,150 / −1,500 m
+    - 8–9 h
+    - trains to Nice every 20–30 min, 35 min
+    text:
+    - 'No water at all in a dry September: 3 L each. The last hour below Col du Berceau (1,090 m) is steep and loose. Then the sea, and the train back to Nice.'
+    hours: 9
+  maps_intro: This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.
+  section_maps:
+  - key: overview
+    caption: Whole route, north at top.
+  - key: north
+    caption: Days 1–3.
+  - key: merv
+    caption: Days 3–5.
+  - key: authion
+    caption: Days 5–6.
+  - key: menton
+    caption: Day 7.
+  rules_title: Rules and water
+  rules:
+  - title: Park core
+    text: '(Col du Barn to just past Pas du Diable): tent up 19:00–09:00 only, low tent, more than one hour from a road, new spot each night, stove yes, fire no, no dogs.'
+  - title: 'Merveilles zone:'
+    text: bivouac only on the marked area behind the Refuge des Merveilles. Stay on the trail. Metal pole tips need rubber caps. Wardens fine.
+  - title: 'Dry stretches:'
+    text: Merveilles → Camp d'Argent and Sospel → Menton. Nothing mapped, nothing in any report. 3 L each.
+  refuges:
+    caption: Refuges, water and where to pitch
+    columns:
+    - Place
+    - Alt.
+    - Open
+    - Tent
+    - Note
+    rows:
+    - - Saint-Dalmas-Valdeblore
+      - 1,290 m
+      - village
+      - HI hostel, booked 11 Sep
+      - bus 90, small shop, taps
+    - - Le Boréon
+      - 1,500 m
+      - hotel-restaurant
+      - 'night 1: lake or ranch, ≈€10'
+      - dinner out 1
+    - - <a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a>
+      - 2,100 m
+      - to 19 Sep
+      - Trécolpas, 30 min
+      - tap, showers
+    - - <a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a>
+      - 1,903 m
+      - to 30 Sep
+      - 'night 2: refuge bed, or Lac de Fenestre 1 h above'
+      - tap, dinner, road
+    - - <a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a>
+      - 2,232 m
+      - to end Sep
+      - by the lake
+      - tap; footbridge gone, ford
+    - - <a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a>
+      - 2,130 m
+      - to end Oct
+      - marked area only
+      - tap, cash only, guided walks
+    - - <a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a>
+      - 1,750 m
+      - to 1 Oct
+      - ask
+      - dinner, tap, road to Turini
+    - - Sospel
+      - 350 m
+      - village
+      - Camping Sainte-Madeleine
+      - shops, station, fountains
+  tech_title: Technical options and via ferrata
+  tech_intro: 'On the line: Trécolpas to Pas des Ladres (steep, blocky), the Pas du Mont Colomb rock step (T3 dry), boulders below Baisse du Basto, and two long loose descents where the reports'' injuries happen. Beyond that:'
+  tech:
+    caption: Technical options and via ferrata
+    columns:
+    - Objective
+    - From
+    - What it is
+    - Time
+    rows:
+    - - <a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">Via ferrata Baus de la Frema</a>
+      - La Colmiane, bus 90 stop above Saint-Dalmas
+      - Grade D, TD variant. 40 m footbridge, overhangs, summit 2,246 m. €6 access, €21 kit, book 24 h ahead, closed in rain.
+      - 4–5 h + 1 h down
+    - - <a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 m</a>
+      - Refuge des Merveilles
+      - Cairned walk, no difficulty, +750 m.
+      - 3–4 h
+    - - <a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 m</a>
+      - Pas du Diable
+      - Steep marked path via Pas du Trem.
+      - ≈2 h
+    - - <a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 m</a>
+      - Pas du Mont Colomb
+      - Off-trail scramble, dry rock and topo needed. Needs the spare day.
+      - 2–3 h
+    - - Cime du Gélas 3,143 m
+      - Madone de Fenestre
+      - AD couloir, rockfall when dry. Skip in September.
+      - —
+    - - <a href="https://www.mercantour-roya.com/via-ferrata/">Roya via ferratas</a>
+      - Tende, La Brigue, by train from Sospel
+      - Easy to moderate, guided ≈€50. Only for a spare day. Peille's L'Escale is closed.
+      - half day
+  practical:
+  - title: September
+    items:
+    - Storms rare, unlike July and August. Valley highs 20–24 °C, 0–5 °C at the high bivouacs, frost possible.
+    - First snow on Colomb and Basto is possible from mid-September. If it falls, wait a day.
+    - Sunrise ≈07:10, sunset ≈19:45.
+    - <b>Live forecast:</b> each day card above shows the current forecast for that day's night spot and high point, from <a href="https://open-meteo.com/">Open-Meteo</a>, refreshed every time the page loads, with warnings derived for thunderstorms, rain, snow and freezing level, ridge wind, frost, heat, fog and UV. The last forecast is kept for offline reading.
+    - <b>Official sources to check the day before:</b> <a href="https://vigilance.meteofrance.fr/fr/alpes-maritimes">Météo-France vigilance, Alpes-Maritimes</a> (colour warnings for storms, rain, heat), <a href="https://meteofrance.com/meteo-montagne/mercantour">Météo-France mountain bulletin, Mercantour</a> (freezing level, wind at 2,000 and 3,000 m, storm timing), <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">park trail notices</a>.
+    - 'Trail notices (park site, 4 Sep): Boréon line reopened; fords at Cougourde and Refuge de Nice. Re-check <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">Info sentiers</a> before leaving.'
+  - title: Transport
+    items:
+    - 'Nice → Saint-Dalmas: <a href="https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/">bus 90</a>, weekdays 08:10, 16:40, 18:40 from Les Arboras via Grand Arénas, ≈2 h. Confirm on the <a href="https://www.lignesdazur.com/">Lignes d''Azur</a> app the week before.'
+    - 'Menton → Nice: trains every 20–30 min, 35 min.'
+    - 'Bail-outs: Madone de Fenestre road, Col de Turini road, Sospel station.'
+  practical_right:
+  - title: Gear
+    items:
+    - Sleeping system to 0 °C.
+    - Poles with rubber tips.
+    - 3 L capacity each plus a filter.
+    - Four days of food from Nice. Cash for refuges.
+    - 'Offline maps: OsmAnd with the GPX, plus IGN 3741 OT and 3841 OT.'
+    - 'Hang food: foxes and boar raid tents by the lakes.'
+    - Headtorch; you will cook at dusk.
+    - 'Emergency: 112.'
+  extra:
+  - title: Car rental at the end
+    intro: Verified on 4 September 2026 from the agencies' own pages. Menton has two confirmed agencies near the station. They close at 18:00 and you arrive Friday around 17:00–18:00 after the descent, so plan on either a Saturday morning pickup in Menton or the airport the same evening.
+    table:
+      caption: Car rental near Menton station
+      columns:
+      - Agency
+      - Address, from station
+      - Hours
+      - Phone
+      - Price
+      - One-way
+      - Notes
+      rows:
+      - - <a href="https://www.ada.fr/location-voiture-menton">Ada</a>
+        - 24 Av. des Alliés, 100 m
+        - Mon–Fri 08:30–12:00, 15:00–18:00; Sat 08:30–12:00, 16:00–18:00; Sun closed
+        - 04 92 10 16 07
+        - low
+        - rarely
+        - Closest. Cars and vans, small fleet, station shuttle on request.
+      - - <a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a>
+        - 4 Av. Cochrane, 300 m
+        - Mon–Sat 08:30–12:00, 14:00–18:00; Sun closed
+        - 04 93 35 18 49
+        - low–mid
+        - 'yes'
+        - Only Menton agency confirming one-way rentals.
+      - - '<a href="https://www.nice.aeroport.fr/en/services/car-rental">Nice airport</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a>'
+        - train Menton → Nice-Ville 35 min, tram 2 to the airport
+        - Sixt 07:30–24:00 daily; T1 desks to 22:00, then the Car Rental Center at T2
+        - —
+        - Sixt ≈€50/day in September
+        - 'yes'
+        - Same-evening pickup, widest choice, cheapest one-way.
+    notes:
+    - <b>Listed online but not operating:</b> Europcar, 9 Av. Thiers, shows "temporarily closed" since 2021 and its booking page is gone. Avis "Gare de Menton" shows closed every day of the week on avis.fr. Ignore both in comparison sites. Prices are September 2026 snapshots from <a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; book about a month ahead. Keep licence and the booking card in the pack.
+  links:
+    reports:
+    - <a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 days wild camping in August. Closest to your plan.
+    - <a href="https://www.altituderando.com/GR52-GR52A-Boucle-Menton-Sospel-Vesubie-Boreon-Vallee-des-Merveilles-Col-de">Altitude Rando</a>, 15–22 September, campsites and refuges. Same dates as yours.
+    - <a href="https://www.randonner-leger.org/forum/viewtopic.php?id=22334">Randonner Léger 2025</a> and <a href="https://www.randonner-leger.org/forum/viewtopic.php?id=21181">Larche to Menton</a>, ultralight bivouac, French.
+    - <a href="https://grfive.com/?page_id=540">GR Five</a>, best description of the Sospel descent.
+    - <a href="https://crossingthealpswithease.wordpress.com/2022-auron-to-menton-gr5-and-gr52/">Crossing the Alps with Ease</a>, refuges, 2022.
+    - <a href="https://howlingmist.blogspot.com/2017/11/hiking-gr52-and-gr52a.html">Howlingmist</a>, late October, the cold end of the season.
+    - <a href="https://www.wikiloc.com/hiking-trails/gr52-de-menton-a-saint-dalmas-valdeblore-14352481">Wikiloc</a>, 5-day bivouac, reversed.
+    - '<a href="https://fastestknowntime.com/route/grande-traversee-des-alpes-gr52-and-gr5-france">FKT, Menton to Lake Geneva via GR52 and GR5</a>: 12 d 20 h, September 2025.'
+    reports_title: Trip reports
+    official:
+    - '<a href="https://www.mongr.fr/trouver-prochaine-randonnee/suggestion/gr-52-de-saint-dalmas-valdeblore-a-menton">Mon GR</a>, <a href="https://topo-de-rando.com/gr52/">Topo de Rando</a>, <a href="https://www.gr-infos.com/en/gr52.htm">GR Infos</a>: stages.'
+    - <a href="https://www.mercantour-parcnational.fr/fr/le-parc-national-du-mercantour/la-reglementation/foire-aux-questions">Park rules FAQ</a>, <a href="https://aida.ineris.fr/consultation_document/42556">bivouac order</a>, <a href="https://www.ffrandonnee.fr/s-informer/actualites/dans-le-mercantour-la-vallee-des-merveilles-est-strictement-surveillee">Merveilles zone</a>.
+    - <a href="https://www.alltrails.com/lists/gr52-la-vallee-des-merveilles">AllTrails stage list</a>, recent reviews.
+    - <a href="https://www.colmiane.com/activites-ete-sur-la-colmiane/via-ferrata.html">La Colmiane via ferrata booking</a>, <a href="https://www.sortir06.fr/les-via-ferrata-alpes-maritimes/">all via ferratas in the 06</a>.
+    official_title: Official
+he:
+  eyebrow: GR52 · מרקנטור · 12–18 בספטמבר 2026
+  title: GR52 עם אוהל
+  lede: ירדן ואיילת נוחתים בניס ביום שישי 11 בספטמבר, ישנים ב-Saint-Dalmas, הולכים שבעה ימים עד Menton עם אוהל, וחוזרים ברכבת לניס. החלוקה שלהם לימים, עם האופציות הטכניות.
+  facts:
+  - value: ≈95 ק"מ
+    label: Saint-Dalmas עד Menton
+  - value: ≈6,200 מ'
+    label: עלייה מצטברת
+  - value: ≈7,500 מ'
+    label: ירידה מצטברת
+  - value: 2,693 מ'
+    label: הנקודה הגבוהה, Baisse du Basto
+  - value: 7 ימים
+    label: שבת 12 עד שישי 18 בספטמבר
+  - value: 3 ליטר
+    label: מים לסחוב בשני ימים יבשים
+  plan_title: התוכנית
+  plan_intro: החלוקה של ירדן ואיילת, שהיא בדיוק השלבים הרשמיים של FFRandonnée. הזמנים הם זמני המדריך פלוס 20 אחוז. בלב הפארק מותר להקים אוהל רק בין 19:00 ל-09:00 והשמש שוקעת בסביבות 19:45, אז מגיעים עד 18:00 ומבשלים לפני שמקימים. שכבות ה-GPX בתיקיית ההורדות תואמות ללילות האלה.
+  snapshot_hint: 'קריאת מיקום אחת, בלי מעקב: מסמנת ימים שהסתיימו כהושלמו וממלאת את המרחק, העלייה שנותרה והערכת ההגעה להיום. לחיצה ארוכה בוחרת את המיקום במפה במקום GPS. לחצו על כותרת יום כדי לראות אותו במפה.'
+  days:
+  - n: 0
+    date: '2026-09-11'
+    label: שישי 11.9
+    title: נחיתה בניס 09:45, כמה שעות בעיר, אוטובוס 90 ל-Saint-Dalmas
+    stats:
+    - אוטובוס 90 יוצא 16:40, כשעתיים
+    - צ'ק-אין באכסניה נסגר ב-19:00
+    text:
+    - '<b>הנקודה הצפופה.</b> קו 90 מניס ל-La Bolline נוסע שלוש פעמים ביום בימי חול: 08:10, 16:40 ו-18:40 מ-Les Arboras, ועובר ב-Grand Arénas כמה דקות אחר כך. האוטובוס של 16:40 מגיע בסביבות 18:40; זה של 18:40 מגיע אחרי שהצ''ק-אין נסגר. קחו את ה-16:40, תהיו ב-Grand Arénas עד 16:15, ותתקשרו לאכסניה בבוקר (06 01 49 22 4 33+) להגיד שאתם מגיעים בערך ב-18:45. מה שהוזמן: חדר עם שתי מיטות באכסניית HI "Le Chalet", ארוחת בוקר כלולה, יש מסעדה במקום לארוחת ערב, צ''ק-אאוט עד 10:00.'
+    - '<b>ניס, 10:30 עד 16:00.</b> רכבת קלה קו 2 מהשדה ל-Grand Arénas זו תחנה אחת; אפשר להשאיר תיקים בלוקר שם או לסחוב. קונים אוכל לארבעה ימים ומיכל גז (אי אפשר לטוס איתו) בדקתלון או בסופר ליד Grand Arénas. אחר כך ברכבת הקלה לעיר העתיקה: שוק Cours Saleya לצהריים, נקודת התצפית בגבעת הטירה, הטיילת. חוזרים לרכבת הקלה עד 15:45.'
+  - n: 1
+    date: '2026-09-12'
+    label: שבת 12.9
+    title: Saint-Dalmas, דרך Col de Veillos ו-Col du Barn ועמק Salèse, עד Le Boréon
+    stats:
+    - ≈18 ק"מ
+    - +1,350 / −1,150 מ'
+    - 9 שעות רשמי, לתכנן 10–11
+    - אוהל ליד האגם ב-Le Boréon, ≈1,500 מ'
+    text:
+    - 'היום הארוך ביותר, ישר אחרי הנסיעה. ארוחת בוקר ב-07:00, יוצאים עד 08:00, מגיעים בסביבות 18:30. מים במעיין בדרך למעלה וב-Lac Petit; אין מים במעבר. Col du Barn (2,452 מ'') הוא גבול הפארק; משם השביל עובר דרך עמק Salèse בתוואי ששוקם אחרי הסופה Alex. Le Boréon מחוץ ללב הפארק, אז אין כלל 19:00: האגם צמוד לכביש, ודוח אחד שילם €10 להקים בחוות הסוסים. <b>ארוחת ערב בחוץ 1:</b> המסעדה של המלון ב-Le Boréon. <b>אם אתם בפיגור</b> ומגיעים ל-Lac Petit אחרי 14:00, ישנים שם ומסיימים את השלב בבוקר.'
+    hours: 9
+  - n: 2
+    date: '2026-09-13'
+    label: ראשון 13.9
+    title: Le Boréon, דרך Lac de Trécolpas ו-Pas des Ladres, עד Madone de Fenestre
+    stats:
+    - ≈9 ק"מ
+    - +1,000 / −600 מ'
+    - 5.5 שעות רשמי, לתכנן 6–7
+    - מיטה בבקתה או Lac de Fenestre, ראו למטה
+    text:
+    - 'קצר ותלול. מ-Trécolpas ל-Pas des Ladres (2,448 מ'') זה אחד משלושת הקטעים שהמדריכים הצרפתיים מסמנים כקשים. <b>אסור לחנות סביב Madone de Fenestre.</b> שתי אפשרויות חוקיות: מיטה בבקתה (62 מקומות, פתוח עד 30.9, הזמנה אונליין, יש ארוחת ערב), או להמשיך עוד שעה ל-Lac de Fenestre (2,266 מ'') ולישון שם באוהל בתוך לב הפארק. המיטה היא הבחירה הנוחה; האגם מקצר את יום 3 בשעה.'
+    hours: 5.5
+  - n: 3
+    date: '2026-09-14'
+    label: שני 14.9
+    title: Madone de Fenestre, מעל Pas du Mont Colomb, עד Refuge de Nice
+    stats:
+    - ≈7 ק"מ
+    - +700 / −350 מ'
+    - 4.5 שעות רשמי, לתכנן 5–6
+    - אוהל ליד Lac de la Fous, ≈2,230 מ'
+    text:
+    - 'היום הטכני. Pas du Mont Colomb (2,548 מ''): גרוס עד פרצה צרה עם מדרגת סלע של 2–3 מטר, בסדר ביבש, לא בגשם. בולדרים בירידה לבקתה; הגשרון נהרס אז חוצים בנחל. יום קצר, ולכן כאן נכנס Mont Colomb (2,816 מ'', סקרמבל מחוץ לשביל, 2–3 שעות) אם הסלע יבש ויש לכם טופו.'
+    hours: 4.5
+  - n: 4
+    date: '2026-09-15'
+    label: שלישי 15.9
+    title: Refuge de Nice, מעל Baisse du Basto, עד Refuge des Merveilles
+    stats:
+    - ≈11 ק"מ
+    - +800 / −900 מ'
+    - 5–6 שעות
+    - אוהל רק בשטח המסומן מאחורי הבקתה
+    text:
+    - 'מעל הנקודה הגבוהה (2,693 מ'') ויורדים לעמק Merveilles: רק על השביל המסומן, גומיות על המקלות, לא נוגעים בחריטות. אחר הצהריים: Mont Bégo (2,872 מ'', +750 מ'', קל, נוף לים) או סיור מודרך בחריטות. יש ארוחת ערב בבקתה, מזומן בלבד.'
+    hours: 6
+  - n: 5
+    date: '2026-09-16'
+    label: רביעי 16.9
+    title: Merveilles, דרך Pas du Diable ורכס Authion, עד Camp d'Argent
+    stats:
+    - ≈18 ק"מ
+    - +700 / −1,050 מ'
+    - 7–8 שעות
+    - בקתה או אוהל, 1,750 מ', מחוץ ללב הפארק
+    text:
+    - 'אין מים מהבקתה ועד Camp d''Argent: יוצאים עם 3 ליטר לאדם. אופציה: Cime du Diable (2,685 מ'', שעתיים נוספות) מהמעבר. <b>ארוחת ערב בחוץ 2:</b> הבקתה L''Estive, פתוחה עד 1.10; שאלו איפה מותר להקים.'
+    hours: 8
+  - n: 6
+    date: '2026-09-17'
+    label: חמישי 17.9
+    title: Camp d'Argent עד Sospel
+    stats:
+    - ≈16 ק"מ
+    - +300 / −1,700 מ'
+    - 5–6 שעות
+    - Camping Sainte-Madeleine, ≈€19
+    text:
+    - ירידה ארוכה, תלולה וחמה. לצאת מוקדם. ב-Sospel יש חנויות, מאפייה ותחנת רכבת על הקו ניס–Tende. <b>ארוחת ערב בחוץ 3:</b> Sospel, ליד הגשר העתיק. למלא כל בקבוק למחר.
+    hours: 6
+  - n: 7
+    date: '2026-09-18'
+    label: שישי 18.9
+    title: Sospel, מעל Col du Berceau, עד Menton, ורכבת לניס
+    stats:
+    - ≈17 ק"מ
+    - +1,150 / −1,500 מ'
+    - 8–9 שעות
+    - רכבת לניס כל 20–30 דקות, 35 דקות
+    text:
+    - 'בספטמבר יבש אין מים בכלל: 3 ליטר לאדם. השעה האחרונה מתחת ל-Col du Berceau (1,090 מ'') תלולה ורופפת. ואז הים, והרכבת חזרה לניס.'
+    hours: 9
+  maps_intro: המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.
+  section_maps:
+  - key: overview
+    caption: כל המסלול, צפון למעלה.
+  - key: north
+    caption: ימים 1–3.
+  - key: merv
+    caption: ימים 3–5.
+  - key: authion
+    caption: ימים 5–6.
+  - key: menton
+    caption: יום 7.
+  rules_title: חוקים ומים
+  rules:
+  - title: לב הפארק
+    text: '(מ-Col du Barn עד קצת אחרי Pas du Diable): אוהל רק בין 19:00 ל-09:00, אוהל נמוך, יותר משעת הליכה מכביש, מקום חדש בכל לילה, גזייה כן, מדורה לא, כלבים אסורים.'
+  - title: 'אזור Merveilles:'
+    text: לינה רק בשטח המסומן מאחורי Refuge des Merveilles. נשארים על השביל. קצה מתכת של מקל חייב גומייה. הפקחים קונסים.
+  - title: 'קטעים יבשים:'
+    text: מ-Merveilles עד Camp d'Argent, ומ-Sospel עד Menton. אין מים במפה ואין מים באף דוח. 3 ליטר לאדם.
+  refuges:
+    caption: בקתות, מים ואיפה מקימים
+    columns:
+    - מקום
+    - גובה
+    - פתוח
+    - אוהל
+    - הערה
+    rows:
+    - - Saint-Dalmas-Valdeblore
+      - 1,290 מ'
+      - כפר
+      - אכסניית HI, הוזמן ל-11.9
+      - אוטובוס 90, חנות קטנה, ברזים
+    - - Le Boréon
+      - 1,500 מ'
+      - מלון-מסעדה
+      - 'לילה 1: ליד האגם או בחווה, ≈€10'
+      - ארוחת ערב בחוץ 1
+    - - <a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a>
+      - 2,100 מ'
+      - עד 19.9
+      - Trécolpas, 30 דק'
+      - ברז, מקלחות
+    - - <a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a>
+      - 1,903 מ'
+      - עד 30.9
+      - 'לילה 2: מיטה בבקתה, או Lac de Fenestre שעה למעלה'
+      - ברז, ארוחת ערב, כביש
+    - - <a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a>
+      - 2,232 מ'
+      - עד סוף ספטמבר
+      - ליד האגם
+      - ברז; הגשרון נהרס, חוצים בנחל
+    - - <a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a>
+      - 2,130 מ'
+      - עד סוף אוקטובר
+      - רק בשטח המסומן
+      - ברז, מזומן בלבד, סיורים מודרכים
+    - - <a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a>
+      - 1,750 מ'
+      - עד 1.10
+      - לשאול
+      - ארוחת ערב, ברז, כביש ל-Turini
+    - - Sospel
+      - 350 מ'
+      - כפר
+      - Camping Sainte-Madeleine
+      - חנויות, רכבת, ברזיות
+  tech_title: אופציות טכניות וויה פראטה
+  tech_intro: 'על המסלול עצמו: מ-Trécolpas ל-Pas des Ladres (תלול, בולדרים), מדרגת הסלע ב-Pas du Mont Colomb (T3 ביבש), בולדרים מתחת ל-Baisse du Basto, ושתי ירידות ארוכות ורופפות שבהן קורות הפציעות שמתוארות בדוחות. מעבר לזה:'
+  tech:
+    caption: אופציות טכניות וויה פראטה
+    columns:
+    - יעד
+    - מאיפה
+    - מה זה
+    - זמן
+    rows:
+    - - <a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">ויה פראטה Baus de la Frema</a>
+      - La Colmiane, תחנת אוטובוס 90 מעל Saint-Dalmas
+      - דרגה D, וריאנט TD. גשר תלוי של 40 מ', תקרות, פסגה ב-2,246 מ'. כניסה €6, השכרת ציוד €21, להזמין יום מראש, סגור בגשם.
+      - 4–5 שעות + שעה ירידה
+    - - <a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 מ'</a>
+      - Refuge des Merveilles
+      - הליכה עם רוג'ומים, בלי קושי, +750 מ'.
+      - 3–4 שעות
+    - - <a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 מ'</a>
+      - Pas du Diable
+      - שביל מסומן ותלול דרך Pas du Trem.
+      - ≈שעתיים
+    - - <a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 מ'</a>
+      - Pas du Mont Colomb
+      - סקרמבל מחוץ לשביל, רק בסלע יבש ועם טופו. דורש את יום הרזרבה.
+      - 2–3 שעות
+    - - Cime du Gélas 3,143 מ'
+      - Madone de Fenestre
+      - ערוץ בדרגה AD, נפילת אבנים כשאין שלג. לוותר בספטמבר.
+      - —
+    - - <a href="https://www.mercantour-roya.com/via-ferrata/">ויה פראטות של עמק Roya</a>
+      - Tende ו-La Brigue, ברכבת מ-Sospel
+      - קלות עד בינוניות, מודרך ≈€50. רק אם יש יום פנוי. L'Escale ב-Peille סגורה.
+      - חצי יום
+  practical:
+  - title: ספטמבר
+    items:
+    - סופות נדירות, בניגוד ליולי ואוגוסט. בעמקים 20–24 מעלות, בלינות הגבוהות 0–5, ייתכן כפור.
+    - שלג ראשון על Colomb ו-Basto אפשרי מאמצע ספטמבר. אם ירד, מחכים יום.
+    - זריחה ≈07:10, שקיעה ≈19:45.
+    - <b>תחזית חיה:</b> כל כרטיס יום למעלה מציג את התחזית העדכנית לנקודת הלינה ולנקודה הגבוהה של אותו יום, מ-<a href="https://open-meteo.com/">Open-Meteo</a>, מתרעננת בכל טעינה של הדף, עם אזהרות שנגזרות ממנה לסופות רעמים, גשם, שלג וגובה הקיפאון, רוח על הרכס, כפור, חום, ערפל וקרינה. התחזית האחרונה נשמרת לקריאה באופליין.
+    - <b>מקורות רשמיים לבדוק יום לפני:</b> <a href="https://vigilance.meteofrance.fr/fr/alpes-maritimes">Météo-France vigilance, Alpes-Maritimes</a> (אזהרות צבע לסופות, גשם, חום), <a href="https://meteofrance.com/meteo-montagne/mercantour">בולטין ההרים של Météo-France, Mercantour</a> (גובה קיפאון, רוח ב-2,000 ו-3,000 מ', תזמון סופות), <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">הודעות השבילים של הפארק</a>.
+    - 'הודעות שבילים (אתר הפארק, 4.9): הקטע ליד Boréon נפתח מחדש; חציות נחל ליד Cougourde ו-Refuge de Nice. לבדוק שוב ב-<a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">Info sentiers</a> לפני היציאה.'
+  - title: תחבורה
+    items:
+    - 'ניס עד Saint-Dalmas: <a href="https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/">אוטובוס 90</a>, בימי חול 08:10, 16:40, 18:40 מ-Les Arboras דרך Grand Arénas, כשעתיים. לאשר באפליקציית <a href="https://www.lignesdazur.com/">Lignes d''Azur</a> שבוע לפני.'
+    - 'Menton עד ניס: רכבת כל 20–30 דקות, 35 דקות נסיעה.'
+    - 'יציאות חירום: הכביש ל-Madone de Fenestre, הכביש ב-Col de Turini, תחנת הרכבת ב-Sospel.'
+  practical_right:
+  - title: ציוד
+    items:
+    - שק שינה ומזרן שמחזיקים עד 0 מעלות.
+    - מקלות עם גומיות.
+    - 3 ליטר קיבולת לאדם ומסנן.
+    - אוכל לארבעה ימים מניס. מזומן לבקתות.
+    - 'מפות אופליין: OsmAnd עם ה-GPX, וגם IGN 3741 OT ו-3841 OT.'
+    - 'לתלות את האוכל: שועלים וחזירי בר פושטים על אוהלים ליד האגמים.'
+    - פנס ראש; תבשלו בחושך.
+    - 'חירום: 112.'
+  extra:
+  - title: השכרת רכב בסוף
+    intro: אומת ב-4 בספטמבר 2026 מהדפים של הסוכנויות עצמן. ב-Menton יש שתי סוכנויות מאומתות ליד תחנת הרכבת. הן נסגרות ב-18:00 ואתם מגיעים ביום שישי בסביבות 17:00–18:00 אחרי הירידה, אז תכננו או איסוף בשבת בבוקר ב-Menton או שדה התעופה באותו ערב.
+    table:
+      caption: השכרת רכב ליד תחנת הרכבת של Menton
+      columns:
+      - סוכנות
+      - כתובת, מרחק מהתחנה
+      - שעות
+      - טלפון
+      - מחיר
+      - החזרה במקום אחר
+      - הערות
+      rows:
+      - - <a href="https://www.ada.fr/location-voiture-menton">Ada</a>
+        - 24 Av. des Alliés, 100 מ'
+        - ב'–ו' 08:30–12:00, 15:00–18:00; שבת 08:30–12:00, 16:00–18:00; א' סגור
+        - 04 92 10 16 07
+        - נמוך
+        - כמעט לא
+        - הכי קרוב. רכבים פרטיים ומסחריים, צי קטן, הסעה מהתחנה לפי בקשה.
+      - - <a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a>
+        - 4 Av. Cochrane, 300 מ'
+        - ב'–שבת 08:30–12:00, 14:00–18:00; א' סגור
+        - 04 93 35 18 49
+        - נמוך–בינוני
+        - כן
+        - הסוכנות היחידה ב-Menton שמאשרת החזרה במקום אחר.
+      - - '<a href="https://www.nice.aeroport.fr/en/services/car-rental">שדה התעופה ניס</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a>'
+        - רכבת מ-Menton ל-Nice-Ville 35 דקות, רכבת קלה קו 2 לשדה
+        - Sixt 07:30–24:00 כל יום; דלפקים בטרמינל 1 עד 22:00, אחר כך מרכז ההשכרה בטרמינל 2
+        - —
+        - Sixt ≈€50 ליום בספטמבר
+        - כן
+        - איסוף באותו ערב, הבחירה הרחבה ביותר, ההחזרה במקום אחר הזולה ביותר.
+    notes:
+    - <b>מופיעות באינטרנט אבל לא פעילות:</b> Europcar, 9 Av. Thiers, מסומנת "סגור זמנית" מאז 2021 ודף ההזמנה שלה נעלם. Avis "Gare de Menton" מופיעה באתר avis.fr כסגורה בכל ימות השבוע. התעלמו משתיהן באתרי השוואה. המחירים הם תמונת מצב מספטמבר 2026 מ-<a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; להזמין בערך חודש מראש. לשמור רישיון וכרטיס האשראי של ההזמנה בתיק.
+  links:
+    reports:
+    - <a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 ימים עם אוהל באוגוסט. הכי דומה לתוכנית שלכם.
+    - <a href="https://www.altituderando.com/GR52-GR52A-Boucle-Menton-Sospel-Vesubie-Boreon-Vallee-des-Merveilles-Col-de">Altitude Rando</a>, 15–22 בספטמבר, קמפינגים ובקתות. אותם תאריכים כמו שלכם.
+    - <a href="https://www.randonner-leger.org/forum/viewtopic.php?id=22334">Randonner Léger 2025</a> ו-<a href="https://www.randonner-leger.org/forum/viewtopic.php?id=21181">Larche עד Menton</a>, אולטרה-לייט עם אוהל, בצרפתית.
+    - <a href="https://grfive.com/?page_id=540">GR Five</a>, התיאור הטוב ביותר של הירידה ל-Sospel.
+    - <a href="https://crossingthealpswithease.wordpress.com/2022-auron-to-menton-gr5-and-gr52/">Crossing the Alps with Ease</a>, בקתות, 2022.
+    - <a href="https://howlingmist.blogspot.com/2017/11/hiking-gr52-and-gr52a.html">Howlingmist</a>, סוף אוקטובר, הקצה הקר של העונה.
+    - <a href="https://www.wikiloc.com/hiking-trails/gr52-de-menton-a-saint-dalmas-valdeblore-14352481">Wikiloc</a>, 5 ימים עם אוהל, בכיוון ההפוך.
+    - '<a href="https://fastestknowntime.com/route/grande-traversee-des-alpes-gr52-and-gr5-france">שיא זמן, Menton עד אגם ז''נבה דרך GR52 ו-GR5</a>: 12 ימים ו-20 שעות, ספטמבר 2025.'
+    reports_title: דוחות טיולים
+    official:
+    - '<a href="https://www.mongr.fr/trouver-prochaine-randonnee/suggestion/gr-52-de-saint-dalmas-valdeblore-a-menton">Mon GR</a>, <a href="https://topo-de-rando.com/gr52/">Topo de Rando</a>, <a href="https://www.gr-infos.com/en/gr52.htm">GR Infos</a>: שלבים.'
+    - <a href="https://www.mercantour-parcnational.fr/fr/le-parc-national-du-mercantour/la-reglementation/foire-aux-questions">שאלות ותשובות על חוקי הפארק</a>, <a href="https://aida.ineris.fr/consultation_document/42556">צו הלינה בשטח</a>, <a href="https://www.ffrandonnee.fr/s-informer/actualites/dans-le-mercantour-la-vallee-des-merveilles-est-strictement-surveillee">אזור Merveilles</a>.
+    - <a href="https://www.alltrails.com/lists/gr52-la-vallee-des-merveilles">רשימת השלבים ב-AllTrails</a>, ביקורות עדכניות.
+    - <a href="https://www.colmiane.com/activites-ete-sur-la-colmiane/via-ferrata.html">הזמנת הוויה פראטה ב-La Colmiane</a>, <a href="https://www.sortir06.fr/les-via-ferrata-alpes-maritimes/">כל הוויה פראטות במחוז</a>.
+    official_title: רשמי
