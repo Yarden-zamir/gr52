@@ -24,7 +24,7 @@ from collections import defaultdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from common import NS, hav, overpass  # noqa: E402
+from common import NS, hav, overpass, walking_line  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 T = json.loads((ROOT / "trek.json").read_text())
@@ -35,16 +35,7 @@ if not gp.exists():
 out_dir = ROOT / "research"
 out_dir.mkdir(exist_ok=True)
 g = ET.parse(gp).getroot()
-line, d, prev = [], 0.0, None
-for trk in g.findall("g:trk", ns):
-    if not trk.findtext("g:name", namespaces=ns).startswith("ROUTE"):
-        continue
-    for p in trk.iter(f"{{{NS}}}trkpt"):
-        pt = (float(p.get("lat")), float(p.get("lon")))
-        if prev:
-            d += hav(prev, pt)
-        line.append((pt[0], pt[1], d))
-        prev = pt
+line = [(p[0], p[1], p[3]) for p in walking_line(g)]  # (lat, lon, metres along the walking line)
 nights = sorted((int(w.findtext("g:name", namespaces=ns).split(" ")[1]), float(w.get("lat")), float(w.get("lon")), w.findtext("g:name", namespaces=ns))
                 for w in g.findall("g:wpt", ns) if w.findtext("g:name", namespaces=ns).startswith("NIGHT ") and "option" not in w.findtext("g:name", namespaces=ns))
 finish = [w for w in g.findall("g:wpt", ns) if w.findtext("g:name", namespaces=ns).startswith("FINISH")]

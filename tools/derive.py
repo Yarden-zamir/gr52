@@ -17,6 +17,9 @@ import sys
 import xml.etree.ElementTree as ET
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from common import walking_line  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
 tp = ROOT / "trek.json"
 T = json.loads(tp.read_text())
@@ -84,7 +87,7 @@ if force or not T.get("places"):
 # ---- section maps from the GPX
 if gp.exists() and (force or not T.get("sectionMaps")):
     g = ET.parse(gp).getroot()
-    pts = [(float(p.get("lat")), float(p.get("lon"))) for t in g.findall("g:trk", NS) if t.findtext("g:name", default="", namespaces=NS).startswith("ROUTE") for p in t.iter("{%s}trkpt" % NS["g"])]
+    pts = [(p[0], p[1]) for p in walking_line(g)]
     nights = sorted(((int(w.findtext("g:name", namespaces=NS).split(" ")[1]), float(w.get("lat")), float(w.get("lon"))) for w in g.findall("g:wpt", NS) if w.findtext("g:name", namespaces=NS).startswith("NIGHT ") and "option" not in w.findtext("g:name", namespaces=NS)))
     def bbox(ps, pad):
         la = [p[0] for p in ps]; lo = [p[1] for p in ps]
