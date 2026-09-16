@@ -17,7 +17,7 @@ en:
     label: water to carry on two dry days
   plan_title: The plan
   plan_intro: Yarden and Ayelet's split, which is the official FFRandonnée staging. Times are guidebook times plus 20 %. In the park core the tent may only stand from 19:00 to 09:00 and sunset is about 19:45, so arrive by 18:00 and cook first. The GPX layers in your Downloads folder match these nights.
-  snapshot_hint: 'One position fix, no tracking: marks finished days done and fills in today''s distance, ascent left and arrival estimate. Long-press to pick your position on the map instead. Tap a day title to see it on the map.'
+  snapshot_hint: 'The round button at the bottom left takes one position fix, no tracking: it shows you on the map and on the profile, marks finished days done and fills in today''s distance, ascent left and arrival estimate. Long-press it to pick your position on the map instead. Each day has Plan, Map and Weather tabs; tap a day title to open its map.'
   days:
   - n: 0
     date: '2026-09-11'
@@ -114,7 +114,7 @@ en:
     text:
     - 'No water at all in a dry September: 3 L each. The last hour below Col du Berceau (1,090 m) is steep and loose. Then the sea, and the train back to Nice.'
     hours: 9
-  maps_intro: This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.
+  maps_intro: This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Each day's Map tab shows its own stretch and profile; this is the whole route. Twist with two fingers or use the arrows to rotate; the compass resets north. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.
   section_maps:
   - key: overview
     caption: Whole route, north at top.
@@ -315,7 +315,7 @@ he:
     label: מים לסחוב בשני ימים יבשים
   plan_title: התוכנית
   plan_intro: החלוקה של ירדן ואיילת, שהיא בדיוק השלבים הרשמיים של FFRandonnée. הזמנים הם זמני המדריך פלוס 20 אחוז. בלב הפארק מותר להקים אוהל רק בין 19:00 ל-09:00 והשמש שוקעת בסביבות 19:45, אז מגיעים עד 18:00 ומבשלים לפני שמקימים. שכבות ה-GPX בתיקיית ההורדות תואמות ללילות האלה.
-  snapshot_hint: 'קריאת מיקום אחת, בלי מעקב: מסמנת ימים שהסתיימו כהושלמו וממלאת את המרחק, העלייה שנותרה והערכת ההגעה להיום. לחיצה ארוכה בוחרת את המיקום במפה במקום GPS. לחצו על כותרת יום כדי לראות אותו במפה.'
+  snapshot_hint: 'הכפתור העגול בפינה השמאלית התחתונה קורא מיקום אחד, בלי מעקב: הוא מציג אתכם במפה ובפרופיל, מסמן ימים שהסתיימו כהושלמו וממלא את המרחק, העלייה שנותרה והערכת ההגעה להיום. לחיצה ארוכה עליו בוחרת את המיקום במפה במקום GPS. לכל יום יש לשוניות תוכנית, מפה ומזג אוויר; לחצו על כותרת יום כדי לפתוח את המפה שלו.'
   days:
   - n: 0
     date: '2026-09-11'
@@ -411,7 +411,7 @@ he:
     text:
     - 'בספטמבר יבש אין מים בכלל: 3 ליטר לאדם. השעה האחרונה מתחת ל-Col du Berceau (1,090 מ'') תלולה ורופפת. ואז הים, והרכבת חזרה לניס.'
     hours: 9
-  maps_intro: המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.
+  maps_intro: המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לשונית המפה של כל יום מציגה את הקטע והפרופיל שלו; כאן כל המסלול. סובבו בשתי אצבעות או עם החצים, והמצפן מחזיר לצפון. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.
   section_maps:
   - key: overview
     caption: כל המסלול, צפון למעלה.
