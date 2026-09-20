@@ -1,0 +1,71 @@
+# Trip log for /log/yarden-zamir/ (unlisted). Text per language; [[map:QUERY|label]] links a place on
+# the map (QUERY matches a waypoint or track name), [[photo:ID]] places an uploaded picture inline.
+# photos: {ID: {day: N, caption: {en: "...", he: "..."}}} overrides what the picture's own data says.
+user: yarden-zamir
+title:
+  en: GR52, as it happened
+  he: GR52, כמו שהיה
+eyebrow:
+  en: Trip log · Ayelet and Yarden · September 2026
+  he: יומן מסע · איילת וירדן · ספטמבר 2026
+intro:
+  en:
+    - Yarden and I planned a walk with a tent, sleeping and cooking outside. We like sleeping in special places in nature, and we did not want to tie ourselves to booked huts. It keeps the days flexible, it is cheaper, and the money goes to food and small luxuries instead.
+    - "The plan was the official seven-day split of the GR52 across the Mercantour, from [[map:NIGHT 0|Saint-Dalmas-Valdeblore]] to Menton, 12 to 18 September. This is the log of what actually happened, day by day, with the pictures we took along the way. The plan itself, with the maps and the weather we walked by, is on the main page."
+  he:
+    - ירדן ואני תכננו טיול עם אוהל, לינה ובישול בשטח. אנחנו אוהבים לישון במקומות מיוחדים בטבע, ולא רצינו לקבע את עצמנו מראש לבקתות. ככה הימים גמישים יותר, הטיול זול יותר, והכסף הולך לאוכל ולמותרות קטנות.
+    - "התוכנית הייתה החלוקה הרשמית לשבעה ימים של ה-GR52 לרוחב המרקנטור, מ-[[map:NIGHT 0|Saint-Dalmas-Valdeblore]] למנטון, 12 עד 18 בספטמבר. זה היומן של מה שקרה בפועל, יום אחרי יום, עם התמונות שצילמנו בדרך. התוכנית עצמה, עם המפות ומזג האוויר שהלכנו לפיו, נמצאת בעמוד הראשי."
+days:
+  - n: 0
+    date: '2026-09-11'
+    title:
+      en: Nice → tram → shopping → bus 90 → Saint-Dalmas
+      he: ניס → רכבת קלה → קניות → אוטובוס 90 → Saint-Dalmas
+    text:
+      en:
+        - We flew to Nice and were in the city by 11:30. From the airport the tram (line 2) took us to Jean Médecin in the centre in 25 minutes. We bought tickets in the Lignes d'Azur app, 1.70 € per person per ride.
+        - From there we visited friends who live in Nice and shopped at an Intermarché, fairly large with a good range. It had no gas canisters, so we went on to a Decathlon in the area and stocked up there.
+        - "Then tram line 3 to the stop by the university, and from there bus 90, which leaves Nice three times a day (08:10, 16:40, 18:40) for [[map:BUS 90|Saint-Dalmas]], where the trek starts. We took the 16:40: two hours of winding, interesting and beautiful road."
+        - "In Saint-Dalmas we slept at the [[map:NIGHT 0|HI hostel Le Chalet]], with dinner and breakfast. Dinner was fried fish with rice and beans, simple and fine, a little pricey."
+      he:
+        - טסנו לניס והגענו לעיר ב-11:30. מהשדה לקחנו את הרכבת הקלה (קו 2) למרכז, לתחנת Jean Médecin, נסיעה של 25 דקות. את הכרטיסים קנינו באפליקציה של Lignes d'Azur, 1.70 יורו לאדם לנסיעה.
+        - משם הלכנו לבקר חברים שגרים בניס ועשינו קניות בסופר Intermarché, יחסית גדול ועם מגוון טוב. גז לא היה שם, אז המשכנו לחנות Decathlon באזור והצטיידנו בה.
+        - "אחר כך רכבת קלה קו 3 לתחנה ליד האוניברסיטה, ומשם קו 90 שיוצא מניס שלוש פעמים ביום (08:10, 16:40, 18:40) ל-[[map:BUS 90|Saint-Dalmas]], שם מתחיל הטרק. לקחנו את של 16:40: שעתיים של כביש מפותל, מעניין ויפה."
+        - "ב-Saint-Dalmas ישנו ב-[[map:NIGHT 0|אכסניית Le Chalet]], עם ארוחת ערב וארוחת בוקר. לערב אכלנו דג מטוגן עם אורז ושעועית, ארוחה פשוטה ובסדר, קצת יקרה."
+  - n: 1
+    date: '2026-09-12'
+    title:
+      en: Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Le Boréon
+      he: Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Le Boréon
+    text:
+      en:
+        - "Up at 07:00, breakfast at 07:30. For two simple Israelis who know a thing or two about falafel, this was an excellent breakfast: croissants fresh from the oven, baguettes, sausage and cheese. Six croissants between us. Wow."
+        - "On the trail at 08:30. A tough start, a serious climb of about 900 m towards Col de Veillos. From the col we took the variant to [[map:Lac Petit|Lac Petit]] (not that small at all). The lake is lovely and Yarden went in. Freezing."
+        - "We kept climbing past a few more lakes to [[map:Col du Barn|Col du Barn]], the high point of the day at 2,452 m, and started down. The descent is beautiful. A little below the col there is a lake off the path, Lac du Barn, well worth the detour: we stopped there for an hour and a half, a proper picnic and even a dip in the icy water."
+        - "Down through the forest. There was a very pretty stream right next to us and Yarden was annoyed that the path did not follow it, and could not see why. After half an hour we reached the road and understood that the road stays with us all the way to [[map:NIGHT 1|Le Boréon]]. A bit of a letdown, since a road is a dull way to walk, so Yarden suggested leaving the path for the stream. The stream really was wild, and we also found out why the path keeps away from it: the whole bank is bog, fed by the water running down off the slopes. We followed the stream a little until our shoes were soaked and then, at the request of the one carrying the pack, went back to the road."
+        - "Another 5 km or so on paths beside the road, through an enchanted forest that I did not like, not enough sunlight, and Yarden loved. On the way we met a nice French family, and after a deep conversation in Frenglish they gave us a lift to Le Boréon, the end of the day. The last kilometres are fairly dull and unnecessary; if a lift comes along, take it."
+        - "We pitched the tent next to the artificial lake. There are a few guesthouses there too. In 2019 a very serious storm hit the area and wrecked many of the paths and the infrastructure; the lake is still being repaired. In the evening we went to the restaurant by the lake, L'Eau à la Bouche, which the internet said was well regarded: expensive, and a lot of meat, to Yarden's specification, while Ayelet wanted rice and lentils."
+      he:
+        - "קמנו ב-07:00, ארוחת בוקר ב-07:30. בתור ישראלים פשוטים שמבינים עניין בפלאפל, זו הייתה ארוחת בוקר מצוינת: קרואסונים טריים מהתנור, בגטים, נקניק וגבינה. אכלנו שישה קרואסונים. פשוט וואו."
+        - "יצאנו לשביל ב-08:30. התחלה קשוחה, עלייה רצינית של בערך 900 מטר לכיוון Col de Veillos. מהמעבר לקחנו את הווריאנט ל-[[map:Lac Petit|Lac Petit]] (לא כל כך קטן בכלל). האגם מקסים וירדן נכנס אליו. קפוא."
+        - "המשכנו לעלות, ראינו בדרך עוד כמה אגמים, עד ל-[[map:Col du Barn|Col du Barn]], נקודת השיא של היום ב-2,452 מטר, והתחלנו לרדת. הירידה יפהפייה. קצת אחרי תחילתה יש אגם מחוץ לשביל, Lac du Barn, שמאוד שווה את הסטייה: עצרנו שם לשעה וחצי, פיקניק מפנק ואפילו כניסה למים הקפואים."
+        - "ירדנו דרך היער. ממש לידנו זרם נחל מאוד יפה, וירדן התבאס שהשביל לא עובר צמוד אליו ולא הבין למה. אחרי חצי שעה הגענו לכביש והבנו שהכביש מלווה אותנו עד היעד, [[map:NIGHT 1|Le Boréon]]. קצת התאכזבנו, כי ללכת לאורך כביש זה משעמם, אז ירדן הציע לרדת מהשביל ללכת צמוד לנחל. הנחל באמת היה מטורף, וגם גילינו למה השביל מתרחק ממנו: כל הגדה היא ביצה, מהמים שזורמים אליו מהמדרונות. הלכנו קצת לאורכו עד שהנעליים נרטבו, ואז, לבקשת זו שנושאת את התיק, חזרנו לכביש."
+        - "עוד כ-5 ק\"מ על שבילים צמודים לכביש, בתוך יער קסום שאני לא אהבתי, לא היה בו מספיק אור שמש, וירדן אהב מאוד. בדרך פגשנו משפחה צרפתית נחמדה, ואחרי שיחה עמוקה בצרפתינגלית הם לקחו אותנו טרמפ עד Le Boréon, היעד של היום. הקילומטרים האחרונים די משעממים ומיותרים; אם מזדמן טרמפ, שווה לקחת."
+        - "הקמנו את האוהל ליד האגם המלאכותי. יש שם גם כמה אכסניות למי שרוצה. ב-2019 פגעה באזור סופה מאוד רצינית שהרסה הרבה מהשבילים והתשתיות; את האגם עדיין משפצים מאז. בערב הלכנו למסעדה ליד האגם, L'Eau à la Bouche, שראינו באינטרנט שהיא נחשבת: יקרה, והרבה בשר, לפי הדרישות של ירדן, בעוד איילת רצתה אורז ועדשים."
+  - n: 2
+    date: '2026-09-13'
+    title:
+      en: Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre
+      he: Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre
+    text:
+      en:
+        - "Up in our lovely tent at 07:15, packed and off. We looked for coffee in the huts nearby and found nothing worth it; Yarden, who needed one, was not pleased."
+        - "We started the day's climb at 09:00, fairly late. It begins in a forest full of mushrooms and goes on through open country with a dramatic view of the mountains and a stream running down with endless pools. One of the highlights of the whole trip: hard walking, but it pays back in full. At one of the pools we went into the water. Cold, but wow."
+        - "We climbed to [[map:Cougourde|Refuge de la Cougourde]] and got there at 12:30. A lovely refuge. After the climb we bought a coffee and a blueberry and raspberry tart, good (and expensive) and highly recommended. We rested with the view and carried on up to [[map:Trécolpas|Lac de Trécolpas]]. The lake was gorgeous, beyond anything we had seen so far. We chose a hidden corner, rested and had lunch."
+        - "After a long break, chamois-watching and exploring the area, we set off around 15:30 for [[map:Pas des Ladres|Pas des Ladres]]. We decided to sleep at [[map:NIGHT 2 option B|Lac de Fenestre]], which the trail does not pass directly. We saw there is a path around that runs along the Italian border, decided that a high five to Italy was a good idea, and took it: challenging and nice. We chose to sleep at a spot overlooking the lake next to ruined buildings from the Second World War, arrived at 17:15 and pitched the tent."
+      he:
+        - "קמנו באוהל המקסים שלנו ב-07:15, התארגנו ויצאנו. חיפשנו קפה בבקתות הסמוכות ולא מצאנו משהו שווה במיוחד; ירדן, שהיה זקוק לקפה, התבאס."
+        - "התחלנו את הטיפוס של היום ב-09:00, יחסית מאוחר. הוא מתחיל בתוך יער מלא פטריות וממשיך בדרך פתוחה עם נוף דרמטי של הרים ונחל זורם עם המון בריכות. אחד ההיילייטים של כל הטיול: הליכה קשה, אבל משתלמת ביותר. באחת הבריכות בדרך נכנסנו למים. קר, אבל וואו."
+        - "טיפסנו עד [[map:Cougourde|Refuge de la Cougourde]] והגענו ב-12:30. רפיוז' מקסים. אחרי העלייה קנינו קפה וטארט אוכמניות ופטל, מוצלח (ויקר) ומומלץ מאוד. נחנו מול הנוף והמשכנו לטפס ל-[[map:Trécolpas|Lac de Trécolpas]]. האגם היה מקסים, מעל ומעבר לכל מה שראינו עד כה. בחרנו לנו פינה נסתרת, נחנו ואכלנו צהריים."
+        - "אחרי הפסקה מפנקת, צפייה ביעלים (chamois) וחקירה של האזור, יצאנו בסביבות 15:30 ל-[[map:Pas des Ladres|Pas des Ladres]]. החלטנו לישון ב-[[map:NIGHT 2 option B|Lac de Fenestre]], שהשביל לא עובר בו ישירות. ראינו שיש שביל עוקף שעובר על גבול איטליה-צרפת, החלטנו שלתת כיף לאיטליה זה רעיון טוב, והלכנו בו: מאתגר ונחמד. בחרנו לישון בנקודה שצופה לאגם, ליד מבנים הרוסים ממלחמת העולם השנייה, הגענו ב-17:15 והקמנו את האוהל."
+photos: {}

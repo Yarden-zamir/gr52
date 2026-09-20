@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Seven-day bivouac plan for the GR52 from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026.">
+<meta name="color-scheme" content="light dark">
+<style>body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%;height:auto}[hidden]{display:none!important}</style>
+<meta name="robots" content="noindex, nofollow">
+<title>GR52 Bivouac Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Heebo:wght@400;500;700&family=Rubik:wght@600;700&display=swap">
+<link rel="stylesheet" href="/vendor/leaflet.min.css?v=b570abbda9">
+<link rel="stylesheet" href="/vendor/leaflet-rotate.css?v=fde9c7ff97">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#C8322B">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+:root{
+  --ground:#F0F1EE; --panel:#FFFFFF; --ink:#1E2726; --muted:#5F6C69; --line:#CCD3D0;
+  --mark:#C8322B; --lake:#2C6A8A; --lake-soft:#DCE9F0; --schist:#7A8A63; --warn:#B3701C; --warn-soft:#F6EAD6;
+  --mark-soft:#F7E1DF; --sign:#F2C94C; --sign-ink:#1E2726;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#161B1B; --panel:#1F2626; --ink:#E4E8E6; --muted:#9AA7A3; --line:#344040;
+    --mark:#E0524A; --lake:#6FB0D0; --lake-soft:#1F3542; --schist:#9AAE7E; --warn:#E0A24F; --warn-soft:#3A2E1B;
+    --mark-soft:#3E2422; --sign:#D4AE3A; --sign-ink:#161B1B;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#161B1B; --panel:#1F2626; --ink:#E4E8E6; --muted:#9AA7A3; --line:#344040;
+  --mark:#E0524A; --lake:#6FB0D0; --lake-soft:#1F3542; --schist:#9AAE7E; --warn:#E0A24F; --warn-soft:#3A2E1B;
+  --mark-soft:#3E2422; --sign:#D4AE3A; --sign-ink:#161B1B;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;margin:0}
+a{color:var(--lake);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 96px}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(44px,7vw,76px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:34px;font-weight:600;margin-top:64px;padding-top:18px;border-top:3px solid var(--ink);display:flex;align-items:baseline;gap:14px}
+h2 .k{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);letter-spacing:.08em;font-weight:500}
+h3{font-size:24px;font-weight:600;margin-top:28px}
+p{max-width:68ch;margin:12px 0}
+ul,ol{max-width:72ch;padding-inline-start:22px;margin:10px 0}
+li{margin:5px 0}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+header{padding:64px 0 8px}
+.balise{display:inline-block;width:56px;height:18px;background:linear-gradient(var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line);vertical-align:middle;margin-inline-end:10px}
+.lede{font-size:19px;max-width:62ch;color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0 0}
+.facts div{background:var(--panel);padding:14px 16px}
+.facts b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.facts span{font-size:12.5px;color:var(--muted)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;margin:22px 0 0;font-size:14px}
+nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+nav.toc a:hover{border-color:var(--mark)}
+.note{border-inline-start:4px solid var(--lake);background:var(--lake-soft);padding:12px 16px;margin:18px 0;max-width:76ch}
+.note.warn{border-color:var(--warn);background:var(--warn-soft)}
+.note.rule{border-color:var(--mark);background:var(--mark-soft)}
+.note.rule p+p{border-top:1px solid color-mix(in srgb,var(--mark) 25%,transparent);padding-top:8px;margin-top:8px}
+.note p{margin:6px 0}
+.scroll{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}
+th,td{text-align:start;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--ground)}
+caption{caption-side:top;text-align:start;font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:600;padding:0 0 8px;color:var(--ink)}
+[lang="he"] caption{font-family:"Rubik","Heebo",sans-serif;font-size:19px}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stage{display:grid;grid-template-columns:96px 1fr;gap:0 22px;border-top:1px solid var(--line);padding:22px 0}
+.stage:last-of-type{border-bottom:1px solid var(--line)}
+.stage .d{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:38px;line-height:1;color:var(--mark)}
+.stage .d small{display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);font-weight:500;margin-top:6px;letter-spacing:.04em}
+.stage h3{margin-top:0;font-size:26px}
+.stage .stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);margin:6px 0 10px;font-variant-numeric:tabular-nums}
+.stage p{margin:8px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line);border-radius:2px;margin-inline-end:6px;color:var(--muted)}
+.tag.tech{border-color:var(--schist);color:var(--schist)}
+.tag.water{border-color:var(--lake);color:var(--lake)}
+.tag.rule{border-color:var(--mark);color:var(--mark)}
+figure{margin:20px 0}
+figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
+.profile{width:100%;height:auto;display:block;background:var(--panel);border:1px solid var(--line)}
+.map{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:none}
+.maps figure{margin:0}
+.src{font-size:14px;columns:2;column-gap:32px;max-width:none}
+.src li{break-inside:avoid}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:none}
+.two > div p{max-width:none}
+.langbar{position:fixed;top:12px;inset-inline-end:14px;z-index:5;padding:0;background:none}
+.langbar button{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 14px;cursor:pointer;box-shadow:0 2px 8px -4px rgba(0,0,0,.4)}
+.langbar button:hover{border-color:var(--mark)}
+/* Hebrew */
+[lang="he"]{font-family:"Heebo",system-ui,"Segoe UI",Arial,sans-serif}
+[lang="he"] h1,[lang="he"] h2,[lang="he"] h3,[lang="he"] .stage .d,[lang="he"] .facts b{font-family:"Rubik","Heebo",Arial,sans-serif;letter-spacing:0}
+[lang="he"] h1{font-size:clamp(38px,6vw,64px)}
+[lang="he"] .stage h3{font-size:23px}
+[lang="he"] .eyebrow,[lang="he"] .tag,[lang="he"] th{letter-spacing:0;text-transform:none;font-family:"Heebo",sans-serif}
+[lang="he"] .stage .d small,[lang="he"] .stage .stats,[lang="he"] h2 .k{font-family:"IBM Plex Mono",monospace}
+[lang="he"] .langbar button{font-family:"Heebo",sans-serif}
+h2,h3,.stage,.note,.scroll,figure,.mapbox{scroll-margin-top:12px}
+td{overflow-wrap:anywhere}
+nav.toc a{padding:4px 0}
+@media (max-width:760px){
+  body{font-size:15.5px}
+  .wrap{padding:0 14px 60px}
+  header{padding:28px 0 8px} .eyebrow{padding-inline-end:120px}
+  h1{font-size:clamp(38px,11vw,52px)} h2{font-size:28px;margin-top:44px} h3{font-size:21px}
+  .lede{font-size:17px}
+  .facts{grid-template-columns:repeat(2,1fr)} .facts b{font-size:26px}
+  .stage{grid-template-columns:1fr;gap:6px 0;padding:18px 0}
+  .stage .d{display:flex;align-items:center;gap:12px;font-size:30px} .stage .d::before{margin:0} .stage .d small{margin:0}
+  .stage h3{font-size:20px}
+  .src{columns:1}
+  .maptools button{flex:1 1 45%;padding:10px 12px}
+  .livemap{height:62vh}
+  .tabs button{padding:8px 10px;font-size:13px}
+  .locbar{left:10px;bottom:10px}
+  /* tables become stacked cards */
+  .scroll{overflow:visible}
+  .scroll table,.scroll caption,.scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .scroll caption{padding:0 0 4px}
+  .scroll tr:first-child{display:none}
+  .scroll tr{border:1px solid var(--line);border-inline-start:4px solid var(--lake);background:var(--panel);margin:12px 0;padding:10px 12px 10px;border-radius:4px;box-sizing:border-box}
+  .scroll td{border:0;padding:5px 0;display:grid;grid-template-columns:minmax(88px,30%) 1fr;gap:2px 12px;align-items:start;font-size:14.5px;line-height:1.45}
+  .scroll td+td{border-top:1px dashed var(--line)}
+  .scroll td::before{content:attr(data-label);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+  .scroll td:first-child{grid-template-columns:1fr;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:20px;line-height:1.15;padding:0 0 6px;margin-bottom:2px;border-bottom:1px solid var(--line)}
+  .scroll td:first-child::before{content:none}
+  .scroll td[data-long]{grid-template-columns:1fr}
+  .scroll td[data-long]::before{padding-top:0}
+  .scroll td.n{white-space:normal;font-family:"IBM Plex Sans",sans-serif}
+  [lang="he"] .scroll td::before{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+  [lang="he"] .scroll td:first-child{font-family:"Rubik","Heebo",sans-serif}
+  .two{gap:8px}
+}
+@media (prefers-reduced-motion:no-preference){a{transition:border-color .15s}}
+
+/* trail theme */
+header{position:relative;overflow:hidden}
+.topo{position:absolute;inset:-40px -40px 0 -40px;pointer-events:none;opacity:.55;
+  background:
+    repeating-radial-gradient(ellipse 60% 45% at 18% 35%, var(--line) 0 1px, transparent 1px 26px),
+    repeating-radial-gradient(ellipse 55% 60% at 82% 75%, var(--line) 0 1px, transparent 1px 34px),
+    repeating-radial-gradient(ellipse 40% 30% at 55% 10%, var(--line) 0 1px, transparent 1px 20px);
+  -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+header > *{position:relative}
+h1{position:relative;display:inline-block}
+h1::after{content:"";display:block;height:6px;margin-top:10px;background:linear-gradient(90deg,var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line);width:120px}
+h2::before{content:"";width:34px;height:16px;flex:none;align-self:center;background:linear-gradient(var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line)}
+.stage .d::before{content:"";display:block;width:46px;height:22px;margin-bottom:8px;background:linear-gradient(var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line)}
+.stage .stats span{background:var(--sign);color:var(--sign-ink);padding:3px 9px;border-radius:2px;font-weight:500;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.stage .stats{gap:6px 8px}
+.stage h3{position:relative}
+.facts div:first-child b{color:var(--mark)}
+figure img.map{box-shadow:0 1px 0 var(--line),0 8px 24px -16px rgba(0,0,0,.45)}
+th{border-bottom:2px solid var(--ink)}
+table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)}
+.langbar button::before{content:"⇄ ";color:var(--mark)}
+
+.mapbox{margin:16px 0}
+.livemap{height:min(72vh,640px);border:1px solid var(--line);background:var(--panel);margin:16px 0;z-index:0}
+.livemap .leaflet-control-layers,.livemap .leaflet-bar{font-family:"IBM Plex Sans",sans-serif}
+.livemap .leaflet-control-layers-overlays label{white-space:nowrap}
+.livemap .leaflet-control-layers-expanded{max-height:60vh;overflow:auto}
+.leaflet-popup-content{font:14px/1.4 "IBM Plex Sans",sans-serif;margin:10px 12px}
+.staticmaps{margin:14px 0}
+.staticmaps summary{cursor:pointer;font-weight:600;padding:8px 0}
+.staticmaps figure{margin:14px 0}
+[lang="he"] .leaflet-popup-content{direction:rtl;font-family:"Heebo",sans-serif}
+.maptools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:10px 0}
+.maptools button{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 12px;cursor:pointer}
+.maptools button:hover{border-color:var(--mark)} .maptools button:disabled{opacity:.6;cursor:wait}
+.mapstatus{font:13px "IBM Plex Mono",monospace;color:var(--muted)}
+canvas.profile{width:100%;height:220px;display:block;background:var(--panel);border:1px solid var(--line);touch-action:none;cursor:crosshair}
+.profstats{font:13px "IBM Plex Mono",monospace;color:var(--muted);margin:6px 0 0;max-width:none}
+[lang="he"] .maptools button,[lang="he"] .mapstatus,[lang="he"] .profstats{font-family:"Heebo",sans-serif}
+a.focus{color:inherit;text-decoration:underline dotted;text-decoration-color:var(--lake);text-underline-offset:3px}
+a.focus:hover{color:var(--lake);text-decoration-style:solid}
+.wx{margin:6px 0 10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5;max-width:76ch}
+.wx:empty{display:none}
+.wx .wxrow{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+.wx .wxk{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.wx .wxwarn{display:inline-block;margin:6px 6px 0 0;padding:2px 8px;border-radius:2px;background:var(--warn-soft);border:1px solid var(--warn);color:var(--ink);font-size:13px}
+.wx .wxwarn.bad{background:var(--mark-soft);border-color:var(--mark)}
+.wx .wxmeta{color:var(--muted);font-size:12px;margin-top:6px}
+[lang="he"] .wx .wxk{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+a.daylink{color:inherit;text-decoration:none;cursor:pointer}
+a.daylink:hover{color:var(--lake)}
+.stage .d a{color:inherit;text-decoration:none;cursor:pointer;display:block}
+.stage .d a:hover{opacity:.8}
+.planbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;max-width:76ch;margin:14px 0 6px}
+.planbar button,.wxbtn,.donebar button{font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px 11px;cursor:pointer}
+.planbar button:hover,.wxbtn:hover,.donebar button:hover{border-color:var(--mark)}
+.snapstatus{font-size:13px;color:var(--muted)}
+.snapbox{margin:6px 0 8px;padding:8px 12px;border-inline-start:4px solid #1E6FD9;background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5}
+.wxfresh.old{color:var(--warn)}
+.wxbtn{padding:3px 9px;font-size:12px;margin-inline-start:6px}
+.wxhour{margin-top:8px}
+.wxhour canvas{width:100%;height:190px;display:block;background:var(--ground);border:1px solid var(--line);touch-action:none;cursor:crosshair}
+.wxread{font:12px "IBM Plex Mono",monospace;color:var(--ink);min-height:18px;margin-top:4px}
+.wxlegend{font-size:12px;color:var(--muted);margin-top:6px}
+.wxslider{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:4px 0 8px;font-size:13.5px}
+.wxslider input[type=range]{flex:1 1 180px;min-width:140px;accent-color:var(--mark)}
+.wxslider output{font-weight:600}
+.wxrec{font-size:12.5px;color:var(--muted)}
+.wxhour canvas{height:300px}
+.wxevents{margin-top:6px;font-size:13.5px}
+.wxev{padding:3px 8px;margin:3px 0;border-inline-start:3px solid var(--line);background:var(--panel)}
+.wxev.storm{border-color:var(--mark)} a.wxsrc{font-size:11px;color:var(--muted);margin-inline-start:6px} .wxev.heat{border-color:#E07A2F} .wxev.rain{border-color:var(--lake)} .wxev.wind{border-color:var(--warn)} .wxev.exp{font-weight:600} .wxev.ok{color:var(--muted)}
+.stage.done .d{color:var(--muted)} .stage.done .d::before{opacity:.35}
+.stage.done h3{opacity:.6}
+.stage.done:not(.open) .stats,.stage.done:not(.open) .tabs,.stage.done:not(.open) .pane,.stage.done:not(.open) .snapbox{display:none}
+.donebar{display:flex;gap:8px;align-items:center;margin:4px 0 6px;font-size:13px}
+.donechip{color:#2E7D32;font-weight:600}
+[lang="he"] .planbar button,[lang="he"] .wxbtn,[lang="he"] .donebar button{font-family:"Heebo",sans-serif}
+[lang="he"] .wxread{font-family:"Heebo",sans-serif}
+[data-act="snapshot"],[data-act="locate"]{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+/* day tabs: plan, map, weather */
+.tabs{display:flex;gap:2px;margin:8px 0 10px;border-bottom:1px solid var(--line)}
+.tabs button{font:600 13.5px "IBM Plex Sans",sans-serif;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.tabs button:hover{color:var(--ink)} .tabs button.on{color:var(--ink);border-bottom-color:var(--mark)}
+.tabs .badge{font:600 11px "IBM Plex Mono",monospace;background:var(--warn-soft);border:1px solid var(--warn);color:var(--ink);border-radius:9px;padding:0 6px;line-height:16px}
+.tabs .badge.bad{background:var(--mark-soft);border-color:var(--mark)}
+.pane{min-width:0} .pane[data-pane="plan"] p:first-child{margin-top:0}
+[lang="he"] .tabs button{font-family:"Heebo",sans-serif}
+/* map hosts: the map box moves into a day's Map tab or back to the Maps section */
+.maphost:not(.empty) .mapclaim{display:none}
+.mapclaim{font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px dashed var(--line);border-radius:3px;padding:10px 14px;cursor:pointer;width:100%}
+.mapclaim:hover{border-color:var(--mark)}
+[lang="he"] .mapclaim{font-family:"Heebo",sans-serif}
+.stage .mapbox{margin:0} .stage .livemap{margin:0 0 10px;height:min(60vh,520px)} .stage canvas.profile{height:180px}
+/* position button, fixed bottom left, and its short status */
+.locbar{position:fixed;left:14px;bottom:14px;z-index:6;display:flex;align-items:center;gap:8px;direction:ltr}
+#locfab{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#1E6FD9;box-shadow:0 4px 14px -4px rgba(0,0,0,.5);cursor:pointer;display:grid;place-items:center;padding:0;flex:none}
+#locfab svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+#locfab:hover{border-color:#1E6FD9} #locfab.busy{opacity:.6;cursor:wait}
+#loctoast{font:13px/1.4 "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-left:4px solid #1E6FD9;border-radius:3px;padding:6px 10px;max-width:min(70vw,420px);box-shadow:0 4px 14px -6px rgba(0,0,0,.5)}
+[lang="he"] #loctoast,html[dir="rtl"] #loctoast{font-family:"Heebo",sans-serif;direction:rtl}
+/* waypoint icons from the GPX (OsmAnd icon names), white glyph on the waypoint colour */
+.wpi{background:none;border:0}
+.wpico{display:block;width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 1.5px #fff,0 1px 3px rgba(0,0,0,.45)}
+.wpico.square{border-radius:4px} .wpico.octagon{border-radius:30%}
+.wpico svg{display:block;width:100%;height:100%;padding:3px;fill:#fff;box-sizing:border-box}
+/* point markers that stay upright and exactly placed under rotation */
+.mepin,.hoverpin,.focusring{background:none;border:0;border-radius:50%;box-sizing:border-box}
+.mepin{background:#1E6FD9;border:2px solid #fff;box-shadow:0 0 0 2px rgba(30,111,217,.35),0 1px 4px rgba(0,0,0,.4)}
+.hoverpin{background:#fff;border:3px solid var(--mark)}
+.focusring{border:3px solid #1E6FD9;pointer-events:none}
+/* back bubble: after a map link, one tap returns to where you were */
+#backbubble{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:7;font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:8px 14px;cursor:pointer;box-shadow:0 4px 14px -4px rgba(0,0,0,.5);max-width:70vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#backbubble:hover{border-color:var(--mark)}
+[dir="rtl"] #backbubble{font-family:"Heebo",sans-serif}
+/* trip log: picture grid, inline pictures, lightbox, photo dots, upload */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;max-height:72vh;overflow-y:auto;padding:2px;-webkit-overflow-scrolling:touch}
+.gallery .muted{grid-column:1/-1;color:var(--muted);font-size:13.5px;margin:4px 0}
+.tile{position:relative;display:block;aspect-ratio:4/3;overflow:hidden;background:var(--line);border-radius:3px}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.tile span{position:absolute;left:0;right:0;bottom:0;padding:14px 8px 5px;font:12px "IBM Plex Sans",sans-serif;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.photoref{display:block;margin:10px 0}
+.inpic{display:block;max-width:420px;border-radius:3px;overflow:hidden;background:var(--line)}
+.inpic img{width:100%;display:block}
+.inpic span{display:block;font-size:12.5px;color:var(--muted);padding:4px 0}
+.pane[data-pane="log"] p{max-width:72ch}
+#lightbox{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px}
+#lightbox img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;display:block}
+#lightbox .lbx,#lightbox .lbp{position:absolute;color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.4);border-radius:50%;width:40px;height:40px;font-size:26px;line-height:36px;cursor:pointer;padding:0}
+#lightbox .lbx{top:12px;right:12px} #lightbox .lbp[data-lb="prev"]{left:8px;top:50%} #lightbox .lbp[data-lb="next"]{right:8px;top:50%} #lightbox .lbp:disabled{opacity:.25;cursor:default}
+#lightbox .lbcap{color:#fff;font:14px "IBM Plex Sans",sans-serif;margin-top:8px;text-align:center;max-width:70ch} #lightbox .lbcap a{color:#9CC7F0}
+#lightbox .lbn{color:#bbb;font:12px "IBM Plex Mono",monospace;margin-top:4px}
+body.lbopen{overflow:hidden}
+.photodot{background:#fff;border:2px solid var(--mark);border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.4);display:grid;place-items:center;box-sizing:border-box}
+.photodot span{font:700 11px "IBM Plex Mono",monospace;color:var(--mark)}
+.photodot span:empty::before{content:"";display:block;width:10px;height:8px;border:2px solid var(--mark);border-radius:2px;box-sizing:border-box}
+.popthumbs{display:flex;gap:4px;flex-wrap:wrap;max-width:240px} .popthumbs a{display:block;width:74px;height:56px;overflow:hidden;border-radius:2px;background:var(--line)} .popthumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.upload{margin:12px 0} .upbtn{display:inline-block;font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 14px;cursor:pointer} .upbtn:hover{border-color:var(--mark)}
+.uplist{font:13px "IBM Plex Mono",monospace;color:var(--muted);margin-top:8px} .uplist div{padding:2px 0}
+.wxh{margin:6px 0 10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5;max-width:76ch}
+.wxh .wxrow{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline} .wxh .wxk{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.wxh canvas{width:100%;height:150px;display:block;background:var(--ground);border:1px solid var(--line);margin-top:8px}
+[lang="he"] .wxh .wxk,[lang="he"] .upbtn,[lang="he"] .tile span{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none}
+/* rotation: plugin compass plus 15° step buttons */
+.leaflet-control-rotatebtns a{font-size:18px;line-height:30px;text-decoration:none}
+.livemap .leaflet-control-rotate{border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.4)}
+</style>
+
+<style>:root{--mark:#C8322B;--mark-soft:#F6DEDD}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--mark:#D45F5A;--mark-soft:#48211F}}:root[data-theme="dark"]{--mark:#D45F5A;--mark-soft:#48211F}</style>
+<script>window.TREK={"slug": "gr52", "gpx": "/GR52_all-in-one.gpx", "timezone": "Europe/Paris", "plannedStart": 8, "tentWindow": "19:00", "strings": {}, "weatherModel": "meteofrance_seamless", "weatherModelLabel": "Météo-France AROME/ARPEGE, blend beyond 4 days", "treeline": 2000, "heatLimit": 32, "exposed": [{"fromKm": 54, "toKm": 67, "name": "Authion ridge"}, {"fromKm": 40, "toKm": 47, "name": "Basto boulder fields"}], "accent": "#C8322B", "elevation": "EU-DEM 25 m"};</script>
+<script>window.LOG={"user": "yarden-zamir", "days": {"0": "2026-09-11", "1": "2026-09-12", "2": "2026-09-13"}, "photos": {}};</script>
+</head>
+<body>
+<div class="langbar"><button id="langbtn" type="button">עברית</button></div>
+<button id="backbubble" type="button" hidden></button>
+<div id="lightbox" hidden><button type="button" class="lbx" data-lb="close" aria-label="Close">×</button><button type="button" class="lbp" data-lb="prev" aria-label="Previous">‹</button><img alt=""><button type="button" class="lbp" data-lb="next" aria-label="Next">›</button><div class="lbcap"></div><div class="lbn"></div></div>
+
+<div id="en" lang="en" dir="ltr" class="wrap">
+<header>
+  <div class="topo" aria-hidden="true"></div>
+  <div class="eyebrow"><span class="balise"></span>Trip log · Ayelet and Yarden · September 2026 · yarden-zamir</div>
+  <h1>GR52, as it happened</h1>
+  <p class="lede">Yarden and I planned a walk with a tent, sleeping and cooking outside. We like sleeping in special places in nature, and we did not want to tie ourselves to booked huts. It keeps the days flexible, it is cheaper, and the money goes to food and small luxuries instead.</p>
+  <p>The plan was the official seven-day split of the GR52 across the Mercantour, from <a href="?map=NIGHT 0" class="focus" data-focus="NIGHT 0">Saint-Dalmas-Valdeblore</a> to <a href="#map" class="focus" data-focus="FINISH">Menton</a>, 12 to 18 September. This is the log of what actually happened, day by day, with the pictures we took along the way. The plan itself, with the maps and the weather we walked by, is on the main page.</p>
+  <nav class="toc" aria-label="Days"><a href="#d0">D0</a><a href="#d1">D1</a><a href="#d2">D2</a><a href="#map">Whole route</a><a href="#upload">Upload pictures</a></nav>
+</header>
+
+<h2 id="days"><span class="k">§1</span>Days</h2>
+<div class="stage" id="d0" data-day="0" data-date="2026-09-11">
+  <div class="d"><a href="?map=day:0" data-focus="day:0">D0<small>FRI 11 SEP</small></a></div>
+  <div>
+    <h3><a href="?map=day:0" class="daylink" data-focus="day:0">Nice → tram → shopping → bus 90 → Saint-Dalmas</a></h3>
+    <div class="stats"><span>bus 90 leaves 16:40, ≈2 h</span><span>hostel check-in closes 19:00</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="0"></div></div>
+    <div class="pane" data-pane="log" role="tabpanel" hidden>
+      <p>We flew to Nice and were in the city by 11:30. From the airport the tram (line 2) took us to Jean Médecin in the centre in 25 minutes. We bought tickets in the Lignes d'Azur app, 1.70 € per person per ride.</p>
+      <p>From there we visited friends who live in Nice and shopped at an Intermarché, fairly large with a good range. It had no gas canisters, so we went on to a Decathlon in the area and stocked up there.</p>
+      <p>Then tram line 3 to the stop by the university, and from there bus 90, which leaves Nice three times a day (08:10, 16:40, 18:40) for <a href="?map=BUS 90" class="focus" data-focus="BUS 90">Saint-Dalmas</a>, where the trek starts. We took the 16:40: two hours of winding, interesting and beautiful road.</p>
+      <p>In <a href="#map" class="focus" data-focus="NIGHT 0">Saint-Dalmas</a> we slept at the <a href="?map=NIGHT 0" class="focus" data-focus="NIGHT 0">HI hostel Le Chalet</a>, with dinner and breakfast. Dinner was fried fish with rice and beans, simple and fine, a little pricey.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="0"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="0"></div></div>
+  </div>
+</div>
+<div class="stage" id="d1" data-day="1" data-date="2026-09-12">
+  <div class="d"><a href="?map=day:1" data-focus="day:1">D1<small>SAT 12 SEP</small></a></div>
+  <div>
+    <h3><a href="?map=day:1" class="daylink" data-focus="day:1">Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Le Boréon</a></h3>
+    <div class="stats"><span>≈18 km</span><span>+1,350 / −1,150 m</span><span>9 h official, plan 10–11</span><span>tent by the lake at <a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, ≈1,500 m</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="1"></div></div>
+    <div class="pane" data-pane="log" role="tabpanel" hidden>
+      <p>Up at 07:00, breakfast at 07:30. For two simple Israelis who know a thing or two about falafel, this was an excellent breakfast: croissants fresh from the oven, baguettes, sausage and cheese. Six croissants between us. Wow.</p>
+      <p>On the trail at 08:30. A tough start, a serious climb of about 900 m towards Col de Veillos. From the col we took the variant to <a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (not that small at all). The lake is lovely and Yarden went in. Freezing.</p>
+      <p>We kept climbing past a few more lakes to <a href="?map=Col du Barn" class="focus" data-focus="Col du Barn">Col du Barn</a>, the high point of the day at 2,452 m, and started down. The descent is beautiful. A little below the col there is a lake off the path, Lac du Barn, well worth the detour: we stopped there for an hour and a half, a proper picnic and even a dip in the icy water.</p>
+      <p>Down through the forest. There was a very pretty stream right next to us and Yarden was annoyed that the path did not follow it, and could not see why. After half an hour we reached the road and understood that the road stays with us all the way to <a href="?map=NIGHT 1" class="focus" data-focus="NIGHT 1">Le Boréon</a>. A bit of a letdown, since a road is a dull way to walk, so Yarden suggested leaving the path for the stream. The stream really was wild, and we also found out why the path keeps away from it: the whole bank is bog, fed by the water running down off the slopes. We followed the stream a little until our shoes were soaked and then, at the request of the one carrying the pack, went back to the road.</p>
+      <p>Another 5 km or so on paths beside the road, through an enchanted forest that I did not like, not enough sunlight, and Yarden loved. On the way we met a nice French family, and after a deep conversation in Frenglish they gave us a lift to <a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, the end of the day. The last kilometres are fairly dull and unnecessary; if a lift comes along, take it.</p>
+      <p>We pitched the tent next to the artificial lake. There are a few guesthouses there too. In 2019 a very serious storm hit the area and wrecked many of the paths and the infrastructure; the lake is still being repaired. In the evening we went to the restaurant by the lake, L'Eau à la Bouche, which the internet said was well regarded: expensive, and a lot of meat, to Yarden's specification, while Ayelet wanted rice and lentils.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="1"></div></div>
+  </div>
+</div>
+<div class="stage" id="d2" data-day="2" data-date="2026-09-13">
+  <div class="d"><a href="?map=day:2" data-focus="day:2">D2<small>SUN 13 SEP</small></a></div>
+  <div>
+    <h3><a href="?map=day:2" class="daylink" data-focus="day:2">Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre</a></h3>
+    <div class="stats"><span>≈9 km</span><span>+1,000 / −600 m</span><span>5.5 h official, plan 6–7</span><span>refuge bed or <a href="#map" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, see below</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="2"></div></div>
+    <div class="pane" data-pane="log" role="tabpanel" hidden>
+      <p>Up in our lovely tent at 07:15, packed and off. We looked for coffee in the huts nearby and found nothing worth it; Yarden, who needed one, was not pleased.</p>
+      <p>We started the day's climb at 09:00, fairly late. It begins in a forest full of mushrooms and goes on through open country with a dramatic view of the mountains and a stream running down with endless pools. One of the highlights of the whole trip: hard walking, but it pays back in full. At one of the pools we went into the water. Cold, but wow.</p>
+      <p>We climbed to <a href="?map=Cougourde" class="focus" data-focus="Cougourde">Refuge de la Cougourde</a> and got there at 12:30. A lovely refuge. After the climb we bought a coffee and a blueberry and raspberry tart, good (and expensive) and highly recommended. We rested with the view and carried on up to <a href="?map=Trécolpas" class="focus" data-focus="Trécolpas">Lac de Trécolpas</a>. The lake was gorgeous, beyond anything we had seen so far. We chose a hidden corner, rested and had lunch.</p>
+      <p>After a long break, chamois-watching and exploring the area, we set off around 15:30 for <a href="?map=Pas des Ladres" class="focus" data-focus="Pas des Ladres">Pas des Ladres</a>. We decided to sleep at <a href="?map=NIGHT 2 option B" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, which the trail does not pass directly. We saw there is a path around that runs along the Italian border, decided that a high five to Italy was a good idea, and took it: challenging and nice. We chose to sleep at a spot overlooking the lake next to ruined buildings from the Second World War, arrived at 17:15 and pitched the tent.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="2"></div></div>
+  </div>
+</div>
+<div class="undated" hidden><h3>Undated pictures</h3><div class="gallery" data-day="none"></div></div>
+
+<h2 id="map"><span class="k">§2</span>Whole route</h2>
+<div class="maphost" data-host="all"><button type="button" class="mapclaim">Show the whole route here</button>
+<div class="mapbox" data-map="en">
+  <div class="livemap" role="application" aria-label="Map"></div>
+  <div class="maptools"><button type="button" data-act="saveroute"></button><span class="mapstatus"></span></div>
+  <canvas class="profile" aria-label="Elevation profile"></canvas>
+  <p class="profstats"></p>
+</div></div>
+<p><a href="/GR52_all-in-one.gpx" download>GPX for OsmAnd ↓</a></p>
+
+<h2 id="upload"><span class="k">§3</span>Upload pictures</h2>
+<p>Pictures go straight into this log. The date and place come from the picture itself; captions and the day can be set afterwards in the log file.</p>
+<div class="upload"><label class="upbtn">Choose pictures<input type="file" accept="image/*,.heic,.heif" multiple hidden></label><div class="uplist"></div></div>
+</div>
+
+<div id="he" lang="he" dir="rtl" class="wrap" hidden>
+<header>
+  <div class="topo" aria-hidden="true"></div>
+  <div class="eyebrow"><span class="balise"></span>יומן מסע · איילת וירדן · ספטמבר 2026 · yarden-zamir</div>
+  <h1>GR52, כמו שהיה</h1>
+  <p class="lede">ירדן ואני תכננו טיול עם אוהל, לינה ובישול בשטח. אנחנו אוהבים לישון במקומות מיוחדים בטבע, ולא רצינו לקבע את עצמנו מראש לבקתות. ככה הימים גמישים יותר, הטיול זול יותר, והכסף הולך לאוכל ולמותרות קטנות.</p>
+  <p>התוכנית הייתה החלוקה הרשמית לשבעה ימים של ה-GR52 לרוחב המרקנטור, מ-<a href="?map=NIGHT 0" class="focus" data-focus="NIGHT 0">Saint-Dalmas-Valdeblore</a> למנטון, 12 עד 18 בספטמבר. זה היומן של מה שקרה בפועל, יום אחרי יום, עם התמונות שצילמנו בדרך. התוכנית עצמה, עם המפות ומזג האוויר שהלכנו לפיו, נמצאת בעמוד הראשי.</p>
+  <nav class="toc" aria-label="Days"><a href="#he-d0">D0</a><a href="#he-d1">D1</a><a href="#he-d2">D2</a><a href="#he-map">כל המסלול</a><a href="#he-upload">העלאת תמונות</a></nav>
+</header>
+
+<h2 id="he-days"><span class="k">§1</span>הימים</h2>
+<div class="stage" id="he-d0" data-day="0" data-date="2026-09-11">
+  <div class="d"><a href="?map=day:0" data-focus="day:0">D0<small>שישי 11.9</small></a></div>
+  <div>
+    <h3><a href="?map=day:0" class="daylink" data-focus="day:0">ניס → רכבת קלה → קניות → אוטובוס 90 → Saint-Dalmas</a></h3>
+    <div class="stats"><span>אוטובוס 90 יוצא 16:40, כשעתיים</span><span>צ'ק-אין באכסניה נסגר ב-19:00</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="0"></div></div>
+    <div class="pane" data-pane="log" role="tabpanel" hidden>
+      <p>טסנו לניס והגענו לעיר ב-11:30. מהשדה לקחנו את הרכבת הקלה (קו 2) למרכז, לתחנת Jean Médecin, נסיעה של 25 דקות. את הכרטיסים קנינו באפליקציה של Lignes d'Azur, 1.70 יורו לאדם לנסיעה.</p>
+      <p>משם הלכנו לבקר חברים שגרים בניס ועשינו קניות בסופר Intermarché, יחסית גדול ועם מגוון טוב. גז לא היה שם, אז המשכנו לחנות Decathlon באזור והצטיידנו בה.</p>
+      <p>אחר כך רכבת קלה קו 3 לתחנה ליד האוניברסיטה, ומשם קו 90 שיוצא מניס שלוש פעמים ביום (08:10, 16:40, 18:40) ל-<a href="?map=BUS 90" class="focus" data-focus="BUS 90">Saint-Dalmas</a>, שם מתחיל הטרק. לקחנו את של 16:40: שעתיים של כביש מפותל, מעניין ויפה.</p>
+      <p>ב-<a href="#map" class="focus" data-focus="NIGHT 0">Saint-Dalmas</a> ישנו ב-<a href="?map=NIGHT 0" class="focus" data-focus="NIGHT 0">אכסניית Le Chalet</a>, עם ארוחת ערב וארוחת בוקר. לערב אכלנו דג מטוגן עם אורז ושעועית, ארוחה פשוטה ובסדר, קצת יקרה.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="0"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="0"></div></div>
+  </div>
+</div>
+<div class="stage" id="he-d1" data-day="1" data-date="2026-09-12">
+  <div class="d"><a href="?map=day:1" data-focus="day:1">D1<small>שבת 12.9</small></a></div>
+  <div>
+    <h3><a href="?map=day:1" class="daylink" data-focus="day:1">Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Le Boréon</a></h3>
+    <div class="stats"><span>≈18 ק"מ</span><span>+1,350 / −1,150 מ'</span><span>9 שעות רשמי, לתכנן 10–11</span><span>אוהל ליד האגם ב-<a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, ≈1,500 מ'</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="1"></div></div>
+    <div class="pane" data-pane="log" role="tabpanel" hidden>
+      <p>קמנו ב-07:00, ארוחת בוקר ב-07:30. בתור ישראלים פשוטים שמבינים עניין בפלאפל, זו הייתה ארוחת בוקר מצוינת: קרואסונים טריים מהתנור, בגטים, נקניק וגבינה. אכלנו שישה קרואסונים. פשוט וואו.</p>
+      <p>יצאנו לשביל ב-08:30. התחלה קשוחה, עלייה רצינית של בערך 900 מטר לכיוון Col de Veillos. מהמעבר לקחנו את הווריאנט ל-<a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (לא כל כך קטן בכלל). האגם מקסים וירדן נכנס אליו. קפוא.</p>
+      <p>המשכנו לעלות, ראינו בדרך עוד כמה אגמים, עד ל-<a href="?map=Col du Barn" class="focus" data-focus="Col du Barn">Col du Barn</a>, נקודת השיא של היום ב-2,452 מטר, והתחלנו לרדת. הירידה יפהפייה. קצת אחרי תחילתה יש אגם מחוץ לשביל, Lac du Barn, שמאוד שווה את הסטייה: עצרנו שם לשעה וחצי, פיקניק מפנק ואפילו כניסה למים הקפואים.</p>
+      <p>ירדנו דרך היער. ממש לידנו זרם נחל מאוד יפה, וירדן התבאס שהשביל לא עובר צמוד אליו ולא הבין למה. אחרי חצי שעה הגענו לכביש והבנו שהכביש מלווה אותנו עד היעד, <a href="?map=NIGHT 1" class="focus" data-focus="NIGHT 1">Le Boréon</a>. קצת התאכזבנו, כי ללכת לאורך כביש זה משעמם, אז ירדן הציע לרדת מהשביל ללכת צמוד לנחל. הנחל באמת היה מטורף, וגם גילינו למה השביל מתרחק ממנו: כל הגדה היא ביצה, מהמים שזורמים אליו מהמדרונות. הלכנו קצת לאורכו עד שהנעליים נרטבו, ואז, לבקשת זו שנושאת את התיק, חזרנו לכביש.</p>
+      <p>עוד כ-5 ק"מ על שבילים צמודים לכביש, בתוך יער קסום שאני לא אהבתי, לא היה בו מספיק אור שמש, וירדן אהב מאוד. בדרך פגשנו משפחה צרפתית נחמדה, ואחרי שיחה עמוקה בצרפתינגלית הם לקחו אותנו טרמפ עד <a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, היעד של היום. הקילומטרים האחרונים די משעממים ומיותרים; אם מזדמן טרמפ, שווה לקחת.</p>
+      <p>הקמנו את האוהל ליד האגם המלאכותי. יש שם גם כמה אכסניות למי שרוצה. ב-2019 פגעה באזור סופה מאוד רצינית שהרסה הרבה מהשבילים והתשתיות; את האגם עדיין משפצים מאז. בערב הלכנו למסעדה ליד האגם, L'Eau à la Bouche, שראינו באינטרנט שהיא נחשבת: יקרה, והרבה בשר, לפי הדרישות של ירדן, בעוד איילת רצתה אורז ועדשים.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="1"></div></div>
+  </div>
+</div>
+<div class="stage" id="he-d2" data-day="2" data-date="2026-09-13">
+  <div class="d"><a href="?map=day:2" data-focus="day:2">D2<small>ראשון 13.9</small></a></div>
+  <div>
+    <h3><a href="?map=day:2" class="daylink" data-focus="day:2">Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre</a></h3>
+    <div class="stats"><span>≈9 ק"מ</span><span>+1,000 / −600 מ'</span><span>5.5 שעות רשמי, לתכנן 6–7</span><span>מיטה בבקתה או <a href="#map" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, ראו למטה</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="2"></div></div>
+    <div class="pane" data-pane="log" role="tabpanel" hidden>
+      <p>קמנו באוהל המקסים שלנו ב-07:15, התארגנו ויצאנו. חיפשנו קפה בבקתות הסמוכות ולא מצאנו משהו שווה במיוחד; ירדן, שהיה זקוק לקפה, התבאס.</p>
+      <p>התחלנו את הטיפוס של היום ב-09:00, יחסית מאוחר. הוא מתחיל בתוך יער מלא פטריות וממשיך בדרך פתוחה עם נוף דרמטי של הרים ונחל זורם עם המון בריכות. אחד ההיילייטים של כל הטיול: הליכה קשה, אבל משתלמת ביותר. באחת הבריכות בדרך נכנסנו למים. קר, אבל וואו.</p>
+      <p>טיפסנו עד <a href="?map=Cougourde" class="focus" data-focus="Cougourde">Refuge de la Cougourde</a> והגענו ב-12:30. רפיוז' מקסים. אחרי העלייה קנינו קפה וטארט אוכמניות ופטל, מוצלח (ויקר) ומומלץ מאוד. נחנו מול הנוף והמשכנו לטפס ל-<a href="?map=Trécolpas" class="focus" data-focus="Trécolpas">Lac de Trécolpas</a>. האגם היה מקסים, מעל ומעבר לכל מה שראינו עד כה. בחרנו לנו פינה נסתרת, נחנו ואכלנו צהריים.</p>
+      <p>אחרי הפסקה מפנקת, צפייה ביעלים (chamois) וחקירה של האזור, יצאנו בסביבות 15:30 ל-<a href="?map=Pas des Ladres" class="focus" data-focus="Pas des Ladres">Pas des Ladres</a>. החלטנו לישון ב-<a href="?map=NIGHT 2 option B" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, שהשביל לא עובר בו ישירות. ראינו שיש שביל עוקף שעובר על גבול איטליה-צרפת, החלטנו שלתת כיף לאיטליה זה רעיון טוב, והלכנו בו: מאתגר ונחמד. בחרנו לישון בנקודה שצופה לאגם, ליד מבנים הרוסים ממלחמת העולם השנייה, הגענו ב-17:15 והקמנו את האוהל.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="2"></div></div>
+  </div>
+</div>
+<div class="undated" hidden><h3>תמונות בלי תאריך</h3><div class="gallery" data-day="none"></div></div>
+
+<h2 id="he-map"><span class="k">§2</span>כל המסלול</h2>
+<div class="maphost" data-host="all"><button type="button" class="mapclaim">הצג את כל המסלול כאן</button>
+<div class="mapbox" data-map="he">
+  <div class="livemap" role="application" aria-label="Map"></div>
+  <div class="maptools"><button type="button" data-act="saveroute"></button><span class="mapstatus"></span></div>
+  <canvas class="profile" aria-label="Elevation profile"></canvas>
+  <p class="profstats"></p>
+</div></div>
+<p><a href="/GR52_all-in-one.gpx" download>GPX ל-OsmAnd ↓</a></p>
+
+<h2 id="he-upload"><span class="k">§3</span>העלאת תמונות</h2>
+<p>התמונות נכנסות ישירות ליומן הזה. התאריך והמקום נלקחים מהתמונה עצמה; כיתוב ויום אפשר לקבוע אחר כך בקובץ היומן.</p>
+<div class="upload"><label class="upbtn">בחרו תמונות<input type="file" accept="image/*,.heic,.heif" multiple hidden></label><div class="uplist"></div></div>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('langbtn'),en=document.getElementById('en'),he=document.getElementById('he');
+  function apply(l){
+    var isHe=l==='he';
+    en.hidden=isHe; he.hidden=!isHe;
+    btn.textContent=isHe?'English':'עברית';
+    btn.setAttribute('lang',isHe?'en':'he');
+    document.documentElement.setAttribute('dir',isHe?'rtl':'ltr');
+    var fab=document.getElementById('locfab');if(fab){var t=fab.getAttribute('data-label-'+l)||'';fab.setAttribute('aria-label',t);fab.title=t;}
+    try{localStorage.setItem(((window.TREK&&window.TREK.slug)||'trek')+'-lang',l)}catch(e){}
+  }
+  var saved='en';
+  try{saved=localStorage.getItem(((window.TREK&&window.TREK.slug)||'trek')+'-lang')||'en'}catch(e){}
+  apply(saved);
+  btn.addEventListener('click',function(){apply(en.hidden?'en':'he')});
+
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){(function(){var had=!!navigator.serviceWorker.controller,done=false;
+  navigator.serviceWorker.addEventListener('controllerchange',function(){if(had&&!done){done=true;location.reload();}});})();}
+</script>
+<script src="/vendor/leaflet.min.js?v=5c9aecfc30"></script>
+<script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe"></script>
+<script src="/map.js?v=a99088cddc" defer></script>
+<script src="/log.js?v=5f21eae235" defer></script>
+</body>
+</html>
