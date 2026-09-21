@@ -23,6 +23,9 @@ days:
     title:
       en: Nice → tram → shopping → bus 90 → Saint-Dalmas
       he: ניס → רכבת קלה → קניות → אוטובוס 90 → Saint-Dalmas
+    stats:
+      en: ["landed 11:30, in town till 16:40", "bus 90 at 16:40, 2 h to Saint-Dalmas", "hostel Le Chalet, dinner and breakfast"]
+      he: ["נחתנו 11:30, בעיר עד 16:40", "קו 90 ב-16:40, שעתיים ל-Saint-Dalmas", "אכסניית Le Chalet, ארוחת ערב ובוקר"]
     text:
       en:
         - We flew to Nice and were in the city by 11:30. From the airport the tram (line 2) took us to Jean Médecin in the centre in 25 minutes. We bought tickets in the Lignes d'Azur app, 1.70 € per person per ride.
@@ -39,6 +42,10 @@ days:
     title:
       en: Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Le Boréon
       he: Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Le Boréon
+    # from the log and the picture times: out 08:30, Lac Petit 12:20, Lac du Barn 13:45–15:15, a lift for the road, camp pictures 19:33
+    stats:
+      en: ["08:30 → ≈17:30, 9 h with a 1½ h stop at Lac du Barn", "≈15 km on foot, a lift for the last 5", "tent by the lake at Le Boréon, 1,500 m"]
+      he: ["08:30 → ≈17:30, 9 שעות עם עצירה של שעה וחצי ב-Lac du Barn", "≈15 ק\"מ ברגל, טרמפ ל-5 האחרונים", "אוהל ליד האגם ב-Le Boréon, 1,500 מ'"]
     # 08:30 out of Saint-Dalmas, the lakes below Col du Barn around 12:20, the col, Lac du Barn 13:45–15:15, road, a lift to Le Boréon
     anchors:
       - {time: '08:30', at: start}
@@ -67,6 +74,10 @@ days:
     title:
       en: Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre
       he: Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre
+    # from the log and the picture times: out 09:00, the refuge 12:30–13:45, Trécolpas till 15:30, the pass, camp 17:15
+    stats:
+      en: ["09:00 → 17:15, 8¼ h with long stops at the refuge and the lake", "≈13 km", "tent above Lac de Fenestre, 2,300 m, by the old border buildings"]
+      he: ["09:00 → 17:15, 8¼ שעות עם עצירות ארוכות ברפיוז' ובאגם", "≈13 ק\"מ", "אוהל מעל Lac de Fenestre, 2,300 מ', ליד מבני הגבול הישנים"]
     # 09:00 out of Le Boréon, the refuge 12:30–13:45, Trécolpas 14:15–15:30, the pass about 16:30, Lac de Fenestre 17:15
     anchors:
       - {time: '09:00', at: start}
