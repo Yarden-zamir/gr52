@@ -263,9 +263,11 @@ a.daylink:hover{color:var(--lake)}
 .tile img{width:100%;height:100%;object-fit:cover;display:block}
 .tile span{position:absolute;left:0;right:0;bottom:0;padding:14px 8px 5px;font:12px "IBM Plex Sans",sans-serif;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .photoref{display:block;margin:12px 0}
-.photos{display:block}
+.photos{display:block;margin:12px 0}
 .inpic{display:block;text-decoration:none;color:inherit}
-.inpic img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:0 auto;border-radius:3px;background:var(--line)}
+.inpic img{display:block;max-width:100%;height:auto;margin:0 auto;border-radius:3px;background:var(--line)}
+.inpic.land img{width:100%}
+.inpic.port img{width:auto;max-height:85vh}
 .inpic span{display:block;font-size:12.5px;color:var(--muted);padding:4px 0;text-align:center;text-decoration:none}
 .pane[data-pane="log"] p{max-width:72ch}
 .tile img{transition:transform .25s ease} .tile:hover img{transform:scale(1.03)} .tile,.inpic,.popthumbs a{cursor:zoom-in}
@@ -278,7 +280,8 @@ a.daylink:hover{color:var(--lake)}
   .photos{display:flex;gap:10px;align-items:flex-start}
   .photos .photoref{flex:1 1 0;min-width:0;margin:0}
   .photos .inpic img{max-height:60vh;width:100%;object-fit:cover;aspect-ratio:4/3}
-  .photoref:not(.photos .photoref) .inpic img{max-height:72vh}
+  .photoref:not(.photos .photoref) .inpic.port img{max-height:92vh}
+  .logpage .pane[data-pane="log"]{max-width:none}
 }
 #lightbox{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px}
 #lightbox img{max-width:100%;max-height:calc(100vh - 90px);object-fit:contain;display:block}
@@ -351,11 +354,18 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
     <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="1"></div></div>
     <div class="pane" data-pane="log" role="tabpanel" hidden>
       <p>Up at 07:00, breakfast at 07:30. For two simple Israelis who know a thing or two about falafel, this was an excellent breakfast: croissants fresh from the oven, baguettes, sausage and cheese. Six croissants between us. Wow.</p>
-      <p>On the trail at 08:30. A tough start, a serious climb of about 900 m towards Col de Veillos. From the col we took the variant to <a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (not that small at all). The lake is lovely and Yarden went in. Freezing. <span class="photoref" data-photo="8bc285d317db"></span></p>
-      <p>We kept climbing past a few more lakes to <a href="?map=Col du Barn" class="focus" data-focus="Col du Barn">Col du Barn</a>, the high point of the day at 2,452 m, and started down. The descent is beautiful. A little below the col there is a lake off the path, Lac du Barn, well worth the detour: we stopped there for an hour and a half, a proper picnic and even a dip in the icy water. <span class="photos"><span class="photoref" data-photo="2b6ff6169193"></span> <span class="photoref" data-photo="79c0470ff95a"></span></span></p>
+      <p>On the trail at 08:30. A tough start, a serious climb of about 900 m towards Col de Veillos. From the col we took the variant to <a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (not that small at all). The lake is lovely and Yarden went in. Freezing.</p>
+      <div class="photoref" data-photo="8bc285d317db"></div>
+      <p>We kept climbing past a few more lakes to <a href="?map=Col du Barn" class="focus" data-focus="Col du Barn">Col du Barn</a>, the high point of the day at 2,452 m, and started down. The descent is beautiful. A little below the col there is a lake off the path, Lac du Barn, well worth the detour: we stopped there for an hour and a half, a proper picnic and even a dip in the icy water.</p>
+      <div class="photos"><span class="photoref" data-photo="2b6ff6169193"></div>
+      <div class="photoref" data-photo="79c0470ff95a"></div>
+      <p></span></p>
       <p>Down through the forest. There was a very pretty stream right next to us and Yarden was annoyed that the path did not follow it, and could not see why. After half an hour we reached the road and understood that the road stays with us all the way to <a href="?map=NIGHT 1" class="focus" data-focus="NIGHT 1">Le Boréon</a>. A bit of a letdown, since a road is a dull way to walk, so Yarden suggested leaving the path for the stream. The stream really was wild, and we also found out why the path keeps away from it: the whole bank is bog, fed by the water running down off the slopes. We followed the stream a little until our shoes were soaked and then, at the request of the one carrying the pack, went back to the road.</p>
       <p>Another 5 km or so on paths beside the road, through an enchanted forest that I did not like, not enough sunlight, and Yarden loved. On the way we met a nice French family, and after a deep conversation in Frenglish they gave us a lift to <a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, the end of the day. The last kilometres are fairly dull and unnecessary; if a lift comes along, take it.</p>
-      <p>We pitched the tent next to the artificial lake. There are a few guesthouses there too. In 2019 a very serious storm hit the area and wrecked many of the paths and the infrastructure; the lake is still being repaired. <span class="photoref" data-photo="9d707f81d114"></span> In the evening we went to the restaurant by the lake, L'Eau à la Bouche, which the internet said was well regarded: expensive, and a lot of meat, to Yarden's specification, while Ayelet wanted rice and lentils. <span class="photoref" data-photo="73db5031d2cc"></span></p>
+      <p>We pitched the tent next to the artificial lake. There are a few guesthouses there too. In 2019 a very serious storm hit the area and wrecked many of the paths and the infrastructure; the lake is still being repaired.</p>
+      <div class="photoref" data-photo="9d707f81d114"></div>
+      <p>In the evening we went to the restaurant by the lake, L'Eau à la Bouche, which the internet said was well regarded: expensive, and a lot of meat, to Yarden's specification, while Ayelet wanted rice and lentils.</p>
+      <div class="photoref" data-photo="73db5031d2cc"></div>
     </div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="1"></div></div>
@@ -370,9 +380,26 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
     <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="2"></div></div>
     <div class="pane" data-pane="log" role="tabpanel" hidden>
       <p>Up in our lovely tent at 07:15, packed and off. We looked for coffee in the huts nearby and found nothing worth it; Yarden, who needed one, was not pleased.</p>
-      <p>We started the day's climb at 09:00, fairly late. It begins in a forest full of mushrooms and goes on through open country with a dramatic view of the mountains and a stream running down with endless pools. One of the highlights of the whole trip: hard walking, but it pays back in full. At one of the pools we went into the water. Cold, but wow. <span class="photos"><span class="photoref" data-photo="e8b1e48ff7f6"></span> <span class="photoref" data-photo="688985c80cce"></span></span></p>
-      <p>We climbed to <a href="?map=Cougourde" class="focus" data-focus="Cougourde">Refuge de la Cougourde</a> and got there at 12:30. A lovely refuge. After the climb we bought a coffee and a blueberry and raspberry tart, good (and expensive) and highly recommended. <span class="photos"><span class="photoref" data-photo="5dd55ef63fe8"></span> <span class="photoref" data-photo="4ea8d8e327b4"></span> </span>We rested with the view and carried on up to <a href="?map=Trécolpas" class="focus" data-focus="Trécolpas">Lac de Trécolpas</a>. The lake was gorgeous, beyond anything we had seen so far. We chose a hidden corner, rested and had lunch. <span class="photos"><span class="photoref" data-photo="a5c3ff234f43"></span> <span class="photoref" data-photo="7884e62dcbdd"></span></span></p>
-      <p>After a long break, watching an ibex pick its way across the boulders, and exploring the area, we set off around 15:30 for <a href="?map=Pas des Ladres" class="focus" data-focus="Pas des Ladres">Pas des Ladres</a>. <span class="photoref" data-photo="3ebcc33967b4"></span> We decided to sleep at <a href="?map=NIGHT 2 option B" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, which the trail does not pass directly. We saw there is a path around that runs along the Italian border, decided that a high five to Italy was a good idea, and took it: challenging and nice. <span class="photoref" data-photo="49982c211d6b"></span> We chose to sleep at a spot overlooking the lake next to ruined buildings from the Second World War, arrived at 17:15 and pitched the tent. <span class="photos"><span class="photoref" data-photo="6c34936af92a"></span> <span class="photoref" data-photo="fea180fe747b"></span> <span class="photoref" data-photo="8ca415f20bb6"></span></span></p>
+      <p>We started the day's climb at 09:00, fairly late. It begins in a forest full of mushrooms and goes on through open country with a dramatic view of the mountains and a stream running down with endless pools. One of the highlights of the whole trip: hard walking, but it pays back in full. At one of the pools we went into the water. Cold, but wow.</p>
+      <div class="photos"><span class="photoref" data-photo="e8b1e48ff7f6"></div>
+      <div class="photoref" data-photo="688985c80cce"></div>
+      <p></span></p>
+      <p>We climbed to <a href="?map=Cougourde" class="focus" data-focus="Cougourde">Refuge de la Cougourde</a> and got there at 12:30. A lovely refuge. After the climb we bought a coffee and a blueberry and raspberry tart, good (and expensive) and highly recommended.</p>
+      <div class="photos"><span class="photoref" data-photo="5dd55ef63fe8"></div>
+      <div class="photoref" data-photo="4ea8d8e327b4"></div>
+      <p></span>We rested with the view and carried on up to <a href="?map=Trécolpas" class="focus" data-focus="Trécolpas">Lac de Trécolpas</a>. The lake was gorgeous, beyond anything we had seen so far. We chose a hidden corner, rested and had lunch.</p>
+      <div class="photos"><span class="photoref" data-photo="a5c3ff234f43"></div>
+      <div class="photoref" data-photo="7884e62dcbdd"></div>
+      <p></span></p>
+      <p>After a long break, watching an ibex pick its way across the boulders, and exploring the area, we set off around 15:30 for <a href="?map=Pas des Ladres" class="focus" data-focus="Pas des Ladres">Pas des Ladres</a>.</p>
+      <div class="photoref" data-photo="3ebcc33967b4"></div>
+      <p>We decided to sleep at <a href="?map=NIGHT 2 option B" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, which the trail does not pass directly. We saw there is a path around that runs along the Italian border, decided that a high five to Italy was a good idea, and took it: challenging and nice.</p>
+      <div class="photoref" data-photo="49982c211d6b"></div>
+      <p>We chose to sleep at a spot overlooking the lake next to ruined buildings from the Second World War, arrived at 17:15 and pitched the tent.</p>
+      <div class="photos"><span class="photoref" data-photo="6c34936af92a"></div>
+      <div class="photoref" data-photo="fea180fe747b"></div>
+      <div class="photoref" data-photo="8ca415f20bb6"></div>
+      <p></span></p>
     </div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="2"></div></div>
@@ -432,11 +459,18 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
     <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="1"></div></div>
     <div class="pane" data-pane="log" role="tabpanel" hidden>
       <p>קמנו ב-07:00, ארוחת בוקר ב-07:30. בתור ישראלים פשוטים שמבינים עניין בפלאפל, זו הייתה ארוחת בוקר מצוינת: קרואסונים טריים מהתנור, בגטים, נקניק וגבינה. אכלנו שישה קרואסונים. פשוט וואו.</p>
-      <p>יצאנו לשביל ב-08:30. התחלה קשוחה, עלייה רצינית של בערך 900 מטר לכיוון Col de Veillos. מהמעבר לקחנו את הווריאנט ל-<a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (לא כל כך קטן בכלל). האגם מקסים וירדן נכנס אליו. קפוא. <span class="photoref" data-photo="8bc285d317db"></span></p>
-      <p>המשכנו לעלות, ראינו בדרך עוד כמה אגמים, עד ל-<a href="?map=Col du Barn" class="focus" data-focus="Col du Barn">Col du Barn</a>, נקודת השיא של היום ב-2,452 מטר, והתחלנו לרדת. הירידה יפהפייה. קצת אחרי תחילתה יש אגם מחוץ לשביל, Lac du Barn, שמאוד שווה את הסטייה: עצרנו שם לשעה וחצי, פיקניק מפנק ואפילו כניסה למים הקפואים. <span class="photos"><span class="photoref" data-photo="2b6ff6169193"></span> <span class="photoref" data-photo="79c0470ff95a"></span></span></p>
+      <p>יצאנו לשביל ב-08:30. התחלה קשוחה, עלייה רצינית של בערך 900 מטר לכיוון Col de Veillos. מהמעבר לקחנו את הווריאנט ל-<a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (לא כל כך קטן בכלל). האגם מקסים וירדן נכנס אליו. קפוא.</p>
+      <div class="photoref" data-photo="8bc285d317db"></div>
+      <p>המשכנו לעלות, ראינו בדרך עוד כמה אגמים, עד ל-<a href="?map=Col du Barn" class="focus" data-focus="Col du Barn">Col du Barn</a>, נקודת השיא של היום ב-2,452 מטר, והתחלנו לרדת. הירידה יפהפייה. קצת אחרי תחילתה יש אגם מחוץ לשביל, Lac du Barn, שמאוד שווה את הסטייה: עצרנו שם לשעה וחצי, פיקניק מפנק ואפילו כניסה למים הקפואים.</p>
+      <div class="photos"><span class="photoref" data-photo="2b6ff6169193"></div>
+      <div class="photoref" data-photo="79c0470ff95a"></div>
+      <p></span></p>
       <p>ירדנו דרך היער. ממש לידנו זרם נחל מאוד יפה, וירדן התבאס שהשביל לא עובר צמוד אליו ולא הבין למה. אחרי חצי שעה הגענו לכביש והבנו שהכביש מלווה אותנו עד היעד, <a href="?map=NIGHT 1" class="focus" data-focus="NIGHT 1">Le Boréon</a>. קצת התאכזבנו, כי ללכת לאורך כביש זה משעמם, אז ירדן הציע לרדת מהשביל ללכת צמוד לנחל. הנחל באמת היה מטורף, וגם גילינו למה השביל מתרחק ממנו: כל הגדה היא ביצה, מהמים שזורמים אליו מהמדרונות. הלכנו קצת לאורכו עד שהנעליים נרטבו, ואז, לבקשת זו שנושאת את התיק, חזרנו לכביש.</p>
       <p>עוד כ-5 ק"מ על שבילים צמודים לכביש, בתוך יער קסום שאני לא אהבתי, לא היה בו מספיק אור שמש, וירדן אהב מאוד. בדרך פגשנו משפחה צרפתית נחמדה, ואחרי שיחה עמוקה בצרפתינגלית הם לקחו אותנו טרמפ עד <a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, היעד של היום. הקילומטרים האחרונים די משעממים ומיותרים; אם מזדמן טרמפ, שווה לקחת.</p>
-      <p>הקמנו את האוהל ליד האגם המלאכותי. יש שם גם כמה אכסניות למי שרוצה. ב-2019 פגעה באזור סופה מאוד רצינית שהרסה הרבה מהשבילים והתשתיות; את האגם עדיין משפצים מאז. <span class="photoref" data-photo="9d707f81d114"></span> בערב הלכנו למסעדה ליד האגם, L'Eau à la Bouche, שראינו באינטרנט שהיא נחשבת: יקרה, והרבה בשר, לפי הדרישות של ירדן, בעוד איילת רצתה אורז ועדשים. <span class="photoref" data-photo="73db5031d2cc"></span></p>
+      <p>הקמנו את האוהל ליד האגם המלאכותי. יש שם גם כמה אכסניות למי שרוצה. ב-2019 פגעה באזור סופה מאוד רצינית שהרסה הרבה מהשבילים והתשתיות; את האגם עדיין משפצים מאז.</p>
+      <div class="photoref" data-photo="9d707f81d114"></div>
+      <p>בערב הלכנו למסעדה ליד האגם, L'Eau à la Bouche, שראינו באינטרנט שהיא נחשבת: יקרה, והרבה בשר, לפי הדרישות של ירדן, בעוד איילת רצתה אורז ועדשים.</p>
+      <div class="photoref" data-photo="73db5031d2cc"></div>
     </div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="1"></div></div>
@@ -451,9 +485,26 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
     <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="2"></div></div>
     <div class="pane" data-pane="log" role="tabpanel" hidden>
       <p>קמנו באוהל המקסים שלנו ב-07:15, התארגנו ויצאנו. חיפשנו קפה בבקתות הסמוכות ולא מצאנו משהו שווה במיוחד; ירדן, שהיה זקוק לקפה, התבאס.</p>
-      <p>התחלנו את הטיפוס של היום ב-09:00, יחסית מאוחר. הוא מתחיל בתוך יער מלא פטריות וממשיך בדרך פתוחה עם נוף דרמטי של הרים ונחל זורם עם המון בריכות. אחד ההיילייטים של כל הטיול: הליכה קשה, אבל משתלמת ביותר. באחת הבריכות בדרך נכנסנו למים. קר, אבל וואו. <span class="photos"><span class="photoref" data-photo="e8b1e48ff7f6"></span> <span class="photoref" data-photo="688985c80cce"></span></span></p>
-      <p>טיפסנו עד <a href="?map=Cougourde" class="focus" data-focus="Cougourde">Refuge de la Cougourde</a> והגענו ב-12:30. רפיוז' מקסים. אחרי העלייה קנינו קפה וטארט אוכמניות ופטל, מוצלח (ויקר) ומומלץ מאוד. <span class="photos"><span class="photoref" data-photo="5dd55ef63fe8"></span> <span class="photoref" data-photo="4ea8d8e327b4"></span> </span>נחנו מול הנוף והמשכנו לטפס ל-<a href="?map=Trécolpas" class="focus" data-focus="Trécolpas">Lac de Trécolpas</a>. האגם היה מקסים, מעל ומעבר לכל מה שראינו עד כה. בחרנו לנו פינה נסתרת, נחנו ואכלנו צהריים. <span class="photos"><span class="photoref" data-photo="a5c3ff234f43"></span> <span class="photoref" data-photo="7884e62dcbdd"></span></span></p>
-      <p>אחרי הפסקה מפנקת, צפייה ביעל שמדלג בין הסלעים וחקירה של האזור, יצאנו בסביבות 15:30 ל-<a href="?map=Pas des Ladres" class="focus" data-focus="Pas des Ladres">Pas des Ladres</a>. <span class="photoref" data-photo="3ebcc33967b4"></span> החלטנו לישון ב-<a href="?map=NIGHT 2 option B" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, שהשביל לא עובר בו ישירות. ראינו שיש שביל עוקף שעובר על גבול איטליה-צרפת, החלטנו שלתת כיף לאיטליה זה רעיון טוב, והלכנו בו: מאתגר ונחמד. <span class="photoref" data-photo="49982c211d6b"></span> בחרנו לישון בנקודה שצופה לאגם, ליד מבנים הרוסים ממלחמת העולם השנייה, הגענו ב-17:15 והקמנו את האוהל. <span class="photos"><span class="photoref" data-photo="6c34936af92a"></span> <span class="photoref" data-photo="fea180fe747b"></span> <span class="photoref" data-photo="8ca415f20bb6"></span></span></p>
+      <p>התחלנו את הטיפוס של היום ב-09:00, יחסית מאוחר. הוא מתחיל בתוך יער מלא פטריות וממשיך בדרך פתוחה עם נוף דרמטי של הרים ונחל זורם עם המון בריכות. אחד ההיילייטים של כל הטיול: הליכה קשה, אבל משתלמת ביותר. באחת הבריכות בדרך נכנסנו למים. קר, אבל וואו.</p>
+      <div class="photos"><span class="photoref" data-photo="e8b1e48ff7f6"></div>
+      <div class="photoref" data-photo="688985c80cce"></div>
+      <p></span></p>
+      <p>טיפסנו עד <a href="?map=Cougourde" class="focus" data-focus="Cougourde">Refuge de la Cougourde</a> והגענו ב-12:30. רפיוז' מקסים. אחרי העלייה קנינו קפה וטארט אוכמניות ופטל, מוצלח (ויקר) ומומלץ מאוד.</p>
+      <div class="photos"><span class="photoref" data-photo="5dd55ef63fe8"></div>
+      <div class="photoref" data-photo="4ea8d8e327b4"></div>
+      <p></span>נחנו מול הנוף והמשכנו לטפס ל-<a href="?map=Trécolpas" class="focus" data-focus="Trécolpas">Lac de Trécolpas</a>. האגם היה מקסים, מעל ומעבר לכל מה שראינו עד כה. בחרנו לנו פינה נסתרת, נחנו ואכלנו צהריים.</p>
+      <div class="photos"><span class="photoref" data-photo="a5c3ff234f43"></div>
+      <div class="photoref" data-photo="7884e62dcbdd"></div>
+      <p></span></p>
+      <p>אחרי הפסקה מפנקת, צפייה ביעל שמדלג בין הסלעים וחקירה של האזור, יצאנו בסביבות 15:30 ל-<a href="?map=Pas des Ladres" class="focus" data-focus="Pas des Ladres">Pas des Ladres</a>.</p>
+      <div class="photoref" data-photo="3ebcc33967b4"></div>
+      <p>החלטנו לישון ב-<a href="?map=NIGHT 2 option B" class="focus" data-focus="NIGHT 2 option B">Lac de Fenestre</a>, שהשביל לא עובר בו ישירות. ראינו שיש שביל עוקף שעובר על גבול איטליה-צרפת, החלטנו שלתת כיף לאיטליה זה רעיון טוב, והלכנו בו: מאתגר ונחמד.</p>
+      <div class="photoref" data-photo="49982c211d6b"></div>
+      <p>בחרנו לישון בנקודה שצופה לאגם, ליד מבנים הרוסים ממלחמת העולם השנייה, הגענו ב-17:15 והקמנו את האוהל.</p>
+      <div class="photos"><span class="photoref" data-photo="6c34936af92a"></div>
+      <div class="photoref" data-photo="fea180fe747b"></div>
+      <div class="photoref" data-photo="8ca415f20bb6"></div>
+      <p></span></p>
     </div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="2"></div></div>
@@ -502,6 +553,6 @@ if('serviceWorker' in navigator){(function(){var had=!!navigator.serviceWorker.c
 <script src="/vendor/leaflet.min.js?v=5c9aecfc30"></script>
 <script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe"></script>
 <script src="/map.js?v=2fe9f49d76" defer></script>
-<script src="/log.js?v=b09697ff21" defer></script>
+<script src="/log.js?v=2bf537a99c" defer></script>
 </body>
 </html>
