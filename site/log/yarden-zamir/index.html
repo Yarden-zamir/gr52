@@ -290,14 +290,17 @@ a.daylink:hover{color:var(--lake)}
 #lightbox .lbcap{color:#fff;font:14px "IBM Plex Sans",sans-serif;margin-top:8px;text-align:center;max-width:70ch} #lightbox .lbcap a{color:#9CC7F0}
 #lightbox .lbn{color:#bbb;font:12px "IBM Plex Mono",monospace;margin-top:4px}
 body.lbopen{overflow:hidden}
-.photodot{background:#fff;border:2px solid var(--mark);border-radius:50%;box-shadow:0 1px 4px rgba(0,0,0,.4);display:grid;place-items:center;box-sizing:border-box}
-.photodot span{font:700 11px "IBM Plex Mono",monospace;color:var(--mark)}
-.photodot span:empty::before{content:"";display:block;width:10px;height:8px;border:2px solid var(--mark);border-radius:2px;box-sizing:border-box}
-.photodot.est{border-style:dashed}
+.photodot{position:relative;width:46px;height:46px;box-sizing:border-box}
+.photodot .pdi{display:grid;width:46px;height:46px;border-radius:50%;overflow:hidden;background:#fff;border:2px solid var(--mark);box-shadow:0 1px 4px rgba(0,0,0,.4);box-sizing:border-box;gap:1px}
+.photodot .pdi.n2,.photodot .pdi.n3,.photodot .pdi.n4{grid-template-columns:1fr 1fr} .photodot .pdi.n3,.photodot .pdi.n4{grid-template-rows:1fr 1fr} .photodot .pdi.n3 img:first-child{grid-row:1/3}
+.photodot img{width:100%;height:100%;object-fit:cover;display:block;min-width:0;min-height:0}
+.photodot b{position:absolute;right:-5px;top:-5px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--mark);color:#fff;font:700 11px "IBM Plex Mono",monospace;line-height:18px;text-align:center;box-sizing:border-box;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.photodot.est .pdi{border-style:dashed}
+.maphint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:800;background:rgba(255,255,255,.92);color:var(--muted);font:12px "IBM Plex Mono",monospace;padding:4px 10px;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.25);pointer-events:none;white-space:nowrap}
 #lightbox .lbdl{position:absolute;top:12px;left:12px;color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.4);border-radius:50%;width:40px;height:40px;font-size:22px;line-height:38px;text-align:center;text-decoration:none}
 #lightbox img{touch-action:pan-y;user-select:none;-webkit-user-select:none}
 body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92px)}
-.popthumbs{display:flex;gap:4px;flex-wrap:wrap;max-width:240px} .popthumbs a{display:block;width:74px;height:56px;overflow:hidden;border-radius:2px;background:var(--line)} .popthumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.popthumbs{display:flex;gap:4px;flex-wrap:wrap;max-width:240px;max-height:250px;overflow:auto} .popthumbs a{display:block;width:74px;height:56px;overflow:hidden;border-radius:2px;background:var(--line)} .popthumbs img{width:100%;height:100%;object-fit:cover;display:block}
 .upload{margin:12px 0} .upbtn{display:inline-block;font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 14px;cursor:pointer} .upbtn:hover{border-color:var(--mark)}
 .uplist{font:13px "IBM Plex Mono",monospace;color:var(--muted);margin-top:8px} .uplist div{padding:2px 0}
 .wxh{margin:6px 0 10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5;max-width:76ch}
@@ -333,14 +336,14 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:0" class="daylink" data-focus="day:0">Nice → tram → shopping → bus 90 ← Saint-Dalmas</a></h3>
     <div class="stats"><span>landed 11:30, in town till 16:30</span><span>bus 90 at 16:30, 2 h to <a href="#map" class="focus" data-focus="NIGHT 0">Saint-Dalmas</a></span><span>hostel Le Chalet, dinner and breakfast</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="0"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>We flew to Nice and were in the city by 11:30. From the airport the L2 tram took us to the centre, Jean Médecin stop, in 25 minutes. We bought the tickets in the Lignes d'Azur app, 1.70 € per person per ride.</p>
       <p>From there we went to visit friends who live in Nice and shopped at an Intermarché, fairly large with a good range. It had no gas, so we went on to a Decathlon in the area and stocked up there.</p>
       <p>Then the L3 tram to the University stop, and from there bus 90, which leaves Nice three times a day (08:10, 16:30, 18:30) for <a href="?map=BUS 90" class="focus" data-focus="BUS 90">Saint-Dalmas</a>, where the trek starts. We took the 16:30 bus: two hours of very winding, interesting and beautiful road.</p>
       <p>In <a href="#map" class="focus" data-focus="NIGHT 0">Saint-Dalmas</a> we slept at the <a href="?map=NIGHT 0" class="focus" data-focus="NIGHT 0">HI hostel Le Chalet</a>, with dinner and breakfast. Dinner was fried fish, rice and beans: a simple meal, fine, a little pricey.</p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="0"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="0"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="0"></div></div>
   </div>
@@ -350,9 +353,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:1" class="daylink" data-focus="day:1">Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Lac du Boréon</a></h3>
     <div class="stats"><span>08:30 ← ≈17:30, 9 h with a 1½ h stop at <a href="#map" class="focus" data-focus="LAKE · Lac du Barn">Lac du Barn</a></span><span>≈15 km on foot, a lift for the last 5</span><span>tent by the lake at <a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, 1,500 m</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="1"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>Up at 07:00, breakfast at 07:30. For two simple Israelis who know a thing or two about falafel, this was an excellent breakfast! Croissants fresh from the oven, baguettes, sausage and cheese. Six croissants between us. Wow.</p>
       <p>On the trail at 08:30. A tough start, a serious climb of about 900 m towards Col de Veillos. From there we took a variant of the trail to reach <a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (not that small at all). The lake is lovely and Yarden went in. Freezing!!!</p>
       <div class="photoref" data-photo="8bc285d317db"></div>
@@ -367,6 +369,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <p>In the evening we went to the restaurant by the lake, L'Eau à la Bouche, which the internet said was well regarded, expensive and heavy on meat, as Yarden demanded (while Ayelet wanted rice and lentils). The restaurant was pleasant and impressive. We chose two mains: an entrecôte steak and a kind of double meat patty which, the waiter said, is cooked outside and raw inside. We did not expect what came: it turns out this is a restaurant that specialises in serving raw meat, on the strength of ingredients good enough to allow it. We got completely raw minced meat and a steak it would be illegal to serve in Israel (we had asked for medium). I was utterly shocked, Yarden rather enjoyed it, but we both agreed it was an experience we probably will not repeat. Still, an experience, and educational. The meal cost us 52 €.</p>
       <div class="photoref" data-photo="73db5031d2cc"></div>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="1"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="1"></div></div>
   </div>
@@ -376,9 +379,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:2" class="daylink" data-focus="day:2">Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre</a></h3>
     <div class="stats"><span>09:00 ← 17:15, 8¼ h with long stops at the refuge and the lake</span><span>≈13 km</span><span>tent above <a href="#map" class="focus" data-focus="NIGHT 2">Lac de Fenestre</a>, 2,300 m, by the old border buildings</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="2"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>Up in our lovely tent at 07:15, packed and off. We looked for coffee in the huts nearby and found nothing worth it, and Yarden, who needed one, was not pleased.</p>
       <p>We started the climb at 09:00 (fairly late). It begins in a forest (full of mushrooms) and goes on through open country with a dramatic view of the mountains and a stream running down with endless pools. One of the highlights of the trip: hard walking, but it pays back in full. At one of the pools we even went into the water. Cold, but wow.</p>
       <div class="photos"><span class="photoref" data-photo="e8b1e48ff7f6"></div>
@@ -401,6 +403,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <div class="photoref" data-photo="8ca415f20bb6"></div>
       <p></span></p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="2"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="2"></div></div>
   </div>
@@ -410,14 +413,14 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:3" class="daylink" data-focus="day:3">Lac de Fenestre → Pas du Mont Colomb → Refuge de Nice → Baisse du Basto → Lac du Basto</a></h3>
     <div class="stats"><span><a href="#map" class="focus" data-focus="PASS · Pas du Mont Colomb">Pas du Mont Colomb</a> 12:00, <a href="#map" class="focus" data-focus="HUT · Refuge de Nice">Refuge de Nice</a> 14:30, camp a little after 18:00</span><span>a second pass, +500 / −400 m, to <a href="#map" class="focus" data-focus="NIGHT 3">Lac du Basto</a></span><span>tent at a lookout over <a href="#map" class="focus" data-focus="NIGHT 3">Lac du Basto</a></span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="3"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>Up, coffee in the tent, packed, and off to fill water at the trickle Yarden had found the day before, also known as the pure cloud-juice press. We started down and took a variant of the trail that cuts the visit to the <a href="#map" class="focus" data-focus="HUT · Refuge de la Madone">Madone de Fenestre</a> hut and goes straight to <a href="?map=Pas du Mont Colomb" class="focus" data-focus="Pas du Mont Colomb">Pas du Mont Colomb</a>. On the way we stopped at the stream, found an amazing pool and bathed, and once refreshed we started the big climb to the pass, technical and nice.</p>
       <p>We reached the pass at 12:00 and had lunch. Then we went down and reached <a href="?map=HUT · Refuge de Nice" class="focus" data-focus="HUT · Refuge de Nice">Refuge de Nice</a> at 14:30. The refuge sits in a lovely spot on the mountainside, straight out of a film. We sat down for a coffee with a tart: the coffee was awful and the tart a B minus. Coffee lovers like us should bring their own to make; the French do not make coffee that well (in the huts, at least). We thought of sleeping at the refuge, but it turns out the beds are in shared dorms only, and we, spoilt as we are, like our privacy.</p>
       <p>The plan was to end the day at the refuge and have an easier day, but since we felt we still had strength (at least 50 % of us did), we decided, after a quick and not very deep look at the map, to go on a little, to <a href="?map=LAKE · Lac du Basto" class="focus" data-focus="LAKE · Lac du Basto">Lac du Basto</a>. We set off and realised you actually have to cross another pass to get there, <a href="?map=Baisse du Basto" class="focus" data-focus="Baisse du Basto">Baisse du Basto</a> (500 m up and 400 down). In short, our chill day turned into a fairly tough one, but we enjoyed the technical walking and the views. Note: towards evening fog starts to form on the high parts of the mountains, worth bearing in mind.</p>
       <p>We reached a lovely lookout over the lake a little after 18:00, stopped there and pitched the tent.</p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="3"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="3"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="3"></div></div>
   </div>
@@ -427,15 +430,15 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:4" class="daylink" data-focus="day:4">Lac du Basto → Vallée de la Valmasque and back → Refuge des Merveilles</a></h3>
     <div class="stats"><span>the <a href="#map" class="focus" data-focus="HUT · Refuge de la Valmasque">Valmasque</a> valley out and back: three big lakes</span><span><a href="#map" class="focus" data-focus="NIGHT 4">Refuge des Merveilles</a>, dinner 21 € each</span><span>tent on the marked area above the refuge, fog</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="4"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>We decided to change the original plan. We had seen that along the GR52 there is a valley called <a href="?map=HUT · Refuge de la Valmasque" class="focus" data-focus="HUT · Refuge de la Valmasque">Valmasque</a> which the trail reaches but does not go through. On the map it looked like a very pretty stretch with three big lakes one after the other, and the French family we met on the first day had recommended it too. So we decided to do the valley out and back, and then carry on to <a href="?map=NIGHT 4" class="focus" data-focus="NIGHT 4">Refuge des Merveilles</a>.</p>
       <p>We highly recommend this extension: the lakes are stunning, and it is a joy to go into the water and sunbathe on the soft grass at the lakeside. The hut there is cute too, and if you like you can carry on along another route that goes down to pretty waterfalls (we did not).</p>
       <p>The Merveilles valley is very beautiful and magical. It is known as one of the sites with the oldest rock engravings, from the Bronze Age. We managed to find very few of them; you are welcome to look for more.</p>
       <p>Next to the Merveilles hut there is one marked area only where a tent may be pitched, above the hut. At the hut we had a meaty dinner, simple but tasty and filling (the meat well done, no worries), 21 € each. Dinners in the huts are usually very social and communal.</p>
       <p>We came out of dinner in the dark and found the whole valley in fog. We had pitched the tent quite far away, so we had to feel our way to it in the murk. The head torches helped us see 2 m ahead instead of 1... In the end, after some back and forth and a bit of arguing, we found the tent and went to sleep!</p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="4"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="4"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="4"></div></div>
   </div>
@@ -445,9 +448,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:5" class="daylink" data-focus="day:5">Merveilles → Lac de la Muta → Lac du Diable → Pas du Diable → Authion ridge → Camp d'Argent → a ledge beyond</a></h3>
     <div class="stats"><span>a fairly easy walking day, fog from the pass on</span><span><a href="#map" class="focus" data-focus="HUT · Camp d'Argent">Camp d'Argent</a> 15:30, local beer</span><span>tent on a flat grass ledge past the hut, 1,700 m</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="5"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>We woke at Merveilles and went to the hut for coffee. It came in bowls, quite a cute concept. Breakfasts in the huts are usually fairly plain: cornflakes, bread, jam and coffee.</p>
       <p>We started climbing and reached <a href="?map=LAKE · Lac de la Muta" class="focus" data-focus="LAKE · Lac de la Muta">Lac de la Muta</a>, the last big lake of the trip. Worth sitting and watching it for a while, and even going in. Note that the whole area is a kind of nature reserve where you are not supposed to leave the paths, but we chose to read a swim in the lake as a separate activity. After another climb you reach Lac du Diable (the devil's lake) right by the pass, which really is the last lake of the trip.</p>
       <p>After <a href="?map=Pas du Diable" class="focus" data-focus="Pas du Diable">Pas du Diable</a>, for the whole rest of the way, we walked in heavy fog and could not see a metre. The walking is very beautiful, along the mountain ridges, but we saw very little in the few windows of sun. A storm was forecast for that day and never came, and above all we made sure not to be at the day's high point, <a href="#map" class="focus" data-focus="PASS · Pas du Diable">Pas du Diable</a>, in the dangerous hours.</p>
@@ -456,6 +458,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <p>We carried on along the trail (part of the next day's route, towards <a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a>) and found a lovely patch of grass, fairly flat (the whole area is quite steep) and out of the wind, with a stunning view, and stopped there. At the hut they had told us there is a cheese shop further along. We checked the map and there really is, but it looks to be in a completely random spot, among ancient ruins in the middle of the mountain. We will look into it tomorrow.</p>
       <div class="photoref" data-photo="e3041fef3915"></div>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="5"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="5"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="5"></div></div>
   </div>
@@ -465,9 +468,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:6" class="daylink" data-focus="day:6">The ledge → cheese farm → Mangiabo ← 1,500 m down → Sospel</a></h3>
     <div class="stats"><span>sunrise start, <a href="#map" class="focus" data-focus="SUMMIT · Mangiabo">Mangiabo</a> for lunch at 12:30</span><span>≈1,500 m down to <a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a> in 3 h, in at 17:30</span><span>Airbnb studio in <a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a>, dinner at Sousper before 20:30</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="6"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>We woke to a wonderful sunrise. We walked through the forest, with the sun peeking between the trees, to a water point marked on the map. It looks a little dubious, but the water was good and tasty. It is important to set out on this day with fairly plenty of water, since the route is long, you go down low and the temperatures rise.</p>
       <div class="photoref" data-photo="f7fa4c6fc858"></div>
       <p>We found the <a href="?map=CHEESE" class="focus" data-focus="CHEESE">cheese shop</a> (Cheese Shop on the map): right inside a small sheep farm, with a small sign. We saw a father and son eating a breakfast of baguette, cheeses and sausage, and asked them "English?" They answered "No". We asked "Cheese?" and they answered "Yes!" They led us to their cheese "cellar", where there were three kinds of cheese. We tasted each and in the end took a little of them all. Recommended!</p>
@@ -479,6 +481,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <p>The town is lovely, full of plane trees, with a cute stream through the middle and plenty of vines and fruit trees. At the Spar we bought sausages and cheeses for the next day, and even a pastry from a lovely bakery called Artisan Boulanger Pâtissier. On the main street there are two fairly similar restaurants serving pizzas and burgers, and to our great surprise both close at 20:30! So mind you go to eat fairly early. We ate at Sousper (as the last customers of the day), and it was very tasty.</p>
       <div class="photoref" data-photo="78e8e0ac40ea"></div>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="6"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="6"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="6"></div></div>
   </div>
@@ -488,9 +491,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:7" class="daylink" data-focus="day:7">Sospel → Col du Berceau → Menton → train to Nice</a></h3>
     <div class="stats"><span>breakfast by the stream, out ≈09:00</span><span>the sea in view from 11:30, above <a href="#map" class="focus" data-focus="FINISH">Menton</a> at 15:30</span><span>train to Nice, pizza</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">Log</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="7"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">Log</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">Pictures<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>The last day, from <a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a> over <a href="?map=Col du Berceau" class="focus" data-focus="Col du Berceau">Col du Berceau</a> and down to the sea at <a href="?map=FINISH" class="focus" data-focus="FINISH">Menton</a>. The words for this day are still to come; the pictures are here already.</p>
       <div class="photos"><span class="photoref" data-photo="96353feb1193"></div>
       <div class="photoref" data-photo="9dcb6276ac5c"></div>
@@ -499,6 +501,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <div class="photoref" data-photo="3d5766222205"></div>
       <p></span></p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="7"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="7"><button type="button" class="mapclaim">Show the map here</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="7"></div></div>
   </div>
@@ -540,14 +543,14 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:0" class="daylink" data-focus="day:0">ניס ← רכבת קלה ← קניות ← אוטובוס 90 ← Saint-Dalmas</a></h3>
     <div class="stats"><span>נחתנו 11:30, בעיר עד 16:30</span><span>קו 90 ב-16:30, שעתיים ל-<a href="#map" class="focus" data-focus="NIGHT 0">Saint-Dalmas</a></span><span>אכסניית Le Chalet, ארוחת ערב ובוקר</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="0"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>טסנו לניס והגענו לעיר ב-11:30. משדה התעופה לקחנו את רכבת L2 למרכז ניס (תחנת Jean Médecin), נסיעה של 25 דקות. את הכרטיס קנינו באפליקציה של Lignes d'Azur, ונסיעה לאדם עלתה 1.7 יורו.</p>
       <p>משם הלכנו לבקר חברים שגרים בניס ועשינו קניות בסופר Intermarché, שהיה יחסית גדול ועם מגוון מוצרים. לא היה גז בסופר, אז נסענו לחנות דקטלון באזור ושם הצטיידנו.</p>
       <p>משם נסענו ברכבת L3 לתחנת University, ומשם לקחנו את קו 90, שיוצא מניס שלוש פעמים ביום (8:10, 16:30, 18:30) לכיוון <a href="?map=BUS 90" class="focus" data-focus="BUS 90">Saint-Dalmas</a>, שם מתחיל הטרק. לקחנו את האוטובוס של 16:30: נסיעה של שעתיים, מפותלת מאוד, מעניינת ויפה!</p>
       <p>ב-<a href="#map" class="focus" data-focus="NIGHT 0">Saint-Dalmas</a> ישנו ב<a href="?map=NIGHT 0" class="focus" data-focus="NIGHT 0">אכסניית Le Chalet</a>, עם ארוחות בוקר וערב. לארוחת ערב אכלנו דג מטוגן, אורז ושעועית. ארוחה פשוטה ובסדר, קצת יקרה.</p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="0"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="0"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="0"></div></div>
   </div>
@@ -557,9 +560,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:1" class="daylink" data-focus="day:1">Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Lac du Boréon</a></h3>
     <div class="stats"><span>08:30 ← ≈17:30, 9 שעות עם עצירה של שעה וחצי ב-<a href="#map" class="focus" data-focus="LAKE · Lac du Barn">Lac du Barn</a></span><span>≈15 ק"מ ברגל, טרמפ ל-5 האחרונים</span><span>אוהל ליד האגם ב-<a href="#map" class="focus" data-focus="NIGHT 1">Le Boréon</a>, 1,500 מ'</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="1"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>קמנו ב-7:00, ארוחת בוקר ב-7:30. בתור ישראלים פשוטים שמבינים עניין בפלאפל, זו הייתה ארוחת בוקר מצוינת! היו קרואסונים טריים מהתנור, בגטים, נקניק וגבינה. אכלנו בסך הכול 6 קרואסונים, פשוט וואו!</p>
       <p>התחלנו ללכת על השביל ב-8:30. התחלה קשוחה עם עלייה רצינית לכיוון Col de Veillos, עלייה של כ-900 מטר. כשהגענו לנקודה הזו, לקחנו וריאנט של השביל כדי להגיע ל-<a href="?map=Lac Petit" class="focus" data-focus="Lac Petit">Lac Petit</a> (לא כל כך קטן בכלל). האגם מקסים, וירדן נכנס אליו. היה קפוא!!!</p>
       <div class="photoref" data-photo="8bc285d317db"></div>
@@ -574,6 +576,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <p>בערב הלכנו למסעדה ליד האגם בשם L'Eau à la Bouche, שראינו באינטרנט שהיא נחשבת, יקרה ומגישה הרבה בשר, לדרישת ירדן (בעוד שאיילת רצתה לאכול אורז ועדשים). המסעדה הייתה נעימה ומרשימה. בחרנו שתי מנות עיקריות: סטייק אנטריקוט ומעין קציצת בשר כפולה, שלפי המלצר עשויה מבחוץ וחיה בפנים. לא ציפינו למה שקיבלנו: מסתבר שזו מסעדה שמתמחה בהגשת בשר חי, על בסיס חומרי גלם איכותיים שמאפשרים את זה. קיבלנו בשר טחון חי לחלוטין וסטייק שבארץ לא היה חוקי להגיש (ביקשנו מדיום). אני הזדעזעתי לחלוטין, ירדן יחסית נהנה, אבל שנינו הסכמנו שזו חוויה שכנראה לא נחזור עליה. בכל זאת, היה חווייתי ומלמד. הארוחה עלתה לנו 52 יורו.</p>
       <div class="photoref" data-photo="73db5031d2cc"></div>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="1"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="1"></div></div>
   </div>
@@ -583,9 +586,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:2" class="daylink" data-focus="day:2">Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre</a></h3>
     <div class="stats"><span>09:00 ← 17:15, 8¼ שעות עם עצירות ארוכות ברפיוז' ובאגם</span><span>≈13 ק"מ</span><span>אוהל מעל <a href="#map" class="focus" data-focus="NIGHT 2">Lac de Fenestre</a>, 2,300 מ', ליד מבני הגבול הישנים</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="2"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>קמנו באוהל המקסים שלנו ב-7:15, התארגנו ויצאנו. חיפשנו קפה בבקתות הסמוכות ולא מצאנו משהו שווה במיוחד, וירדן, שהיה זקוק לקפה, התבאס.</p>
       <p>התחלנו לטפס ב-9:00 (יחסית מאוחר). הטיפוס התחיל בתוך יער (עם מלא פטריות) והמשיך בדרך פתוחה עם נוף דרמטי של הרים ונחל זורם עם המון בריכות. זה אחד ההיילייטים של הטיול: הליכה קשה אבל משתלמת ביותר. באחת הבריכות בדרך אפילו נכנסנו למים. היה קר, אבל וואו.</p>
       <div class="photos"><span class="photoref" data-photo="e8b1e48ff7f6"></div>
@@ -608,6 +610,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <div class="photoref" data-photo="8ca415f20bb6"></div>
       <p></span></p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="2"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="2"></div></div>
   </div>
@@ -617,14 +620,14 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:3" class="daylink" data-focus="day:3">Lac de Fenestre → Pas du Mont Colomb → Refuge de Nice → Baisse du Basto → Lac du Basto</a></h3>
     <div class="stats"><span><a href="#map" class="focus" data-focus="PASS · Pas du Mont Colomb">Pas du Mont Colomb</a> ב-12:00, <a href="#map" class="focus" data-focus="HUT · Refuge de Nice">Refuge de Nice</a> ב-14:30, מחנה קצת אחרי 18:00</span><span>עוד פאס, 500+ / 400− מ', עד <a href="#map" class="focus" data-focus="NIGHT 3">Lac du Basto</a></span><span>אוהל בתצפית על <a href="#map" class="focus" data-focus="NIGHT 3">Lac du Basto</a></span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="3"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>קמנו, שתינו קפה באוהל, התארגנו והלכנו למלא מים בזרזיף שירדן מצא יום קודם, או בשמו השני: מסחטת מיץ עננים טהור. התחלנו לרדת ולקחנו וריאנט של השביל שחותך את ההגעה לבקתת <a href="#map" class="focus" data-focus="HUT · Refuge de la Madone">Madone de Fenestre</a> ומגיע ישר ל-<a href="?map=Pas du Mont Colomb" class="focus" data-focus="Pas du Mont Colomb">Pas du Mont Colomb</a>. בדרך עצרנו בנחל, מצאנו בריכה מטורפת והתרחצנו, ואחרי שהתרעננו התחלנו את העלייה הגדולה לפאס, עלייה טכנית ונחמדה.</p>
       <p>הגענו לפאס ב-12:00 ועשינו ארוחת צהריים. אחר כך ירדנו והגענו ל-<a href="?map=HUT · Refuge de Nice" class="focus" data-focus="HUT · Refuge de Nice">Refuge de Nice</a> ב-14:30. הרפיוג'י ממוקם במקום מקסים על צלע הר, ממש לקוח מסרט. ישבנו לשתות קפה עם טארט: הקפה היה על הפנים והטארט בסדר מינוס. לחובבי קפה כמונו מומלץ להביא קפה להכנה עצמית, הצרפתים לא מכינים קפה כל כך טוב (לפחות בבקתות). חשבנו לישון ברפיוג'י, אבל מסתבר שהלינה היא בדורמים משותפים בלבד, ואנחנו המפונקים אוהבים את הפרטיות שלנו.</p>
       <p>בעיקרון תכננו לסיים את היום ברפיוג'י ולעשות יום יותר איזי, אבל כי הרגשנו שיש לנו עוד כוח (לפחות ל-50% מאיתנו), החלטנו להמשיך קצת, אחרי העפת מבט מהירה ולא מעמיקה במפה, ל-<a href="?map=LAKE · Lac du Basto" class="focus" data-focus="LAKE · Lac du Basto">Lac du Basto</a>. התחלנו ללכת והבנו שבעצם צריך לעבור עוד פאס כדי להגיע לשם, <a href="?map=Baisse du Basto" class="focus" data-focus="Baisse du Basto">Baisse du Basto</a> (500 מטר עלייה ו-400 ירידה). בקיצור, יום הצ'יל שלנו הפך ליום די קשוח, אבל נהנינו מההליכה הטכנית ומהנופים. שימו לב: לקראת הערב מתחיל להיווצר ערפל בחלקים הגבוהים של ההרים, כדאי לקחת את זה בחשבון.</p>
       <p>הגענו לנקודת תצפית מקסימה על האגם קצת אחרי 18:00, ושם עצרנו והקמנו את האוהל.</p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="3"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="3"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="3"></div></div>
   </div>
@@ -634,15 +637,15 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:4" class="daylink" data-focus="day:4">Lac du Basto ← עמק Valmasque הלוך ושוב ← Refuge des Merveilles</a></h3>
     <div class="stats"><span>עמק <a href="#map" class="focus" data-focus="HUT · Refuge de la Valmasque">Valmasque</a> הלוך ושוב: שלושה אגמים גדולים</span><span><a href="#map" class="focus" data-focus="NIGHT 4">Refuge des Merveilles</a>, ארוחת ערב 21 יורו לאדם</span><span>אוהל באזור המסומן מעל הבקתה, ערפל</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="4"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>החלטנו לשנות את התוכנית המקורית. ראינו שלאורך ה-GR52 יש עמק בשם <a href="?map=HUT · Refuge de la Valmasque" class="focus" data-focus="HUT · Refuge de la Valmasque">Valmasque</a> שהשביל מגיע אליו אבל לא עובר דרכו. במפה נראה מקטע יפה מאוד עם שלושה אגמים גדולים אחד אחרי השני, ובנוסף הצרפתים שפגשנו ביום הראשון המליצו עליו. אז החלטנו לעשות את מקטע העמק הלוך ושוב, ואז להמשיך ל-<a href="?map=NIGHT 4" class="focus" data-focus="NIGHT 4">Refuge des Merveilles</a>.</p>
       <p>מאוד ממליצים על ההארכה הזו: האגמים משגעים, כיף להיכנס למים ולהשתזף על הדשא המפנק בשפת האגם. הבקתה שם גם חמודה, ואם רוצים אפשר להמשיך למסלול נוסף שיורד למפלים יפים (לא היינו).</p>
       <p>עמק Merveilles יפה וקסום מאוד. הוא ידוע כאחד האתרים עם חריטות הסלע העתיקות ביותר, מתקופת הברונזה. אנחנו הצלחנו למצוא מעט מאוד מהן, מוזמנים לחפש עוד.</p>
       <p>ליד בקתת Merveilles יש אזור מוגדר בלבד שבו אפשר להקים אוהל, מעל הבקתה. בבקתה אכלנו ארוחת ערב בשרית, פשוטה אבל טעימה ומזינה (הבשר עשוי היטב, אל דאגה), 21 יורו לאדם. ארוחות הערב בבקתות הן בדרך כלל חברתיות ושיתופיות מאוד.</p>
       <p>יצאנו מארוחת הערב בחושך וגילינו שכל העמק בערפל. הקמנו את האוהל די רחוק, אז נאלצנו לגשש אחריו באפלה. הפנסים עזרו לראות 2 מטר קדימה במקום מטר... בסוף, אחרי כמה הלוך ושוב וגם קצת ויכוחים, מצאנו את האוהל והלכנו לישון!</p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="4"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="4"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="4"></div></div>
   </div>
@@ -652,9 +655,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:5" class="daylink" data-focus="day:5">Merveilles → Lac de la Muta → Lac du Diable → Pas du Diable ← רכס Authion → Camp d'Argent ← מדף דשא בהמשך</a></h3>
     <div class="stats"><span>יום הליכה די קליל, ערפל מהפאס והלאה</span><span><a href="#map" class="focus" data-focus="HUT · Camp d'Argent">Camp d'Argent</a> ב-15:30, בירה מקומית</span><span>אוהל על מדף דשא מישורי אחרי הבקתה, 1,700 מ'</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="5"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>קמנו ב-Merveilles והלכנו לשתות קפה בבקתה. קיבלנו קפה בקערות, קונספט די חמוד. ארוחות הבוקר בבקתות בדרך כלל די פשוטות: קורנפלקס, לחם, ריבה וקפה.</p>
       <p>התחלנו לטפס והגענו ל-<a href="?map=LAKE · Lac de la Muta" class="focus" data-focus="LAKE · Lac de la Muta">Lac de la Muta</a>, האגם הגדול האחרון בטיול. ממליצים לשבת ולצפות בו קצת, ואפילו להיכנס. שווה לציין שכל האזור הוא מעין שמורת טבע שבה לא אמורים לרדת מהשבילים, אבל בחרנו לפרש שחייה באגם כפעילות נפרדת. אחרי עוד עלייה מגיעים ל-Lac du Diable (אגם השטן) הצמוד לפאס, שהוא באמת האגם האחרון בטיול.</p>
       <p>אחרי <a href="?map=Pas du Diable" class="focus" data-focus="Pas du Diable">Pas du Diable</a>, לאורך כל המשך הדרך, פגש אותנו ערפל כבד ולא ראינו ממטר. ההליכה יפה מאוד, על רכסי ההרים, אבל אנחנו ראינו מעט מאוד בחלונות השמש הספורים. היה צפי לסופה באותו יום שלא התממש, ובעיקר הקפדנו לא להיות בנקודה הגבוהה של היום, <a href="#map" class="focus" data-focus="PASS · Pas du Diable">Pas du Diable</a>, בשעות המסוכנות.</p>
@@ -663,6 +665,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <p>המשכנו בשביל (חלק מהמסלול של למחרת, בדרך לסוספל) ומצאנו פיסת דשא מקסימה, יחסית מישורית (כל האזור די תלול) וללא רוח, עם נוף משגע, ושם עצרנו. בבקתה סיפרו לנו שבהמשך הדרך יש חנות גבינות. בדקנו במפה ובאמת יש, אבל היא נראית במקום רנדומלי לגמרי, בין הריסות עתיקות באמצע ההר. מחכים למחר לחקור את העניין.</p>
       <div class="photoref" data-photo="e3041fef3915"></div>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="5"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="5"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="5"></div></div>
   </div>
@@ -672,9 +675,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:6" class="daylink" data-focus="day:6">מדף הדשא ← חוות הגבינות ← Mangiabo ← ירידה של 1,500 מ' ← Sospel</a></h3>
     <div class="stats"><span>יציאה עם הזריחה, צהריים ב-<a href="#map" class="focus" data-focus="SUMMIT · Mangiabo">Mangiabo</a> ב-12:30</span><span>ירידה של ≈1,500 מ' לסוספל ב-3 שעות, הגענו ב-17:30</span><span>סטודיו Airbnb בסוספל, ארוחת ערב ב-Sousper לפני 20:30</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="6"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>קמנו לזריחה נהדרת. הלכנו דרך היער, עם שמש שמבצבצת בין העצים, עד לנקודת מילוי מים שמסומנת במפה. היא נראית מעט מפוקפקת, אבל המים היו טעימים וטובים. חשוב לצאת ליום הזה עם יחסית הרבה מים, כי המסלול ארוך, יורדים נמוך והטמפרטורות עולות.</p>
       <div class="photoref" data-photo="f7fa4c6fc858"></div>
       <p>מצאנו את <a href="?map=CHEESE" class="focus" data-focus="CHEESE">חנות הגבינות</a> (Cheese Shop במפה): ממש בתוך חווה קטנה של כבשים, עם שלט קטן. ראינו אבא ובן אוכלים ארוחת בוקר של בגט, גבינות ונקניק, ושאלנו אותם "אינגליש?" הם ענו "נו". שאלנו "צ'יז?" וענו "יס!" הם הובילו אותנו ל"מרתף" הגבינות שלהם, שבו היו שלושה סוגי גבינות. טעמנו מכל אחת ובסוף לקחנו קצת מכולן. ממליצים!</p>
@@ -686,6 +688,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <p>העיירה מקסימה, מלאה בעצי דולב, עם נחל חמוד במרכז והמון גפנים ועצי פרי. קנינו בסופר Spar נקניקים וגבינות למחרת, ואפילו מאפה ממאפייה מקסימה בשם Artisan Boulanger Pâtissier. ברחוב הראשי יש שתי מסעדות די דומות שמגישות פיצות והמבורגרים, ולהפתעתנו הרבה שתיהן נסגרות ב-20:30! אז שימו לב ללכת לאכול יחסית מוקדם. אנחנו אכלנו ב-Sousper (בתור הלקוחות האחרונים של היום), והיה טעים מאוד.</p>
       <div class="photoref" data-photo="78e8e0ac40ea"></div>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="6"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="6"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="6"></div></div>
   </div>
@@ -695,9 +698,8 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <div>
     <h3><a href="?map=day:7" class="daylink" data-focus="day:7">Sospel → Col du Berceau → Menton ← רכבת לניס</a></h3>
     <div class="stats"><span>ארוחת בוקר ליד הנחל, יציאה ≈09:00</span><span>הים נראה מ-11:30, מעל <a href="#map" class="focus" data-focus="FINISH">Menton</a> ב-15:30</span><span>רכבת לניס, פיצה</span></div>
-    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="pics" class="on" aria-selected="true">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="log" class="" aria-selected="false">יומן</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
-    <div class="pane" data-pane="pics" role="tabpanel"><div class="gallery" data-day="7"></div></div>
-    <div class="pane" data-pane="log" role="tabpanel" hidden>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="log" class="on" aria-selected="true">יומן</button><button type="button" role="tab" data-tab="pics" class="" aria-selected="false">תמונות<span class="badge" hidden></span></button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר</button></div>
+    <div class="pane" data-pane="log" role="tabpanel">
       <p>היום האחרון, מסוספל דרך <a href="?map=Col du Berceau" class="focus" data-focus="Col du Berceau">Col du Berceau</a> וירידה לים ב-<a href="?map=FINISH" class="focus" data-focus="FINISH">Menton</a>. המילים ליום הזה עוד יגיעו; התמונות כבר כאן.</p>
       <div class="photos"><span class="photoref" data-photo="96353feb1193"></div>
       <div class="photoref" data-photo="9dcb6276ac5c"></div>
@@ -706,6 +708,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
       <div class="photoref" data-photo="3d5766222205"></div>
       <p></span></p>
     </div>
+    <div class="pane" data-pane="pics" role="tabpanel" hidden><div class="gallery" data-day="7"></div></div>
     <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="7"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
     <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wxh" data-day="7"></div></div>
   </div>
@@ -756,8 +759,8 @@ if('serviceWorker' in navigator){(function(){var had=!!navigator.serviceWorker.c
 </script>
 <script src="/vendor/leaflet.min.js?v=5c9aecfc30"></script>
 <script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe"></script>
-<script src="/map.js?v=2fe9f49d76" defer></script>
+<script src="/map.js?v=46ede058f5" defer></script>
 <script src="/vendor/zip.min.js?v=a911c709c1" defer></script>
-<script src="/log.js?v=988015a9a1" defer></script>
+<script src="/log.js?v=6870f04d44" defer></script>
 </body>
 </html>
