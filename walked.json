@@ -1,0 +1,230 @@
+{
+ "_": "The route as walked, 11-18 Sep 2026, applied to research/plan.gpx by tools/walked.py (then tools/elevation.py). Positions from the log and the pictures' GPS.",
+ "edits": [
+  {
+   "spur": {
+    "to": [
+     44.125,
+     7.2088
+    ],
+    "note": "day 1 · Lac du Barn, off the path below Col du Barn, 1½ h stop"
+   }
+  },
+  {
+   "replace": {
+    "from": [
+     44.11253,
+     7.35316
+    ],
+    "to": [
+     44.10117,
+     7.38583
+    ],
+    "via": [
+     [
+      44.11641,
+      7.36097
+     ],
+     [
+      44.114,
+      7.3622
+     ],
+     [
+      44.11046,
+      7.36264
+     ]
+    ],
+    "note": "day 2-3 · Pas des Ladres along the border to Col de Fenestre, night above Lac de Fenestre, straight on to Pas du Mont Colomb (Madone de Fenestre cut)"
+   }
+  },
+  {
+   "spur": {
+    "to": [
+     44.10815,
+     7.44666
+    ],
+    "note": "day 4 · the Valmasque valley out and back: Lac du Basto, Lac Noir, Lac Vert, Refuge de la Valmasque",
+    "at": [
+     44.0952,
+     7.4325
+    ],
+    "via": [
+     [
+      44.1005,
+      7.44
+     ]
+    ]
+   }
+  },
+  {
+   "replace": {
+    "from": [
+     43.937,
+     7.45247
+    ],
+    "to": [
+     43.93021,
+     7.43839
+    ],
+    "via": [
+     [
+      43.93424,
+      7.45003
+     ],
+     [
+      43.9322,
+      7.4442
+     ]
+    ],
+    "note": "day 6 · the crest from Mangiabo instead of the path beside it, down to the old gun where the paths meet",
+    "straight": true
+   }
+  },
+  {
+   "move": {
+    "waypoint": "NIGHT 2 ·",
+    "to": [
+     44.114,
+     7.3622
+    ],
+    "name": "NIGHT 2 · Sun 13 Sep · above Lac de Fenestre, tent by the old border barracks"
+   }
+  },
+  {
+   "drop": {
+    "waypoint": "NIGHT 2 option B"
+   }
+  },
+  {
+   "drop": {
+    "waypoint": "FALLBACK night 1"
+   }
+  },
+  {
+   "move": {
+    "waypoint": "NIGHT 3 ·",
+    "to": [
+     44.0952,
+     7.4325
+    ],
+    "name": "NIGHT 3 · Mon 14 Sep · lookout over Lac du Basto, tent (walked on past Refuge de Nice)"
+   }
+  },
+  {
+   "move": {
+    "waypoint": "NIGHT 5 ·",
+    "to": [
+     43.98916,
+     7.41239
+    ],
+    "name": "NIGHT 5 · Wed 16 Sep · grass ledge on the ridge past the Authion hut, tent"
+   }
+  },
+  {
+   "move": {
+    "waypoint": "NIGHT 6 ·",
+    "to": [
+     43.87792,
+     7.44834
+    ],
+    "name": "NIGHT 6 · Thu 17 Sep · Sospel, Airbnb studio in the centre, Spar, bakery, restaurants close 20:30"
+   }
+  },
+  {
+   "add": {
+    "name": "HUT · Refuge de la Madone de Fenestre · not visited, cut by the border path",
+    "lat": 44.09577,
+    "lon": 7.35634,
+    "type": "Lodging"
+   }
+  },
+  {
+   "add": {
+    "name": "HUT · Refuge de Nice · coffee and tart, dorms only",
+    "lat": 44.089,
+    "lon": 7.394,
+    "type": "Lodging"
+   }
+  },
+  {
+   "add": {
+    "name": "HUT · Refuge de la Valmasque · end of the out-and-back",
+    "lat": 44.10815,
+    "lon": 7.44666,
+    "type": "Lodging"
+   }
+  },
+  {
+   "add": {
+    "name": "HUT · Camp d'Argent, L'Estive gite · local beer, camping area, microwave dinners",
+    "lat": 43.98866,
+    "lon": 7.40154,
+    "type": "Lodging"
+   }
+  },
+  {
+   "add": {
+    "name": "CHEESE · sheep farm with a small sign, three cheeses in the cellar",
+    "lat": 43.98357,
+    "lon": 7.43889,
+    "type": "Shop"
+   }
+  },
+  {
+   "add": {
+    "name": "SUMMIT · Mangiabo 1821 m · lunch, then the crest",
+    "lat": 43.937,
+    "lon": 7.45247,
+    "type": "Summit"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac du Barn · the detour that is worth it",
+    "lat": 44.12546,
+    "lon": 7.20908,
+    "type": "Water"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac de Fenestre",
+    "lat": 44.11046,
+    "lon": 7.36264,
+    "type": "Water"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac du Basto",
+    "lat": 44.09275,
+    "lon": 7.43805,
+    "type": "Water"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac Noir · Valmasque",
+    "lat": 44.10195,
+    "lon": 7.44095,
+    "type": "Water"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac Vert · Valmasque",
+    "lat": 44.10742,
+    "lon": 7.44372,
+    "type": "Water"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac de la Muta · the last big lake",
+    "lat": 44.05016,
+    "lon": 7.44059,
+    "type": "Water"
+   }
+  }
+ ]
+}
