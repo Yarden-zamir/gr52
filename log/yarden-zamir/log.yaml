@@ -5,18 +5,18 @@
 # the route between them by its time (at: a waypoint name, "start", "end", or km: distance into the day).
 user: yarden-zamir
 title:
-  en: GR52, as it happened
-  he: GR52, כמו שהיה
+  en: GR52 + a tent
+  he: GR52 + אוהל
 eyebrow:
   en: Trip log · Ayelet and Yarden · September 2026
   he: יומן מסע · איילת וירדן · ספטמבר 2026
 intro:
   en:
     - Yarden and I planned a walk with a tent, sleeping and cooking outside. We like sleeping in special places in nature, and we did not want to tie ourselves to booked huts. It keeps the days flexible, it is cheaper, and the money goes to food and small luxuries instead.
-    - "The plan was the official seven-day split of the GR52 across the Mercantour, from [[map:NIGHT 0|Saint-Dalmas-Valdeblore]] to Menton, 12 to 18 September. This is the log of what actually happened, day by day, with the pictures we took along the way. The plan itself, with the maps and the weather we walked by, is on the main page."
+    - The Mercantour park is part of the French Maritime Alps. Through it runs the GR52, about 100 km long, a variation on the finish of the longer GR5, which runs from Geneva to the sea at Nice. The walk takes seven days.
   he:
     - ירדן ואני תכננו טיול עם אוהל, לינה ובישול בשטח. אנחנו אוהבים לישון במקומות מיוחדים בטבע, ולא רצינו לקבע את עצמנו מראש לבקתות. ככה הימים גמישים יותר, הטיול זול יותר, והכסף הולך לאוכל ולמותרות קטנות.
-    - "התוכנית הייתה החלוקה הרשמית לשבעה ימים של ה-GR52 לרוחב המרקנטור, מ-[[map:NIGHT 0|Saint-Dalmas-Valdeblore]] למנטון, 12 עד 18 בספטמבר. זה היומן של מה שקרה בפועל, יום אחרי יום, עם התמונות שצילמנו בדרך. התוכנית עצמה, עם המפות ומזג האוויר שהלכנו לפיו, נמצאת בעמוד הראשי."
+    - פארק Mercantour הוא חלק מהאלפים הימיים הצרפתיים. שם עובר שביל ה-GR52, שאורכו כ-100 ק"מ, וריאציה על סיום השביל הארוך יותר GR5, שעובר מ-Geneva עד לים ב-Nice. אורך המסלול שבעה ימים.
 days:
   - n: 0
     date: '2026-09-11'
