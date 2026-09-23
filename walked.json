@@ -1,5 +1,5 @@
 {
- "_": "The route as walked, 11-18 Sep 2026, applied to research/plan.gpx by tools/walked.py (then tools/elevation.py). Positions from the log and the pictures' GPS.",
+ "_": "The route as walked, 11-18 Sep 2026, applied to research/plan.gpx by tools/walked.py (then tools/elevation.py). Positions from the log and the pictures' GPS; huts and lakes from OpenStreetMap.",
  "edits": [
   {
    "spur": {
@@ -26,8 +26,8 @@
       7.36097
      ],
      [
-      44.114,
-      7.3622
+      44.11452,
+      7.3619
      ],
      [
       44.11046,
@@ -45,8 +45,8 @@
     ],
     "note": "day 4 · the Valmasque valley out and back: Lac du Basto, Lac Noir, Lac Vert, Refuge de la Valmasque",
     "at": [
-     44.0952,
-     7.4325
+     44.08772,
+     7.43426
     ],
     "via": [
      [
@@ -84,8 +84,8 @@
    "move": {
     "waypoint": "NIGHT 2 ·",
     "to": [
-     44.114,
-     7.3622
+     44.11452,
+     7.3619
     ],
     "name": "NIGHT 2 · Sun 13 Sep · above Lac de Fenestre, tent by the old border barracks"
    }
@@ -104,10 +104,10 @@
    "move": {
     "waypoint": "NIGHT 3 ·",
     "to": [
-     44.0952,
-     7.4325
+     44.08772,
+     7.43426
     ],
-    "name": "NIGHT 3 · Mon 14 Sep · lookout over Lac du Basto, tent (walked on past Refuge de Nice)"
+    "name": "NIGHT 3 · Mon 14 Sep · above the south end of Lac du Basto, tent (walked on past Refuge de Nice)"
    }
   },
   {
@@ -131,6 +131,16 @@
    }
   },
   {
+   "move": {
+    "waypoint": "NIGHT 4 ·",
+    "to": [
+     44.05656,
+     7.45299
+    ],
+    "name": "NIGHT 4 · Tue 15 Sep · Refuge des Merveilles, tent on the marked bivouac area above the hut"
+   }
+  },
+  {
    "add": {
     "name": "HUT · Refuge de la Madone de Fenestre · not visited, cut by the border path",
     "lat": 44.09577,
@@ -141,8 +151,8 @@
   {
    "add": {
     "name": "HUT · Refuge de Nice · coffee and tart, dorms only",
-    "lat": 44.089,
-    "lon": 7.394,
+    "lat": 44.10438,
+    "lon": 7.40037,
     "type": "Lodging"
    }
   },
