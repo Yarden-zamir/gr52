@@ -14,30 +14,30 @@ eyebrow:
 intro:
   en:
     - Yarden and I planned a walk with a tent, sleeping and cooking outside. We like sleeping in special places in nature, and we did not want to tie ourselves to booked huts. It keeps the days flexible, it is cheaper, and the money goes to food and small luxuries instead.
-    - "The [[url:https://www.mercantour-parcnational.fr/|Mercantour park]] is part of the French Maritime Alps. Through it runs the GR52, about 100 km long, a variation on the finish of the longer GR5, which runs from Geneva to the sea at Nice. The walk takes seven days."
+    - "The [[url:https://www.mercantour-parcnational.fr/|Mercantour park]] is part of the French Maritime Alps. Through it runs the GR52, about 100 km long, a variation on the finish of the longer GR5, which runs from Geneva to the sea at [[gmaps:Nice, France|Nice]]. The walk takes seven days."
   he:
-    - ירדן ואני תכננו טיול עם אוהל, לינה ובישול בשטח. אנחנו אוהבים לישון במקומות מיוחדים בטבע, ולא רצינו לקבע את עצמנו מראש לבקתות. ככה הימים גמישים יותר, הטיול זול יותר, והכסף הולך לאוכל ולמותרות קטנות.
-    - '[[url:https://www.mercantour-parcnational.fr/|פארק Mercantour]] הוא חלק מהאלפים הימיים הצרפתיים. שם עובר שביל ה-GR52, שאורכו כ-100 ק"מ, וריאציה על סיום השביל הארוך יותר GR5, שעובר מ-Geneva עד לים ב-Nice. אורך המסלול שבעה ימים.'
+    - ירדן ואני תכננו טיול עם אוהל, לינה ובישול בשטח. אנחנו אוהבים לישון במקומות מיוחדים בטבע ולא רצינו לקבע את עצמנו מראש לבקתות. ככה הימים גמישים יותר, הטיול זול יותר והכסף הולך לאוכל ולמותרות קטנות.
+    - '[[url:https://www.mercantour-parcnational.fr/|פארק Mercantour]] הוא חלק מהאלפים הימיים הצרפתיים. שם עובר שביל ה-GR52, שאורכו כ-100 ק"מ, וריאציה על סיום השביל הארוך יותר GR5, שעובר מ-Geneva עד לים ב-[[gmaps:Nice, France|Nice]]. אורך המסלול שבעה ימים.'
 cover: {photo: 9ce9cc5d8097, y: 40%}
 days:
   - n: 0
     date: '2026-09-11'
     title:
       en: Nice → tram → shopping → bus 90 → Saint-Dalmas
-      he: ניס → רכבת קלה → קניות → אוטובוס 90 → Saint-Dalmas
+      he: Nice → רכבת קלה → קניות → אוטובוס 90 → Saint-Dalmas
     stats:
       en: ["bus 90, 2 h"]
       he: ["קו 90, שעתיים"]
     text:
       en:
-        - "We flew to Nice and were in the city by 11:30. From the airport the L2 tram took us to the centre, [[gmaps:Jean Médecin tram stop Nice|Jean Médecin]] stop, in 25 minutes. We bought the tickets in the [[url:https://www.lignesdazur.com/|Lignes d'Azur app]], 1.70 € per person per ride."
-        - "From there we went to visit friends who live in Nice and shopped at an [[gmaps:Intermarché Nice|Intermarché]], fairly large with a good range. It had no gas, so we went on to a [[gmaps:Decathlon Nice|Decathlon]] in the area and stocked up there."
-        - "Then the L3 tram to the University stop, and from there [[map:BUS 90;url:https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/|bus 90]], which leaves Nice three times a day (08:10, 16:30, 18:30) for [[map:NIGHT 0|Saint-Dalmas]], where the trek starts. We took the 16:30 bus: two hours of very winding, interesting and beautiful road."
+        - "We flew to [[gmaps:Nice, France|Nice]] and were in the city by 11:30. From the airport the L2 tram took us to the centre, [[gmaps:Jean Médecin tram stop Nice|Jean Médecin]] stop, in 25 minutes. We bought the tickets in the [[url:https://www.lignesdazur.com/|Lignes d'Azur app]], 1.70 € per person per ride."
+        - "From there we went to visit friends who live in [[gmaps:Nice, France|Nice]] and shopped at an [[gmaps:Intermarché Nice|Intermarché]], fairly large with a good range. It had no gas, so we went on to a [[gmaps:Decathlon Nice|Decathlon]] in the area and stocked up there."
+        - "Then the L3 tram to the University stop, and from there [[map:BUS 90;url:https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/|bus 90]], which leaves [[gmaps:Nice, France|Nice]] three times a day (08:10, 16:30, 18:30) for [[map:NIGHT 0|Saint-Dalmas]], where the trek starts. We took the 16:30 bus: two hours of very winding, interesting and beautiful road."
         - "In Saint-Dalmas we slept at the [[map:NIGHT 0;gmaps:Auberge de jeunesse Le Chalet Saint-Dalmas Valdeblore|HI hostel Le Chalet]], with dinner and breakfast. Dinner was fried fish, rice and beans: a simple meal, fine, a little pricey. [[photo:a93dfe35555b]]"
       he:
-        - "טסנו לניס והגענו לעיר ב-11:30. משדה התעופה לקחנו את רכבת L2 למרכז ניס (תחנת [[gmaps:Jean Médecin tram stop Nice|Jean Médecin]]), נסיעה של 25 דקות. את הכרטיס קנינו ב[[url:https://www.lignesdazur.com/|אפליקציה של Lignes d'Azur]], ונסיעה לאדם עלתה 1.7 יורו."
-        - "משם הלכנו לבקר חברים שגרים בניס ועשינו קניות בסופר [[gmaps:Intermarché Nice|Intermarché]], שהיה יחסית גדול ועם מגוון מוצרים. לא היה גז בסופר, אז נסענו לחנות [[gmaps:Decathlon Nice|דקטלון]] באזור ושם הצטיידנו."
-        - "משם נסענו ברכבת L3 לתחנת University, ומשם לקחנו את [[map:BUS 90;url:https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/|קו 90]], שיוצא מניס שלוש פעמים ביום (8:10, 16:30, 18:30) לכיוון [[map:NIGHT 0|Saint-Dalmas]], שם מתחיל הטרק. לקחנו את האוטובוס של 16:30: נסיעה של שעתיים, מפותלת מאוד, מעניינת ויפה!"
+        - "טסנו ל-[[gmaps:Nice, France|Nice]] והגענו לעיר ב-11:30. משדה התעופה לקחנו את רכבת L2 למרכז [[gmaps:Nice, France|Nice]] (תחנת [[gmaps:Jean Médecin tram stop Nice|Jean Médecin]]), נסיעה של 25 דקות. את הכרטיס קנינו ב[[url:https://www.lignesdazur.com/|אפליקציה של Lignes d'Azur]] ונסיעה לאדם עלתה 1.7 יורו."
+        - "משם הלכנו לבקר חברים שגרים ב-[[gmaps:Nice, France|Nice]] ועשינו קניות בסופר [[gmaps:Intermarché Nice|Intermarché]], שהיה יחסית גדול ועם מגוון מוצרים. לא היה גז בסופר, אז נסענו לחנות [[gmaps:Decathlon Nice|דקטלון]] באזור ושם הצטיידנו."
+        - "משם נסענו ברכבת L3 לתחנת University ומשם לקחנו את [[map:BUS 90;url:https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/|קו 90]], שיוצא מ-[[gmaps:Nice, France|Nice]] שלוש פעמים ביום (8:10, 16:30, 18:30) לכיוון [[map:NIGHT 0|Saint-Dalmas]], שם מתחיל הטרק. לקחנו את האוטובוס של 16:30: נסיעה של שעתיים, מפותלת מאוד, מעניינת ויפה!"
         - "ב-Saint-Dalmas ישנו ב[[map:NIGHT 0;gmaps:Auberge de jeunesse Le Chalet Saint-Dalmas Valdeblore|אכסניית Le Chalet]], עם ארוחות בוקר וערב. לארוחת ערב אכלנו דג מטוגן, אורז ושעועית. ארוחה פשוטה ובסדר, קצת יקרה. [[photo:a93dfe35555b]]"
   - n: 1
     date: '2026-09-12'
@@ -65,12 +65,12 @@ days:
         - "In the evening we went to the restaurant by the lake, [[gmaps:L'Eau à la Bouche Le Boréon;map:NIGHT 1|L'Eau à la Bouche]], which the internet said was well regarded, expensive and heavy on meat, as Yarden demanded (while Ayelet wanted rice and lentils). The restaurant was pleasant and impressive. We chose two mains: an entrecôte steak and a kind of double meat patty which, the waiter said, is cooked outside and raw inside. We did not expect what came: it turns out this is a restaurant that specialises in serving raw meat, on the strength of ingredients good enough to allow it. We got completely raw minced meat and a steak it would be illegal to serve in Israel (we had asked for medium). I was utterly shocked, Yarden rather enjoyed it, but we both agreed it was an experience we probably will not repeat. Still, an experience, and educational. The meal cost us 52 €. [[photo:73db5031d2cc]]"
       he:
         - "קמנו ב-7:00, ארוחת בוקר ב-7:30. בתור ישראלים פשוטים שמבינים עניין בפלאפל בלבד, זו הייתה ארוחת בוקר מצוינת! היו קרואסונים טריים מהתנור, בגטים, נקניק וגבינה. אכלנו בסך הכול 6 קרואסונים, פשוט וואו!  [[photo:fa525aa17bbc]]"
-        - "התחלנו ללכת על השביל ב-8:30. התחלה קשוחה עם עלייה רצינית לכיוון Col de Veillos, עלייה של כ-900 מטר. כשהגענו לנקודה הזו, לקחנו וריאנט של השביל כדי להגיע ל-[[map:Lac Petit|Lac Petit]] (לא כל כך קטן בכלל). האגם מקסים, וירדן נכנס אליו. היה קפוא!!! [[photo:1b4c99e47c3a]]"
-        - "המשכנו לעלות וראינו בדרך כמה אגמים, עד ל-[[map:Col du Barn|Col du Barn]], נקודת שיא הגובה של היום (2,452 מטר), ומשם התחלנו לרדת. הירידה מקסימה. קצת אחרי תחילתה יש אגם מחוץ לשביל בשם [[map:LAKE · Lac du Barn|Lac du Barn]], ומאוד מומלץ להגיע אליו. היה פשוט מקסים, לקחנו שם הפסקה של שעה וחצי עם פיקניק מפנק ואפילו כניסה למים הקפואים! [[photo:2b6ff6169193]] [[photo:08f035ef33a8]]"
-        - "המשכנו לרדת דרך היער. ממש ליד השביל זורם נחל יפה מאוד, וירדן התבאס שהשביל לא עובר בצמוד אליו ולא הבין למה. אחרי כחצי שעה הגענו לכביש, והבנו שהוא מלווה אותנו עד היעד שלנו, [[map:NIGHT 1|Lac du Boréon]]. קצת התאכזבנו שצריך ללכת לאורך הכביש, שזו דרך משעממת, וירדן הציע שנלך מחוץ לשביל בצמוד לנחל. התקרבנו לנחל, שהיה באמת מטורף, אבל גילינו גם למה השביל לא עובר לידו: כל הגדה היא ביצה, בגלל המים שזורמים לנחל מהשלוחות. הלכנו קצת לאורך הנחל עד שהנעליים נרטבו, והחלטנו (לבקשתי הנואשת) לחזור לכביש. [[photo:7d90aa5e2196]] [[photo:f186a9952dd0]]"
-        - "הלכנו עוד כ-5 ק\"מ על שבילים צמודים לכביש, בתוך יער קסום שאני לא אהבתי כי לא היה בו מספיק אור שמש, וירדן אהב מאוד. בדרך פגשנו משפחה של צרפתים נחמדים, שאחרי סחבק עמוק בצרפתינגלית לקחו אותנו טרמפ עד ל-Lac du Boréon. הקילומטרים האחרונים די משעממים ומיותרים, אז אם מוצאים טרמפ, שווה לקחת. [[photo:263e3d37c026]]"
-        - "הקמנו את האוהל ליד האגם המלאכותי. יש שם גם כמה אכסניות למעוניינים. בשנת 2019 הייתה באזור סופה רצינית מאוד שהרסה חלק מהשבילים והתשתיות, והאגם עדיין בשיפוצים מאז!!! [[photo:9d707f81d114]] [[photo:56b9ef251239]]"
-        - "בערב הלכנו למסעדה ליד האגם בשם [[gmaps:L'Eau à la Bouche Le Boréon;map:NIGHT 1|L'Eau à la Bouche]], שראינו באינטרנט שהיא נחשבת, יקרה ומגישה הרבה בשר, לדרישת ירדן (בעוד שאיילת רצתה לאכול אורז ועדשים). המסעדה הייתה נעימה ומרשימה. בחרנו שתי מנות עיקריות: סטייק אנטריקוט ומעין קציצת בשר כפולה, שלפי המלצר עשויה מבחוץ וחיה בפנים. לא ציפינו למה שקיבלנו: מסתבר שזו מסעדה שמתמחה בהגשת בשר חי, על בסיס חומרי גלם איכותיים שמאפשרים את זה. קיבלנו בשר טחון חי לחלוטין וסטייק שבארץ לא היה חוקי להגיש (ביקשנו מדיום). אני הזדעזעתי לחלוטין, ירדן יחסית נהנה, אבל שנינו הסכמנו שזו חוויה שכנראה לא נחזור עליה. בכל זאת, היה חווייתי ומלמד. הארוחה עלתה לנו 52 יורו. [[photo:73db5031d2cc]]"
+        - "התחלנו ללכת על השביל ב-8:30. התחלה קשוחה עם עלייה רצינית לכיוון Col de Veillos, עלייה של כ-900 מטר. כשהגענו לנקודה הזו, לקחנו וריאנט של השביל כדי להגיע ל-[[map:Lac Petit|Lac Petit]] (לא כל כך קטן בכלל). האגם מקסים וירדן נכנס אליו. היה קפוא!!! [[photo:1b4c99e47c3a]]"
+        - "המשכנו לעלות וראינו בדרך כמה אגמים, עד ל-[[map:Col du Barn|Col du Barn]], נקודת שיא הגובה של היום (2,452 מטר) ומשם התחלנו לרדת. הירידה מקסימה. קצת אחרי תחילתה יש אגם מחוץ לשביל בשם [[map:LAKE · Lac du Barn|Lac du Barn]] ומאוד מומלץ להגיע אליו. היה פשוט מקסים, לקחנו שם הפסקה של שעה וחצי עם פיקניק מפנק ואפילו כניסה למים הקפואים! [[photo:2b6ff6169193]] [[photo:08f035ef33a8]] [[photo:1103eb4b39c5]]"
+        - "המשכנו לרדת דרך היער. ממש ליד השביל זורם נחל יפה מאוד וירדן התבאס שהשביל לא עובר בצמוד אליו ולא הבין למה. אחרי כחצי שעה הגענו לכביש והבנו שהוא מלווה אותנו עד היעד שלנו, [[map:NIGHT 1|Lac du Boréon]]. קצת התאכזבנו שצריך ללכת לאורך הכביש, שזו דרך משעממת וירדן הציע שנלך מחוץ לשביל בצמוד לנחל. התקרבנו לנחל, שהיה באמת מטורף, אבל גילינו גם למה השביל לא עובר לידו: כל הגדה היא ביצה, בגלל המים שזורמים לנחל מהשלוחות. הלכנו קצת לאורך הנחל עד שהנעליים נרטבו והחלטנו (לבקשתי הנואשת) לחזור לכביש. [[photo:7d90aa5e2196]] [[photo:f186a9952dd0]]"
+        - "הלכנו עוד כ-5 ק\"מ על שבילים צמודים לכביש, בתוך יער קסום שאני לא אהבתי כי לא היה בו מספיק אור שמש וירדן אהב מאוד. בדרך פגשנו משפחה של צרפתים נחמדים, שאחרי סחבק עמוק בצרפתינגלית לקחו אותנו טרמפ עד ל-Lac du Boréon. הקילומטרים האחרונים די משעממים ומיותרים, אז אם מוצאים טרמפ, שווה לקחת. [[photo:263e3d37c026]]"
+        - "הקמנו את האוהל ליד האגם המלאכותי, יש שם גם כמה אכסניות למעוניינים. בשנת 2019 הייתה באזור סופה רצינית מאוד שהרסה חלק מהשבילים והתשתיות והאגם עדיין בשיפוצים מאז!!! [[photo:9d707f81d114]] [[photo:56b9ef251239]]"
+        - "בערב הלכנו למסעדה ליד האגם בשם [[gmaps:L'Eau à la Bouche Le Boréon;map:NIGHT 1|L'Eau à la Bouche]], שראינו באינטרנט שהיא נחשבת, יקרה ומגישה הרבה בשר, לדרישתו ירדן (בעוד שאיילת רצתה לאכול אורז ועדשים). המסעדה הייתה נעימה ומרשימה, בחרנו שתי מנות עיקריות: סטייק אנטריקוט ומעין קציצת בשר כפולה, שלפי המלצר עשויה מבחוץ וחיה בפנים. לא ציפינו למה שקיבלנו: מסתבר שזו מסעדה שמתמחה בהגשת בשר חי, על בסיס חומרי גלם איכותיים שמאפשרים את זה. קיבלנו בשר טחון חי לחלוטין וסטייק שבארץ לא היה חוקי להגיש (ביקשנו מדיום). אני הזדעזעתי לחלוטין, ירדן יחסית נהנה, אבל שנינו הסכמנו שזו חוויה שכנראה לא נחזור עליה. בכל זאת, היה חווייתי ומלמד. הארוחה עלתה לנו 52 יורו. [[photo:73db5031d2cc]]"
   - n: 2
     date: '2026-09-13'
     title:
@@ -95,10 +95,10 @@ days:
         - "We climbed to [[map:Cougourde;gmaps:Refuge de la Cougourde|Refuge de la Cougourde]] and got there at 12:30. A lovely refuge. After the climb we bought a coffee and a blueberry and raspberry tart, good (and expensive) but highly recommended. [[photo:5dd55ef63fe8]] [[photo:4ea8d8e327b4]] We rested with the view and carried on up to [[map:Trécolpas|Lac de Trécolpas]]. The lake was gorgeous, beyond anything we had seen so far. We chose a hidden corner, rested and had lunch. [[photo:a5c3ff234f43]] [[photo:7884e62dcbdd]] [[photo:9ce9cc5d8097]] [[photo:30ce3bd48db4]]"
         - "After a long break, watching the chamois and exploring the area, we carried on around 15:30 to [[map:Pas des Ladres|Pas des Ladres]]. [[photo:3ebcc33967b4]] We decided to sleep by [[map:NIGHT 2|Lac de Fenestre]], which the trail does not pass directly. We saw there is a path around that runs along the Italian border, and decided a high five to Italy was a good idea. The way was challenging and nice. [[photo:49982c211d6b]] We slept at a spot overlooking the lake, next to ruined buildings from the Second World War. We arrived at 17:15, pitched the tent and ate rice and lentils. [[photo:6c34936af92a]] [[photo:fea180fe747b]] [[photo:8ca415f20bb6]] [[photo:9a85a44fe751]]"
       he:
-        - "קמנו באוהל המקסים שלנו ב-7:15, התארגנו ויצאנו. חיפשנו קפה בבקתות הסמוכות ולא מצאנו משהו שווה במיוחד, וירדן, שהיה זקוק לקפה, התבאס."
-        - "התחלנו לטפס ב-9:00 (יחסית מאוחר). הטיפוס התחיל בתוך יער (עם מלא פטריות) והמשיך בדרך פתוחה עם נוף דרמטי של הרים ונחל זורם עם המון בריכות. זה אחד ההיילייטים של הטיול: הליכה קשה אבל משתלמת ביותר. באחת הבריכות בדרך אפילו נכנסנו למים. היה קר, אבל וואו. [[photo:e8b1e48ff7f6]] [[photo:688985c80cce]] [[photo:6b068225b23f]] [[photo:1d8e96453da1]]"
+        - "קמנו באוהל המקסים שלנו ב-7:15, התארגנו ויצאנו. חיפשנו קפה בבקתות הסמוכות ולא מצאנו משהו שווה במיוחד וירדן שהיה זקוק לקפה, התבאס."
+        - "התחלנו לטפס ב-9:00,  הטיפוס התחיל בתוך יער (עם מלא פטריות) והמשיך בדרך פתוחה עם נוף דרמטי של הרים ונחל זורם עם המון בריכות. הטיפוס היה אחד ההיילייטים של הטיול: הליכה קשה אבל משתלמת ביותר. באחת הבריכות בדרך אפילו נכנסנו למים. היה קר, אבל וואו. [[photo:e8b1e48ff7f6]] [[photo:688985c80cce]] [[photo:6b068225b23f]] [[photo:1d8e96453da1]]"
         - "טיפסנו עד [[map:Cougourde;gmaps:Refuge de la Cougourde|Refuge de la Cougourde]], לשם הגענו ב-12:30. רפיוג'י מקסים. אחרי העלייה קנינו קפה וטארט בלוברי ופטל, מוצלח (ויקר) אבל מומלץ מאוד. [[photo:5dd55ef63fe8]] [[photo:4ea8d8e327b4]] נחנו מול הנוף והמשכנו לטפס ל-[[map:Trécolpas|Lac de Trécolpas]]. האגם היה מקסים, מעל ומעבר לכל מה שראינו עד אז. בחרנו פינה נסתרת, נחנו ואכלנו צהריים. [[photo:a5c3ff234f43]] [[photo:7884e62dcbdd]] [[photo:9ce9cc5d8097]] [[photo:30ce3bd48db4]]"
-        - "אחרי הפסקה מפנקת, צפייה באנטילופות וחקירה של האזור, המשכנו בסביבות 15:30 ל-[[map:Pas des Ladres|Pas des Ladres]]. [[photo:3ebcc33967b4]] החלטנו לישון ליד [[map:NIGHT 2|Lac de Fenestre]], שהשביל לא עובר בו ישירות. ראינו שיש שביל עוקף שעובר על גבול איטליה–צרפת, והחלטנו שלתת כיף לאיטליה זה רעיון טוב. הדרך הייתה מאתגרת ונחמדה. [[photo:49982c211d6b]] ישנו בנקודה שצופה לאגם, לצד מבנים הרוסים ממלחמת העולם השנייה. הגענו ב-17:15, הקמנו את האוהל ואכלנו אורז ועדשים. [[photo:6c34936af92a]] [[photo:fea180fe747b]] [[photo:8ca415f20bb6]] [[photo:9a85a44fe751]]"
+        - "אחרי הפסקה מפנקת, צפייה באנטילופות וחקירה של האזור, המשכנו בסביבות 15:30 ל-[[map:Pas des Ladres|Pas des Ladres]]. [[photo:3ebcc33967b4]] החלטנו לישון ליד [[map:NIGHT 2|Lac de Fenestre]], שהשביל לא עובר בו ישירות. ראינו שיש שביל עוקף שעובר על גבול איטליה–צרפת והחלטנו שלתת כיף לאיטליה זה רעיון טוב. הדרך הייתה מאתגרת ונחמדה. [[photo:49982c211d6b]] ישנו בנקודה שצופה לאגם, לצד מבנים הרוסים ממלחמת העולם השנייה. הגענו ב-17:15, הקמנו את האוהל ואכלנו אורז ועדשים. [[photo:6c34936af92a]] [[photo:fea180fe747b]] [[photo:8ca415f20bb6]] [[photo:9a85a44fe751]]"
   - n: 3
     date: '2026-09-14'
     title:
@@ -122,10 +122,10 @@ days:
         - "The plan was to end the day at the refuge and have an easier day, but since we felt we still had strength (at least 50 % of us did), we decided, after a quick and not very deep look at the map, to go on a little, to [[map:LAKE · Lac du Basto|Lac du Basto]]. We set off and realised you actually have to cross another pass to get there, [[map:Baisse du Basto|Baisse du Basto]] (500 m up and 400 down). In short, our chill day turned into a fairly tough one, but we enjoyed the technical walking and the views. Note: towards evening fog starts to form on the high parts of the mountains, worth bearing in mind. [[photo:cc9ddf3ea009]] [[photo:ee4d18bf6582]]"
         - "We reached a lovely lookout over the lake a little after 18:00, stopped there and pitched the tent. [[photo:c6fe63c0855a]] [[photo:1de3726971dc]]"
       he:
-        - "קמנו, שתינו קפה באוהל, התארגנו והלכנו למלא מים בזרזיף שירדן מצא יום קודם, או בשמו השני: מסחטת מיץ עננים טהור. התחלנו לרדת ולקחנו וריאנט של השביל שחותך את ההגעה ל[[map:HUT · Refuge de la Madone;gmaps:Refuge de la Madone de Fenestre|בקתת Madone de Fenestre]] ומגיע ישר ל-[[map:Pas du Mont Colomb|Pas du Mont Colomb]]. בדרך עצרנו בנחל, מצאנו בריכה מטורפת והתרחצנו, ואחרי שהתרעננו התחלנו את העלייה הגדולה לפאס, עלייה טכנית ונחמדה. [[photo:6aed75e021ab]] [[photo:ae3e7137e984]]"
-        - "הגענו לפאס ב-12:00 ועשינו ארוחת צהריים. אחר כך ירדנו והגענו ל-[[map:HUT · Refuge de Nice;gmaps:Refuge de Nice|Refuge de Nice]] ב-14:30. הרפיוג'י ממוקם במקום מקסים על צלע הר, ממש לקוח מסרט. ישבנו לשתות קפה עם טארט: הקפה היה על הפנים והטארט בסדר מינוס. לחובבי קפה כמונו מומלץ להביא קפה להכנה עצמית, הצרפתים לא מכינים קפה כל כך טוב (לפחות בבקתות). חשבנו לישון ברפיוג'י, אבל מסתבר שהלינה היא בדורמים משותפים בלבד, ואנחנו המפונקים אוהבים את הפרטיות שלנו. [[photo:5eb309572aad]] [[photo:0dba69918f4d]]"
-        - "בעיקרון תכננו לסיים את היום ברפיוג'י ולעשות יום יותר איזי, אבל כי הרגשנו שיש לנו עוד כוח (לפחות ל-50% מאיתנו), החלטנו להמשיך קצת, אחרי העפת מבט מהירה ולא מעמיקה במפה, ל-[[map:LAKE · Lac du Basto|Lac du Basto]]. התחלנו ללכת והבנו שבעצם צריך לעבור עוד פאס כדי להגיע לשם, [[map:Baisse du Basto|Baisse du Basto]] (500 מטר עלייה ו-400 ירידה). בקיצור, יום הצ'יל שלנו הפך ליום די קשוח, אבל נהנינו מההליכה הטכנית ומהנופים. שימו לב: לקראת הערב מתחיל להיווצר ערפל בחלקים הגבוהים של ההרים, כדאי לקחת את זה בחשבון. [[photo:cc9ddf3ea009]] [[photo:ee4d18bf6582]]"
-        - "הגענו לנקודת תצפית מקסימה על האגם קצת אחרי 18:00, ושם עצרנו והקמנו את האוהל. [[photo:c6fe63c0855a]] [[photo:1de3726971dc]]"
+        - "קמנו, שתינו קפה באוהל, התארגנו והלכנו למלא מים בזרזיף שירדן מצא יום קודם, או בשמו השני: מסחטת מיץ עננים טהור. התחלנו לרדת ולקחנו וריאנט של השביל שחותך את ההגעה ל[[map:HUT · Refuge de la Madone;gmaps:Refuge de la Madone de Fenestre|בקתת Madone de Fenestre]] ומגיע ישר ל-[[map:Pas du Mont Colomb|Pas du Mont Colomb]]. בדרך עצרנו בנחל, מצאנו בריכה מטורפת והתרחצנו ואחרי שהתרעננו התחלנו את העלייה הגדולה לפאס, עלייה טכנית ונחמדה. [[photo:6aed75e021ab]] [[photo:ae3e7137e984]]"
+        - "הגענו לפאס ב-12:00 ועשינו ארוחת צהריים. אחר כך ירדנו והגענו ל-[[map:HUT · Refuge de Nice;gmaps:Refuge de Nice|Refuge de Nice]] ב-14:30. הרפיוג'י ממוקם במקום מקסים על צלע הר, ממש לקוח מסרט. ישבנו לשתות קפה עם טארט: הקפה היה על הפנים והטארט בסדר מינוס. לחובבי קפה כמונו מומלץ להביא קפה להכנה עצמית, הצרפתים לא מכינים קפה כל כך טוב (לפחות בבקתות). חשבנו לישון ברפיוג'י, אבל מסתבר שהלינה היא בדורמים משותפים בלבד ואנחנו המפונקים אוהבים את הפרטיות שלנו. [[photo:5eb309572aad]] [[photo:0dba69918f4d]]"
+        - "בעיקרון תכננו לסיים את היום ברפיוג'י ולעשות יום יותר באיזי, אבל הרגשנו שיש לנו עוד כוח (לפחות ל-50% מאיתנו) והחלטנו להמשיך קצת. אחרי העפת מבט מהירה ולא מעמיקה במפה החלטנו ללכת ל-[[map:LAKE · Lac du Basto|Lac du Basto]], לאחר כמה מאוד מטרים של עלייה הבנו שבעצם צריך לעבור עוד פאס כדי להגיע לשם, [[map:Baisse du Basto|Baisse du Basto]] (500 מטר עלייה ו-400 ירידה). בקיצור, יום הצ'יל שלנו הפך ליום די קשוח, אבל נהנינו מההליכה הטכנית ומהנופים. שימו לב: לקראת הערב מתחיל להיווצר ערפל בחלקים הגבוהים של ההרים, כדאי לקחת את זה בחשבון. [[photo:ee4d18bf6582]]"
+        - "הגענו לנקודת תצפית מקסימה על האגם קצת אחרי 18:00 ושם עצרנו והקמנו את האוהל. [[photo:c6fe63c0855a]] [[photo:1de3726971dc]]"
   - n: 4
     date: '2026-09-15'
     title:
@@ -147,11 +147,11 @@ days:
         - "Next to the [[map:NIGHT 4;gmaps:Refuge des Merveilles|Merveilles hut]] there is one marked area only where a tent may be pitched, above the hut. At the hut we had a meaty dinner, simple but tasty and filling (the meat well done, no worries), 21 € each. Dinners in the huts are usually very social and communal. [[photo:7cb340a6856d]]"
         - "We came out of dinner in the dark and found the whole valley in fog. We had pitched the tent quite far away, so we had to feel our way to it in the murk. The head torches helped us see 2 m ahead instead of 1... In the end, after some back and forth and a bit of arguing, we found the tent and went to sleep!"
       he:
-        - "החלטנו לשנות את התוכנית המקורית. ראינו שלאורך ה-GR52 יש עמק בשם [[map:HUT · Refuge de la Valmasque|Valmasque]] שהשביל מגיע אליו אבל לא עובר דרכו. במפה נראה מקטע יפה מאוד עם שלושה אגמים גדולים אחד אחרי השני, ובנוסף הצרפתים שפגשנו ביום הראשון המליצו עליו. אז החלטנו לעשות את מקטע העמק הלוך ושוב, ואז להמשיך ל-[[map:NIGHT 4;gmaps:Refuge des Merveilles|Refuge des Merveilles]]."
-        - "מאוד ממליצים על ההארכה הזו: האגמים משגעים, כיף להיכנס למים ולהשתזף על הדשא המפנק בשפת האגם. [[map:HUT · Refuge de la Valmasque;gmaps:Refuge de la Valmasque|הבקתה]] שם גם חמודה, ואם רוצים אפשר להמשיך למסלול נוסף שיורד למפלים יפים (לא היינו). [[photo:d82410edfbcc]] [[photo:6ff4feac6138]] [[photo:30d6e74ed461]]"
-        - "עמק Merveilles יפה וקסום מאוד. הוא ידוע כאחד האתרים עם חריטות הסלע העתיקות ביותר, מתקופת הברונזה. אנחנו הצלחנו למצוא מעט מאוד מהן, מוזמנים לחפש עוד. [[photo:c3f3bc926be1]]"
-        - "ליד [[map:NIGHT 4;gmaps:Refuge des Merveilles|בקתת Merveilles]] יש אזור מוגדר בלבד שבו אפשר להקים אוהל, מעל הבקתה. בבקתה אכלנו ארוחת ערב בשרית, פשוטה אבל טעימה ומזינה (הבשר עשוי היטב, אל דאגה), 21 יורו לאדם. ארוחות הערב בבקתות הן בדרך כלל חברתיות ושיתופיות מאוד. [[photo:7cb340a6856d]]"
-        - "יצאנו מארוחת הערב בחושך וגילינו שכל העמק בערפל. הקמנו את האוהל די רחוק, אז נאלצנו לגשש אחריו באפלה. הפנסים עזרו לראות 2 מטר קדימה במקום מטר... בסוף, אחרי כמה הלוך ושוב וגם קצת ויכוחים, מצאנו את האוהל והלכנו לישון!"
+        - "החלטנו לשנות את התוכנית המקורית. ראינו שלאורך ה-GR52 יש עמק בשם [[map:HUT · Refuge de la Valmasque|Valmasque]] שהשביל מגיע אליו אבל לא עובר דרכו. במפה נראה מקטע יפה מאוד עם שלושה אגמים גדולים אחד אחרי השני ובנוסף הצרפתים שפגשנו ביום הראשון המליצו עליו. אז החלטנו לעשות את מקטע העמק הלוך ושוב ואז להמשיך ל-[[map:NIGHT 4;gmaps:Refuge des Merveilles|Refuge des Merveilles]]. [[photo:a26d09a02052]]"
+        - "מאוד ממליצים על ההארכה הזו: האגמים משגעים, כיף להיכנס למים ולהשתזף על הדשא המפנק בשפת האגם. [[map:HUT · Refuge de la Valmasque;gmaps:Refuge de la Valmasque|הבקתה]] שם גם חמודה ואם רוצים אפשר להמשיך למסלול נוסף שיורד למפלים יפים (לא היינו). [[photo:d82410edfbcc]] [[photo:6ff4feac6138]] [[photo:30d6e74ed461]]"
+        - "אחרי חזרה לשביל, עלינו וירדנו לעמק Merveilles. העמק יפה וקסום מאוד, הוא ידוע כאחד האתרים עם חריטות הסלע העתיקות ביותר מתקופת הברונזה. אנחנו הצלחנו למצוא מעט מאוד מהן, מוזמנים לחפש עוד. [[photo:c3f3bc926be1]]"
+        - "ליד [[map:NIGHT 4;gmaps:Refuge des Merveilles|בקתת Merveilles]] יש אזור מוגדר מעל הבקתה שבו בלבד אפשר להקים אוהל, לעומת שאר הסקטורים של המסלול בהם אפשר להקים אוהל כמעט בכל מקום. בבקתה אכלנו ארוחת ערב בשרית, פשוטה אבל טעימה ומזינה (הבשר עשוי היטב, אל דאגה), 21 יורו לאדם. ארוחות הערב בבקתות הן בדרך כלל חברתיות ושיתופיות מאוד. [[photo:7cb340a6856d]]"
+        - "יצאנו מארוחת הערב בחושך וגילינו שכל העמק בערפל. הקמנו את האוהל די רחוק, אז נאלצנו לגשש אחריו באפלה. הפנסים עזרו לראות 2 מטר קדימה במקום מטר... בסוף, אחרי הליכה במעגלים וגם קצת ויכוחים, מצאנו את האוהל והלכנו לישון!"
   - n: 5
     date: '2026-09-16'
     title:
@@ -170,14 +170,14 @@ days:
         - "We woke at [[map:NIGHT 4|Merveilles]] and went to the hut for coffee. It came in bowls, quite a cute concept. Breakfasts in the huts are usually fairly plain: cornflakes, bread, jam and coffee. [[photo:d2863563145e]]"
         - "We started climbing and reached [[map:LAKE · Lac de la Muta|Lac de la Muta]], the last big lake of the trip. Worth sitting and watching it for a while, and even going in. Note that the whole area is a kind of nature reserve where you are not supposed to leave the paths, but we chose to read a swim in the lake as a separate activity. After another climb you reach Lac du Diable (the devil's lake) right by the pass, which really is the last lake of the trip. [[photo:53f5436c5ed4]] [[photo:36400654c362]]"
         - "After [[map:Pas du Diable|Pas du Diable]], for the whole rest of the way, we walked in heavy fog and could not see a metre. The walking is very beautiful, along the mountain ridges, but we saw very little in the few windows of sun. A storm was forecast for that day and never came, and above all we made sure not to be at the day's high point, Pas du Diable, in the dangerous hours. [[photo:5d365ba570ae]] [[photo:32421b48a96b]]"
-        - "As walking goes the day was fairly easy for us, with far less climbing than on the previous days. We reached the [[map:HUT · Camp d'Argent;gmaps:L'Estive du Mercantour Camp d'Argent|Camp d'Argent]] hut at 15:30. They serve an excellent local beer, brewed in the Mercantour park. We found there is a camping area next to the hut, and checked on dinner too: they offer ready meals to heat yourself in the microwave, which did not appeal much. We decided to go on, find a more secluded spot to sleep and cook for ourselves."
+        - "As walking goes the day was fairly easy for us, with far less climbing than on the previous days. We reached the [[map:HUT · Camp d'Argent;gmaps:L'Estive du Mercantour Camp d'Argent|Camp d'Argent]] hut at 15:30. They serve an excellent local beer, brewed in the [[url:https://www.mercantour-parcnational.fr/|Mercantour park]]. We found there is a camping area next to the hut, and checked on dinner too: they offer ready meals to heat yourself in the microwave, which did not appeal much. We decided to go on, find a more secluded spot to sleep and cook for ourselves."
         - "We carried on along the trail (part of the next day's route, towards Sospel) and found a lovely patch of grass, fairly flat (the whole area is quite steep) and out of the wind, with a stunning view, and stopped there. At the hut they had told us there is a cheese shop further along. We checked the map and there really is, but it looks to be in a completely random spot, among ancient ruins in the middle of the mountain. We will look into it tomorrow. [[photo:e3041fef3915]] [[photo:94732dcb68e3]]"
       he:
-        - "קמנו ב-[[map:NIGHT 4|Merveilles]] והלכנו לשתות קפה בבקתה. קיבלנו קפה בקערות, קונספט די חמוד. ארוחות הבוקר בבקתות בדרך כלל די פשוטות: קורנפלקס, לחם, ריבה וקפה. [[photo:d2863563145e]]"
-        - "התחלנו לטפס והגענו ל-[[map:LAKE · Lac de la Muta|Lac de la Muta]], האגם הגדול האחרון בטיול. ממליצים לשבת ולצפות בו קצת, ואפילו להיכנס. שווה לציין שכל האזור הוא מעין שמורת טבע שבה לא אמורים לרדת מהשבילים, אבל בחרנו לפרש שחייה באגם כפעילות נפרדת. אחרי עוד עלייה מגיעים ל-Lac du Diable (אגם השטן) הצמוד לפאס, שהוא באמת האגם האחרון בטיול. [[photo:53f5436c5ed4]] [[photo:36400654c362]]"
-        - "אחרי [[map:Pas du Diable|Pas du Diable]], לאורך כל המשך הדרך, פגש אותנו ערפל כבד ולא ראינו ממטר. ההליכה יפה מאוד, על רכסי ההרים, אבל אנחנו ראינו מעט מאוד בחלונות השמש הספורים. היה צפי לסופה באותו יום שלא התממש, ובעיקר הקפדנו לא להיות בנקודה הגבוהה של היום, Pas du Diable, בשעות המסוכנות. [[photo:5d365ba570ae]] [[photo:32421b48a96b]]"
-        - "מבחינת הליכה, היום היה די קליל עבורנו, עם הרבה פחות עליות מבימים הקודמים. הגענו לבקתת [[map:HUT · Camp d'Argent;gmaps:L'Estive du Mercantour Camp d'Argent|Camp d'Argent]] ב-15:30. מגישים שם בירה מצוינת מתוצרת מקומית של פארק מרקנטור. גילינו שיש חניון אוהלים צמוד לבקתה, ובדקנו גם ארוחת ערב: מציעים ארוחות מוכנות לחימום עצמי במיקרוגל, שלא כל כך קסמו לנו. החלטנו להמשיך ולמצוא מקום לינה מבודד יותר ולבשל בעצמנו."
-        - "המשכנו בשביל (חלק מהמסלול של למחרת, בדרך לסוספל) ומצאנו פיסת דשא מקסימה, יחסית מישורית (כל האזור די תלול) וללא רוח, עם נוף משגע, ושם עצרנו. בבקתה סיפרו לנו שבהמשך הדרך יש חנות גבינות. בדקנו במפה ובאמת יש, אבל היא נראית במקום רנדומלי לגמרי, בין הריסות עתיקות באמצע ההר. מחכים למחר לחקור את העניין. [[photo:e3041fef3915]] [[photo:94732dcb68e3]]"
+        - "[[photo:6b17af783901]]\nקמנו ב-[[map:NIGHT 4|Merveilles]] והלכנו לשתות קפה בבקתה. קיבלנו קפה בקערות, קונספט די חמוד. ארוחות הבוקר בבקתות בדרך כלל די פשוטות: קורנפלקס, לחם, ריבה וקפה. [[photo:d2863563145e]]"
+        - "התחלנו לטפס והגענו ל-[[map:LAKE · Lac de la Muta|Lac de la Muta]], האגם הגדול האחרון בטיול. ממליצים לשבת ולצפות בו קצת ואפילו להיכנס. שווה לציין שכל האזור הוא מעין שמורת טבע שבה לא אמורים לרדת מהשבילים, אבל בחרנו לפרש שחייה באגם כפעילות נפרדת. אחרי עוד עלייה מגיעים ל-Lac du Diable (אגם השטן) הצמוד לפאס, שהוא באמת האגם האחרון בטיול. [[photo:53f5436c5ed4]] [[photo:36400654c362]]"
+        - "אחרי [[map:Pas du Diable|Pas du Diable]], לאורך כל המשך הדרך, פגש אותנו ערפל כבד ולא ראינו ממטר. ההליכה יפה מאוד, על רכסי ההרים, אבל אנחנו ראינו מעט מאוד בחלונות השמש הספורים. היה צפי לסופה באותו יום שלא התממש ובעיקר הקפדנו לא להיות בנקודה הגבוהה של היום, Pas du Diable, בשעות המסוכנות. [[photo:5d365ba570ae]] [[photo:32421b48a96b]]"
+        - "מבחינת הליכה, היום היה די קליל עבורנו, עם הרבה פחות עליות מבימים הקודמים. הגענו לבקתת [[map:HUT · Camp d'Argent;gmaps:L'Estive du Mercantour Camp d'Argent|Camp d'Argent]] ב-15:30. מגישים שם בירה מצוינת מתוצרת מקומית של פארק מרקנטור. גילינו שיש חניון אוהלים צמוד לבקתה ובדקנו גם ארוחת ערב: מציעים ארוחות מוכנות לחימום עצמי במיקרוגל, שלא כל כך קסמו לנו. החלטנו להמשיך ולמצוא מקום לינה מבודד יותר ולבשל בעצמנו."
+        - "המשכנו בשביל (חלק מהמסלול של למחרת, בדרך ל-Sospel) ומצאנו פיסת דשא מקסימה, יחסית מישורית (כל האזור די תלול) וללא רוח, עם נוף משגע ושם עצרנו. בבקתה סיפרו לנו שבהמשך הדרך יש חנות גבינות. בדקנו במפה ובאמת יש, אבל היא נראית במקום רנדומלי לגמרי, בין הריסות עתיקות באמצע ההר. מחכים למחר לחקור את העניין. [[photo:e3041fef3915]] [[photo:94732dcb68e3]]"
   - n: 6
     date: '2026-09-17'
     title:
@@ -201,11 +201,11 @@ days:
         - "The town is lovely, full of plane trees, with a cute stream through the middle and plenty of vines and fruit trees. At the [[gmaps:Spar Sospel|Spar]] we bought sausages and cheeses for the next day, and even a pastry from a lovely bakery called [[gmaps:Artisan Boulanger Pâtissier Sospel|Artisan Boulanger Pâtissier]]. On the main street there are two fairly similar restaurants serving pizzas and burgers, and to our great surprise both close at 20:30! So mind you go to eat fairly early. We ate at [[gmaps:Sousper Sospel|Sousper]] (as the last customers of the day), and it was very tasty. [[photo:78e8e0ac40ea]] [[photo:693579635321]]"
       he:
         - "קמנו לזריחה נהדרת. הלכנו דרך היער, עם שמש שמבצבצת בין העצים, עד לנקודת מילוי מים שמסומנת במפה. היא נראית מעט מפוקפקת, אבל המים היו טעימים וטובים. חשוב לצאת ליום הזה עם יחסית הרבה מים, כי המסלול ארוך, יורדים נמוך והטמפרטורות עולות. [[photo:f7fa4c6fc858]] [[photo:5fdeb885b2da]]"
-        - "מצאנו את [[map:CHEESE|חנות הגבינות]] (Cheese Shop במפה): ממש בתוך חווה קטנה של כבשים, עם שלט קטן. ראינו אבא ובן אוכלים ארוחת בוקר של בגט, גבינות ונקניק, ושאלנו אותם \"אינגליש?\" הם ענו \"נו\". שאלנו \"צ'יז?\" וענו \"יס!\" הם הובילו אותנו ל\"מרתף\" הגבינות שלהם, שבו היו שלושה סוגי גבינות. טעמנו מכל אחת ובסוף לקחנו קצת מכולן. ממליצים! [[photo:164b7ded1155]]"
-        - "המשכנו, והדרך נפתחה לנוף של הרים מיוערים, עד לפסגת [[map:SUMMIT · Mangiabo|Mangiabo]], ושם עצרנו לצהריים ב-12:30. ראינו שיש שביל צר שעובר לאורך רכס ההר, במקום השביל הרשמי שעובר לצד הפסגות, ושהשניים מתחברים אחרי כמה קילומטרים. בחרנו בו כי רצינו נוף יפה יותר, והליכה מאתגרת לא מפחידה אותנו. מהר מאוד השביל נעלם ונותרנו לגשש את דרכנו, ובכל זאת ה\"דרך\" הייתה מדהימה: נוף משגע ומגוון של עצים ופרחים מיוחדים שעטפו אותנו. הרגשנו שנכנסנו לשביל הקסמים והפיות. [[photo:a018f1489ac7]] [[photo:51e0d7ba86d4]] [[photo:32953cc802e4]]"
-        - "כשהשבילים התחברו, ליד שרידי תותח עתיק, התחלנו את הירידה הגדולה של היום לסוספל: בערך 1,500 מטר!!! מומלץ מקלות הליכה, מהחנות או מלוקטים ביער. הירידה הייתה ארוכה וקשה מאוד, והתחלנו להרגיש את החום. היא לקחה לנו בסך הכול 3 שעות, והגענו לעיירה ב-17:30, מותשים אבל מרוצים. [[photo:fd2651a9cfbc]]"
-        - "לא סגרנו מראש מקום לינה, ואחרי חיפושים התברר שאין ב[[map:NIGHT 6;gmaps:Sospel|סוספל]] אכסניות או בתי מלון (המלון האחרון נסגר לפני זמן מה). הזמנו Airbnb: חדר סטודיו במרכז העיירה ב-300 ₪ ללילה, צפוף אבל עשה את העבודה."
-        - "העיירה מקסימה, מלאה בעצי דולב, עם נחל חמוד במרכז והמון גפנים ועצי פרי. קנינו בסופר [[gmaps:Spar Sospel|Spar]] נקניקים וגבינות למחרת, ואפילו מאפה ממאפייה מקסימה בשם [[gmaps:Artisan Boulanger Pâtissier Sospel|Artisan Boulanger Pâtissier]]. ברחוב הראשי יש שתי מסעדות די דומות שמגישות פיצות והמבורגרים, ולהפתעתנו הרבה שתיהן נסגרות ב-20:30! אז שימו לב ללכת לאכול יחסית מוקדם. אנחנו אכלנו ב-[[gmaps:Sousper Sospel|Sousper]] (בתור הלקוחות האחרונים של היום), והיה טעים מאוד. [[photo:78e8e0ac40ea]] [[photo:693579635321]]"
+        - "מצאנו את [[map:CHEESE|חנות הגבינות]] (Cheese Shop במפה): ממש בתוך חווה קטנה של כבשים עם שלט קטן. ראינו אבא ובן אוכלים ארוחת בוקר של בגט, גבינות ונקניק, שאלנו אותם \"אינגליש?\" הם ענו \"נו\". שאלנו \"צ'יז?\" וענו \"יס!\" הם הובילו אותנו ל\"מרתף\" הגבינות שלהם, שבו היו שלושה סוגי גבינות. טעמנו מכל אחת ובסוף לקחנו קצת מכולן. ממליצים! [[photo:164b7ded1155]]"
+        - "המשכנו והדרך נפתחה לנוף של הרים מיוערים, עד לפסגת [[map:SUMMIT · Mangiabo|Mangiabo]] ושם עצרנו לצהריים ב-12:30. ראינו שיש שביל צר שעובר לאורך רכס ההר, במקום השביל הרשמי שעובר לצד הפסגות ושהשניים מתחברים אחרי כמה קילומטרים. בחרנו בו כי רצינו נוף יפה יותר והליכה מאתגרת לא מפחידה אותנו. מהר מאוד השביל נעלם ונותרנו לגשש את דרכנו ובכל זאת ה\"דרך\" הייתה מדהימה: נוף משגע ומגוון של עצים ופרחים מיוחדים שעטפו אותנו. הרגשנו שנכנסנו לשביל הקסמים והפיות. [[photo:a018f1489ac7]] [[photo:51e0d7ba86d4]] [[photo:32953cc802e4]]"
+        - "כשהשבילים התחברו, ליד שרידי תותח עתיק, התחלנו את הירידה הגדולה של היום ל-Sospel: בערך 1,500 מטר!!! מומלץ מקלות הליכה, מהחנות או מלוקטים ביער. הירידה הייתה ארוכה וקשה מאוד והתחלנו להרגיש את החום. היא לקחה לנו בסך הכול 3 שעות והגענו לעיירה ב-17:30, מותשים אבל מרוצים. [[photo:fd2651a9cfbc]]"
+        - "לא סגרנו מראש מקום לינה ואחרי חיפושים התברר שאין ב[[map:NIGHT 6;gmaps:Sospel|Sospel]] אכסניות או בתי מלון (המלון האחרון נסגר לפני זמן מה). הזמנו Airbnb: חדר סטודיו במרכז העיירה ב-300 ₪ ללילה, צפוף אבל עשה את העבודה."
+        - "העיירה מקסימה, מלאה בעצי דולב, עם נחל חמוד במרכז והמון גפנים ועצי פרי. קנינו בסופר [[gmaps:Spar Sospel|Spar]] נקניקים וגבינות למחרת ואפילו מאפה ממאפייה מקסימה בשם [[gmaps:Artisan Boulanger Pâtissier Sospel|Artisan Boulanger Pâtissier]]. ברחוב הראשי יש שתי מסעדות די דומות שמגישות פיצות והמבורגרים ולהפתעתנו הרבה שתיהן נסגרות ב-20:30! אז שימו לב ללכת לאכול יחסית מוקדם. אנחנו אכלנו ב-[[gmaps:Sousper Sospel|Sousper]] (בתור הלקוחות האחרונים של היום) והיה טעים מאוד. [[photo:78e8e0ac40ea]] [[photo:693579635321]]"
   - n: 7
     date: '2026-09-18'
     title:
@@ -226,10 +226,10 @@ days:
         - "At 14:40 we reached [[map:Col du Berceau|Col du Berceau]] and the start of the big descent, 1,080 m down to Menton. It took us about 3 hours, and we reached the sea at 17:30. Bring a swimsuit! [[photo:17dc97204efb]] [[photo:cb14f4d4e757]] [[photo:4854c06c2603]]"
         - "[[map:FINISH;gmaps:Menton|Menton]] is famous for its lemons, which are supposed to be especially sweet and juicy. [[photo:36807f865ab0]]"
       he:
-        - "קמנו ליום הליכה ארוך ואינטנסיבי. פתחנו את הבוקר ב-3 קרואסונים, מאפה תפוחים וקפה ב[[gmaps:Boulangerie Sospel|מאפייה חמודה בעיירה]], והתחלנו את ההליכה. [[photo:7f574a0a08e4]] [[photo:96353feb1193]]"
-        - "כל תחילת המסלול עלייה ביער קסום ומכושף, עד שמגיעים לרכס ושם נחשף בפנינו בפעם הראשונה הים של מנטון! משם מרגישים את הנוף הים-תיכוני, שקצת דומה לנוף המוכר מהארץ אבל פשוט <b>הרבה יותר מרשים</b>. הליכה שמתאפיינת בהמון גפן, פטל וזית. [[photo:3bfe35e80feb]] [[photo:d632e003d534]] [[photo:5250e75d4fd6]] [[photo:70d4412b41be]]"
-        - "ב-14:40 הגענו ל[[map:Col du Berceau|Col du Berceau]], תחילת הירידה הגדולה של 1,080 מטר למנטון. הירידה לקחה לנו כ-3 שעות, והגענו לים ב-17:30. תביאו בגד ים! [[photo:17dc97204efb]] [[photo:cb14f4d4e757]] [[photo:4854c06c2603]]"
-        - "[[map:FINISH;gmaps:Menton|מנטון]] מפורסמת בלימונים שלה, שאמורים להיות מתוקים ועסיסיים במיוחד. [[photo:36807f865ab0]]"
+        - "קמנו ליום הליכה ארוך ואינטנסיבי. פתחנו את הבוקר ב-3 קרואסונים, מאפה תפוחים וקפה ב[[gmaps:Boulangerie Sospel|מאפייה חמודה בעיירה]] והתחלנו את ההליכה. [[photo:7f574a0a08e4]] [[photo:96353feb1193]]"
+        - "כל תחילת המסלול עלייה ביער קסום ומכושף, עד שמגיעים לרכס ושם נחשף בפנינו בפעם הראשונה הים של Menton! משם מרגישים את הנוף הים-תיכוני, שקצת דומה לנוף המוכר מהארץ אבל פשוט <b>הרבה יותר מרשים</b>. הליכה שמתאפיינת בהמון גפן, פטל וזית. [[photo:3bfe35e80feb]] [[photo:d632e003d534]] [[photo:5250e75d4fd6]] [[photo:70d4412b41be]]"
+        - "ב-14:40 הגענו ל[[map:Col du Berceau|Col du Berceau]], תחילת הירידה הגדולה של 1,080 מטר ל-Menton. הירידה לקחה לנו כ-3 שעות והגענו לים ב-17:30. תביאו בגד ים! [[photo:17dc97204efb]] [[photo:cb14f4d4e757]] [[photo:4854c06c2603]]"
+        - "[[map:FINISH;gmaps:Menton|Menton]] מפורסמת בלימונים שלה, שאמורים להיות מתוקים ועסיסיים במיוחד. [[photo:36807f865ab0]]"
 outro:
   en:
     - "All in all, a very successful trip: fun, interesting walking, plenty of water and a wide range of scenery. It is fairly demanding; you walk a great deal every day, with a lot of climbing and descending."
@@ -244,7 +244,7 @@ photos:
   dfe57e20fb7e: {caption: {en: "Down to Lac du Barn", he: "יורדים ל-Lac du Barn"}}
   1103eb4b39c5: {caption: {en: "Lac du Barn, clear to the bottom", he: "Lac du Barn, שקוף עד הקרקעית"}}
   79c0470ff95a: {caption: {en: "Picnic at Lac du Barn", he: "פיקניק ב-Lac du Barn"}}
-  9d707f81d114: {caption: {en: "The tent by the lake at Le Boréon, dusk", he: "האוהל ליד האגם ב-Le Boréon, דמדומים"}}
+  9d707f81d114: {caption: {en: "The tent by the lake at Le Boréon, dusk", he: "האוהל ליד האגם ב-Le Boréon, דמדומים"}, hide: true}
   2e8e5d0c3eaf: {caption: {en: "Camp at Le Boréon", he: "המחנה ב-Le Boréon"}}
   b50d21123821: {caption: {en: "Dinner at L'Eau à la Bouche", he: "ארוחת ערב ב-L'Eau à la Bouche"}}
   73db5031d2cc: {caption: {en: "Dinner by the lake, raw as it comes", he: "ארוחת ערב ליד האגם, חי לגמרי"}}
@@ -267,13 +267,13 @@ photos:
   # day 6
   f7fa4c6fc858: {caption: {en: "Morning sun through the forest, on the way to the water point", he: "שמש של בוקר דרך היער, בדרך לנקודת המים"}}
   a018f1489ac7: {caption: {en: "The ridge before Mangiabo", he: "הרכס לפני Mangiabo"}}
-  fd2651a9cfbc: {caption: {en: "Deep in the 1,500 m descent to Sospel", he: "עמוק בתוך הירידה של 1,500 מ' לסוספל"}}
+  fd2651a9cfbc: {caption: {en: "Deep in the 1,500 m descent to Sospel", he: "עמוק בתוך הירידה של 1,500 מ' ל-Sospel"}}
   271d9e28c1d4: {hide: true}
   78e8e0ac40ea: {caption: {en: "Sousper, the last customers of the day", he: "Sousper, הלקוחות האחרונים של היום"}}
   12bf731a9920: {hide: true}
   # day 7
-  96353feb1193: {caption: {en: "Breakfast by the stream in Sospel", he: "ארוחת בוקר ליד הנחל בסוספל"}}
-  9dcb6276ac5c: {caption: {en: "Up out of Sospel", he: "עולים מסוספל"}}
+  96353feb1193: {caption: {en: "Breakfast by the stream in Sospel", he: "ארוחת בוקר ליד הנחל ב-Sospel"}}
+  9dcb6276ac5c: {caption: {en: "Up out of Sospel", he: "עולים מ-Sospel"}}
   2dcfb63e0ea7: {caption: {en: "Flowers on the climb", he: "פרחים בעלייה"}}
   3bfe35e80feb: {caption: {en: "Through the forest", he: "דרך היער"}}
   6a0a8bf3ebd8: {caption: {en: "The forest path", he: "שביל היער"}}
@@ -284,7 +284,7 @@ photos:
   3d5766222205: {caption: {en: "Down to the sea", he: "יורדים לים"}}
   36807f865ab0: {caption: {en: "Pizza after the trek", he: "פיצה אחרי הטרק"}}
   # the rest of the pictures, by day
-  a93dfe35555b: {caption: {en: "The peaks above Saint-Dalmas, from the bus", he: "הפסגות מעל Saint-Dalmas, מהאוטובוס"}}
+  a93dfe35555b: {caption: {en: "The peaks above Saint-Dalmas", he: "הפסגות מעל Saint-Dalmas, מהאוטובוס"}}
   3ec9452ff186: {caption: {en: "Croissant number one, on the hostel terrace", he: "קרואסון מספר אחת, במרפסת האכסנייה"}}
   7d878573da6c: {caption: {en: "Yarden and croissant number two", he: "ירדן וקרואסון מספר שתיים"}}
   fa525aa17bbc: {caption: {en: "Still the croissants", he: "עדיין הקרואסונים"}}
@@ -370,7 +370,7 @@ photos:
   ee4d18bf6582: {caption: {en: "Chamois on the scree", he: "אנטילופות בין הסלעים"}}
   122e8e7ff205: {caption: {en: "One more chamois", he: "עוד אנטילופה"}}
   03a621eb6984: {caption: {en: "The fog closes in near the pass", he: "הערפל נסגר ליד הפאס"}}
-  cc9ddf3ea009: {caption: {en: "Ayelet at Baisse du Basto", he: "איילת ב-Baisse du Basto"}}
+  cc9ddf3ea009: {caption: {en: "Ayelet at Baisse du Basto", he: "איילת ב-Baisse du Basto"}, hide: true}
   f15eb219f59b: {caption: {en: "Down towards Lac du Basto", he: "יורדים לכיוון Lac du Basto"}}
   da38d03cf88f: {caption: {en: "Two on the skyline", he: "שתיים על קו הרקיע"}}
   266f605e74c4: {caption: {en: "Lac du Basto, evening", he: "Lac du Basto, ערב"}}
@@ -393,7 +393,7 @@ photos:
   5dce5162c18e: {caption: {en: "Ayelet on the slabs", he: "איילת על הלוחות"}}
   33c23a1a4b69: {caption: {en: "Big sky over the Valmasque", he: "שמיים גדולים מעל ה-Valmasque"}}
   2c5e95c9c58f: {caption: {en: "Lac Vert from the refuge", he: "Lac Vert מהרפיוז'"}}
-  30d6e74ed461: {caption: {en: "Ibex by the refuge", he: "יעלים ליד הרפיוז'"}}
+  30d6e74ed461: {caption: {en: "Ibex by the refuge", he: "אנטילופות ליד הרפיוז'"}}
   41e0bf328c43: {caption: {en: "An ibex on the rock", he: "יעל על הסלע"}}
   ecbd21366934: {caption: {en: "Coffee and tart at the Valmasque hut", he: "קפה וטארט בבקתת Valmasque"}}
   edfb827cf73c: {caption: {en: "Back down the valley", he: "חזרה במורד העמק"}}
@@ -451,16 +451,16 @@ photos:
   148e11cb2cd7: {caption: {en: "On the crest", he: "על הרכס"}}
   9ec8052f49a3: {caption: {en: "The magic path", he: "שביל הקסמים"}}
   ac02cc338476: {caption: {en: "A pine on the descent", he: "אורן בירידה"}}
-  693579635321: {caption: {en: "Sospel and its stream", he: "סוספל והנחל שלה"}}
+  693579635321: {caption: {en: "Sospel and its stream", he: "Sospel והנחל שלה"}}
   412bec311423: {caption: {en: "The Airbnb corridor", he: "המסדרון של ה-Airbnb"}}
-  9536ab020e55: {caption: {en: "Plane trees in Sospel", he: "עצי דולב בסוספל"}}
+  9536ab020e55: {caption: {en: "Plane trees in Sospel", he: "עצי דולב ב-Sospel"}}
   7f574a0a08e4: {caption: {en: "Breakfast from the bakery", he: "ארוחת בוקר מהמאפייה"}}
   17c01d0cdd13: {caption: {en: "Yarden by the stream", he: "ירדן ליד הנחל"}}
-  7dfa1d819a38: {caption: {en: "Out of Sospel", he: "יוצאים מסוספל"}}
+  7dfa1d819a38: {caption: {en: "Out of Sospel", he: "יוצאים מ-Sospel"}}
   70d4412b41be: {caption: {en: "Olive trees and the sea", he: "עצי זית והים"}}
   3d073436aad1: {caption: {en: "The path climbs", he: "השביל מטפס"}}
   cc14cea944ae: {caption: {en: "Rosemary in flower", he: "רוזמרין פורח"}}
-  06f955f3871b: {caption: {en: "Ayelet above Sospel", he: "איילת מעל סוספל"}}
+  06f955f3871b: {caption: {en: "Ayelet above Sospel", he: "איילת מעל Sospel"}}
   5f25e6f5b541: {caption: {en: "The forest path", he: "שביל היער"}}
   cf16d98d31ce: {caption: {en: "An old wall and its tree", he: "קיר ישן והעץ שלו"}}
   c94fa02aeab8: {caption: {en: "Yarden on the ridge", he: "ירדן על הרכס"}}
