@@ -25,8 +25,8 @@ days:
       en: Nice → tram → shopping → bus 90 → Saint-Dalmas
       he: ניס → רכבת קלה → קניות → אוטובוס 90 → Saint-Dalmas
     stats:
-      en: ["landed 11:30, in town till 16:30", "bus 90 at 16:30, 2 h to Saint-Dalmas", "[[map:NIGHT 0;gmaps:Auberge de jeunesse Le Chalet Saint-Dalmas Valdeblore|hostel Le Chalet]], dinner and breakfast"]
-      he: ["נחתנו 11:30, בעיר עד 16:30", "קו 90 ב-16:30, שעתיים ל-Saint-Dalmas", "[[map:NIGHT 0;gmaps:Auberge de jeunesse Le Chalet Saint-Dalmas Valdeblore|אכסניית Le Chalet]], ארוחת ערב ובוקר"]
+      en: ["landed 11:30", "bus 90 at 16:30, 2 h", "hostel, dinner and breakfast"]
+      he: ["נחתנו 11:30", "קו 90 ב-16:30, שעתיים", "אכסנייה, ערב ובוקר"]
     text:
       en:
         - "We flew to Nice and were in the city by 11:30. From the airport the L2 tram took us to the centre, Jean Médecin stop, in 25 minutes. We bought the tickets in the [[url:https://www.lignesdazur.com/|Lignes d'Azur app]], 1.70 € per person per ride."
@@ -45,8 +45,8 @@ days:
       he: Saint-Dalmas → Col de Veillos → Lac Petit → Col du Barn → Lac du Boréon
     # from the log and the picture times: out 08:30, Lac Petit 12:20, Lac du Barn 13:45–15:15, a lift for the road, camp pictures 19:33
     stats:
-      en: ["08:30 → ≈17:30, 9 h with a 1½ h stop at Lac du Barn", "≈15 km on foot, a lift for the last 5", "tent by the lake at Le Boréon, 1,500 m", "water 3 L each"]
-      he: ["08:30 → ≈17:30, 9 שעות עם עצירה של שעה וחצי ב-Lac du Barn", "≈15 ק\"מ ברגל, טרמפ ל-5 האחרונים", "אוהל ליד האגם ב-Le Boréon, 1,500 מ'", "מים 3 ל' לאדם"]
+      en: ["08:30 → 17:30", "≈15 km + a lift", "tent at 1,500 m", "water 3 L each"]
+      he: ["08:30 → 17:30", "≈15 ק\"מ + טרמפ", "אוהל ב-1,500 מ'", "מים 3 ל' לאדם"]
     anchors:
       - {time: '08:30', at: start}
       - {time: '12:15', at: Lac Petit}
@@ -78,8 +78,8 @@ days:
       he: Le Boréon → Refuge de la Cougourde → Lac de Trécolpas → Pas des Ladres → Lac de Fenestre
     # from the log and the picture times: out 09:00, the refuge 12:30–13:45, Trécolpas till 15:30, the pass, camp 17:15
     stats:
-      en: ["09:00 → 17:15, 8¼ h with long stops at the refuge and the lake", "≈13 km", "tent above Lac de Fenestre, 2,300 m, by the old border buildings", "water 3 L each"]
-      he: ["09:00 → 17:15, 8¼ שעות עם עצירות ארוכות ברפיוז' ובאגם", "≈13 ק\"מ", "אוהל מעל Lac de Fenestre, 2,300 מ', ליד מבני הגבול הישנים", "מים 3 ל' לאדם"]
+      en: ["09:00 → 17:15", "≈13 km", "tent at 2,300 m", "water 3 L each"]
+      he: ["09:00 → 17:15", "≈13 ק\"מ", "אוהל ב-2,300 מ'", "מים 3 ל' לאדם"]
     anchors:
       - {time: '09:00', at: start}
       - {time: '12:30', at: Cougourde}
@@ -106,8 +106,8 @@ days:
       he: Lac de Fenestre → Pas du Mont Colomb → Refuge de Nice → Baisse du Basto → Lac du Basto
     # from the log: the pass at 12:00, Refuge de Nice 14:30, camp a little after 18:00
     stats:
-      en: ["Pas du Mont Colomb 12:00, Refuge de Nice 14:30, camp a little after 18:00", "a second pass, +500 / −400 m, to Lac du Basto", "tent at a lookout over Lac du Basto", "water 3 L each"]
-      he: ["Pas du Mont Colomb ב-12:00, Refuge de Nice ב-14:30, מחנה קצת אחרי 18:00", "עוד פאס, 500+ / 400− מ', עד Lac du Basto", "אוהל בתצפית על Lac du Basto", "מים 3 ל' לאדם"]
+      en: ["pass 12:00, refuge 14:30, camp 18:00", "two passes", "tent at 2,400 m", "water 3 L each"]
+      he: ["פאס 12:00, רפיוז' 14:30, מחנה 18:00", "שני פאסים", "אוהל ב-2,400 מ'", "מים 3 ל' לאדם"]
     anchors:
       - {time: '08:30', at: start}
       - {time: '12:00', at: Pas du Mont Colomb}
@@ -137,8 +137,8 @@ days:
       - {time: '15:07', at: Baisse de Valmasque}
       - {time: '17:00', at: NIGHT 4}
     stats:
-      en: ["the Valmasque valley out and back: three big lakes", "Refuge des Merveilles, dinner 21 € each", "tent on the marked area above the refuge, fog", "water 3 L each"]
-      he: ["עמק Valmasque הלוך ושוב: שלושה אגמים גדולים", "Refuge des Merveilles, ארוחת ערב 21 יורו לאדם", "אוהל באזור המסומן מעל הבקתה, ערפל", "מים 3 ל' לאדם"]
+      en: ["Valmasque out and back", "refuge dinner 21 €", "tent at 2,150 m, fog", "water 3 L each"]
+      he: ["Valmasque הלוך ושוב", "ארוחת ערב ברפיוז' 21 €", "אוהל ב-2,150 מ', ערפל", "מים 3 ל' לאדם"]
     text:
       en:
         - "We decided to change the original plan. We had seen that along the GR52 there is a valley called [[map:HUT · Refuge de la Valmasque|Valmasque]] which the trail reaches but does not go through. On the map it looked like a very pretty stretch with three big lakes one after the other, and the French family we met on the first day had recommended it too. So we decided to do the valley out and back, and then carry on to [[map:NIGHT 4;gmaps:Refuge des Merveilles|Refuge des Merveilles]]. [[photo:0ef17432f7c2]]"
@@ -159,8 +159,8 @@ days:
       he: Merveilles → Lac de la Muta → Lac du Diable → Pas du Diable → רכס Authion → Camp d'Argent → מדף דשא בהמשך
     # from the log and the picture times: on the ridge in the fog 13:42, Camp d'Argent 15:30, the tent up 17:25
     stats:
-      en: ["a fairly easy walking day, fog from the pass on", "[[map:HUT · Camp d'Argent;gmaps:L'Estive du Mercantour Camp d'Argent|Camp d'Argent]] 15:30, local beer", "tent on a flat grass ledge past the hut, 1,700 m", "water 4.5 L each"]
-      he: ["יום הליכה די קליל, ערפל מהפאס והלאה", "[[map:HUT · Camp d'Argent;gmaps:L'Estive du Mercantour Camp d'Argent|Camp d'Argent]] ב-15:30, בירה מקומית", "אוהל על מדף דשא מישורי אחרי הבקתה, 1,700 מ'", "מים 4.5 ל' לאדם"]
+      en: ["easy day, fog", "hut 15:30, beer", "tent at 1,700 m", "water 4.5 L each"]
+      he: ["יום קליל, ערפל", "בקתה 15:30, בירה", "אוהל ב-1,700 מ'", "מים 4.5 ל' לאדם"]
     anchors:
       - {time: '08:30', at: start}
       - {time: '15:30', at: HUT · Camp d'Argent}
@@ -185,8 +185,8 @@ days:
       he: מדף הדשא → חוות הגבינות → Mangiabo → ירידה של 1,500 מ' → Sospel
     # from the log and the picture times: forest 08:47, the ridge 11:45, Mangiabo 12:30, the descent 14:30–17:30, dinner 20:57
     stats:
-      en: ["sunrise start, Mangiabo for lunch at 12:30", "≈1,500 m down to Sospel in 3 h, in at 17:30", "Airbnb studio in Sospel, dinner at [[gmaps:Sousper Sospel|Sousper]] before 20:30", "water 4.5 L each"]
-      he: ["יציאה עם הזריחה, צהריים ב-Mangiabo ב-12:30", "ירידה של ≈1,500 מ' לסוספל ב-3 שעות, הגענו ב-17:30", "סטודיו Airbnb בסוספל, ארוחת ערב ב-[[gmaps:Sousper Sospel|Sousper]] לפני 20:30", "מים 4.5 ל' לאדם"]
+      en: ["sunrise → 17:30", "−1,500 m to Sospel", "Airbnb, dinner by 20:30", "water 4.5 L each"]
+      he: ["זריחה → 17:30", "1,500− מ' לסוספל", "Airbnb, ארוחת ערב עד 20:30", "מים 4.5 ל' לאדם"]
     anchors:
       - {time: '07:30', at: start}
       - {time: '12:30', at: SUMMIT · Mangiabo}
@@ -213,8 +213,8 @@ days:
       he: Sospel → Col du Berceau → Menton → רכבת לניס
     # from the picture times: breakfast by the stream 08:26, on the ridge 10:09, the sea in view 11:33, above Menton 15:34, pizza in Nice 21:47
     stats:
-      en: ["breakfast by the stream, out ≈09:00", "the sea in view from 11:30, above Menton at 15:30", "train to Nice, pizza", "water 4.5 L each"]
-      he: ["ארוחת בוקר ליד הנחל, יציאה ≈09:00", "הים נראה מ-11:30, מעל Menton ב-15:30", "רכבת לניס, פיצה", "מים 4.5 ל' לאדם"]
+      en: ["out ≈09:00", "the sea from 11:30", "Menton 15:30, train to Nice", "water 4.5 L each"]
+      he: ["יציאה ≈09:00", "הים מ-11:30", "Menton 15:30, רכבת לניס", "מים 4.5 ל' לאדם"]
     text:
       en:
         - "The last day, from Sospel over [[map:Col du Berceau|Col du Berceau]] and down to the sea at [[map:FINISH|Menton]]. The words for this day are still to come; the pictures are here already. [[photo:96353feb1193]] [[photo:7f574a0a08e4]] [[photo:cc14cea944ae]] [[photo:d632e003d534]] [[photo:171d2e43d79c]] [[photo:0cab66566cc3]] [[photo:17dc97204efb]] [[photo:4854c06c2603]]"
