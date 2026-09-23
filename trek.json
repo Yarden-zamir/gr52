@@ -28,7 +28,7 @@
     "Lac de Fenestre": "NIGHT 2",
     "Pas du Mont Colomb": "PASS · Pas du Mont Colomb",
     "Refuge de Nice": "HUT · Refuge de Nice",
-    "Lac de la Fous": "HUT · Refuge de Nice",
+    "Lac de la Fous": "LAKE · Lac de la Fous",
     "Baisse du Basto": "Baisse du Basto",
     "Refuge des Merveilles": "NIGHT 4",
     "Vallée des Merveilles": "NIGHT 4",
@@ -54,7 +54,15 @@
     "Lac de la Muta": "LAKE · Lac de la Muta",
     "Mangiabo": "SUMMIT · Mangiabo",
     "Lac Noir": "LAKE · Lac Noir",
-    "Lac Vert": "LAKE · Lac Vert"
+    "Lac Vert": "LAKE · Lac Vert",
+    "Col de Veillos": "PASS · Col de Veillos",
+    "Lac du Diable": "LAKE · Lac du Diable",
+    "Baisse de Valmasque": "PASS · Baisse de Valmasque",
+    "Col de Fenestre": "PASS · Col de Fenestre",
+    "Lac du Boréon": "NIGHT 1",
+    "Merveilles valley": "NIGHT 4",
+    "עמק Merveilles": "NIGHT 4",
+    "Lac des Merveilles": "NIGHT 4"
   },
   "waypoints": [],
   "route": {

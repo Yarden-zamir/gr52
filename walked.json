@@ -235,6 +235,46 @@
     "lon": 7.44059,
     "type": "Water"
    }
+  },
+  {
+   "add": {
+    "name": "PASS · Col de Veillos 2194 m · the first climb",
+    "lat": 44.10396,
+    "lon": 7.18821,
+    "type": "Info"
+   }
+  },
+  {
+   "add": {
+    "name": "PASS · Col de Fenestre 2474 m · the border, on the way to Lac de Fenestre",
+    "lat": 44.11641,
+    "lon": 7.36097,
+    "type": "Info"
+   }
+  },
+  {
+   "add": {
+    "name": "PASS · Baisse de Valmasque 2549 m",
+    "lat": 44.08055,
+    "lon": 7.43853,
+    "type": "Info"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac de la Fous · below Refuge de Nice",
+    "lat": 44.10236,
+    "lon": 7.39743,
+    "type": "Water"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Lac du Diable · the last lake, by Pas du Diable",
+    "lat": 44.04915,
+    "lon": 7.42982,
+    "type": "Water"
+   }
   }
  ]
 }
