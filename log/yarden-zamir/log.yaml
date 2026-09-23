@@ -208,9 +208,9 @@ days:
   - n: 7
     date: '2026-09-18'
     title:
-      en: Sospel → Col du Berceau → Menton → train to Nice
-      he: Sospel → Col du Berceau → Menton → רכבת לניס
-    # from the picture times: breakfast by the stream 08:26, on the ridge 10:09, the sea in view 11:33, above Menton 15:34, pizza in Nice 21:47
+      en: Sospel → Col du Berceau → Menton
+      he: Sospel → Col du Berceau → Menton
+    # from the picture times: breakfast by the stream 08:26, on the ridge 10:09, the sea in view 11:33, above Menton 15:34, pizza after the trek 21:47
     stats:
       en: ["water 4.5 L each"]
       he: ["מים 4.5 ל' לאדם"]
@@ -281,7 +281,7 @@ photos:
   afcd8653370d: {caption: {en: "Daisies", he: "חרציות"}}
   cb14f4d4e757: {caption: {en: "Menton and the sea, from above", he: "Menton והים, מלמעלה"}}
   3d5766222205: {caption: {en: "Down to the sea", he: "יורדים לים"}}
-  36807f865ab0: {caption: {en: "Pizza in Nice, the trek done", he: "פיצה בניס, הטרק נגמר"}}
+  36807f865ab0: {caption: {en: "Pizza after the trek", he: "פיצה אחרי הטרק"}}
   # the rest of the pictures, by day
   a93dfe35555b: {caption: {en: "The peaks above Saint-Dalmas, from the bus", he: "הפסגות מעל Saint-Dalmas, מהאוטובוס"}}
   3ec9452ff186: {caption: {en: "Croissant number one, on the hostel terrace", he: "קרואסון מספר אחת, במרפסת האכסנייה"}}

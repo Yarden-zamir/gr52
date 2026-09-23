@@ -1,7 +1,7 @@
 en:
   eyebrow: GR52 · Mercantour · 12 – 18 September 2026
   title: GR52 Bivouac Dossier
-  lede: Yarden and Ayelet land in Nice on Friday 11 September, sleep in Saint-Dalmas, walk seven days to Menton with a tent, and take the train back to Nice. Their stage split, with the technical options named.
+  lede: Yarden and Ayelet land in Nice on Friday 11 September, sleep in Saint-Dalmas, walk seven days to Menton with a tent. Their stage split, with the technical options named.
   facts:
   - value: ≈95 km
     label: Saint-Dalmas → Menton
@@ -105,14 +105,13 @@ en:
   - n: 7
     date: '2026-09-18'
     label: FRI 18 SEP
-    title: Sospel → Col du Berceau → Menton → train to Nice
+    title: Sospel → Col du Berceau → Menton
     stats:
     - ≈17 km
     - +1,150 / −1,500 m
     - 8–9 h
-    - trains to Nice every 20–30 min, 35 min
     text:
-    - 'No water at all in a dry September: 3 L each. The last hour below Col du Berceau (1,090 m) is steep and loose. Then the sea, and the train back to Nice.'
+    - 'No water at all in a dry September: 3 L each. The last hour below Col du Berceau (1,090 m) is steep and loose. Then the sea.'
     hours: 9
   maps_intro: This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Each day's Map tab shows its own stretch and profile; this is the whole route. Twist with two fingers or use the arrows to rotate; the compass resets north. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.
   section_maps:
@@ -229,7 +228,6 @@ en:
   - title: Transport
     items:
     - 'Nice → Saint-Dalmas: <a href="https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/">bus 90</a>, weekdays 08:10, 16:40, 18:40 from Les Arboras via Grand Arénas, ≈2 h. Confirm on the <a href="https://www.lignesdazur.com/">Lignes d''Azur</a> app the week before.'
-    - 'Menton → Nice: trains every 20–30 min, 35 min.'
     - 'Bail-outs: Madone de Fenestre road, Col de Turini road, Sospel station.'
   practical_right:
   - title: Gear
@@ -242,43 +240,7 @@ en:
     - 'Hang food: foxes and boar raid tents by the lakes.'
     - Headtorch; you will cook at dusk.
     - 'Emergency: 112.'
-  extra:
-  - title: Car rental at the end
-    intro: Verified on 4 September 2026 from the agencies' own pages. Menton has two confirmed agencies near the station. They close at 18:00 and you arrive Friday around 17:00–18:00 after the descent, so plan on either a Saturday morning pickup in Menton or the airport the same evening.
-    table:
-      caption: Car rental near Menton station
-      columns:
-      - Agency
-      - Address, from station
-      - Hours
-      - Phone
-      - Price
-      - One-way
-      - Notes
-      rows:
-      - - <a href="https://www.ada.fr/location-voiture-menton">Ada</a>
-        - 24 Av. des Alliés, 100 m
-        - Mon–Fri 08:30–12:00, 15:00–18:00; Sat 08:30–12:00, 16:00–18:00; Sun closed
-        - 04 92 10 16 07
-        - low
-        - rarely
-        - Closest. Cars and vans, small fleet, station shuttle on request.
-      - - <a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a>
-        - 4 Av. Cochrane, 300 m
-        - Mon–Sat 08:30–12:00, 14:00–18:00; Sun closed
-        - 04 93 35 18 49
-        - low–mid
-        - 'yes'
-        - Only Menton agency confirming one-way rentals.
-      - - '<a href="https://www.nice.aeroport.fr/en/services/car-rental">Nice airport</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a>'
-        - train Menton → Nice-Ville 35 min, tram 2 to the airport
-        - Sixt 07:30–24:00 daily; T1 desks to 22:00, then the Car Rental Center at T2
-        - —
-        - Sixt ≈€50/day in September
-        - 'yes'
-        - Same-evening pickup, widest choice, cheapest one-way.
-    notes:
-    - <b>Listed online but not operating:</b> Europcar, 9 Av. Thiers, shows "temporarily closed" since 2021 and its booking page is gone. Avis "Gare de Menton" shows closed every day of the week on avis.fr. Ignore both in comparison sites. Prices are September 2026 snapshots from <a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; book about a month ahead. Keep licence and the booking card in the pack.
+  extra: []
   links:
     reports:
     - <a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 days wild camping in August. Closest to your plan.
@@ -299,7 +261,7 @@ en:
 he:
   eyebrow: GR52 · מרקנטור · 12–18 בספטמבר 2026
   title: GR52 עם אוהל
-  lede: ירדן ואיילת נוחתים בניס ביום שישי 11 בספטמבר, ישנים ב-Saint-Dalmas, הולכים שבעה ימים עד Menton עם אוהל, וחוזרים ברכבת לניס. החלוקה שלהם לימים, עם האופציות הטכניות.
+  lede: ירדן ואיילת נוחתים בניס ביום שישי 11 בספטמבר, ישנים ב-Saint-Dalmas, הולכים שבעה ימים עד Menton עם אוהל. החלוקה שלהם לימים, עם האופציות הטכניות.
   facts:
   - value: ≈95 ק"מ
     label: Saint-Dalmas עד Menton
@@ -402,14 +364,13 @@ he:
   - n: 7
     date: '2026-09-18'
     label: שישי 18.9
-    title: Sospel, מעל Col du Berceau, עד Menton, ורכבת לניס
+    title: Sospel, מעל Col du Berceau, עד Menton
     stats:
     - ≈17 ק"מ
     - +1,150 / −1,500 מ'
     - 8–9 שעות
-    - רכבת לניס כל 20–30 דקות, 35 דקות
     text:
-    - 'בספטמבר יבש אין מים בכלל: 3 ליטר לאדם. השעה האחרונה מתחת ל-Col du Berceau (1,090 מ'') תלולה ורופפת. ואז הים, והרכבת חזרה לניס.'
+    - 'בספטמבר יבש אין מים בכלל: 3 ליטר לאדם. השעה האחרונה מתחת ל-Col du Berceau (1,090 מ'') תלולה ורופפת. ואז הים.'
     hours: 9
   maps_intro: המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לשונית המפה של כל יום מציגה את הקטע והפרופיל שלו; כאן כל המסלול. סובבו בשתי אצבעות או עם החצים, והמצפן מחזיר לצפון. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.
   section_maps:
@@ -526,7 +487,6 @@ he:
   - title: תחבורה
     items:
     - 'ניס עד Saint-Dalmas: <a href="https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/">אוטובוס 90</a>, בימי חול 08:10, 16:40, 18:40 מ-Les Arboras דרך Grand Arénas, כשעתיים. לאשר באפליקציית <a href="https://www.lignesdazur.com/">Lignes d''Azur</a> שבוע לפני.'
-    - 'Menton עד ניס: רכבת כל 20–30 דקות, 35 דקות נסיעה.'
     - 'יציאות חירום: הכביש ל-Madone de Fenestre, הכביש ב-Col de Turini, תחנת הרכבת ב-Sospel.'
   practical_right:
   - title: ציוד
@@ -539,43 +499,7 @@ he:
     - 'לתלות את האוכל: שועלים וחזירי בר פושטים על אוהלים ליד האגמים.'
     - פנס ראש; תבשלו בחושך.
     - 'חירום: 112.'
-  extra:
-  - title: השכרת רכב בסוף
-    intro: אומת ב-4 בספטמבר 2026 מהדפים של הסוכנויות עצמן. ב-Menton יש שתי סוכנויות מאומתות ליד תחנת הרכבת. הן נסגרות ב-18:00 ואתם מגיעים ביום שישי בסביבות 17:00–18:00 אחרי הירידה, אז תכננו או איסוף בשבת בבוקר ב-Menton או שדה התעופה באותו ערב.
-    table:
-      caption: השכרת רכב ליד תחנת הרכבת של Menton
-      columns:
-      - סוכנות
-      - כתובת, מרחק מהתחנה
-      - שעות
-      - טלפון
-      - מחיר
-      - החזרה במקום אחר
-      - הערות
-      rows:
-      - - <a href="https://www.ada.fr/location-voiture-menton">Ada</a>
-        - 24 Av. des Alliés, 100 מ'
-        - ב'–ו' 08:30–12:00, 15:00–18:00; שבת 08:30–12:00, 16:00–18:00; א' סגור
-        - 04 92 10 16 07
-        - נמוך
-        - כמעט לא
-        - הכי קרוב. רכבים פרטיים ומסחריים, צי קטן, הסעה מהתחנה לפי בקשה.
-      - - <a href="https://www.rentacar.fr/agences/491-menton">Rent a Car</a>
-        - 4 Av. Cochrane, 300 מ'
-        - ב'–שבת 08:30–12:00, 14:00–18:00; א' סגור
-        - 04 93 35 18 49
-        - נמוך–בינוני
-        - כן
-        - הסוכנות היחידה ב-Menton שמאשרת החזרה במקום אחר.
-      - - '<a href="https://www.nice.aeroport.fr/en/services/car-rental">שדה התעופה ניס</a>: <a href="https://www.sixt.com/car-rental/france/nice/nice-airport-terminal-1/">Sixt</a>, <a href="https://www.hertz.co.uk/p/car-hire/france/nice/nice-airport">Hertz</a>, <a href="https://www.europcar.com/en-us/places/car-rental-france/nice/nice-cote-d-azur-airport">Europcar</a>, <a href="https://www.avis.fr/services-avis/location-voiture/europe/france/nice/aeroport-de-nice-cote-d-azur">Avis</a>'
-        - רכבת מ-Menton ל-Nice-Ville 35 דקות, רכבת קלה קו 2 לשדה
-        - Sixt 07:30–24:00 כל יום; דלפקים בטרמינל 1 עד 22:00, אחר כך מרכז ההשכרה בטרמינל 2
-        - —
-        - Sixt ≈€50 ליום בספטמבר
-        - כן
-        - איסוף באותו ערב, הבחירה הרחבה ביותר, ההחזרה במקום אחר הזולה ביותר.
-    notes:
-    - <b>מופיעות באינטרנט אבל לא פעילות:</b> Europcar, 9 Av. Thiers, מסומנת "סגור זמנית" מאז 2021 ודף ההזמנה שלה נעלם. Avis "Gare de Menton" מופיעה באתר avis.fr כסגורה בכל ימות השבוע. התעלמו משתיהן באתרי השוואה. המחירים הם תמונת מצב מספטמבר 2026 מ-<a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; להזמין בערך חודש מראש. לשמור רישיון וכרטיס האשראי של ההזמנה בתיק.
+  extra: []
   links:
     reports:
     - <a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 ימים עם אוהל באוגוסט. הכי דומה לתוכנית שלכם.
