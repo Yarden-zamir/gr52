@@ -41,7 +41,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--mark);outline-offse
 h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:1.05;text-wrap:balance;margin:0}
 h1{font-size:clamp(44px,7vw,76px);font-weight:700;letter-spacing:-.01em}
 h2{font-size:34px;font-weight:600;margin-top:64px;padding-top:18px;border-top:3px solid var(--ink);display:flex;align-items:baseline;gap:14px}
-h2 .k{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);letter-spacing:.08em;font-weight:500}
 h3{font-size:24px;font-weight:600;margin-top:28px}
 p{max-width:68ch;margin:12px 0}
 ul,ol{max-width:72ch;padding-inline-start:22px;margin:10px 0}
@@ -99,7 +98,7 @@ figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
 [lang="he"] h1{font-size:clamp(38px,6vw,64px)}
 [lang="he"] .stage h3{font-size:23px}
 [lang="he"] .eyebrow,[lang="he"] .tag,[lang="he"] th{letter-spacing:0;text-transform:none;font-family:"Heebo",sans-serif}
-[lang="he"] .stage .d small,[lang="he"] .stage .stats,[lang="he"] h2 .k{font-family:"IBM Plex Mono",monospace}
+[lang="he"] .stage .d small,[lang="he"] .stage .stats{font-family:"IBM Plex Mono",monospace}
 [lang="he"] .langbar button{font-family:"Heebo",sans-serif}
 h2,h3,.stage,.note,.scroll,figure,.mapbox{scroll-margin-top:12px}
 td{overflow-wrap:anywhere}
@@ -225,6 +224,17 @@ a.daylink:hover{color:var(--lake)}
 .tabs button:hover{color:var(--ink)} .tabs button.on{color:var(--ink);border-bottom-color:var(--mark)}
 .tabs .badge{font:600 11px "IBM Plex Mono",monospace;background:var(--warn-soft);border:1px solid var(--warn);color:var(--ink);border-radius:9px;padding:0 6px;line-height:16px}
 .tabs .badge.bad{background:var(--mark-soft);border-color:var(--mark)}
+.tabs .editbtn{margin-inline-start:auto;font-size:16px;padding:6px 10px;color:var(--muted)} .tabs .editbtn:hover{color:var(--ink)} .tabs .editbtn.on{color:var(--mark)}
+.editor{margin:8px 0 14px} .editor textarea{width:100%;min-height:260px;box-sizing:border-box;font:14px/1.5 "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:10px;resize:vertical}
+.editor .row{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap} .editor .hint{font:12px "IBM Plex Mono",monospace;color:var(--muted);flex:1 1 100%} .editor .msg{font:12px "IBM Plex Mono",monospace;color:var(--muted)}
+.editor button,.sheet button{font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:8px 14px;cursor:pointer} .editor button.primary{background:var(--mark);border-color:var(--mark);color:#fff}
+#sheetwrap{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.35);display:flex;align-items:flex-end;justify-content:center} #sheetwrap[hidden]{display:none}
+.sheet{background:var(--panel);border-radius:10px 10px 0 0;padding:10px 12px calc(12px + env(safe-area-inset-bottom));width:100%;max-width:520px;box-shadow:0 -4px 20px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:6px}
+.sheet .who{display:flex;gap:10px;align-items:center;font:13px "IBM Plex Sans",sans-serif;color:var(--muted);padding:2px 2px 6px} .sheet .who img{width:48px;height:48px;object-fit:cover;border-radius:4px}
+.sheet button{text-align:start;padding:12px 14px;font-size:15px} .sheet button.danger{color:var(--mark)} .sheet button.cancel{color:var(--muted);border-style:dashed}
+.tile.hid img,.inpic.hid img{opacity:.35} .hiddenpics{margin:10px 0 0;font:13px "IBM Plex Sans",sans-serif;color:var(--muted)} .hiddenpics summary{cursor:pointer} .hiddenpics .gallery{margin-top:8px}
+a.gm{color:var(--ink);text-decoration:underline dotted var(--muted);text-underline-offset:3px} a.gm::after{content:"\00a0↗";font-size:.8em;color:var(--muted)}
+[lang="he"] .editor textarea,[lang="he"] .editor button,[lang="he"] .sheet button{font-family:"Heebo",sans-serif}
 .pane{min-width:0} .pane[data-pane="plan"] p:first-child{margin-top:0}
 [lang="he"] .tabs button{font-family:"Heebo",sans-serif}
 /* map hosts: the map box moves into a day's Map tab or back to the Maps section */
@@ -269,6 +279,7 @@ a.daylink:hover{color:var(--lake)}
 .inpic.port img{width:auto;max-height:85vh}
 .inpic span{display:block;font-size:12.5px;color:var(--muted);padding:4px 0;text-align:center;text-decoration:none}
 .pane[data-pane="log"] p{max-width:72ch}
+.tile,.inpic{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none} .tile img,.inpic img{-webkit-user-drag:none}
 .tile img{transition:transform .25s ease} .tile:hover img{transform:scale(1.03)} .tile,.inpic,.popthumbs a{cursor:zoom-in}
 /* desktop: a wider log page, the whole grid in three columns, pictures in the text side by side */
 .logpage .wrap{max-width:1240px}
@@ -336,7 +347,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <nav class="toc" aria-label="Sections"><a href="#plan">Plan</a><a href="#maps">Maps</a><a href="#rules">Rules &amp; water</a><a href="#tech">Technical</a><a href="#practical">Practical</a><a href="#links">Links</a><a href="/GR52_all-in-one.gpx" download>GPX for OsmAnd ↓</a></nav>
 </header>
 
-<h2 id="plan"><span class="k">§1</span>The plan</h2>
+<h2 id="plan">The plan</h2>
 <p>Yarden and Ayelet's split, which is the official FFRandonnée staging. Times are guidebook times plus 20 %. In the park core the tent may only stand from 19:00 to 09:00 and sunset is about 19:45, so arrive by 18:00 and cook first. The GPX layers in your Downloads folder match these nights.</p>
 <p class="planbar"><span class="snapstatus">The round button at the bottom left takes one position fix, no tracking: it shows you on the map and on the profile, marks finished days done and fills in today's distance, ascent left and arrival estimate. Long-press it to pick your position on the map instead. Each day has Plan, Map and Weather tabs; tap a day title to open its map.</span></p>
 <div class="stage" data-day="0" data-date="2026-09-11" data-hours="2">
@@ -445,7 +456,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   </div>
 </div>
 
-<h2 id="maps"><span class="k">§2</span>Maps and profile</h2>
+<h2 id="maps">Maps and profile</h2>
 <p>This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Each day's Map tab shows its own stretch and profile; this is the whole route. Twist with two fingers or use the arrows to rotate; the compass resets north. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.</p>
 <div class="maphost" data-host="all"><button type="button" class="mapclaim">Show the whole route here</button>
 <div class="mapbox" data-map="en">
@@ -463,7 +474,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <figure><img class="map" src="/maps/menton.webp" width="699" height="1050" loading="lazy" decoding="async" alt="Day 7."><figcaption>Day 7.</figcaption></figure>
 </details>
 
-<h2 id="rules"><span class="k">§3</span>Rules and water</h2>
+<h2 id="rules">Rules and water</h2>
 <div class="note rule"><p><b>Park core</b> (<a href="#map" class="focus" data-focus="Col du Barn">Col du Barn</a> to just past <a href="#map" class="focus" data-focus="PASS · Pas du Diable">Pas du Diable</a>): tent up 19:00–09:00 only, low tent, more than one hour from a road, new spot each night, stove yes, fire no, no dogs.</p><p><b>Merveilles zone:</b> bivouac only on the marked area behind the <a href="#map" class="focus" data-focus="NIGHT 4">Refuge des Merveilles</a>. Stay on the trail. Metal pole tips need rubber caps. Wardens fine.</p><p><b>Dry stretches:</b> Merveilles → <a href="#map" class="focus" data-focus="HUT · Camp d'Argent">Camp d'Argent</a> and <a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a> → <a href="#map" class="focus" data-focus="FINISH">Menton</a>. Nothing mapped, nothing in any report. 3 L each.</p></div>
 <div class="scroll"><table>
   <caption>Refuges, water and where to pitch</caption>
@@ -478,7 +489,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <tr><td data-label="Place"><span><a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a></span></td><td data-label="Alt." class="n"><span>350 m</span></td><td data-label="Open"><span>village</span></td><td data-label="Tent"><span>Camping Sainte-Madeleine</span></td><td data-label="Note"><span>shops, station, fountains</span></td></tr>
 </table></div>
 
-<h2 id="tech"><span class="k">§4</span>Technical options and via ferrata</h2>
+<h2 id="tech">Technical options and via ferrata</h2>
 <p>On the line: <a href="#map" class="focus" data-focus="Trécolpas">Trécolpas</a> to <a href="#map" class="focus" data-focus="ROUTE 2 of 4">Pas des Ladres</a> (steep, blocky), the <a href="#map" class="focus" data-focus="PASS · Pas du Mont Colomb">Pas du Mont Colomb</a> rock step (T3 dry), boulders below <a href="#map" class="focus" data-focus="Baisse du Basto">Baisse du Basto</a>, and two long loose descents where the reports' injuries happen. Beyond that:</p>
 <div class="scroll"><table>
   <caption>Technical options and via ferrata</caption>
@@ -491,7 +502,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <tr><td data-label="Objective"><span><a href="https://www.mercantour-roya.com/via-ferrata/">Roya via ferratas</a></span></td><td data-label="From"><span>Tende, La Brigue, by train from <a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a></span></td><td data-label="What it is" data-long><span>Easy to moderate, guided ≈€50. Only for a spare day. Peille's L'Escale is closed.</span></td><td data-label="Time"><span>half day</span></td></tr>
 </table></div>
 
-<h2 id="practical"><span class="k">§5</span>Practical</h2>
+<h2 id="practical">Practical</h2>
 <div class="two">
   <div>
     <h3>September</h3><ul><li>Storms rare, unlike July and August. Valley highs 20–24 °C, 0–5 °C at the high bivouacs, frost possible.</li><li>First snow on Colomb and Basto is possible from mid-September. If it falls, wait a day.</li><li>Sunrise ≈07:10, sunset ≈19:45.</li><li><b>Live forecast:</b> each day card above shows the current forecast for that day's night spot and high point, from <a href="https://open-meteo.com/">Open-Meteo</a>, refreshed every time the page loads, with warnings derived for thunderstorms, rain, snow and freezing level, ridge wind, frost, heat, fog and UV. The last forecast is kept for offline reading.</li><li><b>Official sources to check the day before:</b> <a href="https://vigilance.meteofrance.fr/fr/alpes-maritimes">Météo-France vigilance, Alpes-Maritimes</a> (colour warnings for storms, rain, heat), <a href="https://meteofrance.com/meteo-montagne/mercantour">Météo-France mountain bulletin, Mercantour</a> (freezing level, wind at 2,000 and 3,000 m, storm timing), <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">park trail notices</a>.</li><li>Trail notices (park site, 4 Sep): Boréon line reopened; fords at Cougourde and <a href="#map" class="focus" data-focus="HUT · Refuge de Nice">Refuge de Nice</a>. Re-check <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">Info sentiers</a> before leaving.</li></ul>
@@ -512,7 +523,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
 </table></div>
 <p><b>Listed online but not operating:</b> Europcar, 9 Av. Thiers, shows "temporarily closed" since 2021 and its booking page is gone. Avis "Gare de <a href="#map" class="focus" data-focus="FINISH">Menton</a>" shows closed every day of the week on avis.fr. Ignore both in comparison sites. Prices are September 2026 snapshots from <a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; book about a month ahead. Keep licence and the booking card in the pack.</p>
 
-<h2 id="links"><span class="k">§6</span>Links</h2>
+<h2 id="links">Links</h2>
 <h3>Trip reports</h3><ul><li><a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 days wild camping in August. Closest to your plan.</li><li><a href="https://www.altituderando.com/GR52-GR52A-Boucle-Menton-Sospel-Vesubie-Boreon-Vallee-des-Merveilles-Col-de">Altitude Rando</a>, 15–22 September, campsites and refuges. Same dates as yours.</li><li><a href="https://www.randonner-leger.org/forum/viewtopic.php?id=22334">Randonner Léger 2025</a> and <a href="https://www.randonner-leger.org/forum/viewtopic.php?id=21181">Larche to Menton</a>, ultralight bivouac, French.</li><li><a href="https://grfive.com/?page_id=540">GR Five</a>, best description of the <a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a> descent.</li><li><a href="https://crossingthealpswithease.wordpress.com/2022-auron-to-menton-gr5-and-gr52/">Crossing the Alps with Ease</a>, refuges, 2022.</li><li><a href="https://howlingmist.blogspot.com/2017/11/hiking-gr52-and-gr52a.html">Howlingmist</a>, late October, the cold end of the season.</li><li><a href="https://www.wikiloc.com/hiking-trails/gr52-de-menton-a-saint-dalmas-valdeblore-14352481">Wikiloc</a>, 5-day bivouac, reversed.</li><li><a href="https://fastestknowntime.com/route/grande-traversee-des-alpes-gr52-and-gr5-france">FKT, Menton to Lake Geneva via GR52 and GR5</a>: 12 d 20 h, September 2025.</li></ul>
 <h3>Official</h3><ul><li><a href="https://www.mongr.fr/trouver-prochaine-randonnee/suggestion/gr-52-de-saint-dalmas-valdeblore-a-menton">Mon GR</a>, <a href="https://topo-de-rando.com/gr52/">Topo de Rando</a>, <a href="https://www.gr-infos.com/en/gr52.htm">GR Infos</a>: stages.</li><li><a href="https://www.mercantour-parcnational.fr/fr/le-parc-national-du-mercantour/la-reglementation/foire-aux-questions">Park rules FAQ</a>, <a href="https://aida.ineris.fr/consultation_document/42556">bivouac order</a>, <a href="https://www.ffrandonnee.fr/s-informer/actualites/dans-le-mercantour-la-vallee-des-merveilles-est-strictement-surveillee">Merveilles zone</a>.</li><li><a href="https://www.alltrails.com/lists/gr52-la-vallee-des-merveilles">AllTrails stage list</a>, recent reviews.</li><li><a href="https://www.colmiane.com/activites-ete-sur-la-colmiane/via-ferrata.html">La Colmiane via ferrata booking</a>, <a href="https://www.sortir06.fr/les-via-ferrata-alpes-maritimes/">all via ferratas in the 06</a>.</li></ul>
 </div>
@@ -534,7 +545,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <nav class="toc" aria-label="Sections"><a href="#he-plan">התוכנית</a><a href="#he-maps">מפות</a><a href="#he-rules">חוקים ומים</a><a href="#he-tech">טכני</a><a href="#he-practical">פרקטי</a><a href="#he-links">קישורים</a><a href="/GR52_all-in-one.gpx" download>GPX ל-OsmAnd ↓</a></nav>
 </header>
 
-<h2 id="he-plan"><span class="k">§1</span>התוכנית</h2>
+<h2 id="he-plan">התוכנית</h2>
 <p>החלוקה של ירדן ואיילת, שהיא בדיוק השלבים הרשמיים של FFRandonnée. הזמנים הם זמני המדריך פלוס 20 אחוז. בלב הפארק מותר להקים אוהל רק בין 19:00 ל-09:00 והשמש שוקעת בסביבות 19:45, אז מגיעים עד 18:00 ומבשלים לפני שמקימים. שכבות ה-GPX בתיקיית ההורדות תואמות ללילות האלה.</p>
 <p class="planbar"><span class="snapstatus">הכפתור העגול בפינה השמאלית התחתונה קורא מיקום אחד, בלי מעקב: הוא מציג אתכם במפה ובפרופיל, מסמן ימים שהסתיימו כהושלמו וממלא את המרחק, העלייה שנותרה והערכת ההגעה להיום. לחיצה ארוכה עליו בוחרת את המיקום במפה במקום GPS. לכל יום יש לשוניות תוכנית, מפה ומזג אוויר; לחצו על כותרת יום כדי לפתוח את המפה שלו.</span></p>
 <div class="stage" data-day="0" data-date="2026-09-11">
@@ -643,7 +654,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   </div>
 </div>
 
-<h2 id="he-maps"><span class="k">§2</span>מפות ופרופיל</h2>
+<h2 id="he-maps">מפות ופרופיל</h2>
 <p>המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לשונית המפה של כל יום מציגה את הקטע והפרופיל שלו; כאן כל המסלול. סובבו בשתי אצבעות או עם החצים, והמצפן מחזיר לצפון. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.</p>
 <div class="maphost" data-host="all"><button type="button" class="mapclaim">הצג את כל המסלול כאן</button>
 <div class="mapbox" data-map="he">
@@ -661,7 +672,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <figure><img class="map" src="/maps/menton.webp" width="699" height="1050" loading="lazy" decoding="async" alt="יום 7."><figcaption>יום 7.</figcaption></figure>
 </details>
 
-<h2 id="he-rules"><span class="k">§3</span>חוקים ומים</h2>
+<h2 id="he-rules">חוקים ומים</h2>
 <div class="note rule"><p><b>לב הפארק</b> (מ-<a href="#map" class="focus" data-focus="Col du Barn">Col du Barn</a> עד קצת אחרי <a href="#map" class="focus" data-focus="PASS · Pas du Diable">Pas du Diable</a>): אוהל רק בין 19:00 ל-09:00, אוהל נמוך, יותר משעת הליכה מכביש, מקום חדש בכל לילה, גזייה כן, מדורה לא, כלבים אסורים.</p><p><b>אזור Merveilles:</b> לינה רק בשטח המסומן מאחורי <a href="#map" class="focus" data-focus="NIGHT 4">Refuge des Merveilles</a>. נשארים על השביל. קצה מתכת של מקל חייב גומייה. הפקחים קונסים.</p><p><b>קטעים יבשים:</b> מ-Merveilles עד <a href="#map" class="focus" data-focus="HUT · Camp d'Argent">Camp d'Argent</a>, ומ-<a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a> עד <a href="#map" class="focus" data-focus="FINISH">Menton</a>. אין מים במפה ואין מים באף דוח. 3 ליטר לאדם.</p></div>
 <div class="scroll"><table>
   <caption>בקתות, מים ואיפה מקימים</caption>
@@ -676,7 +687,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <tr><td data-label="מקום"><span><a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a></span></td><td data-label="גובה" class="n"><span>350 מ'</span></td><td data-label="פתוח"><span>כפר</span></td><td data-label="אוהל"><span>Camping Sainte-Madeleine</span></td><td data-label="הערה"><span>חנויות, רכבת, ברזיות</span></td></tr>
 </table></div>
 
-<h2 id="he-tech"><span class="k">§4</span>אופציות טכניות וויה פראטה</h2>
+<h2 id="he-tech">אופציות טכניות וויה פראטה</h2>
 <p>על המסלול עצמו: מ-<a href="#map" class="focus" data-focus="Trécolpas">Trécolpas</a> ל-<a href="#map" class="focus" data-focus="ROUTE 2 of 4">Pas des Ladres</a> (תלול, בולדרים), מדרגת הסלע ב-<a href="#map" class="focus" data-focus="PASS · Pas du Mont Colomb">Pas du Mont Colomb</a> (T3 ביבש), בולדרים מתחת ל-<a href="#map" class="focus" data-focus="Baisse du Basto">Baisse du Basto</a>, ושתי ירידות ארוכות ורופפות שבהן קורות הפציעות שמתוארות בדוחות. מעבר לזה:</p>
 <div class="scroll"><table>
   <caption>אופציות טכניות וויה פראטה</caption>
@@ -689,7 +700,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <tr><td data-label="יעד"><span><a href="https://www.mercantour-roya.com/via-ferrata/">ויה פראטות של עמק Roya</a></span></td><td data-label="מאיפה"><span>Tende ו-La Brigue, ברכבת מ-<a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a></span></td><td data-label="מה זה" data-long><span>קלות עד בינוניות, מודרך ≈€50. רק אם יש יום פנוי. L'Escale ב-Peille סגורה.</span></td><td data-label="זמן"><span>חצי יום</span></td></tr>
 </table></div>
 
-<h2 id="he-practical"><span class="k">§5</span>פרקטי</h2>
+<h2 id="he-practical">פרקטי</h2>
 <div class="two">
   <div>
     <h3>ספטמבר</h3><ul><li>סופות נדירות, בניגוד ליולי ואוגוסט. בעמקים 20–24 מעלות, בלינות הגבוהות 0–5, ייתכן כפור.</li><li>שלג ראשון על Colomb ו-Basto אפשרי מאמצע ספטמבר. אם ירד, מחכים יום.</li><li>זריחה ≈07:10, שקיעה ≈19:45.</li><li><b>תחזית חיה:</b> כל כרטיס יום למעלה מציג את התחזית העדכנית לנקודת הלינה ולנקודה הגבוהה של אותו יום, מ-<a href="https://open-meteo.com/">Open-Meteo</a>, מתרעננת בכל טעינה של הדף, עם אזהרות שנגזרות ממנה לסופות רעמים, גשם, שלג וגובה הקיפאון, רוח על הרכס, כפור, חום, ערפל וקרינה. התחזית האחרונה נשמרת לקריאה באופליין.</li><li><b>מקורות רשמיים לבדוק יום לפני:</b> <a href="https://vigilance.meteofrance.fr/fr/alpes-maritimes">Météo-France vigilance, Alpes-Maritimes</a> (אזהרות צבע לסופות, גשם, חום), <a href="https://meteofrance.com/meteo-montagne/mercantour">בולטין ההרים של Météo-France, Mercantour</a> (גובה קיפאון, רוח ב-2,000 ו-3,000 מ', תזמון סופות), <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">הודעות השבילים של הפארק</a>.</li><li>הודעות שבילים (אתר הפארק, 4.9): הקטע ליד Boréon נפתח מחדש; חציות נחל ליד Cougourde ו-<a href="#map" class="focus" data-focus="HUT · Refuge de Nice">Refuge de Nice</a>. לבדוק שוב ב-<a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">Info sentiers</a> לפני היציאה.</li></ul>
@@ -710,7 +721,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
 </table></div>
 <p><b>מופיעות באינטרנט אבל לא פעילות:</b> Europcar, 9 Av. Thiers, מסומנת "סגור זמנית" מאז 2021 ודף ההזמנה שלה נעלם. Avis "Gare de <a href="#map" class="focus" data-focus="FINISH">Menton</a>" מופיעה באתר avis.fr כסגורה בכל ימות השבוע. התעלמו משתיהן באתרי השוואה. המחירים הם תמונת מצב מספטמבר 2026 מ-<a href="https://www.kayak.com/Cheap-Menton-Car-Rentals.45983.cars.ksp">Kayak</a>; להזמין בערך חודש מראש. לשמור רישיון וכרטיס האשראי של ההזמנה בתיק.</p>
 
-<h2 id="he-links"><span class="k">§6</span>קישורים</h2>
+<h2 id="he-links">קישורים</h2>
 <h3>דוחות טיולים</h3><ul><li><a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 ימים עם אוהל באוגוסט. הכי דומה לתוכנית שלכם.</li><li><a href="https://www.altituderando.com/GR52-GR52A-Boucle-Menton-Sospel-Vesubie-Boreon-Vallee-des-Merveilles-Col-de">Altitude Rando</a>, 15–22 בספטמבר, קמפינגים ובקתות. אותם תאריכים כמו שלכם.</li><li><a href="https://www.randonner-leger.org/forum/viewtopic.php?id=22334">Randonner Léger 2025</a> ו-<a href="https://www.randonner-leger.org/forum/viewtopic.php?id=21181">Larche עד Menton</a>, אולטרה-לייט עם אוהל, בצרפתית.</li><li><a href="https://grfive.com/?page_id=540">GR Five</a>, התיאור הטוב ביותר של הירידה ל-<a href="#map" class="focus" data-focus="NIGHT 6">Sospel</a>.</li><li><a href="https://crossingthealpswithease.wordpress.com/2022-auron-to-menton-gr5-and-gr52/">Crossing the Alps with Ease</a>, בקתות, 2022.</li><li><a href="https://howlingmist.blogspot.com/2017/11/hiking-gr52-and-gr52a.html">Howlingmist</a>, סוף אוקטובר, הקצה הקר של העונה.</li><li><a href="https://www.wikiloc.com/hiking-trails/gr52-de-menton-a-saint-dalmas-valdeblore-14352481">Wikiloc</a>, 5 ימים עם אוהל, בכיוון ההפוך.</li><li><a href="https://fastestknowntime.com/route/grande-traversee-des-alpes-gr52-and-gr5-france">שיא זמן, Menton עד אגם ז'נבה דרך GR52 ו-GR5</a>: 12 ימים ו-20 שעות, ספטמבר 2025.</li></ul>
 <h3>רשמי</h3><ul><li><a href="https://www.mongr.fr/trouver-prochaine-randonnee/suggestion/gr-52-de-saint-dalmas-valdeblore-a-menton">Mon GR</a>, <a href="https://topo-de-rando.com/gr52/">Topo de Rando</a>, <a href="https://www.gr-infos.com/en/gr52.htm">GR Infos</a>: שלבים.</li><li><a href="https://www.mercantour-parcnational.fr/fr/le-parc-national-du-mercantour/la-reglementation/foire-aux-questions">שאלות ותשובות על חוקי הפארק</a>, <a href="https://aida.ineris.fr/consultation_document/42556">צו הלינה בשטח</a>, <a href="https://www.ffrandonnee.fr/s-informer/actualites/dans-le-mercantour-la-vallee-des-merveilles-est-strictement-surveillee">אזור Merveilles</a>.</li><li><a href="https://www.alltrails.com/lists/gr52-la-vallee-des-merveilles">רשימת השלבים ב-AllTrails</a>, ביקורות עדכניות.</li><li><a href="https://www.colmiane.com/activites-ete-sur-la-colmiane/via-ferrata.html">הזמנת הוויה פראטה ב-La Colmiane</a>, <a href="https://www.sortir06.fr/les-via-ferrata-alpes-maritimes/">כל הוויה פראטות במחוז</a>.</li></ul>
 </div>
