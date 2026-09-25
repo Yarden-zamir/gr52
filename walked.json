@@ -355,6 +355,11 @@
     "lon": 7.38863,
     "type": "Summit"
    }
+  },
+  {
+   "drop": {
+    "track": "PARK CORE BOUNDARY"
+   }
   }
  ]
 }

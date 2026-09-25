@@ -113,7 +113,7 @@ en:
     text:
     - 'No water at all in a dry September: 3 L each. The last hour below Col du Berceau (1,090 m) is steep and loose. Then the sea.'
     hours: 9
-  maps_intro: This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Each day's Map tab shows its own stretch and profile; this is the whole route. Twist with two fingers or use the arrows to rotate; the compass resets north. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.
+  maps_intro: This map is drawn live from the same GPX file you can download here, so the two never differ. Each day's Map tab shows its own stretch and profile; this is the whole route. Twist with two fingers or use the arrows to rotate; the compass resets north. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in the GPX. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.
   section_maps:
   - key: overview
     caption: Whole route, north at top.
@@ -236,7 +236,7 @@ en:
     - Poles with rubber tips.
     - 3 L capacity each plus a filter.
     - Four days of food from Nice. Cash for refuges.
-    - 'Offline maps: OsmAnd with the GPX, plus IGN 3741 OT and 3841 OT.'
+    - 'Offline maps: the GPX in any map app that reads it, plus IGN 3741 OT and 3841 OT.'
     - 'Hang food: foxes and boar raid tents by the lakes.'
     - Headtorch; you will cook at dusk.
     - 'Emergency: 112.'
@@ -372,7 +372,7 @@ he:
     text:
     - 'בספטמבר יבש אין מים בכלל: 3 ליטר לאדם. השעה האחרונה מתחת ל-Col du Berceau (1,090 מ'') תלולה ורופפת. ואז הים.'
     hours: 9
-  maps_intro: המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לשונית המפה של כל יום מציגה את הקטע והפרופיל שלו; כאן כל המסלול. סובבו בשתי אצבעות או עם החצים, והמצפן מחזיר לצפון. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.
+  maps_intro: המפה הזו מצוירת ישירות מאותו קובץ GPX שאפשר להוריד כאן, כך שהשניים אף פעם לא שונים. לשונית המפה של כל יום מציגה את הקטע והפרופיל שלו; כאן כל המסלול. סובבו בשתי אצבעות או עם החצים, והמצפן מחזיר לצפון. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-GPX. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.
   section_maps:
   - key: overview
     caption: כל המסלול, צפון למעלה.
@@ -495,7 +495,7 @@ he:
     - מקלות עם גומיות.
     - 3 ליטר קיבולת לאדם ומסנן.
     - אוכל לארבעה ימים מניס. מזומן לבקתות.
-    - 'מפות אופליין: OsmAnd עם ה-GPX, וגם IGN 3741 OT ו-3841 OT.'
+    - 'מפות אופליין: ה-GPX בכל אפליקציית מפות שקוראת אותו, וגם IGN 3741 OT ו-3841 OT.'
     - 'לתלות את האוכל: שועלים וחזירי בר פושטים על אוהלים ליד האגמים.'
     - פנס ראש; תבשלו בחושך.
     - 'חירום: 112.'

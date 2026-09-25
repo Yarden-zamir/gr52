@@ -12,5 +12,5 @@ This repository deploys the GR52 trip dossier to `gr52.yarden-zamir.com` with Ki
 - `site/index.html`: the dossier, English and Hebrew, built from `src/` by `src/build.py`.
 - `site/map.js`, `site/sw.js`, `site/vendor/`: the map app, service worker and Leaflet.
 - `site/maps/*.webp`: annotated section maps loaded on demand.
-- `site/GR52_all-in-one.gpx`: the OsmAnd track and waypoint file, served as a download.
+- `site/GR52_all-in-one.gpx`: the track and waypoint file, served as a download.
 - `.kitshn.yaml`, `.github/workflows/kitshn.yml`, `compose.yml`, `Caddyfile.j2`, `Dockerfile`.
