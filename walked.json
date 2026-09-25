@@ -275,6 +275,86 @@
     "lon": 7.42982,
     "type": "Water"
    }
+  },
+  {
+   "drop": {
+    "waypoint": "VIA FERRATA"
+   }
+  },
+  {
+   "drop": {
+    "track": "VIA FERRATA"
+   }
+  },
+  {
+   "drop": {
+    "track": "SIDE TRIP"
+   }
+  },
+  {
+   "drop": {
+    "waypoint": "SUMMIT side trip"
+   }
+  },
+  {
+   "drop": {
+    "waypoint": "SKIP ·"
+   }
+  },
+  {
+   "drop": {
+    "waypoint": "CAMPSITE ·"
+   }
+  },
+  {
+   "drop": {
+    "waypoint": "REFUGE · Cougourde"
+   }
+  },
+  {
+   "drop": {
+    "waypoint": "LAKE · Trécolpas"
+   }
+  },
+  {
+   "add": {
+    "name": "REFUGE · Cougourde 2100 m · coffee and fruit tarts, worth the stop",
+    "lat": 44.1263,
+    "lon": 7.3308,
+    "type": "Lodging"
+   }
+  },
+  {
+   "add": {
+    "name": "LAKE · Trécolpas · long lunch by the lake, chamois around",
+    "lat": 44.1158,
+    "lon": 7.3404,
+    "type": "Water"
+   }
+  },
+  {
+   "add": {
+    "name": "SUMMIT · Mont Bégo 2872 m · above the Merveilles valley, not climbed",
+    "lat": 44.07308,
+    "lon": 7.45042,
+    "type": "Summit"
+   }
+  },
+  {
+   "add": {
+    "name": "SUMMIT · Cime du Diable 2685 m · above Pas du Diable, not climbed",
+    "lat": 44.04912,
+    "lon": 7.42278,
+    "type": "Summit"
+   }
+  },
+  {
+   "add": {
+    "name": "SUMMIT · Mont Colomb 2816 m · above the pass, not climbed",
+    "lat": 44.10765,
+    "lon": 7.38863,
+    "type": "Summit"
+   }
   }
  ]
 }

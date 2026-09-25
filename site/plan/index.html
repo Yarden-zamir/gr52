@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Seven-day bivouac plan for the GR52 from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026.">
+<meta property="og:title" content="GR52 Bivouac Dossier">
+<meta property="og:description" content="Seven-day bivouac plan for the GR52 from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://gr52.yarden-zamir.com/log/yarden-zamir/photos/9ce9cc5d8097.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="light dark">
+<style>body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%;height:auto}[hidden]{display:none!important}</style>
+<title>GR52 Bivouac Dossier</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Heebo:wght@400;500;700&family=Rubik:wght@600;700&display=swap">
+<link rel="stylesheet" href="/vendor/leaflet.min.css?v=b570abbda9">
+<link rel="stylesheet" href="/vendor/leaflet-rotate.css?v=fde9c7ff97">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#C8322B">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<style>
+:root{
+  --ground:#F0F1EE; --panel:#FFFFFF; --ink:#1E2726; --muted:#5F6C69; --line:#CCD3D0;
+  --mark:#C8322B; --lake:#2C6A8A; --lake-soft:#DCE9F0; --schist:#7A8A63; --warn:#B3701C; --warn-soft:#F6EAD6;
+  --mark-soft:#F7E1DF; --sign:#F2C94C; --sign-ink:#1E2726;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#161B1B; --panel:#1F2626; --ink:#E4E8E6; --muted:#9AA7A3; --line:#344040;
+    --mark:#E0524A; --lake:#6FB0D0; --lake-soft:#1F3542; --schist:#9AAE7E; --warn:#E0A24F; --warn-soft:#3A2E1B;
+    --mark-soft:#3E2422; --sign:#D4AE3A; --sign-ink:#161B1B;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#161B1B; --panel:#1F2626; --ink:#E4E8E6; --muted:#9AA7A3; --line:#344040;
+  --mark:#E0524A; --lake:#6FB0D0; --lake-soft:#1F3542; --schist:#9AAE7E; --warn:#E0A24F; --warn-soft:#3A2E1B;
+  --mark-soft:#3E2422; --sign:#D4AE3A; --sign-ink:#161B1B;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.55;margin:0}
+a{color:var(--lake);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px 96px}
+h1,h2,h3{font-family:"Barlow Condensed","Arial Narrow",sans-serif;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(44px,7vw,76px);font-weight:700;letter-spacing:-.01em}
+h2{font-size:34px;font-weight:600;margin-top:64px;padding-top:18px;border-top:3px solid var(--ink);display:flex;align-items:baseline;gap:14px}
+h3{font-size:24px;font-weight:600;margin-top:28px}
+p{max-width:68ch;margin:12px 0}
+ul,ol{max-width:72ch;padding-inline-start:22px;margin:10px 0}
+li{margin:5px 0}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+header{padding:64px 0 8px}
+.balise{display:inline-block;width:56px;height:18px;background:linear-gradient(var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line);vertical-align:middle;margin-inline-end:10px}
+.lede{font-size:19px;max-width:62ch;color:var(--ink)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:28px 0 0}
+.facts div{background:var(--panel);padding:14px 16px}
+.facts b{display:block;font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.facts span{font-size:12.5px;color:var(--muted)}
+nav.toc{display:flex;flex-wrap:wrap;gap:6px 18px;margin:22px 0 0;font-size:14px}
+nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+nav.toc a:hover{border-color:var(--mark)}
+.note{border-inline-start:4px solid var(--lake);background:var(--lake-soft);padding:12px 16px;margin:18px 0;max-width:76ch}
+.note.warn{border-color:var(--warn);background:var(--warn-soft)}
+.note.rule{border-color:var(--mark);background:var(--mark-soft)}
+.note.rule p+p{border-top:1px solid color-mix(in srgb,var(--mark) 25%,transparent);padding-top:8px;margin-top:8px}
+.note p{margin:6px 0}
+.scroll{overflow-x:auto;margin:16px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--panel)}
+th,td{text-align:start;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--ground)}
+caption{caption-side:top;text-align:start;font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:600;padding:0 0 8px;color:var(--ink)}
+[lang="he"] caption{font-family:"Rubik","Heebo",sans-serif;font-size:19px}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+.stage{display:grid;grid-template-columns:96px 1fr;gap:0 22px;border-top:1px solid var(--line);padding:22px 0}
+.stage:last-of-type{border-bottom:1px solid var(--line)}
+.stage .d{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:38px;line-height:1;color:var(--mark)}
+.stage .d small{display:block;font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);font-weight:500;margin-top:6px;letter-spacing:.04em}
+.stage h3{margin-top:0;font-size:26px}
+.stage .stats{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);margin:6px 0 10px;font-variant-numeric:tabular-nums}
+.stage p{margin:8px 0}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:2px 7px;border:1px solid var(--line);border-radius:2px;margin-inline-end:6px;color:var(--muted)}
+.tag.tech{border-color:var(--schist);color:var(--schist)}
+.tag.water{border-color:var(--lake);color:var(--lake)}
+.tag.rule{border-color:var(--mark);color:var(--mark)}
+figure{margin:20px 0}
+figcaption{font-size:13px;color:var(--muted);margin-top:6px;max-width:76ch}
+.profile{width:100%;height:auto;display:block;background:var(--panel);border:1px solid var(--line)}
+.map{width:100%;height:auto;display:block;border:1px solid var(--line)}
+.maps{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:none}
+.maps figure{margin:0}
+.src{font-size:14px;columns:2;column-gap:32px;max-width:none}
+.src li{break-inside:avoid}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;max-width:none}
+.two > div p{max-width:none}
+.langbar{position:fixed;top:12px;inset-inline-end:14px;z-index:5;padding:0;background:none}
+.langbar button{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 14px;cursor:pointer;box-shadow:0 2px 8px -4px rgba(0,0,0,.4)}
+.langbar button:hover{border-color:var(--mark)}
+/* Hebrew */
+[lang="he"]{font-family:"Heebo",system-ui,"Segoe UI",Arial,sans-serif}
+[lang="he"] h1,[lang="he"] h2,[lang="he"] h3,[lang="he"] .stage .d,[lang="he"] .facts b{font-family:"Rubik","Heebo",Arial,sans-serif;letter-spacing:0}
+[lang="he"] h1{font-size:clamp(38px,6vw,64px)}
+[lang="he"] .stage h3{font-size:23px}
+[lang="he"] .eyebrow,[lang="he"] .tag,[lang="he"] th{letter-spacing:0;text-transform:none;font-family:"Heebo",sans-serif}
+[lang="he"] .stage .d small,[lang="he"] .stage .stats{font-family:"IBM Plex Mono",monospace}
+[lang="he"] .langbar button{font-family:"Heebo",sans-serif}
+h2,h3,.stage,.note,.scroll,figure,.mapbox{scroll-margin-top:12px}
+td{overflow-wrap:anywhere}
+nav.toc a{padding:4px 0}
+@media (max-width:760px){
+  body{font-size:15.5px}
+  .wrap{padding:0 14px 60px}
+  header{padding:28px 0 8px} .eyebrow{padding-inline-end:120px}
+  h1{font-size:clamp(38px,11vw,52px)} h2{font-size:28px;margin-top:44px} h3{font-size:21px}
+  .lede{font-size:17px}
+  .facts{grid-template-columns:repeat(2,1fr)} .facts b{font-size:26px}
+  .stage{grid-template-columns:1fr;gap:6px 0;padding:18px 0}
+  .stage .d{display:flex;align-items:center;gap:12px;font-size:30px} .stage .d::before{margin:0} .stage .d small{margin:0}
+  .stage h3{font-size:20px}
+  .src{columns:1}
+  .maptools button{flex:1 1 45%;padding:10px 12px}
+  .livemap{height:62vh}
+  .tabs button{padding:8px 10px;font-size:13px}
+  .locbar{left:10px;bottom:10px}
+  /* tables become stacked cards */
+  .scroll{overflow:visible}
+  .scroll table,.scroll caption,.scroll tbody,.scroll tr,.scroll td{display:block;width:100%}
+  .scroll caption{padding:0 0 4px}
+  .scroll tr:first-child{display:none}
+  .scroll tr{border:1px solid var(--line);border-inline-start:4px solid var(--lake);background:var(--panel);margin:12px 0;padding:10px 12px 10px;border-radius:4px;box-sizing:border-box}
+  .scroll td{border:0;padding:5px 0;display:grid;grid-template-columns:minmax(88px,30%) 1fr;gap:2px 12px;align-items:start;font-size:14.5px;line-height:1.45}
+  .scroll td+td{border-top:1px dashed var(--line)}
+  .scroll td::before{content:attr(data-label);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+  .scroll td:first-child{grid-template-columns:1fr;font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:20px;line-height:1.15;padding:0 0 6px;margin-bottom:2px;border-bottom:1px solid var(--line)}
+  .scroll td:first-child::before{content:none}
+  .scroll td[data-long]{grid-template-columns:1fr}
+  .scroll td[data-long]::before{padding-top:0}
+  .scroll td.n{white-space:normal;font-family:"IBM Plex Sans",sans-serif}
+  [lang="he"] .scroll td::before{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+  [lang="he"] .scroll td:first-child{font-family:"Rubik","Heebo",sans-serif}
+  .two{gap:8px}
+}
+@media (prefers-reduced-motion:no-preference){a{transition:border-color .15s}}
+
+/* trail theme */
+header{position:relative;overflow:hidden}
+.topo{position:absolute;inset:-40px -40px 0 -40px;pointer-events:none;opacity:.55;
+  background:
+    repeating-radial-gradient(ellipse 60% 45% at 18% 35%, var(--line) 0 1px, transparent 1px 26px),
+    repeating-radial-gradient(ellipse 55% 60% at 82% 75%, var(--line) 0 1px, transparent 1px 34px),
+    repeating-radial-gradient(ellipse 40% 30% at 55% 10%, var(--line) 0 1px, transparent 1px 20px);
+  -webkit-mask-image:linear-gradient(#000 40%,transparent);mask-image:linear-gradient(#000 40%,transparent)}
+header > *{position:relative}
+/* cover picture (cover: in log.yaml, or cover in trek.json): a full-width masthead with the eyebrow and title over the picture; the rest of the header follows below.
+   It spans the viewport from inside the column (--sbw is the scrollbar width, set by the page script); on scroll the picture drifts slower than the page (--py) and the masthead fades (--pf). */
+html{overflow-x:hidden;overflow-x:clip}
+header.cover{padding-top:0;overflow:visible} header.cover .topo{inset:0}
+.mast{--ink:#fff;--muted:rgba(255,255,255,.86);--line:rgba(255,255,255,.55);color:#fff;position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;min-height:var(--cover-h,min(60vh,560px));
+  margin:0 calc(50% - 50vw + var(--sbw,0px) / 2) 18px;padding:64px calc(50vw - 50% - var(--sbw,0px) / 2) 16px;opacity:var(--pf,1)}
+body:not(.logpage) .mast{--cover-h:min(46vh,420px)}
+.mast .coverimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% var(--cover-y,50%);z-index:-2;margin:0;transform:translate3d(0,var(--py,0px),0) scale(var(--pz,1));will-change:transform}
+.mast::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.18) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,.45) 70%,rgba(0,0,0,.75) 100%)}
+.mast .eyebrow,.mast h1{text-shadow:0 1px 3px rgba(0,0,0,.55)}
+.mast h1{margin-bottom:0}
+.mast .balise,.mast h1::after{border-color:rgba(255,255,255,.6)}
+@media (max-width:760px){.mast{margin:0 calc(50% - 50vw + var(--sbw,0px) / 2) 14px;padding:28px calc(50vw - 50% - var(--sbw,0px) / 2) 12px;min-height:var(--cover-h,min(52vh,460px))}}
+/* where the browser can drive the animation from the scroll position itself, the drift and fade run on the compositor with no lag; the page script only steps in elsewhere */
+.mast{background:#1E2726}
+@supports (animation-timeline: view()){
+  .mast{view-timeline:--mast block;animation:mast-fade linear both;animation-timeline:--mast;animation-range:exit 0% exit 100%;opacity:1}
+  .mast .coverimg{animation:mast-drift linear both;animation-timeline:--mast;animation-range:exit 0% exit 100%;transform:none}
+}
+@keyframes mast-drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(0,60%,0) scale(1.12)}}
+@keyframes mast-fade{0%,30%{opacity:1}95%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.mast .coverimg{transform:none;animation:none} .mast{opacity:1;animation:none}}
+h1{position:relative;display:inline-block}
+h1::after{content:"";display:block;height:6px;margin-top:10px;background:linear-gradient(90deg,var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line);width:120px}
+h2::before{content:"";width:34px;height:16px;flex:none;align-self:center;background:linear-gradient(var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line)}
+.stage .d::before{content:"";display:block;width:46px;height:22px;margin-bottom:8px;background:linear-gradient(var(--mark) 0 50%,#fff 50% 100%);border:1px solid var(--line)}
+.stage .stats span{background:var(--sign);color:var(--sign-ink);padding:3px 9px;border-radius:2px;font-weight:500;box-shadow:inset 0 0 0 1px rgba(0,0,0,.18)}
+.stage .stats{gap:6px 8px}
+.stage h3{position:relative}
+.facts div:first-child b{color:var(--mark)}
+figure img.map{box-shadow:0 1px 0 var(--line),0 8px 24px -16px rgba(0,0,0,.45)}
+th{border-bottom:2px solid var(--ink)}
+table tr:hover td{background:color-mix(in srgb,var(--lake-soft) 45%,transparent)}
+.langbar button::before{content:"⇄ ";color:var(--mark)}
+
+.mapbox{margin:16px 0}
+.livemap{height:min(72vh,640px);border:1px solid var(--line);background:var(--panel);margin:16px 0;z-index:0}
+.livemap .leaflet-control-layers,.livemap .leaflet-bar{font-family:"IBM Plex Sans",sans-serif}
+.livemap .leaflet-control-layers-overlays label{white-space:nowrap}
+.livemap .leaflet-control-layers-expanded{max-height:60vh;overflow:auto}
+.leaflet-popup-content{font:14px/1.4 "IBM Plex Sans",sans-serif;margin:10px 12px}
+.staticmaps{margin:14px 0}
+.staticmaps summary{cursor:pointer;font-weight:600;padding:8px 0}
+.staticmaps figure{margin:14px 0}
+[lang="he"] .leaflet-popup-content{direction:rtl;font-family:"Heebo",sans-serif}
+.maptools{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin:10px 0}
+.maptools button{font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:7px 12px;cursor:pointer}
+.maptools button:hover{border-color:var(--mark)} .maptools button:disabled{opacity:.6;cursor:wait}
+.mapstatus{font:13px "IBM Plex Mono",monospace;color:var(--muted)}
+canvas.profile{width:100%;height:220px;display:block;background:var(--panel);border:1px solid var(--line);touch-action:none;cursor:crosshair}
+.profstats{font:13px "IBM Plex Mono",monospace;color:var(--muted);margin:6px 0 0;max-width:none}
+[lang="he"] .maptools button,[lang="he"] .mapstatus,[lang="he"] .profstats{font-family:"Heebo",sans-serif}
+a.focus{color:inherit;text-decoration:underline dotted;text-decoration-color:var(--lake);text-underline-offset:3px}
+a.focus:hover{color:var(--lake);text-decoration-style:solid}
+.wx{margin:6px 0 10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5;max-width:76ch}
+.wx:empty{display:none}
+.wx .wxrow{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+.wx .wxk{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.wx .wxwarn{display:inline-block;margin:6px 6px 0 0;padding:2px 8px;border-radius:2px;background:var(--warn-soft);border:1px solid var(--warn);color:var(--ink);font-size:13px}
+.wx .wxwarn.bad{background:var(--mark-soft);border-color:var(--mark)}
+.wx .wxmeta{color:var(--muted);font-size:12px;margin-top:6px}
+[lang="he"] .wx .wxk{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none;font-size:12px}
+a.daylink{color:inherit;text-decoration:none;cursor:pointer}
+a.daylink:hover{color:var(--lake)}
+.stage .d a{color:inherit;text-decoration:none;cursor:pointer;display:block}
+.stage .d a:hover{opacity:.8}
+.planbar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;max-width:76ch;margin:14px 0 6px}
+.planbar button,.wxbtn,.donebar button{font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px 11px;cursor:pointer}
+.planbar button:hover,.wxbtn:hover,.donebar button:hover{border-color:var(--mark)}
+.snapstatus{font-size:13px;color:var(--muted)}
+.snapbox{margin:6px 0 8px;padding:8px 12px;border-inline-start:4px solid #1E6FD9;background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5}
+.wxfresh.old{color:var(--warn)}
+.wxbtn{padding:3px 9px;font-size:12px;margin-inline-start:6px}
+.wxhour{margin-top:8px}
+.wxhour canvas{width:100%;height:190px;display:block;background:var(--ground);border:1px solid var(--line);touch-action:none;cursor:crosshair}
+.wxread{font:12px "IBM Plex Mono",monospace;color:var(--ink);min-height:18px;margin-top:4px}
+.wxlegend{font-size:12px;color:var(--muted);margin-top:6px}
+.wxslider{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:4px 0 8px;font-size:13.5px}
+.wxslider input[type=range]{flex:1 1 180px;min-width:140px;accent-color:var(--mark)}
+.wxslider output{font-weight:600}
+.wxrec{font-size:12.5px;color:var(--muted)}
+.wxhour canvas{height:300px}
+.wxevents{margin-top:6px;font-size:13.5px}
+.wxev{padding:3px 8px;margin:3px 0;border-inline-start:3px solid var(--line);background:var(--panel)}
+.wxev.storm{border-color:var(--mark)} a.wxsrc{font-size:11px;color:var(--muted);margin-inline-start:6px} .wxev.heat{border-color:#E07A2F} .wxev.rain{border-color:var(--lake)} .wxev.wind{border-color:var(--warn)} .wxev.exp{font-weight:600} .wxev.ok{color:var(--muted)}
+.stage.done .d{color:var(--muted)} .stage.done .d::before{opacity:.35}
+.stage.done h3{opacity:.6}
+.stage.done:not(.open) .stats,.stage.done:not(.open) .tabs,.stage.done:not(.open) .pane,.stage.done:not(.open) .snapbox{display:none}
+.donebar{display:flex;gap:8px;align-items:center;margin:4px 0 6px;font-size:13px}
+.donechip{color:#2E7D32;font-weight:600}
+[lang="he"] .planbar button,[lang="he"] .wxbtn,[lang="he"] .donebar button{font-family:"Heebo",sans-serif}
+[lang="he"] .wxread{font-family:"Heebo",sans-serif}
+[data-act="snapshot"],[data-act="locate"]{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+/* day tabs: plan, map, weather */
+.tabs{display:flex;gap:2px;margin:8px 0 10px;border-bottom:1px solid var(--line)}
+.tabs button{font:600 13.5px "IBM Plex Sans",sans-serif;color:var(--muted);background:none;border:0;border-bottom:2px solid transparent;margin-bottom:-1px;padding:7px 12px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.tabs button:hover{color:var(--ink)} .tabs button.on{color:var(--ink);border-bottom-color:var(--mark)}
+.tabs .badge{font:600 11px "IBM Plex Mono",monospace;background:var(--warn-soft);border:1px solid var(--warn);color:var(--ink);border-radius:9px;padding:0 6px;line-height:16px}
+.tabs .badge.bad{background:var(--mark-soft);border-color:var(--mark)}
+.tabs .editbtn{margin-inline-start:auto;font-size:16px;padding:6px 10px;color:var(--muted)} .tabs .editbtn:hover{color:var(--ink)} .tabs .editbtn.on{color:var(--mark)}
+/* the archived plan: a note at the top of each language */
+.archive{margin:16px 0 0;padding:10px 14px;border:1px solid var(--warn);background:var(--warn-soft);border-radius:4px;font-size:14px} .archive a{color:var(--ink)}
+/* the intro and the wrap-up carry a pencil of their own */
+.secblock{position:relative;padding-inline-end:34px} .secblock > .editbtn{position:absolute;inset-inline-end:0;top:0;font:16px "IBM Plex Sans",sans-serif;padding:4px 8px;color:var(--muted);background:none;border:0;cursor:pointer} .secblock > .editbtn:hover{color:var(--ink)} .secblock > .editbtn.on{color:var(--mark)}
+[data-section="intro"] .sectext > p:first-child{font-size:19px;max-width:62ch;color:var(--ink)}
+.editor{margin:8px 0 14px} .editor textarea{width:100%;min-height:260px;box-sizing:border-box;font:14px/1.5 "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:10px;resize:vertical}
+.editor .row{display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap} .editor .hint{font:12px "IBM Plex Mono",monospace;color:var(--muted);flex:1 1 100%} .editor .msg{font:12px "IBM Plex Mono",monospace;color:var(--muted)}
+.editor button,.sheet button{font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:8px 14px;cursor:pointer} .editor button.primary{background:var(--mark);border-color:var(--mark);color:#fff}
+#sheetwrap{position:fixed;inset:0;z-index:30;background:rgba(0,0,0,.35);display:flex;align-items:flex-end;justify-content:center} #sheetwrap[hidden]{display:none}
+.sheet{background:var(--panel);border-radius:10px 10px 0 0;padding:10px 12px calc(12px + env(safe-area-inset-bottom));width:100%;max-width:520px;box-shadow:0 -4px 20px rgba(0,0,0,.25);display:flex;flex-direction:column;gap:6px}
+.sheet .who{display:flex;gap:10px;align-items:center;font:13px "IBM Plex Sans",sans-serif;color:var(--muted);padding:2px 2px 6px} .sheet .who img{width:48px;height:48px;object-fit:cover;border-radius:4px}
+.sheet button{text-align:start;padding:12px 14px;font-size:15px} .sheet button.danger{color:var(--mark)} .sheet button.cancel{color:var(--muted);border-style:dashed}
+.tile.hid img,.inpic.hid img{opacity:.35} .hiddenpics{margin:10px 0 0;font:13px "IBM Plex Sans",sans-serif;color:var(--muted)} .hiddenpics summary{cursor:pointer} .hiddenpics .gallery{margin-top:8px}
+a.lk{display:inline-flex;align-items:center;gap:3px;padding:0 8px 0 6px;margin:0 1px;border-radius:12px;background:var(--panel);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:.9em;line-height:1.55;vertical-align:baseline;white-space:nowrap;cursor:pointer}
+a.lk:hover{border-color:var(--mark)} a.lk i{display:inline-block;width:13px;height:13px;flex:none;background:var(--mark);-webkit-mask:var(--ico) center/contain no-repeat;mask:var(--ico) center/contain no-repeat}
+a.lk i.ic-map{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 18c3-1 4-6 8-6s5 5 8 4' fill='none' stroke='%23000' stroke-width='2.6' stroke-linecap='round'/%3E%3Ccircle cx='4' cy='18' r='2.6'/%3E%3Ccircle cx='20' cy='16' r='2.6'/%3E%3C/svg%3E")}
+a.lk i.ic-gmaps{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2z'/%3E%3C/svg%3E")}
+a.lk i.ic-url{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M14 4h6v6h-2V7.4l-8.3 8.3-1.4-1.4L16.6 6H14zM5 6h6v2H7v9h9v-4h2v6H5z'/%3E%3C/svg%3E")}
+.stats a.lk{padding:0 2px;border:0;background:none;font-size:inherit;text-decoration:underline dotted var(--muted);text-underline-offset:3px;gap:2px} .stats a.lk i{width:11px;height:11px}
+.sheet .pick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-height:50vh;overflow:auto;padding:2px 0 8px} .sheet .pick a{display:block;aspect-ratio:1;overflow:hidden;border-radius:4px;background:var(--line)} .sheet .pick img{width:100%;height:100%;object-fit:cover;display:block} .sheet .pick a.used{outline:3px solid var(--mark);outline-offset:-3px}
+.sheet .chips{display:flex;gap:8px;flex-wrap:wrap;padding:4px 0 8px} .sheet .chips a.lk{font-size:15px;padding:8px 14px 8px 10px;gap:8px;border-radius:20px} .sheet .chips a.lk i{width:18px;height:18px}
+[lang="he"] .editor textarea,[lang="he"] .editor button,[lang="he"] .sheet button{font-family:"Heebo",sans-serif}
+.pane{min-width:0} .pane[data-pane="plan"] p:first-child{margin-top:0}
+[lang="he"] .tabs button{font-family:"Heebo",sans-serif}
+/* map hosts: the map box moves into a day's Map tab or back to the Maps section */
+.maphost:not(.empty) .mapclaim{display:none}
+.mapclaim{font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px dashed var(--line);border-radius:3px;padding:10px 14px;cursor:pointer;width:100%}
+.mapclaim:hover{border-color:var(--mark)}
+[lang="he"] .mapclaim{font-family:"Heebo",sans-serif}
+.stage .mapbox{margin:0} .stage .livemap{margin:0 0 10px;height:min(60vh,520px)} .stage canvas.profile{height:180px}
+/* position button, fixed bottom left, and its short status */
+.locbar{position:fixed;left:14px;bottom:14px;z-index:6;display:flex;align-items:center;gap:8px;direction:ltr}
+#locfab{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--panel);color:#1E6FD9;box-shadow:0 4px 14px -4px rgba(0,0,0,.5);cursor:pointer;display:grid;place-items:center;padding:0;flex:none}
+#locfab svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+#locfab:hover{border-color:#1E6FD9} #locfab.busy{opacity:.6;cursor:wait}
+#loctoast{font:13px/1.4 "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-left:4px solid #1E6FD9;border-radius:3px;padding:6px 10px;max-width:min(70vw,420px);box-shadow:0 4px 14px -6px rgba(0,0,0,.5)}
+[lang="he"] #loctoast,html[dir="rtl"] #loctoast{font-family:"Heebo",sans-serif;direction:rtl}
+/* waypoint icons from the GPX (OsmAnd icon names), white glyph on the waypoint colour */
+.wpi{background:none;border:0}
+.wpico{display:block;width:100%;height:100%;border-radius:50%;box-shadow:0 0 0 1.5px #fff,0 1px 3px rgba(0,0,0,.45)}
+.wpico.square{border-radius:4px} .wpico.octagon{border-radius:30%}
+.wpico svg{display:block;width:100%;height:100%;padding:3px;fill:#fff;box-sizing:border-box}
+/* point markers that stay upright and exactly placed under rotation */
+.mepin,.hoverpin,.focusring{background:none;border:0;border-radius:50%;box-sizing:border-box}
+.mepin{background:#1E6FD9;border:2px solid #fff;box-shadow:0 0 0 2px rgba(30,111,217,.35),0 1px 4px rgba(0,0,0,.4)}
+.hoverpin{background:#fff;border:3px solid var(--mark)}
+.focusring{border:3px solid #1E6FD9;pointer-events:none}
+/* back bubble: after a map link, one tap returns to where you were */
+/* the dot rail: fixed on the left in both languages */
+.dots{position:fixed;left:2px;top:50%;transform:translate(-9px,-50%);opacity:.22;z-index:6;display:flex;flex-direction:column;gap:0;padding:4px 2px;direction:ltr;touch-action:none;user-select:none;-webkit-user-select:none;transition:transform .25s,opacity .25s}
+/* tucked into the edge and faint until touched or hovered; then it slides out on a frosted pill */
+.dots.live,.dots.scrub,.dots:hover{transform:translate(0,-50%);opacity:1}
+.dots::before{content:"";position:absolute;left:2px;top:0;bottom:0;width:20px;border-radius:12px;background:color-mix(in srgb,var(--ground) 72%,transparent);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:-1;opacity:0;transition:opacity .25s}
+.dots.live::before,.dots.scrub::before,.dots:hover::before{opacity:1}
+.dots::after{content:"";position:absolute;top:0;bottom:0;left:0;right:-4px}  /* a touch target only a little wider than the peeking dots */
+.dots[hidden]{display:none}
+.dots a{position:relative;display:flex;align-items:center;height:13px;padding:0 4px;text-decoration:none;color:var(--ink);cursor:pointer}
+.dots i{flex:none;width:5px;height:5px;border-radius:50%;background:var(--muted);opacity:.6;box-shadow:0 0 0 2px var(--ground);transition:transform .15s,opacity .15s,background .15s}
+.dots a.sec i{width:8px;height:3px;border-radius:2px}
+.dots a.on i{background:var(--mark);opacity:1;transform:scale(1.7)}
+.dots span{position:absolute;left:22px;top:50%;transform:translateY(-50%);font:600 11.5px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:2px 9px;white-space:nowrap;opacity:0;pointer-events:none;box-shadow:0 2px 8px -4px rgba(0,0,0,.4);transition:opacity .15s}
+.dots.scrub a.on span,.dots:not(.scrub) a:hover span{opacity:1}
+html[dir="rtl"] .dots span{font-family:"Heebo",sans-serif}
+body.editing .dots{display:none}  /* not while a day's text is being edited */
+@media print{.dots{display:none}}
+#backbubble{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:7;font:600 13px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:8px 14px;cursor:pointer;box-shadow:0 4px 14px -4px rgba(0,0,0,.5);max-width:70vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#backbubble:hover{border-color:var(--mark)}
+[dir="rtl"] #backbubble{font-family:"Heebo",sans-serif}
+/* trip log: picture grid, inline pictures, lightbox, photo dots, upload */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:6px;align-items:start;max-height:72vh;overflow-y:auto;padding:2px;-webkit-overflow-scrolling:touch}
+.gallery .col{display:flex;flex-direction:column;gap:6px;min-width:0}
+.gallery .muted{grid-column:1/-1;color:var(--muted);font-size:13.5px;margin:4px 0}
+.tile{position:relative;display:block;overflow:hidden;background:var(--line);border-radius:3px}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.tile span{position:absolute;left:0;right:0;bottom:0;padding:14px 8px 5px;font:12px "IBM Plex Sans",sans-serif;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.6));white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.photoref{display:block;margin:12px 0}
+.photos{display:block;margin:12px 0}
+.inpic{display:block;text-decoration:none;color:inherit}
+/* --ar (width/height) comes with the picture, so its space is reserved before it loads and the page does not jump; the width is whatever fits under 85vh */
+.inpic img{display:block;height:auto;margin:0 auto;border-radius:3px;background:var(--line);aspect-ratio:var(--ar,auto);max-width:100%;width:min(100%,calc(85vh * var(--ar,1.5)))}
+.inpic span{display:block;font-size:12.5px;color:var(--muted);padding:4px 0;text-align:center;text-decoration:none}
+.pane[data-pane="log"] p,.pane[data-pane="tips"] p{max-width:72ch}
+.pane.pressing{user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}
+.tile,.inpic{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none} .tile img,.inpic img{-webkit-user-drag:none}
+.tile img{transition:transform .25s ease} .tile:hover img{transform:scale(1.03)} .tile,.inpic,.popthumbs a{cursor:zoom-in}
+/* desktop: a wider log page, the whole grid in three columns, pictures in the text side by side */
+.logpage .wrap{max-width:1240px}
+@media (min-width:900px){
+  .logpage .gallery{max-height:none;overflow:visible;gap:8px}
+  .logpage .stage .livemap{height:min(70vh,640px)}
+  .logpage .stage canvas.profile{height:200px}
+  .photos{display:flex;gap:10px;align-items:flex-start}
+  .photos .photoref{flex:1 1 0;min-width:0;margin:0}
+  .photos .inpic img{width:min(100%,calc(70vh * var(--ar,1.5)))}
+  .logpage .pane[data-pane="log"],.logpage .pane[data-pane="tips"]{max-width:none}
+}
+#lightbox{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.92);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:12px}
+#lightbox img{max-width:100%;max-height:calc(100vh - 110px);object-fit:contain;display:block}
+#lightbox .lbx,#lightbox .lbp{color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.4);border-radius:50%;width:40px;height:40px;font-size:26px;line-height:36px;cursor:pointer;padding:0}
+#lightbox .lbx{position:absolute;top:12px;right:12px}
+/* the arrows sit under the caption, small to look at, with a press area far larger than they are */
+#lightbox .lbnav{display:flex;align-items:center;gap:18px;margin-top:6px}
+#lightbox .lbp{position:relative;width:30px;height:30px;font-size:20px;line-height:26px;touch-action:manipulation} #lightbox .lbp::before{content:"";position:absolute;inset:-18px -26px} #lightbox .lbp:disabled{opacity:.25;cursor:default}
+#lightbox .lbcap{color:#fff;font:14px "IBM Plex Sans",sans-serif;margin-top:8px;text-align:center;max-width:70ch} #lightbox .lbcap a{color:#9CC7F0}
+#lightbox .lbn{color:#bbb;font:12px "IBM Plex Mono",monospace;min-width:5ch;text-align:center}
+#lightbox .lbnav,#lightbox .lbn,#lightbox .lbx,#lightbox .lbdl{direction:ltr} /* the arrows sit where they are in both languages, and would mirror in Hebrew */
+body.lbopen{overflow:hidden}
+.photodot{width:46px;height:46px;box-sizing:border-box} /* stays position:absolute from Leaflet: in flow the markers would stack and drift */
+.photodot .pdi{display:grid;width:46px;height:46px;border-radius:50%;overflow:hidden;background:#fff;border:2px solid var(--mark);box-shadow:0 1px 4px rgba(0,0,0,.4);box-sizing:border-box;gap:1px}
+.photodot .pdi.n2,.photodot .pdi.n3,.photodot .pdi.n4{grid-template-columns:1fr 1fr} .photodot .pdi.n3,.photodot .pdi.n4{grid-template-rows:1fr 1fr} .photodot .pdi.n3 img:first-child{grid-row:1/3}
+.photodot img{width:100%;height:100%;object-fit:cover;display:block;min-width:0;min-height:0}
+.photodot b{position:absolute;right:-5px;top:-5px;min-width:18px;height:18px;padding:0 4px;border-radius:9px;background:var(--mark);color:#fff;font:700 11px "IBM Plex Mono",monospace;line-height:18px;text-align:center;box-sizing:border-box;box-shadow:0 1px 3px rgba(0,0,0,.4)}
+.maphint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:800;background:rgba(255,255,255,.92);color:var(--muted);font:12px "IBM Plex Mono",monospace;padding:4px 10px;border-radius:12px;box-shadow:0 1px 3px rgba(0,0,0,.25);pointer-events:none;white-space:nowrap}
+#lightbox .lbdl{position:absolute;top:12px;left:12px;color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.4);border-radius:50%;width:40px;height:40px;font-size:22px;line-height:38px;text-align:center;text-decoration:none}
+#lightbox img{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92px)}
+.popthumbs{display:flex;gap:6px;flex-wrap:wrap;max-width:308px;max-height:360px;overflow:auto} .popthumbs a{display:block;width:148px;height:112px;overflow:hidden;border-radius:3px;background:var(--line)} .popthumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.upload{margin:12px 0} .upbtn{display:inline-block;font:600 14px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:9px 14px;cursor:pointer} .upbtn:hover{border-color:var(--mark)}
+.uplist{font:13px "IBM Plex Mono",monospace;color:var(--muted);margin-top:8px} .uplist div{padding:2px 0}
+.wxh{margin:6px 0 10px;padding:10px 12px;border:1px solid var(--line);background:var(--panel);border-radius:3px;font-size:13.5px;line-height:1.5;max-width:76ch}
+.wxh .wxrow{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline} .wxh .wxk{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.wxh canvas{width:100%;height:150px;display:block;background:var(--ground);border:1px solid var(--line);margin-top:8px}
+[lang="he"] .wxh .wxk,[lang="he"] .upbtn,[lang="he"] .tile span{font-family:"Heebo",sans-serif;letter-spacing:0;text-transform:none}
+/* rotation: two-finger twist; the plugin's compass shows once turned and resets north */
+.livemap .leaflet-control-rotate{border-radius:4px;box-shadow:0 1px 5px rgba(0,0,0,.4)}
+</style>
+
+<style>:root{--mark:#C8322B;--mark-soft:#F6DEDD}@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--mark:#D45F5A;--mark-soft:#48211F}}:root[data-theme="dark"]{--mark:#D45F5A;--mark-soft:#48211F}</style>
+<script>window.TREK={"slug": "gr52", "gpx": "/GR52_all-in-one.gpx", "timezone": "Europe/Paris", "plannedStart": 8, "tentWindow": "19:00", "strings": {}, "weatherModel": "meteofrance_seamless", "weatherModelLabel": "Météo-France AROME/ARPEGE, blend beyond 4 days", "treeline": 2000, "heatLimit": 32, "exposed": [{"fromKm": 54, "toKm": 67, "name": "Authion ridge"}, {"fromKm": 40, "toKm": 47, "name": "Basto boulder fields"}], "accent": "#C8322B", "elevation": "EU-DEM 25 m"};</script>
+</head>
+<body>
+<div class="langbar"><button id="langbtn" type="button">עברית</button></div>
+<div class="locbar"><button id="locfab" type="button" data-act="snapshot" aria-label="Where am I" title="Where am I" data-label-en="Where am I" data-label-he="איפה אני"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg></button><span id="loctoast" role="status" hidden></span></div>
+<button id="backbubble" type="button" hidden></button>
+
+<div id="en" lang="en" dir="ltr" class="wrap">
+<div class="archive">This is the plan as it was before we left, kept for reference. The trek as walked, with pictures and tips, is on the <a href="/">front page</a>.</div>
+<header class="cover">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="mast" style="--cover-y:40%"><img class="coverimg" src="/log/yarden-zamir/photos/9ce9cc5d8097.jpg" alt="" fetchpriority="high" decoding="async">
+  <div class="eyebrow"><span class="balise"></span>GR52 · Mercantour · 12 – 18 September 2026</div>
+  <h1>GR52 Bivouac Dossier</h1>
+  </div>
+  <p class="lede">Yarden and Ayelet land in Nice on Friday 11 September, sleep in <a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a>, walk seven days to <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a> with a tent. Their stage split, with the technical options named.</p>
+  <div class="facts">
+    <div><b>≈95 km</b><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a> → <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div>
+    <div><b>≈6,200 m</b><span>total ascent</span></div>
+    <div><b>≈7,500 m</b><span>total descent</span></div>
+    <div><b>2,693 m</b><span>high point, <a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a></span></div>
+    <div><b>7 days</b><span>Sat 12 → Fri 18 Sep</span></div>
+    <div><b>3 L</b><span>water to carry on two dry days</span></div>
+  </div>
+  <nav class="toc" aria-label="Sections"><a href="#plan">Plan</a><a href="#maps">Maps</a><a href="#rules">Rules &amp; water</a><a href="#tech">Technical</a><a href="#practical">Practical</a><a href="#links">Links</a><a href="/GR52_all-in-one.gpx" download>GPX for OsmAnd ↓</a></nav>
+</header>
+
+<h2 id="plan">The plan</h2>
+<p>Yarden and Ayelet's split, which is the official FFRandonnée staging. Times are guidebook times plus 20 %. In the park core the tent may only stand from 19:00 to 09:00 and sunset is about 19:45, so arrive by 18:00 and cook first. The GPX layers in your Downloads folder match these nights.</p>
+<p class="planbar"><span class="snapstatus">The round button at the bottom left takes one position fix, no tracking: it shows you on the map and on the profile, marks finished days done and fills in today's distance, ascent left and arrival estimate. Long-press it to pick your position on the map instead. Each day has Plan, Map and Weather tabs; tap a day title to open its map.</span></p>
+<div class="stage" data-day="0" data-date="2026-09-11" data-hours="2">
+  <div class="d"><a href="#map" data-focus="day:0">D0<small>FRI 11 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:0">Land in Nice 09:45 → a few hours in town → bus 90 → Saint-Dalmas</a></h3>
+    <div class="stats"><span class="st">bus 90 leaves 16:40, ≈2 h</span><span class="st">hostel check-in closes 19:00</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p><b>The tight bit.</b> Bus 90 runs Nice to La Bolline three times a day on weekdays, at 08:10, 16:40 and 18:40 from Les Arboras, passing Grand Arénas a few minutes later. The 16:40 arrives around 18:40; the 18:40 arrives after check-in closes. Take the 16:40, be at Grand Arénas by 16:15, and phone the hostel on +33 4 22 49 01 06 in the morning to say you arrive about 18:45. Booked: twin room at HI hostel "Le Chalet", breakfast included, restaurant on site for dinner, check-out by 10:00.</p>
+      <p><b>Nice, 10:30 to 16:00.</b> Tram 2 from the airport to Grand Arénas is one stop, so leave the packs in a locker there or carry them. Buy four days of food and a gas cartridge, which cannot fly with you, at the Decathlon or a supermarket near Grand Arénas. Then tram into the old town: Cours Saleya market for lunch, the Castle Hill viewpoint, the Promenade. Be back on tram 2 by 15:45.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="0"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="1" data-date="2026-09-12" data-hours="11">
+  <div class="d"><a href="#map" data-focus="day:1">D1<small>SAT 12 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:1">Saint-Dalmas → Col de Veillos → Col du Barn → Salèse valley → Le Boréon</a></h3>
+    <div class="stats"><span class="st">≈18 km</span><span class="st">+1,350 / −1,150 m</span><span class="st">9 h official, plan 10–11</span><span class="st">tent by the lake at Le Boréon, ≈1,500 m</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>The longest day, straight after travel. Breakfast at 07:00, walk by 08:00, and you arrive around 18:30. Water at a spring on the way up and at <a href="#map" class="lk k-map focus" data-focus="Lac Petit"><i class="ic-map"></i>Lac Petit</a>; nothing on the col. <a href="#map" class="lk k-map focus" data-focus="Col du Barn"><i class="ic-map"></i>Col du Barn</a> (2,452 m) is the park boundary; the trail then swings through the <a href="#map" class="lk k-map focus" data-focus="ROUTE 1 of 4"><i class="ic-map"></i>Salèse valley</a> on the line restored after Storm Alex. <a href="#map" class="lk k-map focus" data-focus="NIGHT 1"><i class="ic-map"></i>Le Boréon</a> is outside the core, so no 19:00 rule: the lake is beside the road, and one report paid €10 to pitch at the horse ranch. <b>Dinner out 1:</b> the hotel-restaurant at <a href="#map" class="lk k-map focus" data-focus="NIGHT 1"><i class="ic-map"></i>Le Boréon</a>. <b>If you are behind schedule</b> at <a href="#map" class="lk k-map focus" data-focus="Lac Petit"><i class="ic-map"></i>Lac Petit</a> by 14:00, sleep there and finish the stage in the morning.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="2" data-date="2026-09-13" data-hours="7">
+  <div class="d"><a href="#map" data-focus="day:2">D2<small>SUN 13 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:2">Le Boréon → Lac de Trécolpas → Pas des Ladres → Madone de Fenestre</a></h3>
+    <div class="stats"><span class="st">≈9 km</span><span class="st">+1,000 / −600 m</span><span class="st">5.5 h official, plan 6–7</span><span class="st">refuge bed or Lac de Fenestre, see below</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>Short and steep. <a href="#map" class="lk k-map focus" data-focus="Trécolpas"><i class="ic-map"></i>Trécolpas</a> to <a href="#map" class="lk k-map focus" data-focus="ROUTE 2 of 4"><i class="ic-map"></i>Pas des Ladres</a> (2,448 m) is one of the three sections the French guides flag. <b>Camping is banned around <a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de la Madone"><i class="ic-map"></i>Madone de Fenestre</a>.</b> Two legal options: a bed at the refuge (62 places, open to 30 September, book online, dinner served), or carry on one hour to <a href="#map" class="lk k-map focus" data-focus="NIGHT 2"><i class="ic-map"></i>Lac de Fenestre</a> (2,266 m) and bivouac there inside the core. The refuge bed is the comfortable choice and shortens day 3 by nothing; the lake shortens day 3 by an hour.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="3" data-date="2026-09-14" data-hours="6">
+  <div class="d"><a href="#map" data-focus="day:3">D3<small>MON 14 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:3">Madone de Fenestre → Pas du Mont Colomb → Refuge de Nice</a></h3>
+    <div class="stats"><span class="st">≈7 km</span><span class="st">+700 / −350 m</span><span class="st">4.5 h official, plan 5–6</span><span class="st">tent by Lac de la Fous, ≈2,230 m</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>The technical day. <a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Mont Colomb"><i class="ic-map"></i>Pas du Mont Colomb</a> (2,548 m): scree to a narrow breach with a 2–3 m rock step, fine dry, not in rain. Boulders down to the refuge; the footbridge is gone, so a ford. Short day, so this is where <a href="#map" class="lk k-map focus" data-focus="Mont Colomb"><i class="ic-map"></i>Mont Colomb</a> (2,816 m, off-trail scramble, 2–3 h) fits if the rock is dry and you have the topo.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="3"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="4" data-date="2026-09-15" data-hours="6">
+  <div class="d"><a href="#map" data-focus="day:4">D4<small>TUE 15 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:4">Refuge de Nice → Baisse du Basto → Refuge des Merveilles</a></h3>
+    <div class="stats"><span class="st">≈11 km</span><span class="st">+800 / −900 m</span><span class="st">5–6 h</span><span class="st">tent only on the marked area behind the refuge</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>Over the high point (2,693 m) into the <a href="#map" class="lk k-map focus" data-focus="NIGHT 4"><i class="ic-map"></i>Vallée des Merveilles</a>: marked trail only, rubber tips on poles, no touching engravings. Afternoon: <a href="#map" class="lk k-map focus" data-focus="Mont Bégo"><i class="ic-map"></i>Mont Bégo</a> (2,872 m, +750 m, easy, sea view) or the guided engraving walk. Refuge dinner available, cash only.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="4"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="5" data-date="2026-09-16" data-hours="8">
+  <div class="d"><a href="#map" data-focus="day:5">D5<small>WED 16 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:5">Merveilles → Pas du Diable → Authion ridge → Camp d'Argent</a></h3>
+    <div class="stats"><span class="st">≈18 km</span><span class="st">+700 / −1,050 m</span><span class="st">7–8 h</span><span class="st">gîte or tent, 1,750 m, outside the core</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>No water after the refuge until <a href="#map" class="lk k-map focus" data-focus="HUT · Camp d'Argent"><i class="ic-map"></i>Camp d'Argent</a>: leave with 3 L each. Option: <a href="#map" class="lk k-map focus" data-focus="Cime du Diable"><i class="ic-map"></i>Cime du Diable</a> (2,685 m, +2 h) from the pass. <b>Dinner out 2:</b> L'Estive gîte, open to 1 October; ask where to pitch.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="5"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="6" data-date="2026-09-17" data-hours="6">
+  <div class="d"><a href="#map" data-focus="day:6">D6<small>THU 17 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:6">Camp d'Argent → Sospel</a></h3>
+    <div class="stats"><span class="st">≈16 km</span><span class="st">+300 / −1,700 m</span><span class="st">5–6 h</span><span class="st">Camping Sainte-Madeleine, ≈€19</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>Long, steep, hot descent. Start early. <a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a> has shops, a bakery and a station on the Nice–Tende line. <b>Dinner out 3:</b> <a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a>, by the old bridge. Fill every bottle for tomorrow.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="6"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="7" data-date="2026-09-18" data-hours="9">
+  <div class="d"><a href="#map" data-focus="day:7">D7<small>FRI 18 SEP</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:7">Sospel → Col du Berceau → Menton</a></h3>
+    <div class="stats"><span class="st">≈17 km</span><span class="st">+1,150 / −1,500 m</span><span class="st">8–9 h</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">Plan</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">Map</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">Weather<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>No water at all in a dry September: 3 L each. The last hour below <a href="#map" class="lk k-map focus" data-focus="Col du Berceau"><i class="ic-map"></i>Col du Berceau</a> (1,090 m) is steep and loose. Then the sea.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="7"><button type="button" class="mapclaim">Show the map here</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+
+<h2 id="maps">Maps and profile</h2>
+<p>This map is drawn live from the same GPX file you download for OsmAnd, so the two never differ. Each day's Map tab shows its own stretch and profile; this is the whole route. Twist with two fingers or use the arrows to rotate; the compass resets north. Tap any line or dot for its note. The layers button toggles each track and each kind of waypoint, the same list as in OsmAnd. "Where am I" shows your position, the kilometre on the route and the distance to the next night. "Save this area offline" stores the visible map tiles in the browser; the page and the GPX are stored automatically, so the site keeps working without signal. Add it to your home screen for an app-like view. Base map OpenTopoMap; planning aid only, carry IGN 3741 OT and 3841 OT.</p>
+<div class="maphost" data-host="all"><button type="button" class="mapclaim">Show the whole route here</button>
+<div class="mapbox" data-map="en">
+  <div class="livemap" role="application" aria-label="Map"></div>
+  <div class="maptools"><button type="button" data-act="saveroute"></button><span class="mapstatus"></span></div>
+  <canvas class="profile" aria-label="Elevation profile"></canvas>
+  <p class="profstats"></p>
+</div></div>
+<details class="staticmaps">
+  <summary>Annotated section maps, for printing or offline</summary>
+  <figure><img class="map" src="/maps/overview.webp" width="598" height="830" loading="lazy" decoding="async" alt="Whole route, north at top."><figcaption>Whole route, north at top.</figcaption></figure>
+  <figure><img class="map" src="/maps/north.webp" width="1340" height="811" loading="lazy" decoding="async" alt="Days 1–3."><figcaption>Days 1–3.</figcaption></figure>
+  <figure><img class="map" src="/maps/merv.webp" width="816" height="891" loading="lazy" decoding="async" alt="Days 3–5."><figcaption>Days 3–5.</figcaption></figure>
+  <figure><img class="map" src="/maps/authion.webp" width="757" height="1376" loading="lazy" decoding="async" alt="Days 5–6."><figcaption>Days 5–6.</figcaption></figure>
+  <figure><img class="map" src="/maps/menton.webp" width="699" height="1050" loading="lazy" decoding="async" alt="Day 7."><figcaption>Day 7.</figcaption></figure>
+</details>
+
+<h2 id="rules">Rules and water</h2>
+<div class="note rule"><p><b>Park core</b> (<a href="#map" class="lk k-map focus" data-focus="Col du Barn"><i class="ic-map"></i>Col du Barn</a> to just past <a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Diable"><i class="ic-map"></i>Pas du Diable</a>): tent up 19:00–09:00 only, low tent, more than one hour from a road, new spot each night, stove yes, fire no, no dogs.</p><p><b>Merveilles zone:</b> bivouac only on the marked area behind the <a href="#map" class="lk k-map focus" data-focus="NIGHT 4"><i class="ic-map"></i>Refuge des Merveilles</a>. Stay on the trail. Metal pole tips need rubber caps. Wardens fine.</p><p><b>Dry stretches:</b> Merveilles → <a href="#map" class="lk k-map focus" data-focus="HUT · Camp d'Argent"><i class="ic-map"></i>Camp d'Argent</a> and <a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a> → <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a>. Nothing mapped, nothing in any report. 3 L each.</p></div>
+<div class="scroll"><table>
+  <caption>Refuges, water and where to pitch</caption>
+  <tr><th>Place</th><th>Alt.</th><th>Open</th><th>Tent</th><th>Note</th></tr>
+  <tr><td data-label="Place"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas-Valdeblore</a></span></td><td data-label="Alt." class="n"><span>1,290 m</span></td><td data-label="Open"><span>village</span></td><td data-label="Tent"><span>HI hostel, booked 11 Sep</span></td><td data-label="Note"><span>bus 90, small shop, taps</span></td></tr>
+  <tr><td data-label="Place"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 1"><i class="ic-map"></i>Le Boréon</a></span></td><td data-label="Alt." class="n"><span>1,500 m</span></td><td data-label="Open"><span>hotel-restaurant</span></td><td data-label="Tent"><span>night 1: lake or ranch, ≈€10</span></td><td data-label="Note"><span>dinner out 1</span></td></tr>
+  <tr><td data-label="Place"><span><a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a></span></td><td data-label="Alt." class="n"><span>2,100 m</span></td><td data-label="Open"><span>to 19 Sep</span></td><td data-label="Tent"><span><a href="#map" class="lk k-map focus" data-focus="Trécolpas"><i class="ic-map"></i>Trécolpas</a>, 30 min</span></td><td data-label="Note"><span>tap, showers</span></td></tr>
+  <tr><td data-label="Place"><span><a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a></span></td><td data-label="Alt." class="n"><span>1,903 m</span></td><td data-label="Open"><span>to 30 Sep</span></td><td data-label="Tent" data-long><span>night 2: refuge bed, or <a href="#map" class="lk k-map focus" data-focus="NIGHT 2"><i class="ic-map"></i>Lac de Fenestre</a> 1 h above</span></td><td data-label="Note"><span>tap, dinner, road</span></td></tr>
+  <tr><td data-label="Place"><span><a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a></span></td><td data-label="Alt." class="n"><span>2,232 m</span></td><td data-label="Open"><span>to end Sep</span></td><td data-label="Tent"><span>by the lake</span></td><td data-label="Note"><span>tap; footbridge gone, ford</span></td></tr>
+  <tr><td data-label="Place"><span><a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a></span></td><td data-label="Alt." class="n"><span>2,130 m</span></td><td data-label="Open"><span>to end Oct</span></td><td data-label="Tent"><span>marked area only</span></td><td data-label="Note"><span>tap, cash only, guided walks</span></td></tr>
+  <tr><td data-label="Place"><span><a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a></span></td><td data-label="Alt." class="n"><span>1,750 m</span></td><td data-label="Open"><span>to 1 Oct</span></td><td data-label="Tent"><span>ask</span></td><td data-label="Note"><span>dinner, tap, road to Turini</span></td></tr>
+  <tr><td data-label="Place"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a></span></td><td data-label="Alt." class="n"><span>350 m</span></td><td data-label="Open"><span>village</span></td><td data-label="Tent"><span>Camping Sainte-Madeleine</span></td><td data-label="Note"><span>shops, station, fountains</span></td></tr>
+</table></div>
+
+<h2 id="tech">Technical options and via ferrata</h2>
+<p>On the line: <a href="#map" class="lk k-map focus" data-focus="Trécolpas"><i class="ic-map"></i>Trécolpas</a> to <a href="#map" class="lk k-map focus" data-focus="ROUTE 2 of 4"><i class="ic-map"></i>Pas des Ladres</a> (steep, blocky), the <a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Mont Colomb"><i class="ic-map"></i>Pas du Mont Colomb</a> rock step (T3 dry), boulders below <a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a>, and two long loose descents where the reports' injuries happen. Beyond that:</p>
+<div class="scroll"><table>
+  <caption>Technical options and via ferrata</caption>
+  <tr><th>Objective</th><th>From</th><th>What it is</th><th>Time</th></tr>
+  <tr><td data-label="Objective"><span><a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">Via ferrata Baus de la Frema</a></span></td><td data-label="From"><span>La Colmiane, bus 90 stop above <a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a></span></td><td data-label="What it is" data-long><span>Grade D, TD variant. 40 m footbridge, overhangs, summit 2,246 m. €6 access, €21 kit, book 24 h ahead, closed in rain.</span></td><td data-label="Time"><span>4–5 h + 1 h down</span></td></tr>
+  <tr><td data-label="Objective"><span><a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 m</a></span></td><td data-label="From"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 4"><i class="ic-map"></i>Refuge des Merveilles</a></span></td><td data-label="What it is"><span>Cairned walk, no difficulty, +750 m.</span></td><td data-label="Time" class="n"><span>3–4 h</span></td></tr>
+  <tr><td data-label="Objective"><span><a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 m</a></span></td><td data-label="From"><span><a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Diable"><i class="ic-map"></i>Pas du Diable</a></span></td><td data-label="What it is"><span>Steep marked path via Pas du Trem.</span></td><td data-label="Time"><span>≈2 h</span></td></tr>
+  <tr><td data-label="Objective"><span><a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 m</a></span></td><td data-label="From"><span><a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Mont Colomb"><i class="ic-map"></i>Pas du Mont Colomb</a></span></td><td data-label="What it is" data-long><span>Off-trail scramble, dry rock and topo needed. Needs the spare day.</span></td><td data-label="Time" class="n"><span>2–3 h</span></td></tr>
+  <tr><td data-label="Objective"><span>Cime du Gélas 3,143 m</span></td><td data-label="From"><span><a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de la Madone"><i class="ic-map"></i>Madone de Fenestre</a></span></td><td data-label="What it is" data-long><span>AD couloir, rockfall when dry. Skip in September.</span></td><td data-label="Time"><span>—</span></td></tr>
+  <tr><td data-label="Objective"><span><a href="https://www.mercantour-roya.com/via-ferrata/">Roya via ferratas</a></span></td><td data-label="From"><span>Tende, La Brigue, by train from <a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a></span></td><td data-label="What it is" data-long><span>Easy to moderate, guided ≈€50. Only for a spare day. Peille's L'Escale is closed.</span></td><td data-label="Time"><span>half day</span></td></tr>
+</table></div>
+
+<h2 id="practical">Practical</h2>
+<div class="two">
+  <div>
+    <h3>September</h3><ul><li>Storms rare, unlike July and August. Valley highs 20–24 °C, 0–5 °C at the high bivouacs, frost possible.</li><li>First snow on Colomb and Basto is possible from mid-September. If it falls, wait a day.</li><li>Sunrise ≈07:10, sunset ≈19:45.</li><li><b>Live forecast:</b> each day card above shows the current forecast for that day's night spot and high point, from <a href="https://open-meteo.com/">Open-Meteo</a>, refreshed every time the page loads, with warnings derived for thunderstorms, rain, snow and freezing level, ridge wind, frost, heat, fog and UV. The last forecast is kept for offline reading.</li><li><b>Official sources to check the day before:</b> <a href="https://vigilance.meteofrance.fr/fr/alpes-maritimes">Météo-France vigilance, Alpes-Maritimes</a> (colour warnings for storms, rain, heat), <a href="https://meteofrance.com/meteo-montagne/mercantour">Météo-France mountain bulletin, Mercantour</a> (freezing level, wind at 2,000 and 3,000 m, storm timing), <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">park trail notices</a>.</li><li>Trail notices (park site, 4 Sep): Boréon line reopened; fords at Cougourde and <a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de Nice"><i class="ic-map"></i>Refuge de Nice</a>. Re-check <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">Info sentiers</a> before leaving.</li></ul>
+    <h3>Transport</h3><ul><li>Nice → <a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a>: <a href="https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/">bus 90</a>, weekdays 08:10, 16:40, 18:40 from Les Arboras via Grand Arénas, ≈2 h. Confirm on the <a href="https://www.lignesdazur.com/">Lignes d'Azur</a> app the week before.</li><li>Bail-outs: <a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de la Madone"><i class="ic-map"></i>Madone de Fenestre</a> road, <a href="#map" class="lk k-map focus" data-focus="ESCAPE · Col de Turini"><i class="ic-map"></i>Col de Turini</a> road, <a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a> station.</li></ul>
+  </div>
+  <div>
+    <h3>Gear</h3><ul><li>Sleeping system to 0 °C.</li><li>Poles with rubber tips.</li><li>3 L capacity each plus a filter.</li><li>Four days of food from Nice. Cash for refuges.</li><li>Offline maps: OsmAnd with the GPX, plus IGN 3741 OT and 3841 OT.</li><li>Hang food: foxes and boar raid tents by the lakes.</li><li>Headtorch; you will cook at dusk.</li><li>Emergency: 112.</li></ul>
+  </div>
+</div>
+
+<h2 id="links">Links</h2>
+<h3>Trip reports</h3><ul><li><a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 days wild camping in August. Closest to your plan.</li><li><a href="https://www.altituderando.com/GR52-GR52A-Boucle-Menton-Sospel-Vesubie-Boreon-Vallee-des-Merveilles-Col-de">Altitude Rando</a>, 15–22 September, campsites and refuges. Same dates as yours.</li><li><a href="https://www.randonner-leger.org/forum/viewtopic.php?id=22334">Randonner Léger 2025</a> and <a href="https://www.randonner-leger.org/forum/viewtopic.php?id=21181">Larche to Menton</a>, ultralight bivouac, French.</li><li><a href="https://grfive.com/?page_id=540">GR Five</a>, best description of the <a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a> descent.</li><li><a href="https://crossingthealpswithease.wordpress.com/2022-auron-to-menton-gr5-and-gr52/">Crossing the Alps with Ease</a>, refuges, 2022.</li><li><a href="https://howlingmist.blogspot.com/2017/11/hiking-gr52-and-gr52a.html">Howlingmist</a>, late October, the cold end of the season.</li><li><a href="https://www.wikiloc.com/hiking-trails/gr52-de-menton-a-saint-dalmas-valdeblore-14352481">Wikiloc</a>, 5-day bivouac, reversed.</li><li><a href="https://fastestknowntime.com/route/grande-traversee-des-alpes-gr52-and-gr5-france">FKT, Menton to Lake Geneva via GR52 and GR5</a>: 12 d 20 h, September 2025.</li></ul>
+<h3>Official</h3><ul><li><a href="https://www.mongr.fr/trouver-prochaine-randonnee/suggestion/gr-52-de-saint-dalmas-valdeblore-a-menton">Mon GR</a>, <a href="https://topo-de-rando.com/gr52/">Topo de Rando</a>, <a href="https://www.gr-infos.com/en/gr52.htm">GR Infos</a>: stages.</li><li><a href="https://www.mercantour-parcnational.fr/fr/le-parc-national-du-mercantour/la-reglementation/foire-aux-questions">Park rules FAQ</a>, <a href="https://aida.ineris.fr/consultation_document/42556">bivouac order</a>, <a href="https://www.ffrandonnee.fr/s-informer/actualites/dans-le-mercantour-la-vallee-des-merveilles-est-strictement-surveillee">Merveilles zone</a>.</li><li><a href="https://www.alltrails.com/lists/gr52-la-vallee-des-merveilles">AllTrails stage list</a>, recent reviews.</li><li><a href="https://www.colmiane.com/activites-ete-sur-la-colmiane/via-ferrata.html">La Colmiane via ferrata booking</a>, <a href="https://www.sortir06.fr/les-via-ferrata-alpes-maritimes/">all via ferratas in the 06</a>.</li></ul>
+</div>
+
+<div id="he" lang="he" dir="rtl" class="wrap" hidden>
+<div class="archive">זו התוכנית כפי שהייתה לפני היציאה, שמורה לעיון. המסלול כפי שהלכנו, עם תמונות וטיפים, נמצא ב<a href="/">עמוד הראשי</a>.</div>
+<header class="cover">
+  <div class="topo" aria-hidden="true"></div>
+  <div class="mast" style="--cover-y:40%"><img class="coverimg" src="/log/yarden-zamir/photos/9ce9cc5d8097.jpg" alt="" fetchpriority="high" decoding="async">
+  <div class="eyebrow"><span class="balise"></span>GR52 · מרקנטור · 12–18 בספטמבר 2026</div>
+  <h1>GR52 עם אוהל</h1>
+  </div>
+  <p class="lede">ירדן ואיילת נוחתים בניס ביום שישי 11 בספטמבר, ישנים ב-<a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a>, הולכים שבעה ימים עד <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a> עם אוהל. החלוקה שלהם לימים, עם האופציות הטכניות.</p>
+  <div class="facts">
+    <div><b>≈95 ק"מ</b><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a> עד <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div>
+    <div><b>≈6,200 מ'</b><span>עלייה מצטברת</span></div>
+    <div><b>≈7,500 מ'</b><span>ירידה מצטברת</span></div>
+    <div><b>2,693 מ'</b><span>הנקודה הגבוהה, <a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a></span></div>
+    <div><b>7 ימים</b><span>שבת 12 עד שישי 18 בספטמבר</span></div>
+    <div><b>3 ליטר</b><span>מים לסחוב בשני ימים יבשים</span></div>
+  </div>
+  <nav class="toc" aria-label="Sections"><a href="#he-plan">התוכנית</a><a href="#he-maps">מפות</a><a href="#he-rules">חוקים ומים</a><a href="#he-tech">טכני</a><a href="#he-practical">פרקטי</a><a href="#he-links">קישורים</a><a href="/GR52_all-in-one.gpx" download>GPX ל-OsmAnd ↓</a></nav>
+</header>
+
+<h2 id="he-plan">התוכנית</h2>
+<p>החלוקה של ירדן ואיילת, שהיא בדיוק השלבים הרשמיים של FFRandonnée. הזמנים הם זמני המדריך פלוס 20 אחוז. בלב הפארק מותר להקים אוהל רק בין 19:00 ל-09:00 והשמש שוקעת בסביבות 19:45, אז מגיעים עד 18:00 ומבשלים לפני שמקימים. שכבות ה-GPX בתיקיית ההורדות תואמות ללילות האלה.</p>
+<p class="planbar"><span class="snapstatus">הכפתור העגול בפינה השמאלית התחתונה קורא מיקום אחד, בלי מעקב: הוא מציג אתכם במפה ובפרופיל, מסמן ימים שהסתיימו כהושלמו וממלא את המרחק, העלייה שנותרה והערכת ההגעה להיום. לחיצה ארוכה עליו בוחרת את המיקום במפה במקום GPS. לכל יום יש לשוניות תוכנית, מפה ומזג אוויר; לחצו על כותרת יום כדי לפתוח את המפה שלו.</span></p>
+<div class="stage" data-day="0" data-date="2026-09-11">
+  <div class="d"><a href="#map" data-focus="day:0">D0<small>שישי 11.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:0">נחיתה בניס 09:45, כמה שעות בעיר, אוטובוס 90 ל-Saint-Dalmas</a></h3>
+    <div class="stats"><span class="st">אוטובוס 90 יוצא 16:40, כשעתיים</span><span class="st">צ'ק-אין באכסניה נסגר ב-19:00</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p><b>הנקודה הצפופה.</b> קו 90 מניס ל-La Bolline נוסע שלוש פעמים ביום בימי חול: 08:10, 16:40 ו-18:40 מ-Les Arboras, ועובר ב-Grand Arénas כמה דקות אחר כך. האוטובוס של 16:40 מגיע בסביבות 18:40; זה של 18:40 מגיע אחרי שהצ'ק-אין נסגר. קחו את ה-16:40, תהיו ב-Grand Arénas עד 16:15, ותתקשרו לאכסניה בבוקר (06 01 49 22 4 33+) להגיד שאתם מגיעים בערך ב-18:45. מה שהוזמן: חדר עם שתי מיטות באכסניית HI "Le Chalet", ארוחת בוקר כלולה, יש מסעדה במקום לארוחת ערב, צ'ק-אאוט עד 10:00.</p>
+      <p><b>ניס, 10:30 עד 16:00.</b> רכבת קלה קו 2 מהשדה ל-Grand Arénas זו תחנה אחת; אפשר להשאיר תיקים בלוקר שם או לסחוב. קונים אוכל לארבעה ימים ומיכל גז (אי אפשר לטוס איתו) בדקתלון או בסופר ליד Grand Arénas. אחר כך ברכבת הקלה לעיר העתיקה: שוק Cours Saleya לצהריים, נקודת התצפית בגבעת הטירה, הטיילת. חוזרים לרכבת הקלה עד 15:45.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="0"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="1" data-date="2026-09-12" data-hours="9">
+  <div class="d"><a href="#map" data-focus="day:1">D1<small>שבת 12.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:1">Saint-Dalmas, דרך Col de Veillos ו-Col du Barn ועמק Salèse, עד Le Boréon</a></h3>
+    <div class="stats"><span class="st">≈18 ק"מ</span><span class="st">+1,350 / −1,150 מ'</span><span class="st">9 שעות רשמי, לתכנן 10–11</span><span class="st">אוהל ליד האגם ב-Le Boréon, ≈1,500 מ'</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>היום הארוך ביותר, ישר אחרי הנסיעה. ארוחת בוקר ב-07:00, יוצאים עד 08:00, מגיעים בסביבות 18:30. מים במעיין בדרך למעלה וב-<a href="#map" class="lk k-map focus" data-focus="Lac Petit"><i class="ic-map"></i>Lac Petit</a>; אין מים בפאס. <a href="#map" class="lk k-map focus" data-focus="Col du Barn"><i class="ic-map"></i>Col du Barn</a> (2,452 מ') הוא גבול הפארק; משם השביל עובר דרך <a href="#map" class="lk k-map focus" data-focus="ROUTE 1 of 4"><i class="ic-map"></i>עמק Salèse</a> בתוואי ששוקם אחרי הסופה Alex. <a href="#map" class="lk k-map focus" data-focus="NIGHT 1"><i class="ic-map"></i>Le Boréon</a> מחוץ ללב הפארק, אז אין כלל 19:00: האגם צמוד לכביש, ודוח אחד שילם €10 להקים בחוות הסוסים. <b>ארוחת ערב בחוץ 1:</b> המסעדה של המלון ב-<a href="#map" class="lk k-map focus" data-focus="NIGHT 1"><i class="ic-map"></i>Le Boréon</a>. <b>אם אתם בפיגור</b> ומגיעים ל-<a href="#map" class="lk k-map focus" data-focus="Lac Petit"><i class="ic-map"></i>Lac Petit</a> אחרי 14:00, ישנים שם ומסיימים את השלב בבוקר.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="1"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="2" data-date="2026-09-13" data-hours="5.5">
+  <div class="d"><a href="#map" data-focus="day:2">D2<small>ראשון 13.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:2">Le Boréon, דרך Lac de Trécolpas ו-Pas des Ladres, עד Madone de Fenestre</a></h3>
+    <div class="stats"><span class="st">≈9 ק"מ</span><span class="st">+1,000 / −600 מ'</span><span class="st">5.5 שעות רשמי, לתכנן 6–7</span><span class="st">מיטה בבקתה או Lac de Fenestre, ראו למטה</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>קצר ותלול. מ-<a href="#map" class="lk k-map focus" data-focus="Trécolpas"><i class="ic-map"></i>Trécolpas</a> ל-<a href="#map" class="lk k-map focus" data-focus="ROUTE 2 of 4"><i class="ic-map"></i>Pas des Ladres</a> (2,448 מ') זה אחד משלושת הקטעים שהמדריכים הצרפתיים מסמנים כקשים. <b>אסור לחנות סביב <a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de la Madone"><i class="ic-map"></i>Madone de Fenestre</a>.</b> שתי אפשרויות חוקיות: מיטה בבקתה (62 מקומות, פתוח עד 30.9, הזמנה אונליין, יש ארוחת ערב), או להמשיך עוד שעה ל-<a href="#map" class="lk k-map focus" data-focus="NIGHT 2"><i class="ic-map"></i>Lac de Fenestre</a> (2,266 מ') ולישון שם באוהל בתוך לב הפארק. המיטה היא הבחירה הנוחה; האגם מקצר את יום 3 בשעה.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="2"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="3" data-date="2026-09-14" data-hours="4.5">
+  <div class="d"><a href="#map" data-focus="day:3">D3<small>שני 14.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:3">Madone de Fenestre, מעל Pas du Mont Colomb, עד Refuge de Nice</a></h3>
+    <div class="stats"><span class="st">≈7 ק"מ</span><span class="st">+700 / −350 מ'</span><span class="st">4.5 שעות רשמי, לתכנן 5–6</span><span class="st">אוהל ליד Lac de la Fous, ≈2,230 מ'</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>היום הטכני. <a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Mont Colomb"><i class="ic-map"></i>Pas du Mont Colomb</a> (2,548 מ'): גרוס עד פרצה צרה עם מדרגת סלע של 2–3 מטר, בסדר ביבש, לא בגשם. בולדרים בירידה לבקתה; הגשרון נהרס אז חוצים בנחל. יום קצר, ולכן כאן נכנס <a href="#map" class="lk k-map focus" data-focus="Mont Colomb"><i class="ic-map"></i>Mont Colomb</a> (2,816 מ', סקרמבל מחוץ לשביל, 2–3 שעות) אם הסלע יבש ויש לכם טופו.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="3"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="4" data-date="2026-09-15" data-hours="6">
+  <div class="d"><a href="#map" data-focus="day:4">D4<small>שלישי 15.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:4">Refuge de Nice, מעל Baisse du Basto, עד Refuge des Merveilles</a></h3>
+    <div class="stats"><span class="st">≈11 ק"מ</span><span class="st">+800 / −900 מ'</span><span class="st">5–6 שעות</span><span class="st">אוהל רק בשטח המסומן מאחורי הבקתה</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>מעל הנקודה הגבוהה (2,693 מ') ויורדים ל<a href="#map" class="lk k-map focus" data-focus="NIGHT 4"><i class="ic-map"></i>עמק Merveilles</a>: רק על השביל המסומן, גומיות על המקלות, לא נוגעים בחריטות. אחר הצהריים: <a href="#map" class="lk k-map focus" data-focus="Mont Bégo"><i class="ic-map"></i>Mont Bégo</a> (2,872 מ', +750 מ', קל, נוף לים) או סיור מודרך בחריטות. יש ארוחת ערב בבקתה, מזומן בלבד.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="4"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="5" data-date="2026-09-16" data-hours="8">
+  <div class="d"><a href="#map" data-focus="day:5">D5<small>רביעי 16.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:5">Merveilles, דרך Pas du Diable ורכס Authion, עד Camp d'Argent</a></h3>
+    <div class="stats"><span class="st">≈18 ק"מ</span><span class="st">+700 / −1,050 מ'</span><span class="st">7–8 שעות</span><span class="st">בקתה או אוהל, 1,750 מ', מחוץ ללב הפארק</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>אין מים מהבקתה ועד <a href="#map" class="lk k-map focus" data-focus="HUT · Camp d'Argent"><i class="ic-map"></i>Camp d'Argent</a>: יוצאים עם 3 ליטר לאדם. אופציה: <a href="#map" class="lk k-map focus" data-focus="Cime du Diable"><i class="ic-map"></i>Cime du Diable</a> (2,685 מ', שעתיים נוספות) מהפאס. <b>ארוחת ערב בחוץ 2:</b> הבקתה L'Estive, פתוחה עד 1.10; שאלו איפה מותר להקים.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="5"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="6" data-date="2026-09-17" data-hours="6">
+  <div class="d"><a href="#map" data-focus="day:6">D6<small>חמישי 17.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:6">Camp d'Argent עד Sospel</a></h3>
+    <div class="stats"><span class="st">≈16 ק"מ</span><span class="st">+300 / −1,700 מ'</span><span class="st">5–6 שעות</span><span class="st">Camping Sainte-Madeleine, ≈€19</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>ירידה ארוכה, תלולה וחמה. לצאת מוקדם. ב-<a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a> יש חנויות, מאפייה ותחנת רכבת על הקו ניס–Tende. <b>ארוחת ערב בחוץ 3:</b> <a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a>, ליד הגשר העתיק. למלא כל בקבוק למחר.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="6"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+<div class="stage" data-day="7" data-date="2026-09-18" data-hours="9">
+  <div class="d"><a href="#map" data-focus="day:7">D7<small>שישי 18.9</small></a></div>
+  <div>
+    <h3><a href="#map" class="daylink" data-focus="day:7">Sospel, מעל Col du Berceau, עד Menton</a></h3>
+    <div class="stats"><span class="st">≈17 ק"מ</span><span class="st">+1,150 / −1,500 מ'</span><span class="st">8–9 שעות</span></div>
+    <div class="tabs" role="tablist"><button type="button" role="tab" data-tab="plan" class="on" aria-selected="true">תוכנית</button><button type="button" role="tab" data-tab="map" class="" aria-selected="false">מפה</button><button type="button" role="tab" data-tab="wx" class="" aria-selected="false">מזג אוויר<span class="badge" hidden></span></button></div>
+    <div class="pane" data-pane="plan" role="tabpanel">
+      <p>בספטמבר יבש אין מים בכלל: 3 ליטר לאדם. השעה האחרונה מתחת ל-<a href="#map" class="lk k-map focus" data-focus="Col du Berceau"><i class="ic-map"></i>Col du Berceau</a> (1,090 מ') תלולה ורופפת. ואז הים.</p>
+    </div>
+    <div class="pane" data-pane="map" role="tabpanel" hidden><div class="maphost empty" data-host="7"><button type="button" class="mapclaim">הצג את המפה כאן</button></div></div>
+    <div class="pane" data-pane="wx" role="tabpanel" hidden><div class="wx" aria-live="polite"></div></div>
+  </div>
+</div>
+
+<h2 id="he-maps">מפות ופרופיל</h2>
+<p>המפה הזו מצוירת ישירות מאותו קובץ GPX שמורידים ל-OsmAnd, כך שהשניים אף פעם לא שונים. לשונית המפה של כל יום מציגה את הקטע והפרופיל שלו; כאן כל המסלול. סובבו בשתי אצבעות או עם החצים, והמצפן מחזיר לצפון. לחצו על כל קו או נקודה כדי לראות את ההערה. כפתור השכבות מדליק ומכבה כל מסלול וכל סוג נקודה, אותה רשימה כמו ב-OsmAnd. "איפה אני" מציג את המיקום שלכם, את הקילומטר על המסלול ואת המרחק ללילה הבא. "שמור אזור זה לאופליין" שומר את אריחי המפה שרואים בדפדפן; הדף וה-GPX נשמרים אוטומטית, כך שהאתר ממשיך לעבוד בלי קליטה. הוסיפו למסך הבית לתצוגה כמו אפליקציה. מפת הבסיס OpenTopoMap; עזר לתכנון בלבד, קחו את גיליונות IGN 3741 OT ו-3841 OT.</p>
+<div class="maphost" data-host="all"><button type="button" class="mapclaim">הצג את כל המסלול כאן</button>
+<div class="mapbox" data-map="he">
+  <div class="livemap" role="application" aria-label="Map"></div>
+  <div class="maptools"><button type="button" data-act="saveroute"></button><span class="mapstatus"></span></div>
+  <canvas class="profile" aria-label="Elevation profile"></canvas>
+  <p class="profstats"></p>
+</div></div>
+<details class="staticmaps">
+  <summary>מפות מקטעים עם סימונים, להדפסה או לאופליין</summary>
+  <figure><img class="map" src="/maps/overview.webp" width="598" height="830" loading="lazy" decoding="async" alt="כל המסלול, צפון למעלה."><figcaption>כל המסלול, צפון למעלה.</figcaption></figure>
+  <figure><img class="map" src="/maps/north.webp" width="1340" height="811" loading="lazy" decoding="async" alt="ימים 1–3."><figcaption>ימים 1–3.</figcaption></figure>
+  <figure><img class="map" src="/maps/merv.webp" width="816" height="891" loading="lazy" decoding="async" alt="ימים 3–5."><figcaption>ימים 3–5.</figcaption></figure>
+  <figure><img class="map" src="/maps/authion.webp" width="757" height="1376" loading="lazy" decoding="async" alt="ימים 5–6."><figcaption>ימים 5–6.</figcaption></figure>
+  <figure><img class="map" src="/maps/menton.webp" width="699" height="1050" loading="lazy" decoding="async" alt="יום 7."><figcaption>יום 7.</figcaption></figure>
+</details>
+
+<h2 id="he-rules">חוקים ומים</h2>
+<div class="note rule"><p><b>לב הפארק</b> (מ-<a href="#map" class="lk k-map focus" data-focus="Col du Barn"><i class="ic-map"></i>Col du Barn</a> עד קצת אחרי <a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Diable"><i class="ic-map"></i>Pas du Diable</a>): אוהל רק בין 19:00 ל-09:00, אוהל נמוך, יותר משעת הליכה מכביש, מקום חדש בכל לילה, גזייה כן, מדורה לא, כלבים אסורים.</p><p><b>אזור Merveilles:</b> לינה רק בשטח המסומן מאחורי <a href="#map" class="lk k-map focus" data-focus="NIGHT 4"><i class="ic-map"></i>Refuge des Merveilles</a>. נשארים על השביל. קצה מתכת של מקל חייב גומייה. הפקחים קונסים.</p><p><b>קטעים יבשים:</b> מ-Merveilles עד <a href="#map" class="lk k-map focus" data-focus="HUT · Camp d'Argent"><i class="ic-map"></i>Camp d'Argent</a>, ומ-<a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a> עד <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a>. אין מים במפה ואין מים באף דוח. 3 ליטר לאדם.</p></div>
+<div class="scroll"><table>
+  <caption>בקתות, מים ואיפה מקימים</caption>
+  <tr><th>מקום</th><th>גובה</th><th>פתוח</th><th>אוהל</th><th>הערה</th></tr>
+  <tr><td data-label="מקום"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas-Valdeblore</a></span></td><td data-label="גובה" class="n"><span>1,290 מ'</span></td><td data-label="פתוח"><span>כפר</span></td><td data-label="אוהל"><span>אכסניית HI, הוזמן ל-11.9</span></td><td data-label="הערה"><span>אוטובוס 90, חנות קטנה, ברזים</span></td></tr>
+  <tr><td data-label="מקום"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 1"><i class="ic-map"></i>Le Boréon</a></span></td><td data-label="גובה" class="n"><span>1,500 מ'</span></td><td data-label="פתוח"><span>מלון-מסעדה</span></td><td data-label="אוהל"><span>לילה 1: ליד האגם או בחווה, ≈€10</span></td><td data-label="הערה"><span>ארוחת ערב בחוץ 1</span></td></tr>
+  <tr><td data-label="מקום"><span><a href="https://refugelacougourde.ffcam.fr/">Refuge de la Cougourde</a></span></td><td data-label="גובה" class="n"><span>2,100 מ'</span></td><td data-label="פתוח"><span>עד 19.9</span></td><td data-label="אוהל"><span><a href="#map" class="lk k-map focus" data-focus="Trécolpas"><i class="ic-map"></i>Trécolpas</a>, 30 דק'</span></td><td data-label="הערה"><span>ברז, מקלחות</span></td></tr>
+  <tr><td data-label="מקום"><span><a href="https://www.explorenicecotedazur.com/en/gite-refuge/refuge-de-la-madone-de-fenestre/">Madone de Fenestre</a></span></td><td data-label="גובה" class="n"><span>1,903 מ'</span></td><td data-label="פתוח"><span>עד 30.9</span></td><td data-label="אוהל"><span>לילה 2: מיטה בבקתה, או <a href="#map" class="lk k-map focus" data-focus="NIGHT 2"><i class="ic-map"></i>Lac de Fenestre</a> שעה למעלה</span></td><td data-label="הערה"><span>ברז, ארוחת ערב, כביש</span></td></tr>
+  <tr><td data-label="מקום"><span><a href="https://refugedenice.ffcam.fr/">Refuge de Nice</a></span></td><td data-label="גובה" class="n"><span>2,232 מ'</span></td><td data-label="פתוח"><span>עד סוף ספטמבר</span></td><td data-label="אוהל"><span>ליד האגם</span></td><td data-label="הערה"><span>ברז; הגשרון נהרס, חוצים בנחל</span></td></tr>
+  <tr><td data-label="מקום"><span><a href="https://refugedesmerveilles.ffcam.fr/GB_home.html">Refuge des Merveilles</a></span></td><td data-label="גובה" class="n"><span>2,130 מ'</span></td><td data-label="פתוח"><span>עד סוף אוקטובר</span></td><td data-label="אוהל"><span>רק בשטח המסומן</span></td><td data-label="הערה"><span>ברז, מזומן בלבד, סיורים מודרכים</span></td></tr>
+  <tr><td data-label="מקום"><span><a href="https://www.estive-mercantour.fr/">L'Estive, Camp d'Argent</a></span></td><td data-label="גובה" class="n"><span>1,750 מ'</span></td><td data-label="פתוח"><span>עד 1.10</span></td><td data-label="אוהל"><span>לשאול</span></td><td data-label="הערה"><span>ארוחת ערב, ברז, כביש ל-Turini</span></td></tr>
+  <tr><td data-label="מקום"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a></span></td><td data-label="גובה" class="n"><span>350 מ'</span></td><td data-label="פתוח"><span>כפר</span></td><td data-label="אוהל"><span>Camping Sainte-Madeleine</span></td><td data-label="הערה"><span>חנויות, רכבת, ברזיות</span></td></tr>
+</table></div>
+
+<h2 id="he-tech">אופציות טכניות וויה פראטה</h2>
+<p>על המסלול עצמו: מ-<a href="#map" class="lk k-map focus" data-focus="Trécolpas"><i class="ic-map"></i>Trécolpas</a> ל-<a href="#map" class="lk k-map focus" data-focus="ROUTE 2 of 4"><i class="ic-map"></i>Pas des Ladres</a> (תלול, בולדרים), מדרגת הסלע ב-<a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Mont Colomb"><i class="ic-map"></i>Pas du Mont Colomb</a> (T3 ביבש), בולדרים מתחת ל-<a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a>, ושתי ירידות ארוכות ורופפות שבהן קורות הפציעות שמתוארות בדוחות. מעבר לזה:</p>
+<div class="scroll"><table>
+  <caption>אופציות טכניות וויה פראטה</caption>
+  <tr><th>יעד</th><th>מאיפה</th><th>מה זה</th><th>זמן</th></tr>
+  <tr><td data-label="יעד"><span><a href="https://www.viaferrata-fr.net/via-ferrata-42-Les-Baus-de-la-Frema-La-Colmiane-Alpes-Maritimes.html">ויה פראטה Baus de la Frema</a></span></td><td data-label="מאיפה"><span>La Colmiane, תחנת אוטובוס 90 מעל <a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a></span></td><td data-label="מה זה" data-long><span>דרגה D, וריאנט TD. גשר תלוי של 40 מ', תקרות, פסגה ב-2,246 מ'. כניסה €6, השכרת ציוד €21, להזמין יום מראש, סגור בגשם.</span></td><td data-label="זמן"><span>4–5 שעות + שעה ירידה</span></td></tr>
+  <tr><td data-label="יעד"><span><a href="https://www.trace-ta-route.com/randonnee-mercantour-mont-bego/">Mont Bégo 2,872 מ'</a></span></td><td data-label="מאיפה"><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 4"><i class="ic-map"></i>Refuge des Merveilles</a></span></td><td data-label="מה זה"><span>הליכה עם רוג'ומים, בלי קושי, +750 מ'.</span></td><td data-label="זמן" class="n"><span>3–4 שעות</span></td></tr>
+  <tr><td data-label="יעד"><span><a href="https://www.visorando.com/en/walk-la-cime-du-diable-2685m/">Cime du Diable 2,685 מ'</a></span></td><td data-label="מאיפה"><span><a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Diable"><i class="ic-map"></i>Pas du Diable</a></span></td><td data-label="מה זה"><span>שביל מסומן ותלול דרך Pas du Trem.</span></td><td data-label="זמן"><span>≈שעתיים</span></td></tr>
+  <tr><td data-label="יעד"><span><a href="https://www.altituderando.com/Mont-Colomb-2816m">Mont Colomb 2,816 מ'</a></span></td><td data-label="מאיפה"><span><a href="#map" class="lk k-map focus" data-focus="PASS · Pas du Mont Colomb"><i class="ic-map"></i>Pas du Mont Colomb</a></span></td><td data-label="מה זה" data-long><span>סקרמבל מחוץ לשביל, רק בסלע יבש ועם טופו. דורש את יום הרזרבה.</span></td><td data-label="זמן" class="n"><span>2–3 שעות</span></td></tr>
+  <tr><td data-label="יעד"><span>Cime du Gélas 3,143 מ'</span></td><td data-label="מאיפה"><span><a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de la Madone"><i class="ic-map"></i>Madone de Fenestre</a></span></td><td data-label="מה זה" data-long><span>ערוץ בדרגה AD, נפילת אבנים כשאין שלג. לוותר בספטמבר.</span></td><td data-label="זמן"><span>—</span></td></tr>
+  <tr><td data-label="יעד"><span><a href="https://www.mercantour-roya.com/via-ferrata/">ויה פראטות של עמק Roya</a></span></td><td data-label="מאיפה"><span>Tende ו-La Brigue, ברכבת מ-<a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a></span></td><td data-label="מה זה" data-long><span>קלות עד בינוניות, מודרך ≈€50. רק אם יש יום פנוי. L'Escale ב-Peille סגורה.</span></td><td data-label="זמן"><span>חצי יום</span></td></tr>
+</table></div>
+
+<h2 id="he-practical">פרקטי</h2>
+<div class="two">
+  <div>
+    <h3>ספטמבר</h3><ul><li>סופות נדירות, בניגוד ליולי ואוגוסט. בעמקים 20–24 מעלות, בלינות הגבוהות 0–5, ייתכן כפור.</li><li>שלג ראשון על Colomb ו-Basto אפשרי מאמצע ספטמבר. אם ירד, מחכים יום.</li><li>זריחה ≈07:10, שקיעה ≈19:45.</li><li><b>תחזית חיה:</b> כל כרטיס יום למעלה מציג את התחזית העדכנית לנקודת הלינה ולנקודה הגבוהה של אותו יום, מ-<a href="https://open-meteo.com/">Open-Meteo</a>, מתרעננת בכל טעינה של הדף, עם אזהרות שנגזרות ממנה לסופות רעמים, גשם, שלג וגובה הקיפאון, רוח על הרכס, כפור, חום, ערפל וקרינה. התחזית האחרונה נשמרת לקריאה באופליין.</li><li><b>מקורות רשמיים לבדוק יום לפני:</b> <a href="https://vigilance.meteofrance.fr/fr/alpes-maritimes">Météo-France vigilance, Alpes-Maritimes</a> (אזהרות צבע לסופות, גשם, חום), <a href="https://meteofrance.com/meteo-montagne/mercantour">בולטין ההרים של Météo-France, Mercantour</a> (גובה קיפאון, רוח ב-2,000 ו-3,000 מ', תזמון סופות), <a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">הודעות השבילים של הפארק</a>.</li><li>הודעות שבילים (אתר הפארק, 4.9): הקטע ליד Boréon נפתח מחדש; חציות נחל ליד Cougourde ו-<a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de Nice"><i class="ic-map"></i>Refuge de Nice</a>. לבדוק שוב ב-<a href="https://www.mercantour-parcnational.fr/fr/des-decouvertes/ou-sinformer/info-sentiers">Info sentiers</a> לפני היציאה.</li></ul>
+    <h3>תחבורה</h3><ul><li>ניס עד <a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a>: <a href="https://www.bougerenville.com/bus-90-nice-grand-arenas-valdeblore-horaires-plan/">אוטובוס 90</a>, בימי חול 08:10, 16:40, 18:40 מ-Les Arboras דרך Grand Arénas, כשעתיים. לאשר באפליקציית <a href="https://www.lignesdazur.com/">Lignes d'Azur</a> שבוע לפני.</li><li>יציאות חירום: הכביש ל-<a href="#map" class="lk k-map focus" data-focus="HUT · Refuge de la Madone"><i class="ic-map"></i>Madone de Fenestre</a>, הכביש ב-<a href="#map" class="lk k-map focus" data-focus="ESCAPE · Col de Turini"><i class="ic-map"></i>Col de Turini</a>, תחנת הרכבת ב-<a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a>.</li></ul>
+  </div>
+  <div>
+    <h3>ציוד</h3><ul><li>שק שינה ומזרן שמחזיקים עד 0 מעלות.</li><li>מקלות עם גומיות.</li><li>3 ליטר קיבולת לאדם ומסנן.</li><li>אוכל לארבעה ימים מניס. מזומן לבקתות.</li><li>מפות אופליין: OsmAnd עם ה-GPX, וגם IGN 3741 OT ו-3841 OT.</li><li>לתלות את האוכל: שועלים וחזירי בר פושטים על אוהלים ליד האגמים.</li><li>פנס ראש; תבשלו בחושך.</li><li>חירום: 112.</li></ul>
+  </div>
+</div>
+
+<h2 id="he-links">קישורים</h2>
+<h3>דוחות טיולים</h3><ul><li><a href="https://happilyevertravels.com/hike-gr52-trail/">Happily Ever Travels</a>, 6 ימים עם אוהל באוגוסט. הכי דומה לתוכנית שלכם.</li><li><a href="https://www.altituderando.com/GR52-GR52A-Boucle-Menton-Sospel-Vesubie-Boreon-Vallee-des-Merveilles-Col-de">Altitude Rando</a>, 15–22 בספטמבר, קמפינגים ובקתות. אותם תאריכים כמו שלכם.</li><li><a href="https://www.randonner-leger.org/forum/viewtopic.php?id=22334">Randonner Léger 2025</a> ו-<a href="https://www.randonner-leger.org/forum/viewtopic.php?id=21181">Larche עד Menton</a>, אולטרה-לייט עם אוהל, בצרפתית.</li><li><a href="https://grfive.com/?page_id=540">GR Five</a>, התיאור הטוב ביותר של הירידה ל-<a href="#map" class="lk k-map focus" data-focus="NIGHT 6"><i class="ic-map"></i>Sospel</a>.</li><li><a href="https://crossingthealpswithease.wordpress.com/2022-auron-to-menton-gr5-and-gr52/">Crossing the Alps with Ease</a>, בקתות, 2022.</li><li><a href="https://howlingmist.blogspot.com/2017/11/hiking-gr52-and-gr52a.html">Howlingmist</a>, סוף אוקטובר, הקצה הקר של העונה.</li><li><a href="https://www.wikiloc.com/hiking-trails/gr52-de-menton-a-saint-dalmas-valdeblore-14352481">Wikiloc</a>, 5 ימים עם אוהל, בכיוון ההפוך.</li><li><a href="https://fastestknowntime.com/route/grande-traversee-des-alpes-gr52-and-gr5-france">שיא זמן, Menton עד אגם ז'נבה דרך GR52 ו-GR5</a>: 12 ימים ו-20 שעות, ספטמבר 2025.</li></ul>
+<h3>רשמי</h3><ul><li><a href="https://www.mongr.fr/trouver-prochaine-randonnee/suggestion/gr-52-de-saint-dalmas-valdeblore-a-menton">Mon GR</a>, <a href="https://topo-de-rando.com/gr52/">Topo de Rando</a>, <a href="https://www.gr-infos.com/en/gr52.htm">GR Infos</a>: שלבים.</li><li><a href="https://www.mercantour-parcnational.fr/fr/le-parc-national-du-mercantour/la-reglementation/foire-aux-questions">שאלות ותשובות על חוקי הפארק</a>, <a href="https://aida.ineris.fr/consultation_document/42556">צו הלינה בשטח</a>, <a href="https://www.ffrandonnee.fr/s-informer/actualites/dans-le-mercantour-la-vallee-des-merveilles-est-strictement-surveillee">אזור Merveilles</a>.</li><li><a href="https://www.alltrails.com/lists/gr52-la-vallee-des-merveilles">רשימת השלבים ב-AllTrails</a>, ביקורות עדכניות.</li><li><a href="https://www.colmiane.com/activites-ete-sur-la-colmiane/via-ferrata.html">הזמנת הוויה פראטה ב-La Colmiane</a>, <a href="https://www.sortir06.fr/les-via-ferrata-alpes-maritimes/">כל הוויה פראטות במחוז</a>.</li></ul>
+</div>
+
+<script>
+(function(){
+  var btn=document.getElementById('langbtn'),en=document.getElementById('en'),he=document.getElementById('he');
+  function apply(l,store){
+    var isHe=l==='he';
+    en.hidden=isHe; he.hidden=!isHe;
+    btn.textContent=isHe?'English':'עברית';
+    btn.setAttribute('lang',isHe?'en':'he');
+    document.documentElement.setAttribute('dir',isHe?'rtl':'ltr');
+    document.dispatchEvent(new CustomEvent('trek:lang',{detail:l}));
+    var fab=document.getElementById('locfab');if(fab){var t=fab.getAttribute('data-label-'+l)||'';fab.setAttribute('aria-label',t);fab.title=t;}
+    if(store){
+      try{localStorage.setItem(((window.TREK&&window.TREK.slug)||'trek')+'-lang',l)}catch(e){}
+      try{var u=new URL(location.href);u.searchParams.set('lang',l);history.replaceState(history.state,'',u)}catch(e){}
+    }
+  }
+  /* a shared link carries its language; otherwise the reader's own choice */
+  var saved='en',fromUrl=null;
+  try{fromUrl=new URL(location.href).searchParams.get('lang')}catch(e){}
+  try{saved=localStorage.getItem(((window.TREK&&window.TREK.slug)||'trek')+'-lang')||'en'}catch(e){}
+  apply(fromUrl==='he'||fromUrl==='en'?fromUrl:saved,false);
+  btn.addEventListener('click',function(){apply(en.hidden?'en':'he',true);if(window.gr52Mast)window.gr52Mast.refresh();});
+})();
+(function(){/* the cover masthead: --sbw lets it span the viewport exactly; on scroll the picture drifts at 0.6x of the page and zooms a little, and the masthead fades once a third of it has gone (in CSS where scroll-driven animations exist, here otherwise) */
+  var de=document.documentElement,still=matchMedia('(prefers-reduced-motion: reduce)').matches||(window.CSS&&CSS.supports&&CSS.supports('animation-timeline: view()')),raf=0;
+  function sbw(){de.style.setProperty('--sbw',(window.innerWidth-de.clientWidth)+'px');}
+  function frame(){raf=0;var y=window.scrollY||0;document.querySelectorAll('.mast').forEach(function(m){var h=m.offsetHeight;if(!h)return;var t=Math.min(y,h),k=t/h;m.style.setProperty('--py',(t*0.6).toFixed(1)+'px');m.style.setProperty('--pz',(1+k*0.12).toFixed(3));m.style.setProperty('--pf',Math.max(0,1-Math.max(0,k-0.3)/0.65).toFixed(3));});}
+  function tick(){if(!raf)raf=requestAnimationFrame(frame);}
+  sbw();window.addEventListener('resize',function(){sbw();tick();});
+  if(!still){window.addEventListener('scroll',tick,{passive:true});document.addEventListener('DOMContentLoaded',tick);tick();}
+  window.gr52Mast={refresh:tick};
+
+})();
+</script>
+<script>
+if('serviceWorker' in navigator){(function(){var had=!!navigator.serviceWorker.controller,done=false;
+  navigator.serviceWorker.addEventListener('controllerchange',function(){if(had&&!done){done=true;location.reload();}});})();}
+</script>
+<script src="/vendor/leaflet.min.js?v=5c9aecfc30"></script>
+<script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe"></script>
+<script src="/map.js?v=5500641315" defer></script>
+<script src="/trip.js?v=9a65a731ab" defer></script>
+</body>
+</html>
