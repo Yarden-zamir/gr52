@@ -332,8 +332,9 @@ a.lk i.ic-url{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 .dots a.up i{width:7px;height:7px;background:none;box-shadow:none;position:relative}
 .dots a.up i::before,.dots a.up i::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--c)} .dots a.up i::before{width:7px;height:2px} .dots a.up i::after{width:2px;height:7px}
 .dots a.on i{--c:var(--mark);opacity:1;transform:scale(1.6)}
-.dots .rh{display:block;font:700 9.5px "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--mark);writing-mode:vertical-rl;transform:rotate(180deg);margin:2px auto 6px;opacity:0;transition:opacity .2s;pointer-events:none}
-.dots.live .rh,.dots.scrub .rh,.dots:hover .rh{opacity:1}
+.dots a.top{height:auto;padding:2px 4px 6px} .dots a.top i{display:none}
+.dots a.top span{position:static;transform:rotate(180deg);opacity:1;background:none;border:0;box-shadow:none;padding:0;font:700 9.5px "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--muted);writing-mode:vertical-rl;pointer-events:none}
+.dots a.top.on span{color:var(--mark)}
 .dots span{position:absolute;left:22px;top:50%;transform:translateY(-50%);font:600 11.5px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:2px 9px;white-space:nowrap;opacity:0;pointer-events:none;box-shadow:0 2px 8px -4px rgba(0,0,0,.4);transition:opacity .15s}
 .dots.scrub a.on span,.dots:not(.scrub) a:hover span{opacity:1}
 html[dir="rtl"] .dots span{font-family:"Heebo",sans-serif}
@@ -419,10 +420,10 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   </div>
   <p class="lede">Yarden and Ayelet land in Nice on Friday 11 September, sleep in <a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a>, walk seven days to <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a> with a tent. Their stage split, with the technical options named.</p>
   <div class="facts">
-    <div><b>≈95 km</b><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a> → <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div>
+    <div><b>≈95 km</b><span>Saint-Dalmas → Menton</span></div>
     <div><b>≈6,200 m</b><span>total ascent</span></div>
     <div><b>≈7,500 m</b><span>total descent</span></div>
-    <div><b>2,693 m</b><span>high point, <a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a></span></div>
+    <div><b>2,693 m</b><span>high point, Baisse du Basto</span></div>
     <div><b>7 days</b><span>Sat 12 → Fri 18 Sep</span></div>
     <div><b>3 L</b><span>water to carry on two dry days</span></div>
   </div>
@@ -610,10 +611,10 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   </div>
   <p class="lede">ירדן ואיילת נוחתים בניס ביום שישי 11 בספטמבר, ישנים ב-<a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a>, הולכים שבעה ימים עד <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a> עם אוהל. החלוקה שלהם לימים, עם האופציות הטכניות.</p>
   <div class="facts">
-    <div><b>≈95 ק"מ</b><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a> עד <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div>
+    <div><b>≈95 ק"מ</b><span>Saint-Dalmas עד Menton</span></div>
     <div><b>≈6,200 מ'</b><span>עלייה מצטברת</span></div>
     <div><b>≈7,500 מ'</b><span>ירידה מצטברת</span></div>
-    <div><b>2,693 מ'</b><span>הנקודה הגבוהה, <a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a></span></div>
+    <div><b>2,693 מ'</b><span>הנקודה הגבוהה, Baisse du Basto</span></div>
     <div><b>7 ימים</b><span>שבת 12 עד שישי 18 בספטמבר</span></div>
     <div><b>3 ליטר</b><span>מים לסחוב בשני ימים יבשים</span></div>
   </div>
@@ -831,7 +832,7 @@ if('serviceWorker' in navigator){(function(){var had=!!navigator.serviceWorker.c
 </script>
 <script src="/vendor/leaflet.min.js?v=5c9aecfc30"></script>
 <script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe"></script>
-<script src="/map.js?v=f65503ea65" defer></script>
+<script src="/map.js?v=3451538ca6" defer></script>
 <script src="/trip.js?v=9a65a731ab" defer></script>
 </body>
 </html>

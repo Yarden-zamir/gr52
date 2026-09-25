@@ -332,8 +332,9 @@ a.lk i.ic-url{--ico:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000
 .dots a.up i{width:7px;height:7px;background:none;box-shadow:none;position:relative}
 .dots a.up i::before,.dots a.up i::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--c)} .dots a.up i::before{width:7px;height:2px} .dots a.up i::after{width:2px;height:7px}
 .dots a.on i{--c:var(--mark);opacity:1;transform:scale(1.6)}
-.dots .rh{display:block;font:700 9.5px "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--mark);writing-mode:vertical-rl;transform:rotate(180deg);margin:2px auto 6px;opacity:0;transition:opacity .2s;pointer-events:none}
-.dots.live .rh,.dots.scrub .rh,.dots:hover .rh{opacity:1}
+.dots a.top{height:auto;padding:2px 4px 6px} .dots a.top i{display:none}
+.dots a.top span{position:static;transform:rotate(180deg);opacity:1;background:none;border:0;box-shadow:none;padding:0;font:700 9.5px "IBM Plex Mono",monospace;letter-spacing:.12em;color:var(--muted);writing-mode:vertical-rl;pointer-events:none}
+.dots a.top.on span{color:var(--mark)}
 .dots span{position:absolute;left:22px;top:50%;transform:translateY(-50%);font:600 11.5px "IBM Plex Sans",sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:2px 9px;white-space:nowrap;opacity:0;pointer-events:none;box-shadow:0 2px 8px -4px rgba(0,0,0,.4);transition:opacity .15s}
 .dots.scrub a.on span,.dots:not(.scrub) a:hover span{opacity:1}
 html[dir="rtl"] .dots span{font-family:"Heebo",sans-serif}
@@ -419,7 +420,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <h1>GR52 + a tent</h1>
   </div>
   <div class="secblock" data-section="intro"><div class="sectext">      <p>Yarden and I planned a walk with a tent, sleeping and cooking outside. We like sleeping in special places in nature, and we did not want to tie ourselves to booked huts. It keeps the days flexible, it is cheaper, and the money goes to food and small luxuries instead.</p>      <p>The <a href="https://www.mercantour-parcnational.fr/" class="lk k-url" target="_blank" rel="noopener"><i class="ic-url"></i>Mercantour park</a> is part of the French Maritime Alps. Through it runs the GR52, about 100 km long, a variation on the finish of the longer GR5, which runs from Geneva to the sea at Nice. The walk takes seven days.</p></div><button type="button" class="editbtn" data-edit title="Edit" aria-label="Edit">✎</button></div>
-  <div class="facts"><div><b>≈109 km</b><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a> → <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div><div><b>≈6,450 m</b><span>total ascent</span></div><div><b>≈7,700 m</b><span>total descent</span></div><div><b>2,693 m</b><span>high point, <a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a></span></div><div><b>7 days</b><span>Sat 12 → Fri 18 Sep</span></div><div><b>0 m</b><span>lowest point, the beach at <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div></div>
+  <div class="facts"><div><b>≈109 km</b><span>Saint-Dalmas → Menton</span></div><div><b>≈6,450 m</b><span>total ascent</span></div><div><b>≈7,700 m</b><span>total descent</span></div><div><b>2,693 m</b><span>high point, Baisse du Basto</span></div><div><b>7 days</b><span>Sat 12 → Fri 18 Sep</span></div><div><b>0 m</b><span>lowest point, the beach at Menton</span></div></div>
   <nav class="toc" aria-label="Days"><a href="#d0">Day 0</a><a href="#d1">Day 1</a><a href="#d2">Day 2</a><a href="#d3">Day 3</a><a href="#d4">Day 4</a><a href="#d5">Day 5</a><a href="#d6">Day 6</a><a href="#d7">Day 7</a><a href="#outro">Wrap-up</a><a href="#before">Before you go</a><a href="#links">Links</a><a href="#map">Whole route</a><a href="#upload">Upload pictures</a></nav>
 </header>
 
@@ -674,7 +675,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
   <h1>GR52 + אוהל</h1>
   </div>
   <div class="secblock" data-section="intro"><div class="sectext">      <p>ירדן ואני תכננו טיול עם אוהל, לינה ובישול בשטח. אנחנו אוהבים לישון במקומות מיוחדים בטבע ולא רצינו לקבע את עצמנו מראש לבקתות. ככה הימים גמישים יותר, הטיול זול יותר והכסף הולך לאוכל ולמותרות קטנות.</p>      <p><a href="https://www.mercantour-parcnational.fr/" class="lk k-url" target="_blank" rel="noopener"><i class="ic-url"></i>פארק Mercantour</a> הוא חלק מהאלפים הימיים הצרפתיים. שם עובר שביל ה-GR52, שאורכו כ-100 ק"מ, וריאציה על סיום השביל הארוך יותר GR5, שעובר מ-Geneva עד לים ב-Nice. אורך המסלול שבעה ימים.</p></div><button type="button" class="editbtn" data-edit title="עריכה" aria-label="עריכה">✎</button></div>
-  <div class="facts"><div><b>≈109 ק"מ</b><span><a href="#map" class="lk k-map focus" data-focus="NIGHT 0"><i class="ic-map"></i>Saint-Dalmas</a> עד <a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div><div><b>≈6,450 מ'</b><span>עלייה מצטברת</span></div><div><b>≈7,700 מ'</b><span>ירידה מצטברת</span></div><div><b>2,693 מ'</b><span>הנקודה הגבוהה, <a href="#map" class="lk k-map focus" data-focus="Baisse du Basto"><i class="ic-map"></i>Baisse du Basto</a></span></div><div><b>7 ימים</b><span>שבת 12 עד שישי 18 בספטמבר</span></div><div><b>0 מ'</b><span>הנקודה הנמוכה, החוף ב-<a href="#map" class="lk k-map focus" data-focus="FINISH"><i class="ic-map"></i>Menton</a></span></div></div>
+  <div class="facts"><div><b>≈109 ק"מ</b><span>Saint-Dalmas עד Menton</span></div><div><b>≈6,450 מ'</b><span>עלייה מצטברת</span></div><div><b>≈7,700 מ'</b><span>ירידה מצטברת</span></div><div><b>2,693 מ'</b><span>הנקודה הגבוהה, Baisse du Basto</span></div><div><b>7 ימים</b><span>שבת 12 עד שישי 18 בספטמבר</span></div><div><b>0 מ'</b><span>הנקודה הנמוכה, החוף ב-Menton</span></div></div>
   <nav class="toc" aria-label="Days"><a href="#he-d0">יום 0</a><a href="#he-d1">יום 1</a><a href="#he-d2">יום 2</a><a href="#he-d3">יום 3</a><a href="#he-d4">יום 4</a><a href="#he-d5">יום 5</a><a href="#he-d6">יום 6</a><a href="#he-d7">יום 7</a><a href="#he-outro">לסיכום</a><a href="#he-before">לפני שיוצאים</a><a href="#he-links">קישורים</a><a href="#he-map">כל המסלול</a><a href="#he-upload">העלאת תמונות</a></nav>
 </header>
 
@@ -962,8 +963,8 @@ if('serviceWorker' in navigator){(function(){var had=!!navigator.serviceWorker.c
 </script>
 <script src="/vendor/leaflet.min.js?v=5c9aecfc30"></script>
 <script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe"></script>
-<script src="/map.js?v=f65503ea65" defer></script>
+<script src="/map.js?v=3451538ca6" defer></script>
 <script src="/vendor/zip.min.js?v=a911c709c1" defer></script>
-<script src="/log.js?v=db09bdb204" defer></script>
+<script src="/log.js?v=c3c2dd34e5" defer></script>
 </body>
 </html>
