@@ -20,14 +20,14 @@ intro:
     - '[[url:https://www.mercantour-parcnational.fr/|פארק Mercantour]] הוא חלק מהאלפים הימיים הצרפתיים. שם עובר שביל ה-GR52, שאורכו כ-100 ק"מ, וריאציה על סיום השביל הארוך יותר GR5, שעובר מ-Geneva עד לים ב-Nice. אורך המסלול שבעה ימים.'
 facts:
   en:
-    - {value: "≈109 km", label: "Saint-Dalmas → Menton, as walked"}
+    - {value: "≈109 km", label: "Saint-Dalmas → Menton"}
     - {value: "≈6,450 m", label: "total ascent"}
     - {value: "≈7,700 m", label: "total descent"}
     - {value: "2,693 m", label: "high point, Baisse du Basto"}
     - {value: "7 days", label: "Sat 12 → Fri 18 Sep"}
     - {value: "3–4.5 L", label: "water per person per day"}
   he:
-    - {value: "≈109 ק\"מ", label: "Saint-Dalmas עד Menton, כפי שהלכנו"}
+    - {value: "≈109 ק\"מ", label: "Saint-Dalmas עד Menton"}
     - {value: "≈6,450 מ'", label: "עלייה מצטברת"}
     - {value: "≈7,700 מ'", label: "ירידה מצטברת"}
     - {value: "2,693 מ'", label: "הנקודה הגבוהה, Baisse du Basto"}
