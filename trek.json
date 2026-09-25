@@ -5,6 +5,9 @@
   "description": "Seven-day bivouac plan for the GR52 from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026.",
   "hostname": "gr52.yarden-zamir.com",
   "story": "yarden-zamir",
+  "editors": [
+    "Yarden-zamir"
+  ],
   "gpx": "site/GR52_all-in-one.gpx",
   "timezone": "Europe/Paris",
   "plannedStart": 8,

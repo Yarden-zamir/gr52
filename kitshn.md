@@ -5,7 +5,12 @@ This repository deploys the GR52 trip dossier to `gr52.yarden-zamir.com` with Ki
 - Pushes to `main` deploy `prod`. Pull requests deploy to `pr.<number>.gr52.yarden-zamir.com`.
 - The site is static. A Caddy container serves `site/` and listens on the KitSHn Unix socket
   (`container/Caddyfile`). The host Caddy routes the public hostname to that socket (`Caddyfile.j2`).
-- No persistent data, no secrets beyond `KITSHN_VPS_HOST` and `KITSHN_SSH_KEY`.
+- Pictures and page edits live on the `logdata` volume (the uploader container).
+- Editing needs a GitHub sign-in through oauth2-proxy, the same gate as collie-gate. Params in the repo
+  settings: `KITSHN_OAUTH2_PROXY_CLIENT_ID` (variable), `KITSHN_OAUTH2_PROXY_CLIENT_SECRET` and
+  `KITSHN_OAUTH2_PROXY_COOKIE_SECRET` (secrets). The editors are `trek.json` `"editors"`; `src/build.py`
+  writes `.env` from it. GitHub OAuth app: homepage `https://gr52.yarden-zamir.com`, callback
+  `https://gr52.yarden-zamir.com/auth/callback`.
 
 ## Files
 
