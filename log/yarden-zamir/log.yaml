@@ -25,14 +25,14 @@ facts:
     - {value: "≈7,700 m", label: "total descent"}
     - {value: "2,693 m", label: "high point, Baisse du Basto"}
     - {value: "7 days", label: "Sat 12 → Fri 18 Sep"}
-    - {value: "3–4.5 L", label: "water per person per day"}
+    - {value: "0 m", label: "lowest point, the beach at Menton"}
   he:
     - {value: "≈109 ק\"מ", label: "Saint-Dalmas עד Menton"}
     - {value: "≈6,450 מ'", label: "עלייה מצטברת"}
     - {value: "≈7,700 מ'", label: "ירידה מצטברת"}
     - {value: "2,693 מ'", label: "הנקודה הגבוהה, Baisse du Basto"}
     - {value: "7 ימים", label: "שבת 12 עד שישי 18 בספטמבר"}
-    - {value: "3–4.5 ליטר", label: "מים לאדם ליום"}
+    - {value: "0 מ'", label: "הנקודה הנמוכה, החוף ב-Menton"}
 cover: {photo: 9ce9cc5d8097, y: 40%}
 days:
   - n: 0
