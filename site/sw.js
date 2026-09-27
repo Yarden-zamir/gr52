@@ -1,5 +1,5 @@
 /* Offline: precache the page and its data; cache map tiles and fonts as they are used or saved. */
-var VERSION = 'gr52-7ce407c6ab71';
+var VERSION = 'gr52-29dbae78aea3';
 var PRECACHE = ["/", "/GR52_all-in-one.gpx", "/log.js?v=4cc74c3810", "/vendor/zip.min.js?v=a911c709c1", "/map.js?v=b5508ab6a6", "/trip.js?v=9a65a731ab", "/vendor/leaflet.min.js?v=5c9aecfc30", "/vendor/leaflet.min.css?v=b570abbda9", "/vendor/leaflet-rotate.umd.min.js?v=543dab62fe", "/vendor/leaflet-rotate.css?v=fde9c7ff97", "/vendor/images/layers.png", "/vendor/images/layers-2x.png", "/manifest.webmanifest", "/icon.svg", "/maps/authion.webp", "/maps/menton.webp", "/maps/merv.webp", "/maps/north.webp", "/maps/overview.webp"];
 self.addEventListener('install', function (e) {
   /* cache: 'reload' bypasses the browser's HTTP cache, so a new version never precaches a stale file */
