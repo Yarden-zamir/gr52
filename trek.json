@@ -16,6 +16,7 @@
     "en",
     "he"
   ],
+  "defaultLanguage": "he",
   "elevationDataset": "eudem25m",
   "places": {
     "Saint-Dalmas-Valdeblore": "NIGHT 0",
