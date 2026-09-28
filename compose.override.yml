@@ -1,0 +1,31 @@
+# written by src/build.py from trek.json; docker compose loads it beside compose.yml
+services:
+  uploader:
+    environment:
+      LOG_EDITORS: Yarden-zamir
+      LOG_TZ: Europe/Paris
+  oauth2-proxy:
+    image: quay.io/oauth2-proxy/oauth2-proxy:v7.15.4
+    command:
+    - --http-address=0.0.0.0:4180
+    - --provider=github
+    - --proxy-prefix=/auth
+    - --redirect-url=https://gr52.yarden-zamir.com/auth/callback
+    - --whitelist-domain=gr52.yarden-zamir.com
+    - --reverse-proxy=true
+    - --email-domain=*
+    - --set-xauthrequest=true
+    - --skip-provider-button=true
+    - --cookie-secure=true
+    - --cookie-samesite=lax
+    - --cookie-expire=720h
+    - --cookie-refresh=0
+    - --upstream=static://202
+    environment:
+      OAUTH2_PROXY_CLIENT_ID: ${OAUTH2_PROXY_CLIENT_ID:?OAUTH2_PROXY_CLIENT_ID is
+        a KitSHn param of the repo}
+      OAUTH2_PROXY_CLIENT_SECRET: ${OAUTH2_PROXY_CLIENT_SECRET:?OAUTH2_PROXY_CLIENT_SECRET
+        is a KitSHn param of the repo}
+      OAUTH2_PROXY_COOKIE_SECRET: ${OAUTH2_PROXY_COOKIE_SECRET:?OAUTH2_PROXY_COOKIE_SECRET
+        is a KitSHn param of the repo}
+    restart: unless-stopped
