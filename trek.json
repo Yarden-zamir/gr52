@@ -2,6 +2,7 @@
   "slug": "gr52",
   "name": "GR52 Bivouac Dossier",
   "shortName": "GR52",
+  "auth": true,
   "description": "Seven-day bivouac plan for the GR52 from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026.",
   "names": {
     "en": "GR52 + a tent · the plan",
