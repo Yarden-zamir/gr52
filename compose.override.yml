@@ -2,7 +2,7 @@
 services:
   uploader:
     environment:
-      LOG_EDITORS: Yarden-zamir
+      LOG_EDITORS: Yarden-zamir,ayeletamir30-code
       LOG_TZ: Europe/Paris
   oauth2-proxy:
     image: quay.io/oauth2-proxy/oauth2-proxy:v7.15.4
