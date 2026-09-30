@@ -4,4 +4,12 @@ gr52.yarden-zamir.com
 pr.{{ environment.removeprefix("pr-") }}.gr52.yarden-zamir.com
 {%- endif %} {
     reverse_proxy unix//{{ paths.default_socket }}
+    log {
+        output file /var/log/caddy/{{ deployment | replace("/", "-") }}.access.log {
+            roll_size 20MiB
+            roll_keep 100
+            roll_keep_for 2160h
+        }
+        format json
+    }
 }
