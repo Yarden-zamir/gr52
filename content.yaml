@@ -28,7 +28,7 @@ en:
     - hostel check-in closes 19:00
     text:
     - '<b>The tight bit.</b> Bus 90 runs Nice to La Bolline three times a day on weekdays, at 08:10, 16:40 and 18:40 from Les Arboras, passing Grand Arénas a few minutes later. The 16:40 arrives around 18:40; the 18:40 arrives after check-in closes. Take the 16:40, be at Grand Arénas by 16:15, and phone the hostel on +33 4 22 49 01 06 in the morning to say you arrive about 18:45. Booked: twin room at HI hostel "Le Chalet", breakfast included, restaurant on site for dinner, check-out by 10:00.'
-    - '<b>Nice, 10:30 to 16:00.</b> Tram 2 from the airport to Grand Arénas is one stop, so leave the packs in a locker there or carry them. Buy four days of food and a gas cartridge, which cannot fly with you, at the Decathlon or a supermarket near Grand Arénas. Then tram into the old town: Cours Saleya market for lunch, the Castle Hill viewpoint, the Promenade. Be back on tram 2 by 15:45.'
+    - '<b>Nice, 10:30 to 16:00.</b> Tram 2 from the airport to Grand Arénas is one stop, so leave the packs in a locker there or carry them. Buy six days of food (rice, lentils, salami, cheese, carrots, onion) and a gas cartridge, which cannot fly with you, at the Decathlon or a supermarket near Grand Arénas. Then tram into the old town: Cours Saleya market for lunch, the Castle Hill viewpoint, the Promenade. Be back on tram 2 by 15:45.'
     hours: 2
   - n: 1
     date: '2026-09-12'
@@ -235,7 +235,7 @@ en:
     - Sleeping system to 0 °C.
     - Poles with rubber tips.
     - 3 L capacity each plus a filter.
-    - Four days of food from Nice. Cash for refuges.
+    - Six days of food from Nice (rice, lentils, salami, cheese, carrots, onion), so the refuges are extras. Cash for refuges.
     - 'Offline maps: the GPX in any map app that reads it, plus IGN 3741 OT and 3841 OT.'
     - 'Hang food: foxes and boar raid tents by the lakes.'
     - Headtorch; you will cook at dusk.
@@ -288,7 +288,7 @@ he:
     - צ'ק-אין באכסניה נסגר ב-19:00
     text:
     - '<b>הנקודה הצפופה.</b> קו 90 מניס ל-La Bolline נוסע שלוש פעמים ביום בימי חול: 08:10, 16:40 ו-18:40 מ-Les Arboras, ועובר ב-Grand Arénas כמה דקות אחר כך. האוטובוס של 16:40 מגיע בסביבות 18:40; זה של 18:40 מגיע אחרי שהצ''ק-אין נסגר. קחו את ה-16:40, תהיו ב-Grand Arénas עד 16:15, ותתקשרו לאכסניה בבוקר (06 01 49 22 4 33+) להגיד שאתם מגיעים בערך ב-18:45. מה שהוזמן: חדר עם שתי מיטות באכסניית HI "Le Chalet", ארוחת בוקר כלולה, יש מסעדה במקום לארוחת ערב, צ''ק-אאוט עד 10:00.'
-    - '<b>ניס, 10:30 עד 16:00.</b> רכבת קלה קו 2 מהשדה ל-Grand Arénas זו תחנה אחת; אפשר להשאיר תיקים בלוקר שם או לסחוב. קונים אוכל לארבעה ימים ומיכל גז (אי אפשר לטוס איתו) בדקתלון או בסופר ליד Grand Arénas. אחר כך ברכבת הקלה לעיר העתיקה: שוק Cours Saleya לצהריים, נקודת התצפית בגבעת הטירה, הטיילת. חוזרים לרכבת הקלה עד 15:45.'
+    - '<b>ניס, 10:30 עד 16:00.</b> רכבת קלה קו 2 מהשדה ל-Grand Arénas זו תחנה אחת; אפשר להשאיר תיקים בלוקר שם או לסחוב. קונים אוכל לשישה ימים (אורז, עדשים, סלמי, גבינה, גזר, בצל) ומיכל גז (אי אפשר לטוס איתו) בדקתלון או בסופר ליד Grand Arénas. אחר כך ברכבת הקלה לעיר העתיקה: שוק Cours Saleya לצהריים, נקודת התצפית בגבעת הטירה, הטיילת. חוזרים לרכבת הקלה עד 15:45.'
   - n: 1
     date: '2026-09-12'
     label: שבת 12.9
@@ -494,7 +494,7 @@ he:
     - שק שינה ומזרן שמחזיקים עד 0 מעלות.
     - מקלות עם גומיות.
     - 3 ליטר קיבולת לאדם ומסנן.
-    - אוכל לארבעה ימים מניס. מזומן לבקתות.
+    - אוכל לשישה ימים מניס (אורז, עדשים, סלמי, גבינה, גזר, בצל), כך שהבקתות הן תוספת. מזומן לבקתות.
     - 'מפות אופליין: ה-GPX בכל אפליקציית מפות שקוראת אותו, וגם IGN 3741 OT ו-3841 OT.'
     - 'לתלות את האוכל: שועלים וחזירי בר פושטים על אוהלים ליד האגמים.'
     - פנס ראש; תבשלו בחושך.
