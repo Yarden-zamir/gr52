@@ -76,7 +76,7 @@ en:
     - 5–6 h
     - tent only on the marked area behind the refuge
     text:
-    - 'Over the high point (2,693 m) into the Vallée des Merveilles: marked trail only, rubber tips on poles, no touching engravings. Afternoon: Mont Bégo (2,872 m, +750 m, easy, sea view) or the guided engraving walk. Refuge dinner available, cash only.'
+    - 'Over the high point (2,693 m) into the Vallée des Merveilles: marked trail only, no touching engravings. Afternoon: Mont Bégo (2,872 m, +750 m, easy, sea view) or the guided engraving walk. Refuge dinner available, cash only.'
     hours: 6
   - n: 5
     date: '2026-09-16'
@@ -130,7 +130,7 @@ en:
   - title: Park core
     text: '(Col du Barn to just past Pas du Diable): tent up 19:00–09:00 only, low tent, more than one hour from a road, new spot each night, stove yes, fire no, no dogs.'
   - title: 'Merveilles zone:'
-    text: bivouac only on the marked area behind the Refuge des Merveilles. Stay on the trail. Metal pole tips need rubber caps. Wardens fine.
+    text: bivouac only on the marked area behind the Refuge des Merveilles. Stay on the trail. Wardens fine.
   - title: 'Dry stretches:'
     text: Merveilles → Camp d'Argent and Sospel → Menton. Nothing mapped, nothing in any report. 3 L each.
   refuges:
@@ -232,9 +232,9 @@ en:
   practical_right:
   - title: Gear
     items:
-    - Sleeping system to 0 °C.
-    - Poles with rubber tips.
-    - 3 L capacity each plus a filter.
+    - Sleeping bag and mat.
+    - Walking poles.
+    - 3 L capacity each.
     - Six days of food from Nice (rice, lentils, salami, cheese, carrots, onion), so the refuges are extras. Cash for refuges.
     - 'Offline maps: the GPX in any map app that reads it, plus IGN 3741 OT and 3841 OT.'
     - 'Hang food: foxes and boar raid tents by the lakes.'
@@ -335,7 +335,7 @@ he:
     - 5–6 שעות
     - אוהל רק בשטח המסומן מאחורי הבקתה
     text:
-    - 'מעל הנקודה הגבוהה (2,693 מ'') ויורדים לעמק Merveilles: רק על השביל המסומן, גומיות על המקלות, לא נוגעים בחריטות. אחר הצהריים: Mont Bégo (2,872 מ'', +750 מ'', קל, נוף לים) או סיור מודרך בחריטות. יש ארוחת ערב בבקתה, מזומן בלבד.'
+    - 'מעל הנקודה הגבוהה (2,693 מ'') ויורדים לעמק Merveilles: רק על השביל המסומן, לא נוגעים בחריטות. אחר הצהריים: Mont Bégo (2,872 מ'', +750 מ'', קל, נוף לים) או סיור מודרך בחריטות. יש ארוחת ערב בבקתה, מזומן בלבד.'
     hours: 6
   - n: 5
     date: '2026-09-16'
@@ -389,7 +389,7 @@ he:
   - title: לב הפארק
     text: '(מ-Col du Barn עד קצת אחרי Pas du Diable): אוהל רק בין 19:00 ל-09:00, אוהל נמוך, יותר משעת הליכה מכביש, מקום חדש בכל לילה, גזייה כן, מדורה לא, כלבים אסורים.'
   - title: 'אזור Merveilles:'
-    text: לינה רק בשטח המסומן מאחורי Refuge des Merveilles. נשארים על השביל. קצה מתכת של מקל חייב גומייה. הפקחים קונסים.
+    text: לינה רק בשטח המסומן מאחורי Refuge des Merveilles. נשארים על השביל. הפקחים קונסים.
   - title: 'קטעים יבשים:'
     text: מ-Merveilles עד Camp d'Argent, ומ-Sospel עד Menton. אין מים במפה ואין מים באף דוח. 3 ליטר לאדם.
   refuges:
@@ -491,9 +491,9 @@ he:
   practical_right:
   - title: ציוד
     items:
-    - שק שינה ומזרן שמחזיקים עד 0 מעלות.
-    - מקלות עם גומיות.
-    - 3 ליטר קיבולת לאדם ומסנן.
+    - שק שינה ומזרן.
+    - מקלות הליכה.
+    - 3 ליטר קיבולת לאדם.
     - אוכל לשישה ימים מניס (אורז, עדשים, סלמי, גבינה, גזר, בצל), כך שהבקתות הן תוספת. מזומן לבקתות.
     - 'מפות אופליין: ה-GPX בכל אפליקציית מפות שקוראת אותו, וגם IGN 3741 OT ו-3841 OT.'
     - 'לתלות את האוכל: שועלים וחזירי בר פושטים על אוהלים ליד האגמים.'
