@@ -57,10 +57,10 @@ days:
     tips:
       en:
         - "Bus 90 from the University tram stop, three times a day on weekdays; the 16:30 one makes the hostel's 19:00 check-in."
-        - "Buy six days of food and the gas in Nice (we took rice, lentils, salami, cheese, carrots and onion), so that the huts are extras: nothing before Le Boréon, and the [[gmaps:Intermarché Nice|Intermarché]] had no gas, [[gmaps:Decathlon Nice|Decathlon]] did."
+        - "Buy six days of food and the gas in Nice (we took rice, lentils, salami, cheese, carrots and onion), so that the huts are extras. We found gas at [[gmaps:Decathlon Nice|Decathlon]]."
       he:
         - "אוטובוס 90 מתחנת הרכבת הקלה University, שלוש פעמים ביום בימי חול; זה של 16:30 מספיק לצ'ק-אין של 19:00 באכסניה."
-        - "קונים ב-Nice אוכל לשישה ימים וגז (אנחנו לקחנו אורז, עדשים, סלמי, גבינה, גזר ובצל), כך שהבקתות הן תוספת: אין כלום לפני Le Boréon, וב-[[gmaps:Intermarché Nice|Intermarché]] לא היה גז, ב-[[gmaps:Decathlon Nice|Decathlon]] כן."
+        - "קונים ב-Nice אוכל לשישה ימים וגז (אנחנו לקחנו אורז, עדשים, סלמי, גבינה, גזר ובצל), כך שהבקתות הן תוספת. גז מצאנו ב-[[gmaps:Decathlon Nice|Decathlon]]."
   - n: 1
     date: '2026-09-12'
     title:
@@ -134,10 +134,10 @@ days:
     tips:
       en:
         - "No coffee at Le Boréon in the morning; start early, the climb to Cougourde is long."
-        - "Sleeping above Lac de Fenestre: flat ground by the old barracks, water from a trickle on the far side."
+        - "Sleeping above Lac de Fenestre: flat ground by the old barracks."
       he:
         - "אין קפה ב-Le Boréon בבוקר; לצאת מוקדם, העלייה ל-Cougourde ארוכה."
-        - "לינה מעל Lac de Fenestre: שטח ישר ליד הקסרקטין הישן, מים מנביעה קטנה בצד הרחוק."
+        - "לינה מעל Lac de Fenestre: שטח ישר ליד הקסרקטין הישן."
   - n: 3
     date: '2026-09-14'
     title:
@@ -167,10 +167,10 @@ days:
         - "בעיקרון תכננו לסיים את היום ברפיוג'י ולעשות יום יותר באיזי, אבל הרגשנו שיש לנו עוד כוח (לפחות ל-50% מאיתנו) והחלטנו להמשיך קצת. אחרי העפת מבט מהירה ולא מעמיקה במפה החלטנו ללכת ל-[[map:LAKE · Lac du Basto|Lac du Basto]], לאחר כמה מאות מטרים של עלייה הבנו שבעצם צריך לעבור עוד פאס כדי להגיע לשם, [[map:Baisse du Basto|Baisse du Basto]] (500 מטר עלייה ו-400 ירידה). בקיצור, יום הצ'יל שלנו הפך ליום די קשוח, אבל נהנינו מההליכה הטכנית ומהנופים. שימו לב: לקראת הערב התחיל להיווצר ערפל בחלקים הגבוהים של ההרים, כדאי לקחת את זה בחשבון.\n [[photo:ee4d18bf6582]]\n[[photo:03a621eb6984]] \n[[photo:da38d03cf88f]]\n[[photo:266f605e74c4]]\nהגענו לנקודת תצפית מקסימה על האגם קצת אחרי 18:00, ושם עצרנו והקמנו את האוהל.\n [[photo:c6fe63c0855a]]\n [[photo:1de3726971dc]]"
     tips:
       en:
-        - "Skip the Madone hut and go straight to Pas du Mont Colomb; the pass is a short rock step."
+        - "Skip the Madone hut and go straight to Pas du Mont Colomb."
         - "Going on past Refuge de Nice means Baisse du Basto the same afternoon, 500 m up; fog comes towards evening."
       he:
-        - "מדלגים על בקתת Madone והולכים ישר ל-Pas du Mont Colomb; הפאס הוא מדרגת סלע קצרה."
+        - "מדלגים על בקתת Madone והולכים ישר ל-Pas du Mont Colomb."
         - "להמשיך אחרי Refuge de Nice אומר Baisse du Basto באותו אחר צהריים, 500 מטר למעלה; לקראת ערב יורד ערפל."
   - n: 4
     date: '2026-09-15'
@@ -237,11 +237,11 @@ days:
       en:
         - "No water from Lac du Diable to Camp d'Argent: 4.5 L each."
         - "Be over Pas du Diable before the afternoon if a storm is forecast."
-        - "Twenty minutes past Camp d'Argent there is a flat, sheltered ledge, the best tent spot of the trip."
+        - "Past Camp d'Argent there is a flat, sheltered ledge, the best tent spot of the trip."
       he:
         - "אין מים מ-Lac du Diable עד Camp d'Argent: 4.5 ליטר לאדם."
         - "עוברים את Pas du Diable לפני אחר הצהריים אם צפויה סופה."
-        - "עשרים דקות אחרי Camp d'Argent יש מדף ישר ומוגן, מקום האוהל הטוב בטיול."
+        - "אחרי Camp d'Argent יש מדף ישר ומוגן, מקום האוהל הטוב בטיול."
   - n: 6
     date: '2026-09-17'
     title:
@@ -325,20 +325,20 @@ sections:
     text:
       en:
         - "<b>When.</b> Mid September was right: warm days, the huts still open, few people."
-        - "<b>Park rules.</b> From Col du Barn to just past Pas du Diable you are in the park core: tent up between 19:00 and 09:00 only, more than an hour from a road, a new spot each night, stove yes, fire no, no dogs. In the Merveilles valley stay on the trail and camp only on the marked area above the refuge; the wardens do fine people."
+        - "<b>Park rules.</b> From Col du Barn to just past Pas du Diable you are in the park core: a new spot each night. In the Merveilles valley stay on the trail and camp only on the marked area above the refuge."
         - "<b>Water.</b> 3 L each was enough on days 1 to 4. We recommend 4.5 L from Refuge des Merveilles to Camp d'Argent and from Sospel to Menton, the two dry stretches."
         - "<b>Food.</b> We carried six days of food from Nice so that we did not depend on the huts: rice, lentils, salami, cheese, carrots and onion. The huts were extras."
         - "<b>Sleeping.</b> Our nights: the hostel in Saint-Dalmas, the lake at Le Boréon, above Lac de Fenestre, above Lac du Basto, the bivouac area at Merveilles, the ledge past Camp d'Argent, an Airbnb in Sospel. A sleeping bag and a mat."
-        - "<b>Gear.</b> Walking poles: we did not bring any and wished we had on the long descents to Sospel and Menton, so take a pair. A headtorch, a swimsuit, a stove and your own coffee. Offline maps: the GPX from this page in any map app that reads GPX files."
-        - "<b>Weather.</b> Check the [[url:https://meteofrance.com/meteo-montagne/mercantour|Météo-France mountain bulletin]] and the [[url:https://vigilance.meteofrance.fr/fr/alpes-maritimes|vigilance page]] the evening before. Storms build in the afternoon, so plan to be over Pas du Mont Colomb, Baisse du Basto and Pas du Diable by early afternoon."
+        - "<b>Gear.</b> Walking poles: we did not bring any and wished we had on the long descents to Sospel and Menton, so take a pair. Offline maps: the GPX from this page in any map app that reads GPX files."
+        - "<b>Weather.</b> Check the [[url:https://meteofrance.com/meteo-montagne/mercantour|Météo-France mountain bulletin]] the evening before."
       he:
         - "<b>מתי.</b> אמצע ספטמבר היה נכון: ימים חמים, הבקתות עדיין פתוחות, מעט אנשים."
-        - "<b>חוקי הפארק.</b> מ-Col du Barn עד קצת אחרי Pas du Diable נמצאים בלב הפארק: אוהל רק בין 19:00 ל-09:00, יותר משעת הליכה מכביש, מקום חדש בכל לילה, גזייה כן, מדורה לא, כלבים אסורים. בעמק Merveilles נשארים על השביל וישנים רק בשטח המסומן מעל הרפיוז'; הפקחים באמת קונסים."
+        - "<b>חוקי הפארק.</b> מ-Col du Barn עד קצת אחרי Pas du Diable נמצאים בלב הפארק: מקום חדש בכל לילה. בעמק Merveilles נשארים על השביל וישנים רק בשטח המסומן מעל הרפיוז'."
         - "<b>מים.</b> 3 ליטר לאדם הספיקו בימים 1 עד 4. מומלץ 4.5 ליטר מ-Refuge des Merveilles עד Camp d'Argent ומ-Sospel עד Menton, שני הקטעים היבשים."
         - "<b>אוכל.</b> לקחנו מ-Nice אוכל לשישה ימים כדי לא להיות תלויים בבקתות: אורז, עדשים, סלמי, גבינה, גזר ובצל. הבקתות היו תוספת."
         - "<b>שינה.</b> הלילות שלנו: האכסניה ב-Saint-Dalmas, האגם ב-Le Boréon, מעל Lac de Fenestre, מעל Lac du Basto, שטח הלינה ב-Merveilles, המדף אחרי Camp d'Argent, Airbnb ב-Sospel. שק שינה ומזרן."
-        - "<b>ציוד.</b> מקלות הליכה: אנחנו לא לקחנו והצטערנו בירידות הארוכות ל-Sospel ול-Menton, אז קחו זוג. פנס ראש, בגד ים, גזייה וקפה משלכם. מפות אופליין: ה-GPX מהעמוד הזה בכל אפליקציית מפות שקוראת קובצי GPX."
-        - "<b>מזג אוויר.</b> בודקים את [[url:https://meteofrance.com/meteo-montagne/mercantour|בולטין ההרים של Météo-France]] ואת [[url:https://vigilance.meteofrance.fr/fr/alpes-maritimes|עמוד האזהרות]] בערב שלפני. סופות נבנות אחר הצהריים, אז מתכננים לעבור את Pas du Mont Colomb, Baisse du Basto ו-Pas du Diable עד תחילת אחר הצהריים."
+        - "<b>ציוד.</b> מקלות הליכה: אנחנו לא לקחנו והצטערנו בירידות הארוכות ל-Sospel ול-Menton, אז קחו זוג. מפות אופליין: ה-GPX מהעמוד הזה בכל אפליקציית מפות שקוראת קובצי GPX."
+        - "<b>מזג אוויר.</b> בודקים את [[url:https://meteofrance.com/meteo-montagne/mercantour|בולטין ההרים של Météo-France]] בערב שלפני."
   - key: links
     title: {en: Links, he: קישורים}
     text:

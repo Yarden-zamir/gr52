@@ -16,7 +16,7 @@ en:
   - value: 3 L
     label: water to carry on two dry days
   plan_title: The plan
-  plan_intro: Yarden and Ayelet's split, which is the official FFRandonnée staging. Times are guidebook times plus 20 %. In the park core the tent may only stand from 19:00 to 09:00 and sunset is about 19:45, so arrive by 18:00 and cook first. The GPX layers in your Downloads folder match these nights.
+  plan_intro: Yarden and Ayelet's split, which is the official FFRandonnée staging. Times are guidebook times plus 20 %. The GPX layers in your Downloads folder match these nights.
   snapshot_hint: 'The round button at the bottom left takes one position fix, no tracking: it shows you on the map and on the profile, marks finished days done and fills in today''s distance, ascent left and arrival estimate. Long-press it to pick your position on the map instead. Each day has Plan, Map and Weather tabs; tap a day title to open its map.'
   days:
   - n: 0
@@ -128,9 +128,9 @@ en:
   rules_title: Rules and water
   rules:
   - title: Park core
-    text: '(Col du Barn to just past Pas du Diable): tent up 19:00–09:00 only, low tent, more than one hour from a road, new spot each night, stove yes, fire no, no dogs.'
+    text: '(Col du Barn to just past Pas du Diable): low tent, new spot each night.'
   - title: 'Merveilles zone:'
-    text: bivouac only on the marked area behind the Refuge des Merveilles. Stay on the trail. Wardens fine.
+    text: bivouac only on the marked area behind the Refuge des Merveilles. Stay on the trail.
   - title: 'Dry stretches:'
     text: Merveilles → Camp d'Argent and Sospel → Menton. Nothing mapped, nothing in any report. 3 L each.
   refuges:
@@ -276,7 +276,7 @@ he:
   - value: 3 ליטר
     label: מים לסחוב בשני ימים יבשים
   plan_title: התוכנית
-  plan_intro: החלוקה של ירדן ואיילת, שהיא בדיוק השלבים הרשמיים של FFRandonnée. הזמנים הם זמני המדריך פלוס 20 אחוז. בלב הפארק מותר להקים אוהל רק בין 19:00 ל-09:00 והשמש שוקעת בסביבות 19:45, אז מגיעים עד 18:00 ומבשלים לפני שמקימים. שכבות ה-GPX בתיקיית ההורדות תואמות ללילות האלה.
+  plan_intro: החלוקה של ירדן ואיילת, שהיא בדיוק השלבים הרשמיים של FFRandonnée. הזמנים הם זמני המדריך פלוס 20 אחוז. שכבות ה-GPX בתיקיית ההורדות תואמות ללילות האלה.
   snapshot_hint: 'הכפתור העגול בפינה השמאלית התחתונה קורא מיקום אחד, בלי מעקב: הוא מציג אתכם במפה ובפרופיל, מסמן ימים שהסתיימו כהושלמו וממלא את המרחק, העלייה שנותרה והערכת ההגעה להיום. לחיצה ארוכה עליו בוחרת את המיקום במפה במקום GPS. לכל יום יש לשוניות תוכנית, מפה ומזג אוויר; לחצו על כותרת יום כדי לפתוח את המפה שלו.'
   days:
   - n: 0
@@ -387,9 +387,9 @@ he:
   rules_title: חוקים ומים
   rules:
   - title: לב הפארק
-    text: '(מ-Col du Barn עד קצת אחרי Pas du Diable): אוהל רק בין 19:00 ל-09:00, אוהל נמוך, יותר משעת הליכה מכביש, מקום חדש בכל לילה, גזייה כן, מדורה לא, כלבים אסורים.'
+    text: '(מ-Col du Barn עד קצת אחרי Pas du Diable): אוהל נמוך, מקום חדש בכל לילה.'
   - title: 'אזור Merveilles:'
-    text: לינה רק בשטח המסומן מאחורי Refuge des Merveilles. נשארים על השביל. הפקחים קונסים.
+    text: לינה רק בשטח המסומן מאחורי Refuge des Merveilles. נשארים על השביל.
   - title: 'קטעים יבשים:'
     text: מ-Merveilles עד Camp d'Argent, ומ-Sospel עד Menton. אין מים במפה ואין מים באף דוח. 3 ליטר לאדם.
   refuges:
