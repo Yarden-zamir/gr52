@@ -18,13 +18,14 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://gr52.yarden-zamir.com/log/yarden-zamir/photos/9ce9cc5d8097.og.jpg?y=40">
-<script>if (location.hostname === "gr52.yarden-zamir.com") { var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-QWT107CCNB"; document.head.appendChild(s); window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; gtag("js", new Date()); gtag("config", "G-QWT107CCNB"); var e = document.createElement("script"); e.defer = true; e.src = "/analytics.js?v=5b67c200f3"; document.head.appendChild(e); }</script>
+<script>if (location.hostname === "gr52.yarden-zamir.com") { window.dataLayer = window.dataLayer || []; window.gtag = function () { dataLayer.push(arguments); }; gtag("js", new Date()); gtag("config", "G-QWT107CCNB"); addEventListener("load", function () { var s = document.createElement("script"); s.async = true; s.src = "https://www.googletagmanager.com/gtag/js?id=G-QWT107CCNB"; document.head.appendChild(s); var e = document.createElement("script"); e.async = true; e.src = "/analytics.js?v=5b67c200f3"; document.head.appendChild(e); }); }</script>
 <meta name="color-scheme" content="light dark">
 <style>body{margin:0;font-size:14px;font-family:system-ui,sans-serif}img{max-width:100%;height:auto}[hidden]{display:none!important}</style>
 <title>GR52 + אוהל</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Heebo:wght@400;500;700&family=Rubik:wght@600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Heebo:wght@400;500;700&family=Rubik:wght@600;700&display=swap" media="print" onload="this.media='all'">  <!-- not render-blocking: the text shows in a fallback font until these arrive -->
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Heebo:wght@400;500;700&family=Rubik:wght@600;700&display=swap"></noscript>
 <link rel="stylesheet" href="/vendor/leaflet.min.css?v=b570abbda9">
 <link rel="stylesheet" href="/vendor/leaflet-rotate.css?v=fde9c7ff97">
 <link rel="manifest" href="/manifest.webmanifest">
@@ -248,7 +249,7 @@ a.daylink:hover{color:var(--lake)}
 .wxev{padding:3px 8px;margin:3px 0;border-inline-start:3px solid var(--line);background:var(--panel)}
 .wxev.storm{border-color:var(--mark)} a.wxsrc{font-size:11px;color:var(--muted);margin-inline-start:6px} .wxev.heat{border-color:#E07A2F} .wxev.rain{border-color:var(--lake)} .wxev.wind{border-color:var(--warn)} .wxev.exp{font-weight:600} .wxev.ok{color:var(--muted)}
 .stage.done .d{color:var(--muted)} .stage.done .d::before{opacity:.35}
-.stage.done h3{opacity:.6}
+.stage.done h3{opacity:.68}  /* .6 was under the 4.5:1 text contrast */
 .stage.done:not(.open) .stats,.stage.done:not(.open) .tabs,.stage.done:not(.open) .pane,.stage.done:not(.open) .snapbox{display:none}
 .donebar{display:flex;gap:8px;align-items:center;margin:4px 0 6px;font-size:13px}
 .donechip{color:#2E7D32;font-weight:600}
@@ -503,9 +504,9 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
 <body class="logpage">
 <div class="langbar"><button id="langbtn" type="button">English</button></div>
 <button id="backbubble" type="button" hidden></button>
-<div id="lightbox" hidden><button type="button" class="lbx" data-lb="close" aria-label="Close">×</button><img alt=""><a class="lbdl" download aria-label="Download">⤓</a><div class="lbfoot"><div class="lbcap"></div><div class="lbnav"><button type="button" class="lbp" data-lb="prev" aria-label="Previous">‹</button><div class="lbn"></div><button type="button" class="lbp" data-lb="next" aria-label="Next">›</button></div></div></div>
+<div id="lightbox" hidden><button type="button" class="lbx" data-lb="close" aria-label="Close">×</button><img alt=""><a class="lbdl" href="#" download aria-label="Download">⤓</a><div class="lbfoot"><div class="lbcap"></div><div class="lbnav"><button type="button" class="lbp" data-lb="prev" aria-label="Previous">‹</button><div class="lbn"></div><button type="button" class="lbp" data-lb="next" aria-label="Next">›</button></div></div></div>
 
-<div id="en" lang="en" dir="ltr" class="wrap" hidden>
+<div id="en" lang="en" dir="ltr" class="wrap" role="main" hidden>
 <div class="main">
 <header class="cover">
   <div class="topo" aria-hidden="true"></div>
@@ -804,7 +805,7 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
 <div class="upload"><label class="upbtn">Choose pictures<input type="file" accept="image/*,video/*,.heic,.heif,.mp4,.mov,.m4v,.zip,application/zip" multiple hidden></label><div class="uplist"></div></div>
 </div><aside class="spine" aria-label="Map"><div class="maphost empty" data-host="spine"></div></aside></div>
 
-<div id="he" lang="he" dir="rtl" class="wrap">
+<div id="he" lang="he" dir="rtl" class="wrap" role="main">
 <div class="main">
 <header class="cover">
   <div class="topo" aria-hidden="true"></div>
@@ -1141,10 +1142,9 @@ body:has(.locbar) #backbubble{left:78px;transform:none;max-width:calc(100vw - 92
 if('serviceWorker' in navigator){(function(){var had=!!navigator.serviceWorker.controller,done=false;
   navigator.serviceWorker.addEventListener('controllerchange',function(){if(had&&!done){done=true;location.reload();}});})();}
 </script>
-<script src="/vendor/leaflet.min.js?v=5c9aecfc30"></script>
-<script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe"></script>
-<script src="/map.js?v=1d81c586dc" defer></script>
-<script src="/vendor/zip.min.js?v=a911c709c1" defer></script>
-<script src="/log.js?v=517b424060" defer></script>
+<script src="/vendor/leaflet.min.js?v=5c9aecfc30" defer></script>
+<script src="/vendor/leaflet-rotate.umd.min.js?v=543dab62fe" defer></script>
+<script src="/map.js?v=4d2ce3bce6" defer></script>
+<script src="/log.js?v=cd57128640" defer></script>
 </body>
 </html>
