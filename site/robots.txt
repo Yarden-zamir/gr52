@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gr52.yarden-zamir.com/sitemap.xml
