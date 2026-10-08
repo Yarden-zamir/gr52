@@ -2,7 +2,7 @@
 
 This repository deploys the GR52 site to `gr52.yarden-zamir.com` with KitSHn.
 
-- Pushes to `main` deploy `prod`. Pull requests deploy to `pr.<number>.gr52.yarden-zamir.com`.
+- Pushes to `main` deploy `prod`. Pull requests deploy to `pr-<number>.gr52.yarden-zamir.com`.
 - A Caddy container serves `site/` and listens on the KitSHn Unix socket (`container/Caddyfile`). The host Caddy routes the public hostname to that socket (`Caddyfile.j2`).
 - The `uploader` container keeps the pictures, the videos and the page edits on the `logdata` volume.
 - Editing needs a GitHub sign-in through oauth2-proxy. It uses the GitHub App https://github.com/apps/gr52-trip-log, with the callback `https://gr52.yarden-zamir.com/auth/callback`. The secrets are in the `prod` environment: `KITSHN_OAUTH2_PROXY_CLIENT_ID`, `KITSHN_OAUTH2_PROXY_CLIENT_SECRET` and `KITSHN_OAUTH2_PROXY_COOKIE_SECRET`.
