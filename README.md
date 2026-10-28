@@ -1,6 +1,6 @@
 # GR52 + a tent
 
-[![kitshn](https://kitshn.yarden-zamir.com/b/Yarden-zamir/gr52.svg)](https://gr52.yarden-zamir.com)
+[![kitshn](https://kit.yarden-zamir.com/public/badges/Yarden-zamir/gr52.svg)](https://gr52.yarden-zamir.com)
 
 The site of our GR52 walk across the Mercantour, from Saint-Dalmas-Valdeblore to Menton, 12 to 18 September 2026: seven days with a tent, about 109 km, 6,450 m up and 7,700 m down.
 
