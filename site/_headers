@@ -1,9 +1,10 @@
 # kitshn 2 reads this file for the response headers of the static site (K-805); the old Caddyfile did the same.
+# Cloudflare allows one splat (*) per URL pattern, so the log rules name the one user.
 /*.gpx
   Content-Disposition: attachment
 /maps/*
   Cache-Control: public, max-age=604800
-/log/*/photos/*
+/log/yarden-zamir/photos/*
   Cache-Control: public, max-age=86400
-/log/*/orig/*
+/log/yarden-zamir/orig/*
   Cache-Control: public, max-age=86400
